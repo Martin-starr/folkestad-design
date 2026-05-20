@@ -61,6 +61,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   margin: 0 auto;
   padding: 0 32px;
 }
+@media (max-width: 600px) {
+  .container { padding: 0 20px; }
+}
 
 /* ============================================
    NAVIGATION
@@ -1675,6 +1678,7 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
   border-radius: 12px;
   border: 1px solid var(--border-subtle);
   background: var(--bg-surface);
+  -webkit-overflow-scrolling: touch;
 }
 
 .compare table {
@@ -1717,6 +1721,75 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
 .compare .no { color: var(--text-dim); }
 
 .compare tr:last-child td { border-bottom: none; }
+
+/* Mobile: table → stacked cards */
+@media (max-width: 700px) {
+  .compare {
+    overflow: visible;
+    border: none;
+    background: transparent;
+    border-radius: 0;
+  }
+  .compare table {
+    display: none;
+  }
+  .compare-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .compare-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    padding: 20px 18px;
+  }
+  .compare-card-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 14px;
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+  }
+  .compare-card-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-top: 1px solid var(--border-subtle);
+    font-size: 13px;
+  }
+  .compare-card-row.is-folkestad {
+    color: var(--accent);
+    font-weight: 700;
+    background: var(--bg-primary);
+    margin: 0 -18px;
+    padding: 12px 18px;
+    border-top: 1px solid var(--accent);
+    border-bottom: 1px solid var(--accent);
+  }
+  .compare-card-row .label {
+    font-weight: 500;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+    font-size: 11px;
+    text-transform: uppercase;
+  }
+  .compare-card-row.is-folkestad .label {
+    color: var(--accent);
+    font-weight: 700;
+  }
+  .compare-card-row .mark {
+    font-size: 16px;
+    font-weight: 700;
+  }
+  .compare-card-row .mark.yes { color: var(--accent); }
+  .compare-card-row .mark.no { color: var(--text-dim); }
+}
+@media (min-width: 701px) {
+  .compare-mobile { display: none; }
+}
 
 /* ============================================
    SECTION 08 — PRICING
@@ -2921,6 +2994,58 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
           </tr>
         </tbody>
       </table>
+
+      <!-- Mobile card view (shown <701px) -->
+      <div class="compare-mobile">
+        <div class="compare-card">
+          <div class="compare-card-title">Ferdig levert under 14 dager</div>
+          <div class="compare-card-row is-folkestad"><span class="label">Folkestad</span><span class="mark yes">✓</span></div>
+          <div class="compare-card-row"><span class="label">Storbyrå</span><span class="mark no">✕</span></div>
+          <div class="compare-card-row"><span class="label">Frilanser</span><span class="mark no">✕</span></div>
+          <div class="compare-card-row"><span class="label">Wix selv</span><span class="mark yes">✓</span></div>
+          <div class="compare-card-row"><span class="label">Ingenting</span><span class="mark no">✕</span></div>
+        </div>
+        <div class="compare-card">
+          <div class="compare-card-title">Komplett pakke (web + trykk + brand)</div>
+          <div class="compare-card-row is-folkestad"><span class="label">Folkestad</span><span class="mark yes">✓</span></div>
+          <div class="compare-card-row"><span class="label">Storbyrå</span><span class="mark yes">✓</span></div>
+          <div class="compare-card-row"><span class="label">Frilanser</span><span class="mark no">✕</span></div>
+          <div class="compare-card-row"><span class="label">Wix selv</span><span class="mark no">✕</span></div>
+          <div class="compare-card-row"><span class="label">Ingenting</span><span class="mark no">✕</span></div>
+        </div>
+        <div class="compare-card">
+          <div class="compare-card-title">Du betaler kun om fornøyd</div>
+          <div class="compare-card-row is-folkestad"><span class="label">Folkestad</span><span class="mark yes">✓</span></div>
+          <div class="compare-card-row"><span class="label">Storbyrå</span><span class="mark no">✕</span></div>
+          <div class="compare-card-row"><span class="label">Frilanser</span><span class="mark no">✕</span></div>
+          <div class="compare-card-row"><span class="label">Wix selv</span><span class="mark no">✕</span></div>
+          <div class="compare-card-row"><span class="label">Ingenting</span><span class="mark no">✕</span></div>
+        </div>
+        <div class="compare-card">
+          <div class="compare-card-title">Faste, transparente priser</div>
+          <div class="compare-card-row is-folkestad"><span class="label">Folkestad</span><span class="mark yes">✓</span></div>
+          <div class="compare-card-row"><span class="label">Storbyrå</span><span class="mark no">✕</span></div>
+          <div class="compare-card-row"><span class="label">Frilanser</span><span class="mark no">✕</span></div>
+          <div class="compare-card-row"><span class="label">Wix selv</span><span class="mark yes">✓</span></div>
+          <div class="compare-card-row"><span class="label">Ingenting</span><span class="mark no">✕</span></div>
+        </div>
+        <div class="compare-card">
+          <div class="compare-card-title">Lokal — møtes ansikt til ansikt</div>
+          <div class="compare-card-row is-folkestad"><span class="label">Folkestad</span><span class="mark yes">✓</span></div>
+          <div class="compare-card-row"><span class="label">Storbyrå</span><span class="mark no">✕</span></div>
+          <div class="compare-card-row"><span class="label">Frilanser</span><span class="mark yes">✓</span></div>
+          <div class="compare-card-row"><span class="label">Wix selv</span><span class="mark no">✕</span></div>
+          <div class="compare-card-row"><span class="label">Ingenting</span><span class="mark no">✕</span></div>
+        </div>
+        <div class="compare-card">
+          <div class="compare-card-title">Du eier alle filer</div>
+          <div class="compare-card-row is-folkestad"><span class="label">Folkestad</span><span class="mark yes">✓</span></div>
+          <div class="compare-card-row"><span class="label">Storbyrå</span><span class="mark no">✕</span></div>
+          <div class="compare-card-row"><span class="label">Frilanser</span><span class="mark yes">✓</span></div>
+          <div class="compare-card-row"><span class="label">Wix selv</span><span class="mark no">✕</span></div>
+          <div class="compare-card-row"><span class="label">Ingenting</span><span class="mark no">✕</span></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
