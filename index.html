@@ -792,6 +792,172 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
   gap: 24px;
 }
 
+/* Featured case (ESE Solution — real delivered client) */
+.case.case-featured {
+  display: block;
+  margin-bottom: 32px;
+  background: var(--bg-contrast);
+  color: #F5F0E8;
+  border-radius: 16px;
+  overflow: hidden;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  border: 1px solid rgba(245, 240, 232, 0.08);
+  padding: 0;
+}
+.case.case-featured:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+}
+.case-featured-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+}
+.case-featured-cover {
+  background: linear-gradient(135deg, #0b1220 0%, #1d2740 50%, #2a3450 100%);
+  padding: 56px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 360px;
+  position: relative;
+  overflow: hidden;
+}
+.case-featured-cover::before {
+  content: '';
+  position: absolute;
+  top: -50%; right: -30%;
+  width: 80%; height: 200%;
+  background: radial-gradient(ellipse, rgba(255, 91, 31, 0.25) 0%, transparent 60%);
+  filter: blur(40px);
+  pointer-events: none;
+}
+.case-featured-mock {
+  width: 100%; max-width: 380px;
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 24px;
+  color: #1a1f2e;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  position: relative;
+  z-index: 1;
+}
+.case-featured-mock-bar {
+  width: 60px; height: 4px;
+  background: #ff5b1f;
+  border-radius: 2px;
+  margin-bottom: 18px;
+}
+.case-featured-mock-content {
+  display: flex; flex-direction: column; gap: 8px;
+}
+.case-featured-mock-tag {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  color: #ff5b1f;
+}
+.case-featured-mock-title {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #0b1220;
+}
+.case-featured-mock-sub {
+  font-size: 13px;
+  color: #5b6478;
+  margin-bottom: 16px;
+}
+.case-featured-mock-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  padding-top: 14px;
+  border-top: 1px solid #e5e8f0;
+}
+.case-featured-mock-stats > div {
+  display: flex; flex-direction: column;
+  font-size: 10px;
+  letter-spacing: 0.05em;
+}
+.case-featured-mock-stats strong {
+  font-size: 18px;
+  font-weight: 800;
+  color: #0b1220;
+  letter-spacing: -0.02em;
+}
+.case-featured-mock-stats span {
+  font-size: 10px;
+  font-weight: 500;
+  color: #5b6478;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.case-featured-body {
+  padding: 48px 44px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
+}
+.case-featured-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: rgba(232, 90, 60, 0.12);
+  padding: 6px 12px;
+  border-radius: 20px;
+  align-self: flex-start;
+}
+.case-featured-body .case-tags {
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(245, 240, 232, 0.55);
+  letter-spacing: 0.05em;
+}
+.case.case-featured .case-featured-body h3 {
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: #F5F0E8;
+  line-height: 1.1;
+  margin: 4px 0;
+}
+.case-featured-body .case-sub {
+  font-size: 16px;
+  line-height: 1.6;
+  color: rgba(245, 240, 232, 0.82);
+  margin: 0;
+}
+.case-featured-extra {
+  font-size: 14px;
+  line-height: 1.65;
+  color: rgba(245, 240, 232, 0.6);
+  margin: 0;
+}
+.case-featured-extra strong {
+  color: var(--accent);
+  font-weight: 600;
+}
+.case-featured-body .case-link {
+  margin-top: 8px;
+  color: var(--accent);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+@media (max-width: 880px) {
+  .case-featured-grid { grid-template-columns: 1fr; }
+  .case-featured-cover { padding: 40px 32px; min-height: 280px; }
+  .case-featured-body { padding: 32px 28px; }
+  .case-featured-body h3 { font-size: 26px; }
+}
+
 .case {
   background: var(--bg-surface);
   border-radius: 12px;
@@ -2497,9 +2663,38 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
   <div class="container">
     <div class="section-head reveal">
       <div class="eyebrow accent">[ 02 / Studier ]</div>
-      <h2>Bygget. Pitchet.<br>Eller eid selv.</h2>
-      <p class="lead">Tre Jæren-bedrifter, tre måter å vise hva vi kan. Vi heller bygger ferdige utkast enn å fortelle hva vi <em>kunne</em> gjort — så du kan dømme på arbeid, ikke ord.</p>
+      <h2>Levert. Bygget. Pitchet.<br>Eller eid selv.</h2>
+      <p class="lead">Fire bedrifter, fire måter å vise hva vi kan. Først ute: <em>ESE Solution</em> — vår første ekte kunde. Resten er bygget for å vise spennvidden før vi tar første krone.</p>
     </div>
+
+    <!-- Featured case: first real client -->
+    <a href="https://martin-starr.github.io/jaeren-demos/ese-solution.html" target="_blank" rel="noopener" class="case case-featured reveal">
+      <div class="case-featured-grid">
+        <div class="case-featured-cover">
+          <div class="case-featured-mock">
+            <div class="case-featured-mock-bar"></div>
+            <div class="case-featured-mock-content">
+              <div class="case-featured-mock-tag">KR · NO</div>
+              <div class="case-featured-mock-title">ESE Solution</div>
+              <div class="case-featured-mock-sub">Industrielle løsninger til Norge</div>
+              <div class="case-featured-mock-stats">
+                <div><strong>20+</strong> <span>år</span></div>
+                <div><strong>500+</strong> <span>prosjekter</span></div>
+                <div><strong>ISO</strong> <span>sertifisert</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="case-featured-body">
+          <div class="case-featured-badge">★ Første ekte kunde</div>
+          <div class="case-tags">Levert klient · Bilingual NO/EN · B2B industri</div>
+          <h3>ESE Solution Norway</h3>
+          <p class="case-sub">Koreansk presisjonsproduksjon møter norsk B2B-marked. Komplett bilingual nettside med tjenester, kontaktskjema og industriell visuell identitet — designet og levert for et ekte firma.</p>
+          <p class="case-featured-extra">Bygget for Martins egen far — så ja, vi kjenner kunden godt. Men jobben er levert og live, og demoen viser <em>nøyaktig</em> hvordan vi behandler en ekte oppdrag fra første utkast til ferdig nettside.</p>
+          <span class="case-link">Se live nettside →</span>
+        </div>
+      </div>
+    </a>
 
     <div class="cases reveal">
       <a href="https://martin-starr.github.io/jaeren-demos/hodne-gartneri-masterpiece.html" target="_blank" rel="noopener" class="case">
