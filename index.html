@@ -154,20 +154,41 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .hamburger { display: none; }
 
 @media (max-width: 840px) {
-  .nav-links, .nav-cta { display: none; }
-  .hamburger {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
+  .nav-links { display: none; }
+  .nav-cta {
+    padding: 9px 16px;
+    font-size: 13px;
   }
-  .hamburger span {
-    display: block;
-    width: 22px;
-    height: 2px;
-    background: var(--text-primary);
-    border-radius: 2px;
-  }
+  .hamburger { display: none; }
+}
+
+/* Sticky mobile contact bar */
+.mobile-bar {
+  display: none;
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 90;
+  background: var(--bg-surface);
+  border-top: 1px solid var(--border-subtle);
+  padding: 10px 14px;
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.08);
+}
+.mobile-bar a {
+  display: block;
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  padding: 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.01em;
+}
+.mobile-bar a:active { background: var(--accent-dark); }
+@media (max-width: 700px) {
+  .mobile-bar { display: block; }
+  body { padding-bottom: 80px; }
 }
 
 /* ============================================
@@ -1449,14 +1470,19 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
   border: 1px solid var(--border-subtle);
 }
 
-.verminord-doc.d1 { left: 0; top: 20px; transform: rotate(-4deg); }
-.verminord-doc.d2 { left: 20px; top: 0; transform: rotate(3deg); }
+.verminord-doc.d1 { left: 0; top: 20px; transform: rotate(-4deg); background: #F6F2EA; }
+.verminord-doc.d2 {
+  left: 20px; top: 0; transform: rotate(3deg);
+  background: #1C3A5C;
+  color: #F6F2EA;
+}
 .verminord-doc.d3 {
   left: 40px;
   top: -10px;
-  background: #1C3A5C;
+  background: #F6F2EA;
   transform: rotate(7deg);
-  color: #F6F2EA;
+  color: #1C3A5C;
+  border: 1px solid #B8993A;
 }
 
 .verminord-doc-label {
@@ -1464,8 +1490,9 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
   font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: #B8993A;
 }
+.verminord-doc.d2 .verminord-doc-label { color: #B8993A; }
 .verminord-doc.d3 .verminord-doc-label { color: #B8993A; }
 
 .verminord-doc-title {
@@ -1477,11 +1504,12 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
 
 .verminord-doc-bar {
   height: 4px;
-  background: var(--border-subtle);
+  background: rgba(28, 58, 92, 0.15);
   border-radius: 2px;
 }
 .verminord-doc-bar.short { width: 60%; }
-.verminord-doc.d3 .verminord-doc-bar { background: rgba(255,255,255,0.15); }
+.verminord-doc.d2 .verminord-doc-bar { background: rgba(255,255,255,0.18); }
+.verminord-doc.d3 .verminord-doc-bar { background: rgba(28, 58, 92, 0.18); }
 
 @media (max-width: 880px) {
   .verminord-split { grid-template-columns: 1fr; gap: 40px; }
@@ -2275,21 +2303,21 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
       Nettsider, merkevare og dokumentasjon for håndverkere, restauranter og fagbedrifter på Jæren. Ingen byrå-prosess. Du betaler kun om du er fornøyd.
     </p>
     <div class="hero-cta">
-      <a href="#kontakt" class="btn-primary">Få et tilbud →</a>
-      <a href="#arbeid" class="btn-outline">[ Se 21 prosjekter ]</a>
+      <a href="#kontakt" class="btn-primary">Få gratis utkast →</a>
+      <a href="#arbeid" class="btn-outline">[ Se 20+ studier ]</a>
     </div>
     <div class="stats-strip">
       <div class="stat-item">
-        <span class="stat-number" data-target="21">21</span>
-        <span class="stat-label">Prosjekter</span>
+        <span class="stat-number" data-target="20">20</span>
+        <span class="stat-label">Designstudier bygget</span>
       </div>
       <div class="stat-item">
-        <span class="stat-number" data-target="9">9</span>
-        <span class="stat-label">Dager snitt levering</span>
+        <span class="stat-number" data-target="14">14</span>
+        <span class="stat-label">Dager fra prat til ferdig</span>
       </div>
       <div class="stat-item">
-        <span class="stat-number" data-target="100">100</span>
-        <span class="stat-label">% Fornøyd-garanti</span>
+        <span class="stat-number" data-target="0">0</span>
+        <span class="stat-label">Kr før du har godkjent</span>
       </div>
     </div>
   </div>
@@ -2306,7 +2334,7 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
     <span class="marquee-item">Merkevare</span>
     <span class="marquee-item">Trykk</span>
     <span class="marquee-item">Dokumentasjon</span>
-    <span class="marquee-item">21 prosjekter</span>
+    <span class="marquee-item">20+ studier</span>
     <span class="marquee-item">Klepp Stasjon</span>
     <span class="marquee-item">Jæren</span>
     <span class="marquee-item">2025</span>
@@ -2316,7 +2344,7 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
     <span class="marquee-item">Merkevare</span>
     <span class="marquee-item">Trykk</span>
     <span class="marquee-item">Dokumentasjon</span>
-    <span class="marquee-item">21 prosjekter</span>
+    <span class="marquee-item">20+ studier</span>
     <span class="marquee-item">Klepp Stasjon</span>
     <span class="marquee-item">Jæren</span>
     <span class="marquee-item">2025</span>
@@ -2330,7 +2358,7 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
   <div class="container">
     <div class="section-head reveal">
       <div class="eyebrow accent">[ 01 / Kapabiliteter ]</div>
-      <h2>Komplett design.<br>Ett team. Alt under ett tak.</h2>
+      <h2>Komplett design.<br>Én designer. Alt under ett tak.</h2>
       <p class="lead">Du slipper å koordinere mellom logo-designer, web-utvikler og trykker. Vi gjør hele kjeden — fra første utkast til ferdig produkt.</p>
     </div>
 
@@ -2468,9 +2496,9 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
 <section class="cream" id="arbeid">
   <div class="container">
     <div class="section-head reveal">
-      <div class="eyebrow accent">[ 02 / Arbeid ]</div>
-      <h2>Ekte arbeid.<br>Ekte bedrifter.</h2>
-      <p class="lead">Tre prosjekter fra det siste året — fra blomsterprodusent til kafé til fagbedrift. Alle leveres med samme tilnærming: rolig, presist, premium.</p>
+      <div class="eyebrow accent">[ 02 / Studier ]</div>
+      <h2>Bygget. Pitchet.<br>Eller eid selv.</h2>
+      <p class="lead">Tre Jæren-bedrifter, tre måter å vise hva vi kan. Vi heller bygger ferdige utkast enn å fortelle hva vi <em>kunne</em> gjort — så du kan dømme på arbeid, ikke ord.</p>
     </div>
 
     <div class="cases reveal">
@@ -2485,10 +2513,10 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
           </div>
         </div>
         <div class="case-body">
-          <div class="case-tags">Merkevare · Web · Fotodireksjon</div>
+          <div class="case-tags">Designstudie · Pitch · Web + Merkevare</div>
           <h3>Hodne Gartneri</h3>
-          <p class="case-sub">Norges største Kalanchoë-produsent siden 1971 — fortalt digitalt.</p>
-          <span class="case-link">Se prosjekt →</span>
+          <p class="case-sub">Norges største Kalanchoë-produsent siden 1971. Vi bygde et komplett forslag før vi tok kontakt.</p>
+          <span class="case-link">Se studie →</span>
         </div>
       </a>
 
@@ -2506,9 +2534,9 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
           </div>
         </div>
         <div class="case-body">
-          <div class="case-tags">Merkevare · Wordmark · Farge · Trykk</div>
+          <div class="case-tags">Fiktiv case · Komplett merkevare · 7 dager</div>
           <h3>Kvernhuset Kafé</h3>
-          <p class="case-sub">Komplett merkevare på 7 dager — fra ingenting til ferdig brand book.</p>
+          <p class="case-sub">Et tenkt Klepp-bakeri. Vi bygde hele merkevaren på 7 dager for å vise hva pakken faktisk inneholder.</p>
           <span class="case-link">Les case study →</span>
         </div>
       </a>
@@ -2532,9 +2560,9 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
           </div>
         </div>
         <div class="case-body">
-          <div class="case-tags">Dokumentasjon · Compliance · Intern merkevare</div>
+          <div class="case-tags">Egen bedrift · SOPer · Intern merkevare</div>
           <h3>Verminord AS</h3>
-          <p class="case-sub">Dokumentasjon som faktisk leses. Tilgjengelig som digitalt produkt.</p>
+          <p class="case-sub">Vermikompost-produsenten Martin selv driver. Komplett intern merkevare + SOPer som ble til digitale produkter.</p>
           <span class="case-link">Se produkter →</span>
         </div>
       </a>
@@ -2737,27 +2765,27 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
 <section class="cream">
   <div class="container">
     <div class="section-head reveal">
-      <div class="eyebrow accent">[ 04 / Verminord / Case study ]</div>
-      <h2>Compliance som design.</h2>
-      <p class="lead">Verminord AS leverer skadedyrkontroll i hele Rogaland. De trengte ferdig Mattilsynet-dokumentasjon, SOPs for teknikerne og en intern brand book som hele teamet kunne følge.</p>
+      <div class="eyebrow accent">[ 04 / Verminord / Egen bedrift ]</div>
+      <h2>Det som startet alt.</h2>
+      <p class="lead">Verminord AS er Norges nye vermikompost-produsent — Martin sitt eget firma. Han startet det i 2024, satt med en mappe Word-dokumenter, og innså at presentasjonen avgjorde om bedriften ble tatt seriøst. Det var derfor Folkestad Designs ble til.</p>
     </div>
 
     <div class="verminord-split">
       <div class="verminord-left reveal">
-        <div class="verminord-tags">Intern merkevare · SOP · Mattilsynet · Trykk + PDF</div>
+        <div class="verminord-tags">Egen bedrift · Intern merkevare · SOPer · Mattilsynet-biprodukt</div>
 
         <p style="font-size: 17px; line-height: 1.7; color: var(--text-primary);">
-          Vi laget ferdig <strong>navy-på-cream</strong> identitet med gold accents — institusjonell og rolig, men levende. Alt fra dokumentmaler til feltrapporter er konsistent og lett å bruke.
+          Hele Verminord-identiteten ble bygget fra bunnen: <strong>navy + gold + cream</strong> i IBM Plex Sans, institusjonell og rolig. Alt fra produktetiketter til SOPer, batchlogger til Mattilsynet-biproduktdokumentasjon ble laget i samme system. Ferdig før første sekk vermikompost forlot lageret.
         </p>
 
         <div class="verminord-quote">
-          Det føltes ikke som en mappe med Word-dokumenter — det føltes som et profesjonelt firma.
-          <span class="verminord-quote-author">— Daglig leder, Verminord AS</span>
+          Da jeg startet Verminord, satt jeg med en mappe Word-dokumenter og innså at presentasjonen avgjorde om jeg ble tatt seriøst. Det er derfor jeg startet Folkestad Designs.
+          <span class="verminord-quote-author">— Martin Folkestad, grunnlegger av Verminord &amp; Folkestad Designs</span>
         </div>
 
         <div class="verminord-cta-box">
           <h4>Trenger din bedrift profesjonell dokumentasjon?</h4>
-          <p>Vi har laget ferdige pakker du kan kjøpe direkte. Tilpasses din virksomhet på under en uke.</p>
+          <p>Vi har laget ferdige pakker basert på Verminord-systemet. Tilpasses din virksomhet på under en uke.</p>
           <a href="#produkter">Se produkter →</a>
         </div>
       </div>
@@ -2765,8 +2793,8 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
       <div class="verminord-right reveal">
         <div class="verminord-stack">
           <div class="verminord-doc d1">
-            <div class="verminord-doc-label">SOP — Behandling</div>
-            <div class="verminord-doc-title">Rotter i bygg.<br>Protokoll.</div>
+            <div class="verminord-doc-label">SOP — Produksjon</div>
+            <div class="verminord-doc-title">Fôring.<br>Pre-kompost.</div>
             <div class="verminord-doc-bar"></div>
             <div class="verminord-doc-bar short"></div>
             <div class="verminord-doc-bar"></div>
@@ -2781,8 +2809,8 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
             <div class="verminord-doc-bar"></div>
           </div>
           <div class="verminord-doc d3">
-            <div class="verminord-doc-label">Mattilsynet — Rapport</div>
-            <div class="verminord-doc-title">Kontroll.<br>Q2 2025.</div>
+            <div class="verminord-doc-label">Mattilsynet — Biprodukt</div>
+            <div class="verminord-doc-title">Sporbarhet.<br>Batch-logg.</div>
             <div class="verminord-doc-bar"></div>
             <div class="verminord-doc-bar short"></div>
             <div class="verminord-doc-bar"></div>
@@ -2832,7 +2860,7 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
         <h3>SOP-pakke</h3>
         <p class="product-desc">12 ferdige SOP-maler for håndverkere og fagbedrifter. Inkluderer prosedyrer, sjekklister og rapport-templates.</p>
         <div class="product-price">1 990 kr</div>
-        <a href="#" class="product-btn">Last ned →</a>
+        <a href="mailto:hei@folkestad.design?subject=Bestilling%3A%20SOP-pakke%20(1%20990%20kr)&amp;body=Hei%20Martin%2C%0A%0AJeg%20vil%20bestille%20SOP-pakken.%20Send%20gjerne%20over%20fakturadetaljer%20og%20levering.%0A%0ATakk%21" class="product-btn">Kontakt for tilgang →</a>
       </div>
 
       <div class="product">
@@ -2855,7 +2883,7 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
         <h3>Mattilsynet-kit</h3>
         <p class="product-desc">Komplett dokumentasjon for tilsyn: HACCP, IK-Mat, sjekklister og rapport-templates. Bygd etter forskriften.</p>
         <div class="product-price">2 990 kr</div>
-        <a href="#" class="product-btn">Last ned →</a>
+        <a href="mailto:hei@folkestad.design?subject=Bestilling%3A%20Mattilsynet-kit%20(2%20990%20kr)&amp;body=Hei%20Martin%2C%0A%0AJeg%20vil%20bestille%20Mattilsynet-kit.%20Send%20gjerne%20over%20fakturadetaljer%20og%20levering.%0A%0ATakk%21" class="product-btn">Kontakt for tilgang →</a>
       </div>
 
       <div class="product">
@@ -2876,7 +2904,7 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
         <h3>Starter-merkevare</h3>
         <p class="product-desc">Logo-mal, fargesystem, typografi-guide og visittkort-template. For deg som vil komme i gang i dag.</p>
         <div class="product-price">990 kr</div>
-        <a href="#" class="product-btn">Last ned →</a>
+        <a href="mailto:hei@folkestad.design?subject=Bestilling%3A%20Starter-merkevare%20(990%20kr)&amp;body=Hei%20Martin%2C%0A%0AJeg%20vil%20bestille%20Starter-merkevaren.%20Send%20gjerne%20over%20fakturadetaljer%20og%20levering.%0A%0ATakk%21" class="product-btn">Kontakt for tilgang →</a>
       </div>
     </div>
 
@@ -3109,22 +3137,93 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
 </section>
 
 <!-- ============================================
-     09 TESTIMONIAL
+     09 GARANTI — Risk Reversal
      ============================================ -->
 <section class="white">
   <div class="container">
-    <div class="testimonial reveal">
-      <p class="testimonial-quote">"Jeg bygger sider jeg selv ville vært stolt av som eier."</p>
-      <div class="testimonial-attribution">
-        <div class="testimonial-portrait">MF</div>
-        <div>
-          <div class="testimonial-name">Martin Folkestad</div>
-          <div class="testimonial-role">Folkestad Designs · Klepp Stasjon</div>
-        </div>
+    <div class="section-head reveal" style="text-align: center; margin: 0 auto 56px;">
+      <div class="eyebrow accent">[ 09 / Garanti ]</div>
+      <h2>Vi har ikke kundereferanser ennå.<br>Her er hva du får i stedet.</h2>
+      <p class="lead" style="margin: 0 auto;">Folkestad Designs er nytt. Det betyr at <strong>du er kanskje vår første kunde</strong> — og at vi har alt å bevise. Derfor er risikoen lagt på oss, ikke deg.</p>
+    </div>
+
+    <div class="reversal reveal">
+      <div class="reversal-card">
+        <div class="reversal-num">01</div>
+        <h3>Gratis utkast først</h3>
+        <p>Vi bruker 2–3 dager på å lage et ferdig forslag. Du ser hva du får før vi snakker pris. Ingen forpliktelse.</p>
+      </div>
+      <div class="reversal-card">
+        <div class="reversal-num">02</div>
+        <h3>Betal etter godkjenning</h3>
+        <p>Faktura sendes når du har sagt ja til utkastet. Liker du det ikke, går vi hver vår vei — uten kostnad.</p>
+      </div>
+      <div class="reversal-card">
+        <div class="reversal-num">03</div>
+        <h3>Alle filer er dine</h3>
+        <p>Vektor-logo, fonter, PSD, InDesign — alt blir overlevert. Du står helt fritt etterpå, uavhengig av oss.</p>
+      </div>
+      <div class="reversal-card">
+        <div class="reversal-num">04</div>
+        <h3>30 dager etter lansering</h3>
+        <p>Små endringer, bugs, spørsmål — gratis i en måned etter at siden går live. Vi er ikke ferdige før du er det.</p>
       </div>
     </div>
+
+    <p class="reversal-footnote reveal">Vi vet det er nytt. Det er <strong>derfor</strong> risikoen er null.</p>
   </div>
 </section>
+
+<style>
+.reversal {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 920px;
+  margin: 0 auto;
+}
+.reversal-card {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 32px 28px;
+  position: relative;
+}
+.reversal-num {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 0.18em;
+  margin-bottom: 14px;
+}
+.reversal-card h3 {
+  font-size: 19px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  letter-spacing: -0.015em;
+}
+.reversal-card p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+.reversal-footnote {
+  max-width: 920px;
+  margin: 40px auto 0;
+  text-align: center;
+  font-size: 17px;
+  color: var(--text-muted);
+  font-style: italic;
+}
+.reversal-footnote strong {
+  color: var(--accent);
+  font-style: normal;
+}
+@media (max-width: 700px) {
+  .reversal { grid-template-columns: 1fr; gap: 14px; }
+  .reversal-card { padding: 24px 22px; }
+}
+</style>
 
 <!-- ============================================
      10 FAQ
@@ -3236,10 +3335,10 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
     <div class="contact-inner reveal">
       <div class="eyebrow">[ 11 / Kontakt ]</div>
       <h2>Klar?<br>La oss bygge.</h2>
-      <p class="contact-sub">Send mail eller ring. Første samtale er alltid gratis. Ingen salgspresentasjon — bare en god prat om hva du trenger.</p>
+      <p class="contact-sub">Send en kort mail med hva du trenger, så svarer Martin personlig innen samme dag. Første samtale er alltid gratis — ingen salgspresentasjon, bare en god prat om bedriften din.</p>
       <div class="contact-buttons">
-        <a href="mailto:hei@folkestad.design" class="btn-primary">hei@folkestad.design</a>
-        <a href="tel:+47" class="btn-outline">Ring [TELEFON]</a>
+        <a href="mailto:hei@folkestad.design?subject=Foresp%C3%B8rsel%20fra%20folkestad.design" class="btn-primary">hei@folkestad.design</a>
+        <a href="mailto:martin@folkestad.design?subject=Foresp%C3%B8rsel%20fra%20folkestad.design" class="btn-outline">martin@folkestad.design</a>
       </div>
       <div class="contact-loc">Klepp Stasjon · Jæren · Norge</div>
     </div>
@@ -3249,6 +3348,11 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
 <!-- ============================================
      FOOTER
      ============================================ -->
+<!-- Sticky mobile contact bar -->
+<div class="mobile-bar">
+  <a href="mailto:hei@folkestad.design?subject=Foresp%C3%B8rsel%20fra%20folkestad.design">Send mail til Martin →</a>
+</div>
+
 <footer class="footer">
   <div class="container">
     <div class="footer-top">
@@ -3285,7 +3389,6 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
         <ul>
           <li><a href="mailto:hei@folkestad.design">hei@folkestad.design</a></li>
           <li><a href="mailto:martin@folkestad.design">martin@folkestad.design</a></li>
-          <li><a href="tel:+47">[TELEFON]</a></li>
           <li><span>Klepp Stasjon, Jæren</span></li>
         </ul>
       </div>
