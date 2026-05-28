@@ -4246,6 +4246,403 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
 }
 </style>
 
+<!-- ============================================================
+     SECTION 09 — OM MARTIN
+     Editorial 2-column profile. Drops into folkestad-designs page
+     between cream/white sections. Uses parent --bg-surface (white)
+     so it contrasts with surrounding cream blocks.
+     ============================================================ -->
+
+<style>
+/* ============================================================
+   OM MARTIN — scoped styles (om-* prefix)
+   ============================================================ */
+
+#om-martin {
+  background: var(--bg-surface);
+  position: relative;
+  overflow: hidden;
+}
+
+#om-martin::before {
+  content: '';
+  position: absolute;
+  top: 80px;
+  left: -120px;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(232, 90, 60, 0.06) 0%, transparent 70%);
+  filter: blur(40px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.om-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.66fr) minmax(0, 1fr);
+  gap: 88px;
+  align-items: start;
+  position: relative;
+  z-index: 1;
+}
+
+/* ---------- LEFT: Portrait + identity card ---------- */
+
+.om-left {
+  position: sticky;
+  top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.om-portrait {
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  max-width: 360px;
+  border-radius: 999px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-subtle);
+  position: relative;
+  overflow: hidden;
+}
+
+/* layered abstract silhouette — cream + coral */
+.om-portrait::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 50% 110%, rgba(232, 90, 60, 0.22) 0%, transparent 55%),
+    radial-gradient(circle at 50% 40%, rgba(232, 90, 60, 0.10) 0%, transparent 60%);
+}
+
+/* The shoulders */
+.om-portrait::after {
+  content: '';
+  position: absolute;
+  bottom: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 130%;
+  height: 70%;
+  background: linear-gradient(180deg, rgba(232, 90, 60, 0.32) 0%, rgba(232, 90, 60, 0.18) 100%);
+  border-radius: 50% 50% 0 0 / 60% 60% 0 0;
+}
+
+/* The head */
+.om-portrait-head {
+  position: absolute;
+  top: 22%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 42%;
+  aspect-ratio: 1 / 1.15;
+  background: linear-gradient(180deg, rgba(232, 90, 60, 0.45) 0%, rgba(232, 90, 60, 0.28) 100%);
+  border-radius: 50% 50% 48% 48% / 60% 60% 40% 40%;
+  z-index: 2;
+}
+
+/* Subtle initials watermark */
+.om-portrait-initials {
+  position: absolute;
+  bottom: 22px;
+  right: 28px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: rgba(26, 26, 26, 0.32);
+  z-index: 3;
+}
+
+/* Thin ring */
+.om-portrait-ring {
+  position: absolute;
+  inset: 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(232, 90, 60, 0.18);
+  pointer-events: none;
+  z-index: 3;
+}
+
+.om-identity {
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 28px;
+}
+
+.om-name {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.om-role {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 28px;
+}
+
+.om-facts {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.om-fact {
+  display: flex;
+  gap: 14px;
+  align-items: baseline;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+.om-fact-marker {
+  flex: 0 0 auto;
+  width: 10px;
+  height: 1px;
+  background: var(--accent);
+  position: relative;
+  top: -4px;
+}
+
+.om-fact strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* ---------- RIGHT: Story ---------- */
+
+.om-right {
+  max-width: 620px;
+}
+
+.om-eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 32px;
+  display: inline-block;
+}
+
+.om-headline {
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  color: var(--text-primary);
+  margin: 0 0 48px;
+}
+
+.om-headline em {
+  font-style: italic;
+  font-weight: 500;
+  color: var(--accent);
+}
+
+.om-story {
+  font-size: 18px;
+  line-height: 1.75;
+  color: var(--text-primary);
+  max-width: 580px;
+}
+
+.om-story p {
+  margin: 0 0 26px;
+}
+
+.om-story p:last-child {
+  margin-bottom: 0;
+}
+
+.om-story em {
+  font-style: italic;
+  font-weight: 500;
+}
+
+.om-story strong {
+  font-weight: 600;
+}
+
+/* Pull-quote — single accented line set apart from the prose */
+.om-pull {
+  margin: 44px 0;
+  padding: 0 0 0 24px;
+  border-left: 2px solid var(--accent);
+  font-size: 22px;
+  font-weight: 500;
+  font-style: italic;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+  max-width: 540px;
+}
+
+.om-signature {
+  margin-top: 56px;
+  padding-top: 28px;
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.om-signature-mark {
+  font-family: 'Poppins', sans-serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 28px;
+  color: var(--accent);
+  letter-spacing: -0.02em;
+}
+
+.om-signature-meta {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted);
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 900px) {
+  .om-grid {
+    grid-template-columns: 1fr;
+    gap: 56px;
+  }
+  .om-left {
+    position: static;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+  .om-portrait {
+    width: 160px;
+    max-width: 160px;
+    flex: 0 0 auto;
+  }
+  .om-identity {
+    flex: 1 1 240px;
+    border-top: none;
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .om-left {
+    flex-direction: column;
+    gap: 32px;
+  }
+  .om-portrait {
+    width: 140px;
+    max-width: 140px;
+  }
+  .om-identity {
+    width: 100%;
+  }
+  .om-headline {
+    margin-bottom: 32px;
+  }
+  .om-story {
+    font-size: 17px;
+    line-height: 1.7;
+  }
+  .om-pull {
+    font-size: 19px;
+    margin: 32px 0;
+  }
+}
+</style>
+
+
+<section class="white" id="om-martin">
+  <div class="container">
+
+    <div class="om-grid">
+
+      <!-- ============== LEFT: Portrait + identity ============== -->
+      <aside class="om-left reveal">
+        <div class="om-portrait" aria-hidden="true">
+          <div class="om-portrait-head"></div>
+          <div class="om-portrait-ring"></div>
+          <div class="om-portrait-initials">MF</div>
+        </div>
+
+        <div class="om-identity">
+          <div class="om-name">Martin Folkestad</div>
+          <div class="om-role">Grunnlegger &middot; Folkestad Designs &amp; Verminord</div>
+
+          <ul class="om-facts">
+            <li class="om-fact">
+              <span class="om-fact-marker"></span>
+              <span>Bor i <strong>Klepp Stasjon</strong>, Jæren</span>
+            </li>
+            <li class="om-fact">
+              <span class="om-fact-marker"></span>
+              <span>Født og oppvokst i Rogaland</span>
+            </li>
+            <li class="om-fact">
+              <span class="om-fact-marker"></span>
+              <span>Driver to bedrifter: <strong>Folkestad Designs</strong> (design) og <strong>Verminord</strong> (vermikompost)</span>
+            </li>
+            <li class="om-fact">
+              <span class="om-fact-marker"></span>
+              <span>Tilgjengelig på <strong>hei@folkestad.design</strong></span>
+            </li>
+          </ul>
+        </div>
+      </aside>
+
+
+      <!-- ============== RIGHT: The story ============== -->
+      <article class="om-right reveal">
+
+        <div class="om-eyebrow">[ 09 / Om Martin ]</div>
+
+        <h2 class="om-headline">Det startet med en <em>mappe Word-dokumenter</em>.</h2>
+
+        <div class="om-story">
+
+          <p>I 2024 startet jeg Verminord — Norges nyeste produsent av vermikompost, drevet fra et bygg på Jæren. Den første måneden gikk ikke til mark eller substrat. Den gikk til en mappe på skrivebordet mitt: produksjonslogger, batchsporing, hygieniseringsrutiner, papirarbeid for Mattilsynet. Word-dokumenter, alle sammen. Times New Roman 11pt.</p>
+
+          <p>Jeg printet det ut og la det ved siden av en konkurrents brosjyre. Forskjellen var ikke i innholdet — mitt var mer grundig. Forskjellen var at hans så ut som det kom fra en bedrift, og mitt så ut som det kom fra en mappe.</p>
+
+          <p>Så jeg brukte to uker på å lære meg å designe. Ikke fordi jeg ville bli designer — men fordi jeg trengte at en kjøper i Bryne skulle åpne et dokument fra Verminord og <em>tro</em> på det før han leste første setning. Brand book, etiketter, SOP-er, datablader. Alt fikk en ny form.</p>
+
+          <div class="om-pull">Jeg er ikke en designer som ble bedriftseier. Jeg er en bedriftseier som ble designer.</div>
+
+          <p>Det rare skjedde etterpå. Andre Jæren-bedrifter — en murmester i Klepp, en kafé i Sandnes, en blikkenslager på Gjesdal — begynte å spørre hvem som hadde laget materialet til Verminord. Svaret var meg, på kjøkkenbordet, mellom matinger av kompostormer.</p>
+
+          <p>Folkestad Designs ble til av nødvendighet, ikke ambisjon. Jeg designer for Verminord hver dag. Nå gjør jeg det for andre lokale bedrifter også — og det jeg har lært er enkelt: en god håndverker, kafé eller fagbedrift på Jæren trenger ikke et byrå fra Oslo. De trenger noen som forstår at det viktigste dokumentet er det neste kunden åpner.</p>
+
+          <p>Jeg vet hva det koster å være ny. Jeg er fortsatt ny. Det er ikke en svakhet jeg prøver å skjule — det er grunnen til at jeg vet nøyaktig hva en bedrift på Jæren faktisk har bruk for.</p>
+
+          <div class="om-signature">
+            <div class="om-signature-mark">— Martin</div>
+            <div class="om-signature-meta">Klepp Stasjon, 2025</div>
+          </div>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
 <!-- ============================================
      10 FAQ
      ============================================ -->
@@ -4348,6 +4745,338 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
   </div>
 </section>
 
+<style>
+/* ============================================
+   JÆREN LANDSCAPE — Full-bleed cinematic break
+   ============================================ */
+.jaeren-section {
+  position: relative;
+  padding: 0;
+  background: linear-gradient(180deg,
+    #F5F0E8 0%,
+    #F8E4D6 35%,
+    #F2D0BA 60%,
+    #1A0F08 100%);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.jaeren-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 120px 32px 0;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.jaeren-eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #E85A3C;
+  margin-bottom: 24px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.jaeren-quote {
+  font-size: clamp(28px, 4.5vw, 56px);
+  font-weight: 500;
+  font-style: italic;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: #1A1A1A;
+  max-width: 880px;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease 0.15s, transform 1s ease 0.15s;
+}
+
+.jaeren-quote strong {
+  font-weight: 800;
+  font-style: normal;
+  color: #1A1A1A;
+}
+
+.jaeren-attribution {
+  margin-top: 32px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(26, 26, 26, 0.6);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease 0.3s, transform 0.8s ease 0.3s;
+}
+
+.jaeren-section.is-visible .jaeren-eyebrow,
+.jaeren-section.is-visible .jaeren-quote,
+.jaeren-section.is-visible .jaeren-attribution {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============== LANDSCAPE (CSS-only silhouette) ============== */
+.jaeren-landscape {
+  position: relative;
+  width: 100%;
+  height: 380px;
+  margin-top: 80px;
+  z-index: 1;
+}
+
+/* Sun — coral disc */
+.jaeren-sun {
+  position: absolute;
+  top: 32%;
+  left: 18%;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #E85A3C 0%, #C9462C 60%, rgba(201, 70, 44, 0) 100%);
+  box-shadow: 0 0 80px 20px rgba(232, 90, 60, 0.35);
+  filter: blur(0.5px);
+  z-index: 1;
+}
+
+/* Wind turbine — Jæren signature */
+.jaeren-turbine {
+  position: absolute;
+  bottom: 38%;
+  z-index: 2;
+}
+.jaeren-turbine--1 { left: 28%; transform: scale(0.7); }
+.jaeren-turbine--2 { left: 62%; transform: scale(0.55); opacity: 0.7; }
+.jaeren-turbine--3 { left: 78%; transform: scale(0.45); opacity: 0.55; }
+
+.jaeren-turbine-pole {
+  width: 2px;
+  height: 90px;
+  background: linear-gradient(180deg, #2B1A0F 0%, #1A0F08 100%);
+  margin: 0 auto;
+  position: relative;
+}
+.jaeren-turbine-hub {
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 8px;
+  background: #1A0F08;
+  border-radius: 50%;
+}
+.jaeren-turbine-blade {
+  position: absolute;
+  top: -2px;
+  left: 50%;
+  width: 2px;
+  height: 38px;
+  background: linear-gradient(180deg, #2B1A0F 0%, #1A0F08 100%);
+  transform-origin: 50% 1px;
+  border-radius: 1px;
+}
+.jaeren-turbine-blade:nth-child(2) { transform: translateX(-50%) rotate(0deg); }
+.jaeren-turbine-blade:nth-child(3) { transform: translateX(-50%) rotate(120deg); }
+.jaeren-turbine-blade:nth-child(4) { transform: translateX(-50%) rotate(240deg); }
+
+/* Layered horizons — distant to foreground */
+.jaeren-layer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+}
+
+/* Distant hills — softest */
+.jaeren-layer--hills {
+  bottom: 38%;
+  height: 50px;
+  background: linear-gradient(180deg,
+    rgba(80, 52, 33, 0.35) 0%,
+    rgba(80, 52, 33, 0.55) 100%);
+  clip-path: polygon(
+    0% 100%,
+    0% 75%,
+    8% 60%,
+    18% 70%,
+    28% 50%,
+    38% 65%,
+    50% 45%,
+    62% 60%,
+    72% 50%,
+    82% 65%,
+    92% 55%,
+    100% 70%,
+    100% 100%
+  );
+}
+
+/* Mid field line */
+.jaeren-layer--field {
+  bottom: 28%;
+  height: 60px;
+  background: linear-gradient(180deg,
+    rgba(43, 26, 15, 0.55) 0%,
+    rgba(43, 26, 15, 0.75) 100%);
+  clip-path: polygon(
+    0% 100%,
+    0% 85%,
+    100% 70%,
+    100% 100%
+  );
+}
+
+/* Foreground grass / stone wall (jærsteinen) */
+.jaeren-layer--foreground {
+  bottom: 0;
+  height: 38%;
+  background: linear-gradient(180deg,
+    rgba(26, 15, 8, 0.85) 0%,
+    #0A0A0A 100%);
+  clip-path: polygon(
+    0% 100%,
+    0% 25%,
+    5% 20%,
+    12% 28%,
+    20% 22%,
+    32% 30%,
+    45% 18%,
+    58% 28%,
+    72% 22%,
+    85% 30%,
+    95% 24%,
+    100% 28%,
+    100% 100%
+  );
+}
+
+/* Stone wall dots — jærsteinen */
+.jaeren-stones {
+  position: absolute;
+  bottom: 16%;
+  left: 0;
+  right: 0;
+  height: 16px;
+  z-index: 3;
+}
+.jaeren-stone {
+  position: absolute;
+  background: #1A0F08;
+  border-radius: 50%;
+  opacity: 0.85;
+}
+.jaeren-stone:nth-child(1) { left: 8%; bottom: 0; width: 10px; height: 9px; }
+.jaeren-stone:nth-child(2) { left: 13%; bottom: 1px; width: 8px; height: 7px; }
+.jaeren-stone:nth-child(3) { left: 22%; bottom: 0; width: 12px; height: 10px; }
+.jaeren-stone:nth-child(4) { left: 30%; bottom: 2px; width: 7px; height: 6px; }
+.jaeren-stone:nth-child(5) { left: 42%; bottom: 0; width: 11px; height: 9px; }
+.jaeren-stone:nth-child(6) { left: 50%; bottom: 1px; width: 9px; height: 8px; }
+.jaeren-stone:nth-child(7) { left: 59%; bottom: 0; width: 10px; height: 9px; }
+.jaeren-stone:nth-child(8) { left: 68%; bottom: 2px; width: 8px; height: 7px; }
+.jaeren-stone:nth-child(9) { left: 76%; bottom: 0; width: 13px; height: 11px; }
+.jaeren-stone:nth-child(10) { left: 85%; bottom: 1px; width: 9px; height: 8px; }
+.jaeren-stone:nth-child(11) { left: 92%; bottom: 0; width: 10px; height: 9px; }
+
+/* Address line at very bottom */
+.jaeren-coords {
+  position: relative;
+  z-index: 3;
+  padding: 0 32px 32px;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  color: rgba(245, 240, 232, 0.55);
+  font-family: inherit;
+}
+
+@media (max-width: 700px) {
+  .jaeren-inner { padding-top: 80px; }
+  .jaeren-landscape { height: 280px; margin-top: 56px; }
+  .jaeren-sun { width: 48px; height: 48px; }
+  .jaeren-turbine-pole { height: 70px; }
+  .jaeren-turbine-blade { height: 30px; }
+  .jaeren-turbine--1 { left: 22%; }
+  .jaeren-turbine--2 { left: 65%; }
+  .jaeren-turbine--3 { display: none; }
+}
+
+@media (max-width: 480px) {
+  .jaeren-landscape { height: 220px; }
+  .jaeren-quote { font-size: 26px; }
+}
+</style>
+
+
+<section class="jaeren-section reveal" id="jaeren">
+
+  <div class="jaeren-inner">
+    <div class="jaeren-eyebrow">[ Hjemme · Jæren · Norge ]</div>
+    <p class="jaeren-quote">
+      På Jæren er himmelen lavere<br>
+      og folk er <strong>rette i ryggen</strong>.<br>
+      Vi designer for dem.
+    </p>
+    <div class="jaeren-attribution">Klepp Stasjon &middot; 58.7755° N · 5.6422° E</div>
+  </div>
+
+  <div class="jaeren-landscape" aria-hidden="true">
+    <div class="jaeren-sun"></div>
+
+    <div class="jaeren-turbine jaeren-turbine--1">
+      <div class="jaeren-turbine-pole">
+        <div class="jaeren-turbine-hub"></div>
+        <div class="jaeren-turbine-blade"></div>
+        <div class="jaeren-turbine-blade"></div>
+        <div class="jaeren-turbine-blade"></div>
+      </div>
+    </div>
+    <div class="jaeren-turbine jaeren-turbine--2">
+      <div class="jaeren-turbine-pole">
+        <div class="jaeren-turbine-hub"></div>
+        <div class="jaeren-turbine-blade"></div>
+        <div class="jaeren-turbine-blade"></div>
+        <div class="jaeren-turbine-blade"></div>
+      </div>
+    </div>
+    <div class="jaeren-turbine jaeren-turbine--3">
+      <div class="jaeren-turbine-pole">
+        <div class="jaeren-turbine-hub"></div>
+        <div class="jaeren-turbine-blade"></div>
+        <div class="jaeren-turbine-blade"></div>
+        <div class="jaeren-turbine-blade"></div>
+      </div>
+    </div>
+
+    <div class="jaeren-layer jaeren-layer--hills"></div>
+    <div class="jaeren-layer jaeren-layer--field"></div>
+    <div class="jaeren-layer jaeren-layer--foreground"></div>
+
+    <div class="jaeren-stones">
+      <div class="jaeren-stone"></div>
+      <div class="jaeren-stone"></div>
+      <div class="jaeren-stone"></div>
+      <div class="jaeren-stone"></div>
+      <div class="jaeren-stone"></div>
+      <div class="jaeren-stone"></div>
+      <div class="jaeren-stone"></div>
+      <div class="jaeren-stone"></div>
+      <div class="jaeren-stone"></div>
+      <div class="jaeren-stone"></div>
+      <div class="jaeren-stone"></div>
+    </div>
+  </div>
+
+  <div class="jaeren-coords">FOLKESTAD DESIGNS &middot; KLEPP STASJON &middot; ESTABLISHED 2025</div>
+
+</section>
+
 <!-- ============================================
      11 CONTACT
      ============================================ -->
@@ -4356,15 +5085,146 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
     <div class="contact-inner reveal">
       <div class="eyebrow">[ 11 / Kontakt ]</div>
       <h2>Klar?<br>La oss bygge.</h2>
-      <p class="contact-sub">Send en kort mail med hva du trenger, så svarer Martin personlig innen samme dag. Første samtale er alltid gratis — ingen salgspresentasjon, bare en god prat om bedriften din.</p>
+      <p class="contact-sub">Send en kort melding — Martin svarer personlig innen samme dag. Første samtale er alltid gratis: ingen salgspresentasjon, bare en prat om bedriften din.</p>
+
+      <form class="contact-form" id="contactForm" novalidate>
+        <div class="form-row">
+          <label class="form-field">
+            <span class="form-label">Navn</span>
+            <input type="text" name="navn" required autocomplete="name" placeholder="Ditt fulle navn">
+          </label>
+          <label class="form-field">
+            <span class="form-label">Telefon eller e-post</span>
+            <input type="text" name="kontakt" required autocomplete="tel" placeholder="Hvordan vi kan nå deg">
+          </label>
+        </div>
+        <label class="form-field">
+          <span class="form-label">Hva trenger du?</span>
+          <textarea name="melding" rows="4" required placeholder="Kort om bedriften og hva du tenker — vi tar resten på telefon."></textarea>
+        </label>
+        <button type="submit" class="form-submit">Send melding →</button>
+        <p class="form-note">Svar innen samme dag · Ingen forpliktelse · Du betaler kun ved godkjent utkast</p>
+      </form>
+
+      <div class="contact-divider"><span>eller direkte</span></div>
+
       <div class="contact-buttons">
-        <a href="mailto:hei@folkestad.design?subject=Foresp%C3%B8rsel%20fra%20folkestad.design" class="btn-primary">hei@folkestad.design</a>
-        <a href="mailto:martin@folkestad.design?subject=Foresp%C3%B8rsel%20fra%20folkestad.design" class="btn-outline">martin@folkestad.design</a>
+        <a href="mailto:hei@folkestad.design?subject=Foresp%C3%B8rsel%20fra%20folkestad.design" class="btn-outline">hei@folkestad.design</a>
       </div>
+
       <div class="contact-loc">Klepp Stasjon · Jæren · Norge</div>
     </div>
   </div>
 </section>
+
+<style>
+.contact-form {
+  margin: 40px auto 28px;
+  max-width: 580px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.contact-form .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.form-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(245, 240, 232, 0.7);
+}
+.contact-form input,
+.contact-form textarea {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(245, 240, 232, 0.18);
+  border-radius: 6px;
+  padding: 14px 16px;
+  font-family: inherit;
+  font-size: 15px;
+  color: #F5F0E8;
+  transition: border-color 0.2s, background 0.2s;
+}
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: rgba(245, 240, 232, 0.35);
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: rgba(255, 255, 255, 0.08);
+}
+.contact-form textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+.form-submit {
+  background: var(--accent);
+  color: #FFFFFF;
+  border: none;
+  padding: 16px 28px;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  margin-top: 6px;
+}
+.form-submit:hover {
+  background: var(--accent-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(232, 90, 60, 0.3);
+}
+.form-submit:active { transform: translateY(0); }
+.form-note {
+  font-size: 13px;
+  color: rgba(245, 240, 232, 0.5);
+  margin: 4px 0 0;
+  line-height: 1.6;
+}
+.contact-divider {
+  margin: 36px 0 18px;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(245, 240, 232, 0.45);
+  position: relative;
+  text-align: center;
+}
+.contact-divider span {
+  background: var(--bg-contrast);
+  padding: 0 18px;
+  position: relative;
+  z-index: 1;
+}
+.contact-divider::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: rgba(245, 240, 232, 0.12);
+  z-index: 0;
+}
+@media (max-width: 600px) {
+  .contact-form .form-row { grid-template-columns: 1fr; }
+  .contact-form { margin: 32px auto 24px; }
+}
+</style>
 
 <!-- ============================================
      FOOTER
@@ -4491,6 +5351,38 @@ document.querySelectorAll('.faq-q').forEach(btn => {
     if (!wasOpen) item.classList.add('open');
   });
 });
+
+// ============================================
+// CONTACT FORM — construct mailto with form data
+// ============================================
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+  contactForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const f = e.target;
+    const navn = (f.navn.value || '').trim();
+    const kontakt = (f.kontakt.value || '').trim();
+    const melding = (f.melding.value || '').trim();
+    if (!navn || !kontakt || !melding) {
+      f.reportValidity();
+      return;
+    }
+    const body = `Hei Martin,\n\nNavn: ${navn}\nKontakt: ${kontakt}\n\nMelding:\n${melding}\n\n--\nSendt fra folkestad.design`;
+    const subject = `Forespørsel fra ${navn}`;
+    const mailto = `mailto:hei@folkestad.design?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    // Visual confirmation
+    const btn = f.querySelector('.form-submit');
+    if (btn) {
+      btn.textContent = 'Åpner mail-app...';
+      btn.disabled = true;
+      setTimeout(() => {
+        btn.textContent = 'Send melding →';
+        btn.disabled = false;
+      }, 3000);
+    }
+    window.location.href = mailto;
+  });
+}
 </script>
 
 </body>
