@@ -958,6 +958,89 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
   .case-featured-body h3 { font-size: 26px; }
 }
 
+/* ====== Verminord featured cover (uses real Verminord brand) ====== */
+.case-featured-cover-verminord {
+  background: #1C3A5C;
+  padding: 56px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 360px;
+  position: relative;
+  overflow: hidden;
+}
+.case-featured-cover-verminord::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 3px;
+  background: #B8993A;
+  z-index: 2;
+}
+.case-featured-cover-verminord::after {
+  content: '';
+  position: absolute;
+  bottom: -40%; left: -10%;
+  width: 60%; height: 80%;
+  background: radial-gradient(ellipse, rgba(184, 153, 58, 0.18) 0%, transparent 60%);
+  filter: blur(40px);
+  pointer-events: none;
+}
+.vm-logo-stage {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  position: relative;
+  z-index: 1;
+}
+.vm-logo {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.3));
+}
+.vm-tagline {
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 300;
+  font-style: italic;
+  color: #B8993A;
+  letter-spacing: 0.04em;
+  text-align: center;
+  max-width: 280px;
+  line-height: 1.5;
+}
+.vm-palette {
+  display: flex;
+  gap: 6px;
+  margin-top: 8px;
+  padding: 8px 12px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+.vm-swatch {
+  width: 24px;
+  height: 24px;
+  border-radius: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  cursor: help;
+  transition: transform 0.2s;
+}
+.case.case-featured-verminord:hover .vm-swatch {
+  transform: scale(1.08);
+}
+.case.case-featured-verminord:hover .vm-swatch:nth-child(2) {
+  transform: scale(1.15);
+}
+
+@media (max-width: 880px) {
+  .case-featured-cover-verminord { padding: 48px 32px; min-height: 320px; }
+  .vm-logo { max-width: 220px; }
+  .vm-tagline { font-size: 12px; }
+}
+
 .case {
   background: var(--bg-surface);
   border-radius: 12px;
@@ -2692,6 +2775,33 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
           <p class="case-sub">Koreansk presisjonsproduksjon møter norsk B2B-marked. Komplett bilingual nettside med tjenester, kontaktskjema og industriell visuell identitet — designet og levert for et ekte firma.</p>
           <p class="case-featured-extra">Bygget for Martins egen far — så ja, vi kjenner kunden godt. Men jobben er levert og live, og demoen viser <em>nøyaktig</em> hvordan vi behandler en ekte oppdrag fra første utkast til ferdig nettside.</p>
           <span class="case-link">Se live nettside →</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Featured case 2: Verminord — real internal brand work with actual logo -->
+    <a href="#verminord" class="case case-featured case-featured-verminord reveal">
+      <div class="case-featured-grid">
+        <div class="case-featured-cover case-featured-cover-verminord">
+          <div class="vm-logo-stage">
+            <img src="images/verminord/logo-white.svg" alt="Verminord logo" class="vm-logo" />
+            <div class="vm-tagline">Mark-kompost. Norsk. Produsert på Jæren.</div>
+            <div class="vm-palette">
+              <span class="vm-swatch" style="background:#1C3A5C" title="Navy #1C3A5C"></span>
+              <span class="vm-swatch" style="background:#B8993A" title="Gold #B8993A"></span>
+              <span class="vm-swatch" style="background:#F6F2EA" title="Cream #F6F2EA"></span>
+              <span class="vm-swatch" style="background:#1A1A1A" title="Ink #1A1A1A"></span>
+              <span class="vm-swatch" style="background:#5A6270" title="Muted #5A6270"></span>
+            </div>
+          </div>
+        </div>
+        <div class="case-featured-body">
+          <div class="case-featured-badge">★ Komplett intern merkevare</div>
+          <div class="case-tags">Egen bedrift · Logo · Identitet · SOPer · Trykk</div>
+          <h3>Verminord AS</h3>
+          <p class="case-sub">Komplett merkevare bygget fra bunnen: logo, fargesystem, typografi, brand book, etiketter, visittkort, datablad og Mattilsynet-dokumentasjon. Hele systemet er i bruk hver dag.</p>
+          <p class="case-featured-extra">Dette er Martins eget firma — så vi vet hvert valg som ble tatt fra logo-vektorene til etikett-trykket. <em>Brand i bruk</em>, ikke bare brand på skjerm.</p>
+          <span class="case-link">Se case study ↓</span>
         </div>
       </div>
     </a>
