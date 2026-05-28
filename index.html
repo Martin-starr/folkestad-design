@@ -3128,12 +3128,1054 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
 </section>
 
 <!-- ============================================
+     05 VERMINORD — BRAND I BRUK
+     Showcase section: real brand applied across 8 deliverables
+     Drop-in between section 04 (Verminord case) and section 05 (Produkter)
+     Remember to renumber the Produkter section eyebrow to 06 / Produkter
+     ============================================ -->
+<style>
+  /* ============================================
+     VERMINORD BRAND TOKENS (scoped to .vmb-*)
+     ============================================ */
+  .vmb-section {
+    background: #FFFFFF;
+    --vmb-navy: #1C3A5C;
+    --vmb-gold: #B8993A;
+    --vmb-cream: #F6F2EA;
+    --vmb-ink: #1A1A1A;
+    --vmb-white: #FFFFFF;
+    --vmb-muted: #5A6270;
+    --vmb-border: #E8E2D5;
+  }
+
+  /* Section head reuses parent .eyebrow/.section-head — only override the em italic accent */
+  .vmb-section .section-head h2 em {
+    font-style: italic;
+    font-weight: 500;
+    color: var(--vmb-navy);
+  }
+
+  /* ============================================
+     BENTO GRID
+     ============================================ */
+  .vmb-bento {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px;
+    margin-top: 8px;
+  }
+
+  /* Default tile */
+  .vmb-tile {
+    position: relative;
+    overflow: hidden;
+    border-radius: 6px;
+    box-shadow:
+      0 30px 60px -20px rgba(15, 28, 45, 0.18),
+      0 12px 24px -8px rgba(15, 28, 45, 0.10);
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+                box-shadow 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform;
+  }
+
+  .vmb-tile:hover {
+    transform: translateY(-4px);
+    box-shadow:
+      0 40px 80px -20px rgba(15, 28, 45, 0.28),
+      0 18px 36px -10px rgba(15, 28, 45, 0.14);
+  }
+
+  /* Reveal stagger — works with parent .reveal observer */
+  .vmb-bento .reveal { transition-delay: 0s; }
+  .vmb-bento .reveal:nth-child(1) { transition-delay: 0.05s; }
+  .vmb-bento .reveal:nth-child(2) { transition-delay: 0.15s; }
+  .vmb-bento .reveal:nth-child(3) { transition-delay: 0.25s; }
+  .vmb-bento .reveal:nth-child(4) { transition-delay: 0.35s; }
+  .vmb-bento .reveal:nth-child(5) { transition-delay: 0.45s; }
+  .vmb-bento .reveal:nth-child(6) { transition-delay: 0.55s; }
+  .vmb-bento .reveal:nth-child(7) { transition-delay: 0.65s; }
+  .vmb-bento .reveal:nth-child(8) { transition-delay: 0.75s; }
+
+  /* Column spans (desktop) */
+  .vmb-c6 { grid-column: span 6; }
+  .vmb-c4 { grid-column: span 4; }
+
+  /* ============================================
+     CAPTION (under each tile)
+     ============================================ */
+  .vmb-tile-wrap { display: flex; flex-direction: column; gap: 12px; }
+  .vmb-caption {
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--vmb-muted);
+    padding: 0 4px;
+  }
+  .vmb-caption-meta {
+    font-weight: 300;
+    letter-spacing: 0.04em;
+    text-transform: none;
+    color: var(--vmb-muted);
+    opacity: 0.7;
+  }
+
+  /* ============================================
+     TILE 1 — VISITTKORT FRONT (Navy)
+     ============================================ */
+  .vmb-card-front {
+    aspect-ratio: 1.6 / 1;
+    background: var(--vmb-navy);
+    color: var(--vmb-cream);
+    padding: 36px 38px 34px;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+  }
+  .vmb-card-front::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: var(--vmb-gold);
+  }
+  .vmb-card-front-top {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .vmb-wordmark {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: clamp(15px, 1.6vw, 19px);
+    letter-spacing: 0.20em;
+    color: var(--vmb-cream);
+    line-height: 1;
+  }
+  .vmb-wordmark-sub {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 9px;
+    letter-spacing: 0.22em;
+    color: var(--vmb-gold);
+    line-height: 1;
+  }
+  .vmb-card-front-bottom {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .vmb-card-name {
+    font-weight: 700;
+    font-size: clamp(15px, 1.5vw, 17px);
+    color: var(--vmb-cream);
+    letter-spacing: -0.005em;
+  }
+  .vmb-card-role {
+    font-weight: 300;
+    font-style: italic;
+    font-size: 12px;
+    color: var(--vmb-gold);
+    margin-bottom: 14px;
+  }
+  .vmb-card-contact {
+    font-weight: 400;
+    font-size: 11px;
+    color: var(--vmb-cream);
+    letter-spacing: 0.01em;
+    line-height: 1.55;
+  }
+  .vmb-card-url {
+    font-weight: 600;
+    font-size: 11px;
+    color: var(--vmb-gold);
+    letter-spacing: 0.04em;
+    margin-top: 4px;
+  }
+
+  /* ============================================
+     TILE 2 — VISITTKORT BACK (Cream)
+     ============================================ */
+  .vmb-card-back {
+    aspect-ratio: 1.6 / 1;
+    background: var(--vmb-cream);
+    color: var(--vmb-navy);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    padding: 32px;
+    font-family: 'Poppins', sans-serif;
+  }
+  .vmb-card-back-logo {
+    width: 56%;
+    max-width: 220px;
+    height: auto;
+    display: block;
+  }
+  .vmb-card-back-hairline {
+    width: 60px;
+    height: 1px;
+    background: var(--vmb-gold);
+  }
+  .vmb-card-back-tagline {
+    font-weight: 600;
+    font-size: 10px;
+    letter-spacing: 0.30em;
+    color: var(--vmb-navy);
+    text-align: center;
+  }
+
+  /* ============================================
+     TILE 3 — 5L VERMICAST ETIKETT (Cream landscape)
+     ============================================ */
+  .vmb-label-5l {
+    aspect-ratio: 1.5 / 1;
+    background: var(--vmb-cream);
+    color: var(--vmb-navy);
+    padding: 22px 26px;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+  }
+  .vmb-label-5l::after {
+    /* very faint paper texture via radial gradient */
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at top left, rgba(184, 153, 58, 0.04), transparent 60%),
+      radial-gradient(ellipse at bottom right, rgba(28, 58, 92, 0.03), transparent 60%);
+    pointer-events: none;
+  }
+  .vmb-label-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--vmb-gold);
+    position: relative;
+    z-index: 1;
+  }
+  .vmb-label-mark {
+    font-weight: 800;
+    font-size: 9px;
+    letter-spacing: 0.22em;
+    color: var(--vmb-navy);
+  }
+  .vmb-label-region {
+    font-weight: 600;
+    font-size: 7px;
+    letter-spacing: 0.22em;
+    color: var(--vmb-gold);
+  }
+  .vmb-label-center {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 6px;
+    position: relative;
+    z-index: 1;
+  }
+  .vmb-label-product {
+    font-weight: 800;
+    font-size: clamp(22px, 2.6vw, 30px);
+    letter-spacing: -0.025em;
+    color: var(--vmb-navy);
+    line-height: 1;
+  }
+  .vmb-label-tagline {
+    font-weight: 300;
+    font-style: italic;
+    font-size: 10px;
+    color: var(--vmb-muted);
+    letter-spacing: 0.01em;
+  }
+  .vmb-label-size {
+    font-weight: 800;
+    font-size: 14px;
+    letter-spacing: 0.18em;
+    color: var(--vmb-gold);
+    margin-top: 4px;
+  }
+  .vmb-label-spec {
+    margin-top: 6px;
+    text-align: center;
+  }
+  .vmb-label-spec-label {
+    font-weight: 600;
+    font-size: 7px;
+    letter-spacing: 0.22em;
+    color: var(--vmb-navy);
+    display: block;
+    margin-bottom: 2px;
+  }
+  .vmb-label-spec-body {
+    font-weight: 400;
+    font-size: 8.5px;
+    color: var(--vmb-ink);
+    line-height: 1.5;
+    max-width: 80%;
+    margin: 0 auto;
+  }
+  .vmb-label-bottom {
+    margin-top: auto;
+    padding-top: 10px;
+    border-top: 1px solid rgba(28, 58, 92, 0.12);
+    font-weight: 400;
+    font-size: 7.5px;
+    color: var(--vmb-muted);
+    letter-spacing: 0.04em;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ============================================
+     TILE 4 — 10L SEKK (Navy portrait)
+     ============================================ */
+  .vmb-sack {
+    aspect-ratio: 3 / 4;
+    background: var(--vmb-navy);
+    color: var(--vmb-cream);
+    padding: 26px 24px 22px;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    transform: perspective(900px) rotateY(1.5deg);
+    transform-origin: left center;
+  }
+  .vmb-sack::before {
+    /* subtle vertical seam */
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 12%;
+    bottom: 12%;
+    width: 1px;
+    background: linear-gradient(
+      to bottom,
+      transparent,
+      rgba(246, 242, 234, 0.06) 20%,
+      rgba(246, 242, 234, 0.06) 80%,
+      transparent
+    );
+    transform: translateX(-50%);
+  }
+  .vmb-sack-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--vmb-gold);
+    position: relative;
+    z-index: 1;
+  }
+  .vmb-sack-mark {
+    font-weight: 800;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    color: var(--vmb-cream);
+  }
+  .vmb-sack-region {
+    font-weight: 600;
+    font-size: 8px;
+    letter-spacing: 0.22em;
+    color: var(--vmb-gold);
+  }
+  .vmb-sack-center {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    position: relative;
+    z-index: 1;
+  }
+  .vmb-sack-logo {
+    width: 70%;
+    max-width: 200px;
+    height: auto;
+  }
+  .vmb-sack-product {
+    font-weight: 800;
+    font-size: clamp(26px, 3vw, 38px);
+    letter-spacing: -0.025em;
+    color: var(--vmb-cream);
+    line-height: 1;
+  }
+  .vmb-sack-size {
+    font-weight: 800;
+    font-size: 16px;
+    letter-spacing: 0.18em;
+    color: var(--vmb-gold);
+  }
+  .vmb-sack-label {
+    font-weight: 600;
+    font-size: 9px;
+    letter-spacing: 0.25em;
+    color: var(--vmb-cream);
+    text-align: center;
+  }
+  .vmb-sack-bottom {
+    margin-top: auto;
+    text-align: center;
+    border-top: 1px solid rgba(184, 153, 58, 0.3);
+    padding-top: 10px;
+    position: relative;
+    z-index: 1;
+  }
+  .vmb-sack-bottom-line1 {
+    font-weight: 600;
+    font-size: 8px;
+    letter-spacing: 0.22em;
+    color: var(--vmb-cream);
+    margin-bottom: 3px;
+  }
+  .vmb-sack-bottom-line2 {
+    font-weight: 400;
+    font-size: 8.5px;
+    color: var(--vmb-gold);
+    letter-spacing: 0.04em;
+  }
+
+  /* ============================================
+     TILE 5 — BRAND BOOK A4 (Navy portrait)
+     ============================================ */
+  .vmb-brandbook {
+    aspect-ratio: 1 / 1.414;
+    background: var(--vmb-navy);
+    color: var(--vmb-cream);
+    padding: 30px 28px;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+  }
+  .vmb-brandbook::after {
+    /* page-curl effect at bottom-right corner */
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 28px;
+    height: 28px;
+    background: linear-gradient(
+      135deg,
+      transparent 50%,
+      rgba(0, 0, 0, 0.25) 50%,
+      rgba(28, 58, 92, 0.9) 60%,
+      var(--vmb-cream) 100%
+    );
+    border-top-left-radius: 4px;
+  }
+  .vmb-brandbook-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .vmb-brandbook-top-l {
+    font-weight: 300;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    color: var(--vmb-cream);
+  }
+  .vmb-brandbook-top-r {
+    font-weight: 800;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    color: var(--vmb-gold);
+  }
+  .vmb-brandbook-center {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+  }
+  .vmb-brandbook-logo {
+    width: 60%;
+    max-width: 200px;
+    height: auto;
+  }
+  .vmb-brandbook-mark-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .vmb-brandbook-hairline {
+    width: 30px;
+    height: 1px;
+    background: var(--vmb-gold);
+  }
+  .vmb-brandbook-mark-label {
+    font-weight: 600;
+    font-size: 8px;
+    letter-spacing: 0.30em;
+    color: var(--vmb-gold);
+  }
+  .vmb-brandbook-bottom {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-top: 1px solid rgba(184, 153, 58, 0.3);
+    padding-top: 12px;
+  }
+  .vmb-brandbook-bottom-l {
+    font-weight: 600;
+    font-size: 8.5px;
+    letter-spacing: 0.20em;
+    color: var(--vmb-cream);
+  }
+  .vmb-brandbook-bottom-r {
+    font-weight: 400;
+    font-size: 8.5px;
+    letter-spacing: 0.20em;
+    color: var(--vmb-gold);
+  }
+
+  /* ============================================
+     TILE 6 — DATABLAD A4 (Cream landscape)
+     ============================================ */
+  .vmb-datablad {
+    aspect-ratio: 1.414 / 1;
+    background: var(--vmb-cream);
+    color: var(--vmb-navy);
+    display: flex;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+  }
+  .vmb-datablad-header {
+    background: var(--vmb-navy);
+    color: var(--vmb-cream);
+    padding: 14px 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .vmb-datablad-header-l {
+    font-weight: 800;
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    color: var(--vmb-cream);
+  }
+  .vmb-datablad-header-r {
+    font-weight: 600;
+    font-size: 9px;
+    letter-spacing: 0.22em;
+    color: var(--vmb-gold);
+  }
+  .vmb-datablad-body {
+    flex: 1;
+    padding: 20px 22px 14px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+    align-items: start;
+  }
+  .vmb-datablad-l {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .vmb-datablad-product {
+    font-weight: 800;
+    font-size: clamp(20px, 2.3vw, 26px);
+    letter-spacing: -0.025em;
+    color: var(--vmb-navy);
+    line-height: 1;
+  }
+  .vmb-datablad-product-sub {
+    font-weight: 300;
+    font-style: italic;
+    font-size: 9px;
+    color: var(--vmb-muted);
+    margin-bottom: 6px;
+  }
+  .vmb-datablad-spec-label {
+    font-weight: 600;
+    font-size: 8px;
+    letter-spacing: 0.25em;
+    color: var(--vmb-gold);
+    margin-bottom: 4px;
+  }
+  .vmb-datablad-spec-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 0;
+    border-bottom: 1px solid rgba(28, 58, 92, 0.15);
+    font-size: 9.5px;
+  }
+  .vmb-datablad-spec-row:last-child {
+    border-bottom: none;
+  }
+  .vmb-datablad-spec-key {
+    font-weight: 400;
+    color: var(--vmb-ink);
+  }
+  .vmb-datablad-spec-val {
+    font-weight: 600;
+    color: var(--vmb-navy);
+  }
+  .vmb-datablad-r {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .vmb-datablad-step {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  .vmb-datablad-step-num {
+    font-weight: 800;
+    font-size: 14px;
+    color: var(--vmb-gold);
+    line-height: 1;
+    min-width: 18px;
+    letter-spacing: -0.02em;
+  }
+  .vmb-datablad-step-body {
+    font-weight: 400;
+    font-size: 9px;
+    color: var(--vmb-ink);
+    line-height: 1.55;
+  }
+  .vmb-datablad-step-body strong {
+    font-weight: 700;
+    color: var(--vmb-navy);
+    display: block;
+    font-size: 8.5px;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+  }
+  .vmb-datablad-footer {
+    background: var(--vmb-navy);
+    color: var(--vmb-cream);
+    padding: 9px 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 8px;
+    font-weight: 400;
+    letter-spacing: 0.10em;
+  }
+  .vmb-datablad-footer-r {
+    color: var(--vmb-gold);
+    font-weight: 600;
+    letter-spacing: 0.16em;
+  }
+
+  /* ============================================
+     TILE 7 — INSTAGRAM POST (Navy square)
+     ============================================ */
+  .vmb-instagram {
+    aspect-ratio: 1 / 1;
+    background: var(--vmb-navy);
+    color: var(--vmb-cream);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 32px;
+    gap: 24px;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+  }
+  .vmb-instagram-hairline {
+    width: 80px;
+    height: 1px;
+    background: var(--vmb-gold);
+  }
+  .vmb-instagram-quote {
+    font-weight: 800;
+    font-size: clamp(20px, 2.4vw, 30px);
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    color: var(--vmb-cream);
+  }
+  .vmb-instagram-logo {
+    width: 38%;
+    max-width: 120px;
+    height: auto;
+  }
+  .vmb-instagram-handle {
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    color: var(--vmb-gold);
+  }
+
+  /* ============================================
+     TILE 8 — EMAIL SIGNATURE (White wide)
+     ============================================ */
+  .vmb-emailsig {
+    aspect-ratio: 2 / 1;
+    background: var(--vmb-white);
+    border: 1px solid var(--vmb-border);
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 18px;
+    padding: 26px 30px;
+    font-family: 'Poppins', sans-serif;
+    align-items: center;
+  }
+  .vmb-emailsig-l {
+    display: flex;
+    flex-direction: column;
+  }
+  .vmb-emailsig-greeting {
+    font-weight: 400;
+    font-size: 11px;
+    color: var(--vmb-ink);
+    margin-bottom: 14px;
+  }
+  .vmb-emailsig-name {
+    font-weight: 800;
+    font-size: 15px;
+    color: var(--vmb-navy);
+    letter-spacing: -0.005em;
+    line-height: 1.1;
+  }
+  .vmb-emailsig-role {
+    font-weight: 300;
+    font-style: italic;
+    font-size: 11px;
+    color: var(--vmb-muted);
+    margin-top: 2px;
+    margin-bottom: 12px;
+  }
+  .vmb-emailsig-hairline {
+    width: 40px;
+    height: 1px;
+    background: var(--vmb-gold);
+    margin-bottom: 12px;
+  }
+  .vmb-emailsig-line {
+    font-weight: 400;
+    font-size: 10px;
+    color: var(--vmb-navy);
+    line-height: 1.7;
+    letter-spacing: 0.01em;
+  }
+  .vmb-emailsig-line.url {
+    font-weight: 600;
+    color: var(--vmb-gold);
+  }
+  .vmb-emailsig-line.muted {
+    color: var(--vmb-muted);
+    font-weight: 400;
+  }
+  .vmb-emailsig-r {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 14px;
+    border-left: 1px solid var(--vmb-border);
+    height: 100%;
+  }
+  .vmb-emailsig-logo {
+    width: 100%;
+    max-width: 130px;
+    height: auto;
+  }
+
+  /* ============================================
+     SECTION CLOSER
+     ============================================ */
+  .vmb-closer {
+    margin-top: 72px;
+    max-width: 760px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: clamp(17px, 1.5vw, 21px);
+    line-height: 1.55;
+    color: var(--vmb-muted);
+    letter-spacing: -0.005em;
+  }
+  .vmb-closer em {
+    font-style: italic;
+    font-weight: 500;
+    color: var(--vmb-navy);
+    background: linear-gradient(transparent 65%, rgba(184, 153, 58, 0.18) 65%);
+    padding: 0 2px;
+  }
+
+  /* ============================================
+     RESPONSIVE — TABLET (700-1024)
+     ============================================ */
+  @media (max-width: 1024px) {
+    .vmb-bento {
+      grid-template-columns: repeat(6, 1fr);
+      gap: 20px;
+    }
+    .vmb-c6 { grid-column: span 6; }
+    .vmb-c4 { grid-column: span 3; }
+    /* Datablad keeps full row on tablet */
+    .vmb-tile-wrap.vmb-c6 { grid-column: span 6; }
+  }
+
+  /* ============================================
+     RESPONSIVE — MOBILE (<700)
+     ============================================ */
+  @media (max-width: 700px) {
+    .vmb-bento {
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+    .vmb-c6, .vmb-c4 { grid-column: span 1; }
+    .vmb-tile-wrap.vmb-c6, .vmb-tile-wrap.vmb-c4 { grid-column: span 1; }
+
+    /* Smaller text on mobile cards */
+    .vmb-card-front { padding: 26px 26px 24px; }
+    .vmb-sack { padding: 22px 20px 18px; transform: none; }
+    .vmb-brandbook { padding: 24px 22px; }
+    .vmb-emailsig { padding: 22px 24px; gap: 14px; }
+    .vmb-datablad-body { padding: 16px 16px 12px; gap: 14px; }
+
+    .vmb-closer { margin-top: 48px; }
+  }
+
+  @media (max-width: 380px) {
+    /* Email signature stacks on tiny screens */
+    .vmb-emailsig {
+      grid-template-columns: 1fr;
+      aspect-ratio: auto;
+    }
+    .vmb-emailsig-r {
+      border-left: none;
+      border-top: 1px solid var(--vmb-border);
+      padding-left: 0;
+      padding-top: 14px;
+    }
+  }
+</style>
+
+<section class="white vmb-section">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow accent">[ 05 / Brand i bruk ]</div>
+      <h2>Verminord — <em>brand i bruk</em>.</h2>
+      <p class="lead">Logo og fargesystem er én ting. Faktisk applikasjon over seks forskjellige flater er det som beviser at merkevaren funker. Her er Verminord-systemet i praksis — fra visittkort til datablad.</p>
+    </div>
+
+    <div class="vmb-bento">
+
+      <!-- ====================================
+           TILE 1 — VISITTKORT FRONT
+           ==================================== -->
+      <div class="vmb-tile-wrap vmb-c6 reveal">
+        <div class="vmb-tile vmb-card-front">
+          <div class="vmb-card-front-top">
+            <div class="vmb-wordmark">VERMINORD</div>
+            <div class="vmb-wordmark-sub">JÆREN, NORGE</div>
+          </div>
+          <div class="vmb-card-front-bottom">
+            <div class="vmb-card-name">Martin Folkestad</div>
+            <div class="vmb-card-role">Grunnlegger</div>
+            <div class="vmb-card-contact">martin@verminord.com</div>
+            <div class="vmb-card-contact">+47 928 16 547</div>
+            <div class="vmb-card-url">verminord.com</div>
+          </div>
+        </div>
+        <div class="vmb-caption">Visittkort · Forside <span class="vmb-caption-meta">/ 85×54mm</span></div>
+      </div>
+
+      <!-- ====================================
+           TILE 2 — VISITTKORT BACK
+           ==================================== -->
+      <div class="vmb-tile-wrap vmb-c6 reveal">
+        <div class="vmb-tile vmb-card-back">
+          <img src="images/verminord/logo-dark.svg" alt="Verminord" class="vmb-card-back-logo" />
+          <div class="vmb-card-back-hairline"></div>
+          <div class="vmb-card-back-tagline">MARK · KOMPOST · NORSK</div>
+        </div>
+        <div class="vmb-caption">Visittkort · Bakside <span class="vmb-caption-meta">/ 85×54mm</span></div>
+      </div>
+
+      <!-- ====================================
+           TILE 3 — 5L VERMICAST ETIKETT
+           ==================================== -->
+      <div class="vmb-tile-wrap vmb-c4 reveal">
+        <div class="vmb-tile vmb-label-5l">
+          <div class="vmb-label-top">
+            <div class="vmb-label-mark">VERMINORD</div>
+            <div class="vmb-label-region">JÆREN · NORGE</div>
+          </div>
+          <div class="vmb-label-center">
+            <div class="vmb-label-product">VermiCast</div>
+            <div class="vmb-label-tagline">Premium vermikompost</div>
+            <div class="vmb-label-size">5 LITER</div>
+            <div class="vmb-label-spec">
+              <span class="vmb-label-spec-label">INGREDIENSER</span>
+              <div class="vmb-label-spec-body">100 % markekompost fra norsk grønnsaks- og hageavfall.</div>
+            </div>
+          </div>
+          <div class="vmb-label-bottom">Best før: 12/2026 · Batch V-2025-001 · verminord.com</div>
+        </div>
+        <div class="vmb-caption">Produktetikett · 5L <span class="vmb-caption-meta">/ Spand</span></div>
+      </div>
+
+      <!-- ====================================
+           TILE 4 — 10L SEKK
+           ==================================== -->
+      <div class="vmb-tile-wrap vmb-c4 reveal">
+        <div class="vmb-tile vmb-sack">
+          <div class="vmb-sack-top">
+            <div class="vmb-sack-mark">VERMINORD</div>
+            <div class="vmb-sack-region">JÆREN · NORGE</div>
+          </div>
+          <div class="vmb-sack-center">
+            <img src="images/verminord/logo-white.svg" alt="Verminord" class="vmb-sack-logo" />
+            <div class="vmb-sack-product">VermiCast</div>
+            <div class="vmb-sack-size">10 LITER</div>
+            <div class="vmb-sack-label">PREMIUM<br>VERMIKOMPOST</div>
+          </div>
+          <div class="vmb-sack-bottom">
+            <div class="vmb-sack-bottom-line1">100 % ORGANISK · PRODUSERT PÅ JÆREN</div>
+            <div class="vmb-sack-bottom-line2">verminord.com</div>
+          </div>
+        </div>
+        <div class="vmb-caption">Produktsekk · 10L <span class="vmb-caption-meta">/ Hessian</span></div>
+      </div>
+
+      <!-- ====================================
+           TILE 5 — BRAND BOOK COVER
+           ==================================== -->
+      <div class="vmb-tile-wrap vmb-c4 reveal">
+        <div class="vmb-tile vmb-brandbook">
+          <div class="vmb-brandbook-top">
+            <div class="vmb-brandbook-top-l">BRAND BOOK</div>
+            <div class="vmb-brandbook-top-r">VERMINORD AS</div>
+          </div>
+          <div class="vmb-brandbook-center">
+            <img src="images/verminord/logo-white.svg" alt="Verminord" class="vmb-brandbook-logo" />
+            <div class="vmb-brandbook-mark-row">
+              <span class="vmb-brandbook-hairline"></span>
+              <span class="vmb-brandbook-mark-label">IDENTITET · SYSTEM</span>
+              <span class="vmb-brandbook-hairline"></span>
+            </div>
+          </div>
+          <div class="vmb-brandbook-bottom">
+            <div class="vmb-brandbook-bottom-l">VERSJON 1.0 · 2026</div>
+            <div class="vmb-brandbook-bottom-r">KLEPP STASJON, JÆREN</div>
+          </div>
+        </div>
+        <div class="vmb-caption">Brand Book · Forside <span class="vmb-caption-meta">/ A4</span></div>
+      </div>
+
+      <!-- ====================================
+           TILE 6 — DATABLAD A4
+           ==================================== -->
+      <div class="vmb-tile-wrap vmb-c6 reveal">
+        <div class="vmb-tile vmb-datablad">
+          <div class="vmb-datablad-header">
+            <div class="vmb-datablad-header-l">VERMINORD</div>
+            <div class="vmb-datablad-header-r">DATABLAD · VERMICAST 5L</div>
+          </div>
+          <div class="vmb-datablad-body">
+            <div class="vmb-datablad-l">
+              <div>
+                <div class="vmb-datablad-product">VermiCast</div>
+                <div class="vmb-datablad-product-sub">Premium markekompost, 5 liter</div>
+              </div>
+              <div>
+                <div class="vmb-datablad-spec-label">SPESIFIKASJON</div>
+                <div class="vmb-datablad-spec-row"><span class="vmb-datablad-spec-key">pH</span><span class="vmb-datablad-spec-val">6.5 – 7.2</span></div>
+                <div class="vmb-datablad-spec-row"><span class="vmb-datablad-spec-key">Organisk materiale</span><span class="vmb-datablad-spec-val">65 %</span></div>
+                <div class="vmb-datablad-spec-row"><span class="vmb-datablad-spec-key">Nitrogen (N)</span><span class="vmb-datablad-spec-val">1.2 %</span></div>
+                <div class="vmb-datablad-spec-row"><span class="vmb-datablad-spec-key">Fosfor (P)</span><span class="vmb-datablad-spec-val">0.8 %</span></div>
+                <div class="vmb-datablad-spec-row"><span class="vmb-datablad-spec-key">Kalium (K)</span><span class="vmb-datablad-spec-val">0.6 %</span></div>
+                <div class="vmb-datablad-spec-row"><span class="vmb-datablad-spec-key">Vekt</span><span class="vmb-datablad-spec-val">ca. 4.5 kg / 5L</span></div>
+              </div>
+            </div>
+            <div class="vmb-datablad-r">
+              <div class="vmb-datablad-spec-label">BRUK</div>
+              <div class="vmb-datablad-step">
+                <div class="vmb-datablad-step-num">1</div>
+                <div class="vmb-datablad-step-body"><strong>Bland inn</strong>1 del VermiCast til 4 deler jord ved planting. For potter: dryss på toppen.</div>
+              </div>
+              <div class="vmb-datablad-step">
+                <div class="vmb-datablad-step-num">2</div>
+                <div class="vmb-datablad-step-body"><strong>Vann</strong>Etter applikasjon vann lett. Markekomposten frigjør næring sakte.</div>
+              </div>
+              <div class="vmb-datablad-step">
+                <div class="vmb-datablad-step-num">3</div>
+                <div class="vmb-datablad-step-body"><strong>Vedlikehold</strong>Tilfør ny dose hver 8.–12. uke gjennom vekstsesongen.</div>
+              </div>
+            </div>
+          </div>
+          <div class="vmb-datablad-footer">
+            <div>Mattilsynet biproduktkategori 2-godkjent</div>
+            <div class="vmb-datablad-footer-r">VERMINORD AS · KLEPP STASJON</div>
+          </div>
+        </div>
+        <div class="vmb-caption">Datablad · VermiCast 5L <span class="vmb-caption-meta">/ A4 PDF</span></div>
+      </div>
+
+      <!-- ====================================
+           TILE 7 — INSTAGRAM POST
+           ==================================== -->
+      <div class="vmb-tile-wrap vmb-c4 reveal">
+        <div class="vmb-tile vmb-instagram">
+          <div class="vmb-instagram-hairline"></div>
+          <div class="vmb-instagram-quote">Mark-kompost.<br>Norsk.<br>Produsert på Jæren.</div>
+          <img src="images/verminord/logo-white.svg" alt="Verminord" class="vmb-instagram-logo" />
+          <div class="vmb-instagram-handle">@verminord_no</div>
+        </div>
+        <div class="vmb-caption">Instagram · Post <span class="vmb-caption-meta">/ 1080×1080</span></div>
+      </div>
+
+      <!-- ====================================
+           TILE 8 — EMAIL SIGNATURE
+           ==================================== -->
+      <div class="vmb-tile-wrap vmb-c4 reveal">
+        <div class="vmb-tile vmb-emailsig">
+          <div class="vmb-emailsig-l">
+            <div class="vmb-emailsig-greeting">Med vennlig hilsen,</div>
+            <div class="vmb-emailsig-name">Martin Folkestad</div>
+            <div class="vmb-emailsig-role">Grunnlegger · Verminord AS</div>
+            <div class="vmb-emailsig-hairline"></div>
+            <div class="vmb-emailsig-line">martin@verminord.com</div>
+            <div class="vmb-emailsig-line url">verminord.com</div>
+            <div class="vmb-emailsig-line muted">Klepp Stasjon · Jæren</div>
+          </div>
+          <div class="vmb-emailsig-r">
+            <img src="images/verminord/logo-dark.svg" alt="Verminord" class="vmb-emailsig-logo" />
+          </div>
+        </div>
+        <div class="vmb-caption">E-postsignatur <span class="vmb-caption-meta">/ HTML</span></div>
+      </div>
+
+    </div>
+
+    <div class="vmb-closer reveal">
+      Samme system. Seks flater. Én bedrift som ser ut som <em>én bedrift</em> uansett hvor du møter den.
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
      05 PRODUCTS
      ============================================ -->
 <section class="white" id="produkter">
   <div class="container">
     <div class="section-head reveal">
-      <div class="eyebrow accent">[ 05 / Produkter / Digitale nedlastinger ]</div>
+      <div class="eyebrow accent">[ 06 / Produkter / Digitale nedlastinger ]</div>
       <h2>Ferdige designpakker.</h2>
       <p class="lead">Last ned, tilpass med din bedrift, og bruk. Alle pakker leveres som InDesign + PDF + Word, og er bygget for små bedrifter på Jæren som trenger noe profesjonelt — raskt.</p>
     </div>
@@ -3223,7 +4265,7 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
 <section class="cream">
   <div class="container">
     <div class="section-head reveal">
-      <div class="eyebrow accent">[ 06 / Prosess ]</div>
+      <div class="eyebrow accent">[ 07 / Prosess ]</div>
       <h2>Fra første prat til lansering.</h2>
       <p class="lead">Fire steg. Ingen byråspråk. Du eier alle filer fra dag én.</p>
     </div>
@@ -3259,7 +4301,7 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
 <section class="white">
   <div class="container">
     <div class="section-head reveal">
-      <div class="eyebrow accent">[ 07 / Sammenligning ]</div>
+      <div class="eyebrow accent">[ 08 / Sammenligning ]</div>
       <h2>Hvorfor Folkestad — og ikke noe annet.</h2>
       <p class="lead">Du har valg. Her er hva som faktisk skiller oss fra alternativene.</p>
     </div>
@@ -4219,7 +5261,7 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
   <div class="container">
 
     <div class="section-head reveal">
-      <div class="eyebrow accent">[ 08 / Merkevare-eksempel ]</div>
+      <div class="eyebrow accent">[ 09 / Merkevare-eksempel ]</div>
       <h2>
         Trenger merkevaren din løft?
         <span class="jaercafe-headline-italic">Få komplett identitet for prisen av en logo.</span>
@@ -4410,7 +5452,7 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
 <section class="cream" id="priser">
   <div class="container">
     <div class="section-head reveal">
-      <div class="eyebrow accent">[ 09 / Priser ]</div>
+      <div class="eyebrow accent">[ 10 / Priser ]</div>
       <h2>Enkle priser. Ingen overraskelser.</h2>
       <p class="lead">Du betaler aldri før du har sett utkastet. Alle pakker inkluderer 30 dager support etter lansering.</p>
     </div>
@@ -4468,7 +5510,7 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
 <section class="white">
   <div class="container">
     <div class="section-head reveal" style="text-align: center; margin: 0 auto 56px;">
-      <div class="eyebrow accent">[ 10 / Garanti ]</div>
+      <div class="eyebrow accent">[ 11 / Garanti ]</div>
       <h2>Fortsatt nye.<br>Risikoen er fortsatt null.</h2>
       <p class="lead" style="margin: 0 auto;">Folkestad Designs startet i 2025. Vi har levert <strong>ESE Solution Norway</strong> som første eksterne klient, bygget <strong>Verminord</strong> internt fra grunnen av, og 22 designstudier. Du blir kanskje den andre eller tredje ekte kunden — derfor er risikoen vår, ikke din.</p>
       <p class="lead" style="margin: 18px auto 0; font-size: 14px; color: var(--text-muted); font-style: italic;">Note: ESE Solution-siden er fersk fra trykkeriet — den oppdateres med mer detaljert innhold om bedriftens norske operasjoner i ukene som kommer.</p>
@@ -4915,7 +5957,7 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
       <!-- ============== RIGHT: The story ============== -->
       <article class="om-right reveal">
 
-        <div class="om-eyebrow">[ 11 / Om Martin ]</div>
+        <div class="om-eyebrow">[ 12 / Om Martin ]</div>
 
         <h2 class="om-headline">Det startet med en <em>mappe Word-dokumenter</em>.</h2>
 
@@ -4955,7 +5997,7 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
 <section class="cream">
   <div class="container">
     <div class="section-head reveal" style="text-align: center; margin: 0 auto 72px;">
-      <div class="eyebrow accent">[ 12 / FAQ ]</div>
+      <div class="eyebrow accent">[ 13 / FAQ ]</div>
       <h2>Vanlige spørsmål.</h2>
     </div>
 
@@ -5400,7 +6442,7 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
 <section class="contact" id="kontakt">
   <div class="container">
     <div class="contact-inner reveal">
-      <div class="eyebrow">[ 13 / Kontakt ]</div>
+      <div class="eyebrow">[ 14 / Kontakt ]</div>
       <h2>Klar?<br>La oss bygge.</h2>
       <p class="contact-sub">Send en kort melding — Martin svarer personlig innen samme dag. Første samtale er alltid gratis: ingen salgspresentasjon, bare en prat om bedriften din.</p>
 
