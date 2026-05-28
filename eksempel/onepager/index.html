@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Solhuset Bakeri &amp; Café — Konsept fra Folkestad Designs</title>
+<meta name="description" content="Konsept-onepager bygget av Folkestad Designs. Et fiktivt bakeri på Jæren, brukt for å vise hva en 12k-pakke faktisk leverer i innhold, design og mobil.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="canonical" href="https://folkestad.design/eksempel/onepager">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* =====================================================================
+   SOLHUSET BAKERI & CAFÉ — Konsept
+   Warm wheat palette, Fraunces serif + Inter body.
+   Built as a one-page demo for Folkestad Designs.
+   ===================================================================== */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --sh-cream: #F5EBD8;
+  --sh-oat: #EADFC7;
+  --sh-honey: #C89642;
+  --sh-honey-dark: #A87B2E;
+  --sh-coffee: #2A1E14;
+  --sh-ink: #1A1310;
+  --sh-muted: #6C5D4D;
+  --sh-border: #DCCEB4;
+  --sh-white: #FBF7EE;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: var(--sh-cream);
+  color: var(--sh-ink);
+  line-height: 1.65;
+  font-weight: 400;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, svg { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+@media (max-width: 700px) {
+  .container { padding: 0 24px; }
+}
+
+/* ----- KONSEPT-banner ----- */
+.concept-banner {
+  background: var(--sh-coffee);
+  color: var(--sh-cream);
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  padding: 10px 16px;
+}
+.concept-banner a {
+  color: var(--sh-honey);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* ----- Nav ----- */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(245, 235, 216, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--sh-border);
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 40px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.brand {
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: -0.02em;
+  color: var(--sh-coffee);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.brand-mark {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--sh-honey);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Fraunces', serif;
+  font-weight: 900;
+  font-size: 14px;
+  color: var(--sh-coffee);
+}
+.nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--sh-coffee);
+  transition: color 0.3s var(--ease);
+}
+.nav-links a:hover { color: var(--sh-honey-dark); }
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 20px;
+  background: var(--sh-coffee);
+  color: var(--sh-cream);
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  min-height: 40px;
+  transition: background 0.3s var(--ease);
+}
+.nav-cta:hover { background: var(--sh-honey-dark); }
+@media (max-width: 760px) {
+  .nav-inner { padding: 14px 24px; }
+  .nav-links { display: none; }
+}
+
+/* ----- Hero ----- */
+.hero {
+  padding: 80px 0 100px;
+  position: relative;
+  overflow: hidden;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 64px;
+  align-items: center;
+}
+@media (max-width: 880px) {
+  .hero { padding: 56px 0 64px; }
+  .hero-grid { grid-template-columns: 1fr; gap: 48px; }
+}
+
+.eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--sh-honey-dark);
+  margin-bottom: 24px;
+  display: inline-block;
+}
+
+.hero h1 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(40px, 5.6vw, 72px);
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+  color: var(--sh-coffee);
+  margin-bottom: 24px;
+}
+.hero h1 em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--sh-honey-dark);
+}
+
+.hero-sub {
+  font-size: clamp(16px, 1.2vw, 18px);
+  color: var(--sh-muted);
+  max-width: 480px;
+  margin-bottom: 36px;
+  line-height: 1.65;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.btn-primary,
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  padding: 14px 26px;
+  border-radius: 999px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  min-height: 48px;
+  transition: all 0.3s var(--ease);
+}
+.btn-primary {
+  background: var(--sh-coffee);
+  color: var(--sh-cream);
+}
+.btn-primary:hover {
+  background: var(--sh-honey-dark);
+  transform: translateY(-1px);
+}
+.btn-outline {
+  background: transparent;
+  color: var(--sh-coffee);
+  border: 1.5px solid var(--sh-coffee);
+}
+.btn-outline:hover {
+  background: var(--sh-coffee);
+  color: var(--sh-cream);
+}
+
+/* Hero visual — stylized loaf with steam */
+.hero-visual {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  max-width: 420px;
+  margin-left: auto;
+}
+.hero-visual-card {
+  position: absolute;
+  inset: 0;
+  background: var(--sh-oat);
+  border-radius: 24px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-visual-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(200, 150, 66, 0.16) 0%, transparent 50%),
+    radial-gradient(circle at 70% 70%, rgba(42, 30, 20, 0.08) 0%, transparent 50%);
+}
+.hero-loaf {
+  position: relative;
+  width: 60%;
+  aspect-ratio: 1.4 / 1;
+  background: linear-gradient(180deg, #B07A38 0%, #8C5A22 50%, #6B4218 100%);
+  border-radius: 50% 50% 40% 40% / 60% 60% 40% 40%;
+  box-shadow:
+    inset -4px -10px 20px rgba(42, 30, 20, 0.35),
+    inset 4px 4px 16px rgba(255, 230, 180, 0.25);
+}
+.hero-loaf::before,
+.hero-loaf::after {
+  content: '';
+  position: absolute;
+  top: 18%;
+  width: 35%;
+  height: 8%;
+  background: rgba(42, 30, 20, 0.4);
+  border-radius: 50%;
+  transform: rotate(-15deg);
+}
+.hero-loaf::before { left: 10%; }
+.hero-loaf::after { right: 10%; transform: rotate(15deg); }
+.hero-steam {
+  position: absolute;
+  top: 12%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+.hero-steam span {
+  width: 6px;
+  height: 28px;
+  background: rgba(255, 247, 237, 0.7);
+  border-radius: 50%;
+  filter: blur(2px);
+  animation: steam 3s ease-in-out infinite;
+}
+.hero-steam span:nth-child(2) { animation-delay: 0.5s; height: 36px; }
+.hero-steam span:nth-child(3) { animation-delay: 1s; }
+@keyframes steam {
+  0%, 100% { transform: translateY(0) scaleY(1); opacity: 0.5; }
+  50% { transform: translateY(-12px) scaleY(1.2); opacity: 0.9; }
+}
+.hero-visual-tag {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 13px;
+  color: var(--sh-coffee);
+  background: rgba(245, 235, 216, 0.85);
+  padding: 6px 12px;
+  border-radius: 999px;
+}
+
+/* ----- Trust strip ----- */
+.trust {
+  background: var(--sh-white);
+  border-top: 1px solid var(--sh-border);
+  border-bottom: 1px solid var(--sh-border);
+  padding: 24px 0;
+  overflow: hidden;
+}
+.trust-track {
+  display: flex;
+  gap: 56px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: clamp(16px, 1.6vw, 20px);
+  font-weight: 500;
+  color: var(--sh-coffee);
+}
+.trust-track span { display: inline-flex; align-items: center; }
+.trust-track .dot {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--sh-honey);
+  margin-left: 56px;
+}
+@media (max-width: 700px) {
+  .trust-track .dot { display: none; }
+  .trust-track { gap: 16px 28px; }
+}
+
+/* ----- Sections (shared) ----- */
+.section {
+  padding: 96px 0;
+}
+@media (max-width: 700px) {
+  .section { padding: 72px 0; }
+}
+
+.section-eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--sh-honey-dark);
+  margin-bottom: 18px;
+}
+.section h2 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(32px, 4.2vw, 52px);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  color: var(--sh-coffee);
+  margin-bottom: 24px;
+}
+.section h2 em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--sh-honey-dark);
+}
+.section .lead {
+  font-size: clamp(16px, 1.2vw, 18px);
+  color: var(--sh-muted);
+  max-width: 580px;
+  line-height: 1.65;
+}
+
+/* ----- Hva vi baker ----- */
+.baker-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 48px;
+  align-items: end;
+  margin-bottom: 64px;
+}
+@media (max-width: 880px) {
+  .baker-head { grid-template-columns: 1fr; gap: 24px; margin-bottom: 40px; }
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+@media (max-width: 880px) {
+  .products { grid-template-columns: 1fr; gap: 18px; }
+}
+
+.product {
+  background: var(--sh-white);
+  border: 1px solid var(--sh-border);
+  border-radius: 16px;
+  padding: 28px;
+  transition: border-color 0.3s var(--ease), transform 0.3s var(--ease);
+}
+.product:hover {
+  border-color: var(--sh-honey);
+  transform: translateY(-3px);
+}
+.product-visual {
+  aspect-ratio: 4 / 3;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+}
+.product-visual.surdeig { background: linear-gradient(160deg, #C89642 0%, #6B4218 100%); }
+.product-visual.kanelbolle { background: linear-gradient(160deg, #D4A85C 0%, #8C5A22 100%); }
+.product-visual.kaffe { background: linear-gradient(160deg, #4A3220 0%, #1F140C 100%); }
+.product-visual::after {
+  content: '';
+  position: absolute;
+  inset: 14px;
+  border: 1px solid rgba(245, 235, 216, 0.25);
+  border-radius: 6px;
+}
+
+.product-tag {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--sh-honey-dark);
+  margin-bottom: 8px;
+}
+.product h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  color: var(--sh-coffee);
+  margin-bottom: 8px;
+}
+.product p {
+  font-size: 14.5px;
+  color: var(--sh-muted);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+.product-price {
+  font-family: 'Fraunces', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--sh-coffee);
+}
+
+/* ----- Om Solhuset ----- */
+.om {
+  background: var(--sh-white);
+}
+.om-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+  gap: 64px;
+  align-items: center;
+}
+@media (max-width: 880px) {
+  .om-grid { grid-template-columns: 1fr; gap: 40px; }
+}
+
+.om-visual {
+  aspect-ratio: 4 / 5;
+  background: linear-gradient(180deg, var(--sh-oat) 0%, var(--sh-cream) 100%);
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.om-visual::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 25% 30%, rgba(200, 150, 66, 0.18) 0%, transparent 50%),
+    radial-gradient(circle at 75% 70%, rgba(42, 30, 20, 0.05) 0%, transparent 50%);
+}
+.om-visual-card {
+  position: relative;
+  background: var(--sh-cream);
+  padding: 36px;
+  border-radius: 12px;
+  box-shadow: 0 12px 32px rgba(42, 30, 20, 0.08);
+  text-align: center;
+  max-width: 260px;
+}
+.om-visual-card-mark {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--sh-honey);
+  margin: 0 auto 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Fraunces', serif;
+  font-weight: 900;
+  font-size: 26px;
+  color: var(--sh-coffee);
+}
+.om-visual-card-name {
+  font-family: 'Fraunces', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--sh-coffee);
+  margin-bottom: 4px;
+}
+.om-visual-card-meta {
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--sh-muted);
+}
+
+.om-body p {
+  font-size: 17px;
+  color: var(--sh-ink);
+  line-height: 1.75;
+  margin-bottom: 18px;
+}
+.om-body p:first-of-type::first-letter {
+  font-family: 'Fraunces', serif;
+  font-size: 56px;
+  font-weight: 700;
+  float: left;
+  line-height: 0.9;
+  margin: 4px 12px 0 0;
+  color: var(--sh-honey-dark);
+}
+.om-signature {
+  margin-top: 28px;
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 18px;
+  color: var(--sh-coffee);
+}
+
+/* ----- Besøk oss ----- */
+.besok-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+  gap: 48px;
+  align-items: stretch;
+}
+@media (max-width: 880px) {
+  .besok-grid { grid-template-columns: 1fr; gap: 32px; }
+}
+
+.besok-info {
+  background: var(--sh-coffee);
+  color: var(--sh-cream);
+  padding: 48px;
+  border-radius: 16px;
+}
+@media (max-width: 700px) {
+  .besok-info { padding: 36px 28px; }
+}
+.besok-info h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  letter-spacing: -0.015em;
+}
+.besok-hours {
+  list-style: none;
+  margin: 0 0 32px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.besok-hours li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(245, 235, 216, 0.12);
+  font-size: 15px;
+}
+.besok-hours li span:first-child {
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+.besok-hours li span:last-child {
+  color: var(--sh-honey);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+.besok-address {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 16px;
+  color: var(--sh-cream);
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+.besok-address strong {
+  display: block;
+  font-style: normal;
+  font-weight: 700;
+  color: var(--sh-honey);
+  margin-bottom: 4px;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+}
+
+.besok-map {
+  background: var(--sh-oat);
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.besok-map::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(42, 30, 20, 0.05) 39px, rgba(42, 30, 20, 0.05) 40px),
+    repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(42, 30, 20, 0.05) 39px, rgba(42, 30, 20, 0.05) 40px);
+}
+.besok-map-pin {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--sh-honey);
+  border: 4px solid var(--sh-cream);
+  box-shadow: 0 8px 20px rgba(42, 30, 20, 0.2);
+  z-index: 1;
+}
+.besok-map-pin::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 12px solid var(--sh-honey);
+}
+.besok-map-meta {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--sh-muted);
+  background: rgba(245, 235, 216, 0.92);
+  padding: 6px 12px;
+  border-radius: 999px;
+}
+
+/* ----- Footer ----- */
+.footer {
+  background: var(--sh-coffee);
+  color: var(--sh-cream);
+  padding: 64px 0 32px;
+  margin-top: 80px;
+}
+.footer-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 48px;
+}
+@media (max-width: 700px) {
+  .footer-top { grid-template-columns: 1fr; gap: 32px; margin-bottom: 36px; }
+}
+.footer h4 {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--sh-honey);
+  margin-bottom: 14px;
+}
+.footer-tagline {
+  font-family: 'Fraunces', serif;
+  font-size: 20px;
+  font-style: italic;
+  color: var(--sh-cream);
+  margin-top: 12px;
+  max-width: 340px;
+  line-height: 1.5;
+}
+.footer ul { list-style: none; margin: 0; padding: 0; }
+.footer ul li { padding: 6px 0; font-size: 14px; color: rgba(245, 235, 216, 0.78); }
+.footer-bottom {
+  padding-top: 28px;
+  border-top: 1px solid rgba(245, 235, 216, 0.12);
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: 12px;
+  color: rgba(245, 235, 216, 0.55);
+}
+.footer-bottom a {
+  color: var(--sh-honey);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+</style>
+</head>
+<body>
+
+<!-- Konsept-banner: explicit "not a real bakery" -->
+<div class="concept-banner">
+  Fiktivt konsept &middot; Bygget av <a href="/">Folkestad Designs</a> som eksempel-onepager
+</div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="brand">
+      <span class="brand-mark">S</span>
+      Solhuset
+    </a>
+    <ul class="nav-links">
+      <li><a href="#baker">Hva vi baker</a></li>
+      <li><a href="#om">Om oss</a></li>
+      <li><a href="#besok">Besøk oss</a></li>
+    </ul>
+    <a href="#besok" class="nav-cta">Åpningstider &rarr;</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow">[ Klepp Stasjon &middot; Siden 2024 ]</div>
+        <h1>Surdeig og kanelbolle. <em>Hver morgen.</em></h1>
+        <p class="hero-sub">Lite bakeri i hjertet av Klepp Stasjon. Vi bruker mel fra nordisk korn, vann fra Jæren og smør som smør skal smake. Du finner oss åpne fra klokken syv hverdager.</p>
+        <div class="hero-cta">
+          <a href="#besok" class="btn-primary">Finn oss &rarr;</a>
+          <a href="#baker" class="btn-outline">Se hva vi baker</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-visual-card">
+          <div class="hero-steam"><span></span><span></span><span></span></div>
+          <div class="hero-loaf"></div>
+          <div class="hero-visual-tag">— Surdeig &middot; 24 timer heving</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- TRUST -->
+<div class="trust">
+  <div class="container">
+    <div class="trust-track">
+      <span>Surdeig</span>
+      <span class="dot"></span>
+      <span>Kanelboller</span>
+      <span class="dot"></span>
+      <span>Hjemmelaget kaffe</span>
+      <span class="dot"></span>
+      <span>Smør fra Jæren</span>
+      <span class="dot"></span>
+      <span>Åpent 7&ndash;16</span>
+    </div>
+  </div>
+</div>
+
+<!-- HVA VI BAKER -->
+<section class="section" id="baker">
+  <div class="container">
+    <div class="baker-head">
+      <div>
+        <div class="section-eyebrow">[ 01 &middot; Hva vi baker ]</div>
+        <h2>Tre faste favoritter. <em>Pluss en handfull til på disken hver dag.</em></h2>
+      </div>
+      <p class="lead">Det meste bakes om natten og selges samme dag. Det vi ikke får solgt går til nabofamilier som henter klokken fire. Vi har aldri kastet et brød.</p>
+    </div>
+
+    <div class="products">
+      <article class="product">
+        <div class="product-visual surdeig"></div>
+        <div class="product-tag">[ 01 &middot; Brød ]</div>
+        <h3>Solhuset surdeig</h3>
+        <p>Hvete, rug og litt salt. 24 timers heving i kjellerkjølig temperatur. Skorpe med sprett, krumme med struktur. Holder i fire dager hvis du har is i magen.</p>
+        <div class="product-price">79 kr</div>
+      </article>
+
+      <article class="product">
+        <div class="product-visual kanelbolle"></div>
+        <div class="product-tag">[ 02 &middot; Søtt ]</div>
+        <h3>Kanelbolle med kardemomme</h3>
+        <p>Smør, kardemomme fra Sri Lanka, kanel fra Madagaskar. Ferdig stekt klokken syv, fortsatt varm når du henter den klokken halv åtte.</p>
+        <div class="product-price">35 kr</div>
+      </article>
+
+      <article class="product">
+        <div class="product-visual kaffe"></div>
+        <div class="product-tag">[ 03 &middot; Kaffe ]</div>
+        <h3>Bryggekaffe &middot; Solberg &amp; Hansen</h3>
+        <p>Kaffe fra Solberg &amp; Hansen i Oslo, brent for oss til mørk filterprofil. Servert i keramikk-koppen til Hans i Klepp. Ingen takeaway-kopper &mdash; bare lever den tilbake.</p>
+        <div class="product-price">38 kr</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- OM SOLHUSET -->
+<section class="section om" id="om">
+  <div class="container">
+    <div class="om-grid">
+      <div class="om-visual">
+        <div class="om-visual-card">
+          <div class="om-visual-card-mark">S</div>
+          <div class="om-visual-card-name">Solhuset</div>
+          <div class="om-visual-card-meta">Klepp Stasjon &middot; Siden 2024</div>
+        </div>
+      </div>
+
+      <div class="om-body">
+        <div class="section-eyebrow">[ 02 &middot; Om Solhuset ]</div>
+        <h2>Vi startet med tre forme og en kjellerovn.</h2>
+        <p>Solhuset begynte ikke som en plan. Det begynte med at vi bakte til naboene en søndag i januar 2024, og naboene spurte hvor lenge vi hadde tenkt å gjøre det. Svaret ble: så lenge mel og smør koster det de koster, og folk vil ha brød som smaker av brød.</p>
+        <p>Nå er vi tre personer. Vi baker fra fire om morgenen, åpner butikken klokken syv, og holder åpent til klokken fire. Det er enkelt, det er lite, og det fungerer. Vi har ikke planer om å bli større &mdash; bare bedre.</p>
+        <p class="om-signature">— Marit &amp; Olav, bakere</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BESØK OSS -->
+<section class="section" id="besok">
+  <div class="container">
+    <div class="section-eyebrow">[ 03 &middot; Finn oss ]</div>
+    <h2>Stasjonsveien 12, Klepp Stasjon. <em>Åpent hver dag bortsett fra mandag.</em></h2>
+
+    <div class="besok-grid" style="margin-top: 48px;">
+      <div class="besok-info">
+        <h3>Åpningstider</h3>
+        <ul class="besok-hours">
+          <li><span>Tirsdag &ndash; Fredag</span><span>07&ndash;16</span></li>
+          <li><span>Lørdag</span><span>08&ndash;14</span></li>
+          <li><span>Søndag</span><span>09&ndash;13</span></li>
+          <li><span>Mandag</span><span>Stengt</span></li>
+        </ul>
+        <p class="besok-address">
+          <strong>Adresse</strong>
+          Stasjonsveien 12<br>
+          4352 Klepp Stasjon<br>
+          (rett ved jernbanestasjonen)
+        </p>
+      </div>
+
+      <div class="besok-map" role="img" aria-label="Stilisert kart som viser Solhusets posisjon ved Klepp Stasjon">
+        <div class="besok-map-pin"></div>
+        <span class="besok-map-meta">[ Konsept-kart &middot; Klepp Stasjon ]</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <a href="#" class="brand" style="color: var(--sh-cream);">
+          <span class="brand-mark">S</span>
+          Solhuset
+        </a>
+        <p class="footer-tagline">Lite bakeri på Klepp Stasjon. Surdeig og kanelboller siden 2024.</p>
+      </div>
+      <div>
+        <h4>Finn oss</h4>
+        <ul>
+          <li>Stasjonsveien 12</li>
+          <li>4352 Klepp Stasjon</li>
+          <li>Åpent 7&ndash;16, ti&ndash;fr</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <ul>
+          <li>hei@solhuset.no</li>
+          <li>+47 00 00 00 00</li>
+          <li>@solhuset.bakeri</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>&copy; 2025 Solhuset Bakeri &amp; Café (fiktivt konsept)</div>
+      <div>Konsept-onepager bygget av <a href="/">Folkestad Designs</a></div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

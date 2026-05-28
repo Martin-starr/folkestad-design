@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personvern — Folkestad Designs</title>
+<meta name="description" content="Slik håndterer Folkestad Designs personopplysninger fra kontaktskjemaet på folkestad.design. Klart og kort, i tråd med personvernforordningen (GDPR).">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://folkestad.design/personvern">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg-primary: #F5F0E8;
+  --bg-surface: #FFFFFF;
+  --bg-contrast: #1A1A1A;
+  --text-primary: #1A1A1A;
+  --text-muted: #6B6B6B;
+  --text-dim: #A8A8A8;
+  --accent: #E85A3C;
+  --accent-dark: #C9462C;
+  --border-subtle: #E8E2D5;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Poppins', -apple-system, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.7;
+  font-weight: 400;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a { color: inherit; }
+
+.container {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+@media (max-width: 600px) {
+  .container { padding: 0 20px; }
+}
+
+/* Nav */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(245, 240, 232, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-subtle);
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 32px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+.brand {
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: -0.015em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-primary);
+  text-decoration: none;
+}
+.brand .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+.nav-back {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: color 0.3s var(--ease);
+}
+.nav-back:hover { color: var(--accent); }
+
+/* Page header */
+.page-head {
+  padding: 96px 0 56px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+.eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+.page-head h1 {
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+  color: var(--text-primary);
+}
+.page-head .lead {
+  margin-top: 20px;
+  font-size: clamp(16px, 1.2vw, 18px);
+  font-weight: 400;
+  color: var(--text-muted);
+  line-height: 1.6;
+  max-width: 640px;
+}
+.updated {
+  margin-top: 24px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+/* Article */
+.legal {
+  padding: 56px 0 96px;
+}
+.legal h2 {
+  font-size: clamp(22px, 2.4vw, 28px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  margin: 48px 0 16px;
+  color: var(--text-primary);
+}
+.legal h2:first-of-type { margin-top: 0; }
+.legal h3 {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  margin: 24px 0 8px;
+  color: var(--text-primary);
+}
+.legal p,
+.legal ul,
+.legal ol {
+  font-size: 15.5px;
+  color: var(--text-primary);
+  line-height: 1.75;
+}
+.legal p + p { margin-top: 14px; }
+.legal ul,
+.legal ol { margin: 12px 0 12px 22px; }
+.legal li + li { margin-top: 6px; }
+.legal a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.legal a:hover { color: var(--accent-dark); }
+
+.callout {
+  margin: 24px 0;
+  padding: 20px 24px;
+  background: var(--bg-surface);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 8px 8px 0;
+  font-size: 15px;
+  color: var(--text-primary);
+}
+.callout strong { font-weight: 700; }
+
+/* Footer */
+.footer {
+  background: var(--bg-contrast);
+  color: var(--bg-primary);
+  padding: 56px 0 32px;
+}
+.footer .brand { color: #fff; }
+.footer-tagline {
+  margin-top: 12px;
+  font-size: 13px;
+  color: rgba(245, 240, 232, 0.65);
+  max-width: 420px;
+}
+.footer-bottom {
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(245, 240, 232, 0.1);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: space-between;
+  font-size: 12px;
+  color: rgba(245, 240, 232, 0.45);
+}
+.footer-bottom a {
+  color: rgba(245, 240, 232, 0.7);
+  text-decoration: none;
+}
+.footer-bottom a:hover { color: var(--accent); }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="brand">
+      <span class="dot"></span>
+      Folkestad Designs
+    </a>
+    <a href="/#kontakt" class="nav-back">&larr; Tilbake til forsiden</a>
+  </div>
+</nav>
+
+<header class="page-head">
+  <div class="container">
+    <div class="eyebrow">[ Personvernerklæring ]</div>
+    <h1>Personvern.</h1>
+    <p class="lead">Slik håndterer Folkestad Designs personopplysninger du sender via kontaktskjemaet eller e-post. Kort, klart og i tråd med personvernforordningen (GDPR).</p>
+    <div class="updated">Sist oppdatert: 2026-05-28</div>
+  </div>
+</header>
+
+<article class="legal">
+  <div class="container">
+
+    <h2>1. Hvem er behandlingsansvarlig?</h2>
+    <p><strong>Folkestad Designs</strong>, ved Martin Folkestad, er behandlingsansvarlig for personopplysninger som samles inn via folkestad.design.</p>
+    <ul>
+      <li>Kontakt: <a href="mailto:hei@folkestad.design">hei@folkestad.design</a></li>
+      <li>Adresse: Klepp Stasjon, Jæren, Norge</li>
+      <li>Organisasjonsnummer: {{ TODO: orgnr (kommer når ENK er registrert) }}</li>
+    </ul>
+
+    <h2>2. Hvilke opplysninger samler vi inn?</h2>
+    <p>Når du tar kontakt via kontaktskjemaet på forsiden eller sender e-post, lagrer vi det du selv velger å oppgi:</p>
+    <ul>
+      <li><strong>Navn</strong></li>
+      <li><strong>Telefonnummer eller e-postadresse</strong></li>
+      <li><strong>Meldingen din</strong> (kort beskrivelse av hva du trenger)</li>
+    </ul>
+    <p>Vi ber ikke om personnummer, betalingsdata eller annen sensitiv informasjon på dette stadiet. Skjemaet sender meldingen direkte til Martins e-postinnboks &mdash; det lagres ingen kopi i en database vi drifter.</p>
+
+    <h2>3. Hvorfor samler vi det inn?</h2>
+    <p>Opplysningene brukes til ett formål: <strong>å svare på henvendelsen din</strong> og &mdash; hvis det blir et oppdrag &mdash; å gjennomføre arbeidet vi er enige om. Vi bruker dem ikke til markedsføring, profilering eller analyse.</p>
+
+    <h2>4. Rettsgrunnlag</h2>
+    <p>Behandlingen skjer på følgende grunnlag i personvernforordningen:</p>
+    <ul>
+      <li><strong>Artikkel 6(1)(b)</strong> &mdash; for å gjennomføre tiltak på din anmodning før en eventuell avtale inngås (svare på henvendelsen).</li>
+      <li><strong>Artikkel 6(1)(f)</strong> &mdash; berettiget interesse i å kommunisere med potensielle og eksisterende kunder.</li>
+    </ul>
+
+    <h2>5. Hvem deler vi dataene med?</h2>
+    <p>Vi deler ikke personopplysningene dine med tredjepart for markedsføring. Følgende databehandlere kan se opplysningene som en del av drift:</p>
+    <ul>
+      <li><strong>E-posttjeneste</strong> &mdash; {{ TODO: e-post-leverandør (f.eks. Namecheap Private Email) }} &mdash; for å motta og lagre e-post.</li>
+      <li><strong>Nettsidehosting</strong> &mdash; GitHub Pages (Microsoft / GitHub Inc.) &mdash; serverer selve nettsiden; mottar ikke skjemadata.</li>
+    </ul>
+    <p>Vi bruker ikke sporings-cookies, Google Analytics eller liknende verktøy på folkestad.design. Eventuelle tekniske informasjonskapsler er strengt nødvendige for at siden skal vises riktig.</p>
+
+    <h2>6. Hvor lenge lagrer vi opplysningene?</h2>
+    <p>Henvendelser som ikke fører til et oppdrag slettes etter <strong>12 måneder</strong>. Hvis vi inngår et oppdrag, oppbevares relevant korrespondanse og fakturagrunnlag så lenge bokføringsloven krever (normalt fem år), deretter slettes det.</p>
+
+    <h2>7. Dine rettigheter</h2>
+    <p>Du har rett til å:</p>
+    <ul>
+      <li>be om <strong>innsyn</strong> i hvilke opplysninger vi har om deg</li>
+      <li>be om <strong>retting</strong> av feil</li>
+      <li>be om <strong>sletting</strong> ("retten til å bli glemt")</li>
+      <li>be om <strong>dataportabilitet</strong> &mdash; en kopi av det du har gitt oss</li>
+      <li>protestere mot behandlingen eller trekke tilbake samtykke</li>
+    </ul>
+    <p>For å bruke rettighetene: send en e-post til <a href="mailto:hei@folkestad.design">hei@folkestad.design</a>. Vi svarer normalt innen samme dag på hverdager, og senest innen 30 dager som loven krever.</p>
+
+    <h2>8. Klage til Datatilsynet</h2>
+    <p>Hvis du mener vi behandler personopplysningene dine på en ulovlig måte, kan du klage til <strong>Datatilsynet</strong>:</p>
+    <ul>
+      <li>Nettside: <a href="https://www.datatilsynet.no" target="_blank" rel="noopener">datatilsynet.no</a></li>
+      <li>Telefon: 22 39 69 00</li>
+    </ul>
+    <p>Vi vil aller helst at du tar kontakt med oss først, slik at vi kan rette opp i det.</p>
+
+    <h2>9. Endringer i denne erklæringen</h2>
+    <p>Vi oppdaterer denne erklæringen dersom rutinene endrer seg eller loven krever det. Datoen øverst på siden viser når den sist ble revidert.</p>
+
+    <div class="callout">
+      <strong>Kort versjon:</strong> Du fyller ut et skjema, vi får en e-post, vi svarer deg. Ingen sporing, ingen videresalg, ingen rare ting. Spørsmål? <a href="mailto:hei@folkestad.design">hei@folkestad.design</a>.
+    </div>
+
+  </div>
+</article>
+
+<footer class="footer">
+  <div class="container">
+    <a href="/" class="brand">
+      <span class="dot"></span>
+      Folkestad Designs
+    </a>
+    <p class="footer-tagline">Design som virker for ekte bedrifter. Bygd på Klepp Stasjon, Jæren.</p>
+    <div class="footer-bottom">
+      <div>&copy; 2025 Folkestad Designs &middot; Klepp Stasjon, Jæren</div>
+      <div><a href="/">Til forsiden</a> &middot; <a href="mailto:hei@folkestad.design">hei@folkestad.design</a></div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
