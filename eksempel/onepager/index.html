@@ -234,12 +234,19 @@ a { color: inherit; text-decoration: none; }
   color: var(--sh-cream);
 }
 
-/* Hero visual — stylized loaf with steam */
+/* Hero visual — stylized loaf with steam.
+   Fix: include explicit width: 100% so the aspect-ratio has a baseline
+   to compute against when the grid collapses to a single column on
+   mobile. Without this the box resolves to 0×0 in single-column flow. */
 .hero-visual {
   position: relative;
   aspect-ratio: 1 / 1;
+  width: 100%;
   max-width: 420px;
   margin-left: auto;
+}
+@media (max-width: 880px) {
+  .hero-visual { margin: 0 auto; }
 }
 .hero-visual-card {
   position: absolute;
