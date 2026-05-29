@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /eksempel/
+Crawl-delay: 1
+
+Sitemap: https://folkestad.design/sitemap.xml

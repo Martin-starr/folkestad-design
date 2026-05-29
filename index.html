@@ -2497,6 +2497,33 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
   transform: translateY(-1px);
 }
 
+.product-btn[aria-disabled="true"] {
+  background: var(--text-muted);
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.65;
+  transform: none;
+}
+
+.product-soon-note {
+  margin-top: 8px;
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+.product-soon-note a {
+  color: var(--text-muted);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.product-soon-note a:hover {
+  color: var(--text-primary);
+}
+
 .products-foot {
   margin-top: 32px;
   text-align: center;
@@ -7682,6 +7709,30 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
 </footer>
 
 <script>
+// ============================================
+// CHECKOUT FEATURE FLAG
+// Flip to true once Stripe live keys are configured (see DEPLOY.md, issue #6).
+// When false: product buttons read "Snart tilgjengelig" and a small interest
+// note is rendered below each. When true: existing mailto: behavior preserved
+// verbatim until issue #5 lands the real checkout handler.
+// ============================================
+const CHECKOUT_LIVE = false;
+
+document.addEventListener('DOMContentLoaded', () => {
+  if (CHECKOUT_LIVE === true) return;
+  const productBtns = document.querySelectorAll('.product-btn');
+  productBtns.forEach(btn => {
+    btn.textContent = 'Snart tilgjengelig';
+    btn.setAttribute('aria-disabled', 'true');
+    btn.setAttribute('tabindex', '-1');
+    if (btn.nextElementSibling && btn.nextElementSibling.classList.contains('product-soon-note')) return;
+    const note = document.createElement('p');
+    note.className = 'product-soon-note';
+    note.innerHTML = 'Sender ut n&aring;r Stripe-kontoen er aktivert &mdash; meld interesse: <a href="mailto:hei@folkestad.design">hei@folkestad.design</a>';
+    btn.insertAdjacentElement('afterend', note);
+  });
+});
+
 // ============================================
 // NAV SCROLL
 // ============================================
