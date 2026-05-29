@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vindfanget Bistro &amp; Vinbar &mdash; Konsept fra Folkestad Designs</title>
+<meta name="description" content="Konsept-onepager bygget av Folkestad Designs. Et fiktivt kveldsbistro p&aring; J&aelig;ren, brukt for &aring; vise bredden i en 12k-pakke &mdash; innhold, design og mobil.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="canonical" href="https://folkestad.design/eksempel/bistro">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* =====================================================================
+   VINDFANGET BISTRO &amp; VINBAR &mdash; Konsept
+   Evening palette: deep wine, paper cream, brass accent, ink.
+   DM Serif Display + Inter. Built as a one-pager for Folkestad Designs.
+   ===================================================================== */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --vf-cream: #F4EEE3;
+  --vf-paper: #FBF7EE;
+  --vf-wine: #6E2A36;
+  --vf-wine-deep: #4A1A24;
+  --vf-brass: #B89A5E;
+  --vf-brass-deep: #8E7340;
+  --vf-ink: #1A1612;
+  --vf-muted: #6B5F58;
+  --vf-border: #E1D6C2;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: var(--vf-cream);
+  color: var(--vf-ink);
+  line-height: 1.65;
+  font-weight: 400;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, svg { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+@media (max-width: 700px) {
+  .container { padding: 0 22px; }
+}
+
+/* ----- KONSEPT-banner ----- */
+.concept-banner {
+  background: var(--vf-wine-deep);
+  color: var(--vf-cream);
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  padding: 10px 16px;
+}
+.concept-banner a {
+  color: var(--vf-brass);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* ----- Nav ----- */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(244, 238, 227, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--vf-border);
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 40px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.brand {
+  font-family: 'DM Serif Display', serif;
+  font-weight: 400;
+  font-size: 22px;
+  letter-spacing: -0.01em;
+  color: var(--vf-wine);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.brand-mark {
+  width: 30px;
+  height: 30px;
+  border: 1.5px solid var(--vf-brass);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'DM Serif Display', serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--vf-wine);
+  background: transparent;
+}
+.brand-sub {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--vf-muted);
+  margin-left: -4px;
+}
+.nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--vf-ink);
+  transition: color 0.3s var(--ease);
+}
+.nav-links a:hover { color: var(--vf-wine); }
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 22px;
+  background: var(--vf-wine);
+  color: var(--vf-cream);
+  border-radius: 2px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  min-height: 42px;
+  transition: background 0.3s var(--ease);
+}
+.nav-cta:hover { background: var(--vf-wine-deep); }
+@media (max-width: 760px) {
+  .nav-inner { padding: 14px 22px; }
+  .nav-links { display: none; }
+  .brand-sub { display: none; }
+}
+
+/* ----- Hero ----- */
+.hero {
+  padding: 88px 0 100px;
+  position: relative;
+  overflow: hidden;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  gap: 64px;
+  align-items: center;
+}
+@media (max-width: 880px) {
+  .hero { padding: 56px 0 64px; }
+  .hero-grid { grid-template-columns: 1fr; gap: 44px; }
+  .hero-visual { width: 100%; max-width: 360px; margin: 0 auto; }
+}
+
+.eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--vf-brass-deep);
+  margin-bottom: 26px;
+  display: inline-block;
+}
+
+.hero h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(42px, 5.8vw, 76px);
+  font-weight: 400;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  color: var(--vf-ink);
+  margin-bottom: 26px;
+}
+.hero h1 em {
+  font-style: italic;
+  color: var(--vf-wine);
+}
+
+.hero-sub {
+  font-size: clamp(16px, 1.2vw, 18px);
+  color: var(--vf-muted);
+  max-width: 480px;
+  margin-bottom: 36px;
+  line-height: 1.7;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.btn-primary,
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  padding: 14px 28px;
+  border-radius: 2px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  min-height: 48px;
+  transition: all 0.3s var(--ease);
+}
+.btn-primary {
+  background: var(--vf-wine);
+  color: var(--vf-cream);
+  border: 1.5px solid var(--vf-wine);
+}
+.btn-primary:hover {
+  background: var(--vf-wine-deep);
+  border-color: var(--vf-wine-deep);
+  transform: translateY(-1px);
+}
+.btn-outline {
+  background: transparent;
+  color: var(--vf-ink);
+  border: 1.5px solid var(--vf-ink);
+}
+.btn-outline:hover {
+  background: var(--vf-ink);
+  color: var(--vf-cream);
+}
+
+/* Hero visual &mdash; stylized wine glass on a paper card */
+.hero-visual {
+  position: relative;
+  aspect-ratio: 1 / 1.05;
+  max-width: 420px;
+  margin-left: auto;
+}
+.hero-visual-card {
+  position: absolute;
+  inset: 0;
+  background: var(--vf-paper);
+  border: 1px solid var(--vf-border);
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 12%;
+}
+.hero-visual-card::before {
+  content: '';
+  position: absolute;
+  inset: 14px;
+  border: 1px solid var(--vf-brass);
+  border-radius: 2px;
+  pointer-events: none;
+}
+.glass {
+  position: relative;
+  width: 32%;
+  aspect-ratio: 1 / 2.1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.glass-bowl {
+  position: relative;
+  width: 100%;
+  flex: 0 0 58%;
+  background: linear-gradient(180deg, rgba(110, 42, 54, 0.18) 0%, var(--vf-wine) 38%, var(--vf-wine-deep) 100%);
+  border-radius: 50% 50% 46% 46% / 18% 18% 92% 92%;
+  border: 1.5px solid var(--vf-ink);
+}
+.glass-bowl::after {
+  content: '';
+  position: absolute;
+  top: 12%;
+  left: 16%;
+  width: 22%;
+  height: 18%;
+  background: rgba(255, 245, 230, 0.18);
+  border-radius: 50%;
+  filter: blur(1px);
+}
+.glass-stem {
+  width: 6%;
+  flex: 0 0 28%;
+  background: var(--vf-ink);
+  margin-top: -2px;
+}
+.glass-base {
+  width: 60%;
+  height: 4px;
+  background: var(--vf-ink);
+  border-radius: 2px;
+  margin-top: 4px;
+}
+.hero-visual-tag {
+  position: absolute;
+  bottom: 22px;
+  left: 22px;
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: 13px;
+  color: var(--vf-wine);
+  background: var(--vf-cream);
+  padding: 6px 12px;
+  border: 1px solid var(--vf-border);
+  border-radius: 2px;
+}
+
+/* ----- Strip ----- */
+.strip {
+  background: var(--vf-paper);
+  border-top: 1px solid var(--vf-border);
+  border-bottom: 1px solid var(--vf-border);
+  padding: 26px 0;
+  overflow: hidden;
+}
+.strip-track {
+  display: flex;
+  gap: 56px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: clamp(16px, 1.6vw, 20px);
+  font-weight: 400;
+  color: var(--vf-wine);
+}
+.strip-track span { display: inline-flex; align-items: center; }
+.strip-track .dot {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--vf-brass);
+  margin-left: 56px;
+}
+@media (max-width: 700px) {
+  .strip-track .dot { display: none; }
+  .strip-track { gap: 14px 28px; }
+}
+
+/* ----- Sections (shared) ----- */
+.section {
+  padding: 100px 0;
+}
+@media (max-width: 700px) {
+  .section { padding: 72px 0; }
+}
+
+.section-eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--vf-brass-deep);
+  margin-bottom: 18px;
+}
+.section h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(32px, 4.2vw, 54px);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--vf-ink);
+  margin-bottom: 24px;
+}
+.section h2 em {
+  font-style: italic;
+  color: var(--vf-wine);
+}
+.section .lead {
+  font-size: clamp(16px, 1.2vw, 18px);
+  color: var(--vf-muted);
+  max-width: 580px;
+  line-height: 1.7;
+}
+
+/* ----- Meny i utdrag ----- */
+.meny-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 48px;
+  align-items: end;
+  margin-bottom: 56px;
+}
+@media (max-width: 880px) {
+  .meny-head { grid-template-columns: 1fr; gap: 22px; margin-bottom: 40px; }
+}
+
+.dishes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border-top: 1px solid var(--vf-border);
+  border-left: 1px solid var(--vf-border);
+}
+.dish {
+  border-right: 1px solid var(--vf-border);
+  border-bottom: 1px solid var(--vf-border);
+  padding: 32px 32px 30px;
+  background: var(--vf-paper);
+  transition: background 0.3s var(--ease);
+}
+.dish:hover { background: var(--vf-cream); }
+@media (max-width: 700px) {
+  .dishes { grid-template-columns: 1fr; }
+  .dish { padding: 26px 22px; }
+}
+
+.dish-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 18px;
+  margin-bottom: 6px;
+}
+.dish-tag {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--vf-brass-deep);
+  margin-bottom: 10px;
+}
+.dish h3 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: var(--vf-ink);
+}
+.dish-price {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: 18px;
+  color: var(--vf-wine);
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.dish p {
+  font-size: 14.5px;
+  color: var(--vf-muted);
+  line-height: 1.65;
+}
+.dish-meta {
+  margin-top: 14px;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--vf-brass-deep);
+  font-weight: 600;
+}
+
+/* ----- Om Vindfanget ----- */
+.om {
+  background: var(--vf-paper);
+}
+.om-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+  gap: 64px;
+  align-items: center;
+}
+@media (max-width: 880px) {
+  .om-grid { grid-template-columns: 1fr; gap: 40px; }
+}
+
+.om-visual {
+  aspect-ratio: 4 / 5;
+  background: var(--vf-wine-deep);
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--vf-cream);
+}
+.om-visual::before {
+  content: '';
+  position: absolute;
+  inset: 18px;
+  border: 1px solid var(--vf-brass);
+  border-radius: 2px;
+  pointer-events: none;
+}
+.om-visual-inner {
+  text-align: center;
+  padding: 40px;
+  position: relative;
+}
+.om-visual-mark {
+  font-family: 'DM Serif Display', serif;
+  font-size: 64px;
+  line-height: 1;
+  color: var(--vf-brass);
+  margin-bottom: 18px;
+}
+.om-visual-name {
+  font-family: 'DM Serif Display', serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--vf-cream);
+  margin-bottom: 6px;
+}
+.om-visual-meta {
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--vf-brass);
+}
+
+.om-body p {
+  font-size: 17px;
+  color: var(--vf-ink);
+  line-height: 1.75;
+  margin-bottom: 18px;
+}
+.om-body p:first-of-type::first-letter {
+  font-family: 'DM Serif Display', serif;
+  font-size: 58px;
+  font-weight: 400;
+  float: left;
+  line-height: 0.9;
+  margin: 6px 12px 0 0;
+  color: var(--vf-wine);
+}
+.om-signature {
+  margin-top: 28px;
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: 18px;
+  color: var(--vf-wine);
+}
+
+/* ----- Vinkart teaser ----- */
+.vin {
+  background: var(--vf-wine-deep);
+  color: var(--vf-cream);
+}
+.vin .section-eyebrow { color: var(--vf-brass); }
+.vin h2 { color: var(--vf-cream); }
+.vin h2 em { color: var(--vf-brass); }
+.vin .lead { color: rgba(244, 238, 227, 0.78); }
+
+.vin-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+  gap: 56px;
+  align-items: start;
+  margin-top: 48px;
+}
+@media (max-width: 880px) {
+  .vin-grid { grid-template-columns: 1fr; gap: 36px; }
+}
+
+.vin-list {
+  list-style: none;
+  border-top: 1px solid rgba(184, 154, 94, 0.35);
+}
+.vin-list li {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: baseline;
+  gap: 20px;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(184, 154, 94, 0.22);
+}
+.vin-list .name {
+  font-family: 'DM Serif Display', serif;
+  font-size: 18px;
+  color: var(--vf-cream);
+  letter-spacing: -0.01em;
+}
+.vin-list .meta {
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--vf-brass);
+  margin-top: 4px;
+}
+.vin-list .price {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: 16px;
+  color: var(--vf-brass);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.vin-note {
+  background: rgba(244, 238, 227, 0.06);
+  border: 1px solid rgba(184, 154, 94, 0.4);
+  padding: 28px;
+  border-radius: 4px;
+}
+.vin-note h4 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--vf-cream);
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+.vin-note p {
+  font-size: 14.5px;
+  color: rgba(244, 238, 227, 0.78);
+  line-height: 1.65;
+}
+
+/* ----- Reservasjon ----- */
+.reserve-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  gap: 56px;
+  align-items: start;
+  margin-top: 48px;
+}
+@media (max-width: 880px) {
+  .reserve-grid { grid-template-columns: 1fr; gap: 36px; }
+}
+
+.reserve-info p {
+  font-size: 16px;
+  color: var(--vf-ink);
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+.reserve-info .phone {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: 28px;
+  color: var(--vf-wine);
+  display: inline-block;
+  margin-top: 8px;
+  letter-spacing: -0.01em;
+}
+
+.reserve-form {
+  background: var(--vf-paper);
+  border: 1px solid var(--vf-border);
+  border-radius: 4px;
+  padding: 32px;
+}
+@media (max-width: 700px) {
+  .reserve-form { padding: 26px 22px; }
+}
+
+.reserve-form h3 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--vf-ink);
+  margin-bottom: 20px;
+  letter-spacing: -0.01em;
+}
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+@media (max-width: 480px) {
+  .field-row { grid-template-columns: 1fr; }
+}
+.field label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--vf-brass-deep);
+}
+.field input,
+.field select {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  color: var(--vf-ink);
+  background: var(--vf-cream);
+  border: 1px solid var(--vf-border);
+  border-radius: 2px;
+  padding: 12px 14px;
+  min-height: 44px;
+  transition: border-color 0.3s var(--ease);
+}
+.field input:focus,
+.field select:focus {
+  outline: none;
+  border-color: var(--vf-wine);
+}
+.reserve-form button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 10px;
+  padding: 14px 28px;
+  background: var(--vf-wine);
+  color: var(--vf-cream);
+  border: 1.5px solid var(--vf-wine);
+  border-radius: 2px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  min-height: 48px;
+  cursor: pointer;
+  transition: background 0.3s var(--ease), border-color 0.3s var(--ease);
+}
+.reserve-form button:hover {
+  background: var(--vf-wine-deep);
+  border-color: var(--vf-wine-deep);
+}
+.reserve-form .note {
+  font-size: 12px;
+  color: var(--vf-muted);
+  margin-top: 14px;
+  text-align: center;
+}
+
+/* ----- Finn oss ----- */
+.finn-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+  gap: 48px;
+  align-items: stretch;
+}
+@media (max-width: 880px) {
+  .finn-grid { grid-template-columns: 1fr; gap: 28px; }
+}
+
+.finn-info {
+  background: var(--vf-ink);
+  color: var(--vf-cream);
+  padding: 48px;
+  border-radius: 4px;
+}
+@media (max-width: 700px) {
+  .finn-info { padding: 36px 26px; }
+}
+.finn-info h3 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 28px;
+  font-weight: 400;
+  margin-bottom: 24px;
+  letter-spacing: -0.01em;
+}
+.finn-hours {
+  list-style: none;
+  margin: 0 0 32px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.finn-hours li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(244, 238, 227, 0.14);
+  font-size: 15px;
+}
+.finn-hours li span:first-child {
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+.finn-hours li span:last-child {
+  color: var(--vf-brass);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+.finn-address {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: 16px;
+  color: var(--vf-cream);
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+.finn-address strong {
+  display: block;
+  font-style: normal;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  color: var(--vf-brass);
+  margin-bottom: 6px;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.finn-map {
+  background: var(--vf-paper);
+  border: 1px solid var(--vf-border);
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.finn-map::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(110, 42, 54, 0.07) 39px, rgba(110, 42, 54, 0.07) 40px),
+    repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(110, 42, 54, 0.07) 39px, rgba(110, 42, 54, 0.07) 40px);
+}
+.finn-map-pin {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  border: 3px solid var(--vf-brass);
+  background: var(--vf-wine);
+  border-radius: 50%;
+  z-index: 1;
+}
+.finn-map-pin::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 12px solid var(--vf-wine);
+}
+.finn-map-meta {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--vf-muted);
+  background: var(--vf-cream);
+  border: 1px solid var(--vf-border);
+  padding: 6px 12px;
+  border-radius: 2px;
+}
+
+/* ----- Footer ----- */
+.footer {
+  background: var(--vf-ink);
+  color: var(--vf-cream);
+  padding: 64px 0 32px;
+  margin-top: 88px;
+}
+.footer-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 48px;
+}
+@media (max-width: 700px) {
+  .footer-top { grid-template-columns: 1fr; gap: 30px; margin-bottom: 36px; }
+}
+.footer h4 {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--vf-brass);
+  margin-bottom: 14px;
+}
+.footer .brand { color: var(--vf-cream); }
+.footer .brand .brand-mark { color: var(--vf-cream); border-color: var(--vf-brass); }
+.footer-tagline {
+  font-family: 'DM Serif Display', serif;
+  font-size: 20px;
+  font-style: italic;
+  color: var(--vf-cream);
+  margin-top: 12px;
+  max-width: 360px;
+  line-height: 1.5;
+}
+.footer ul { list-style: none; margin: 0; padding: 0; }
+.footer ul li { padding: 6px 0; font-size: 14px; color: rgba(244, 238, 227, 0.78); }
+.footer-bottom {
+  padding-top: 28px;
+  border-top: 1px solid rgba(244, 238, 227, 0.12);
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: 12px;
+  color: rgba(244, 238, 227, 0.55);
+}
+.footer-bottom a {
+  color: var(--vf-brass);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+</style>
+</head>
+<body>
+
+<!-- Konsept-banner: explicit "not a real bistro" -->
+<div class="concept-banner">
+  Fiktivt konsept &middot; Bygget av <a href="/">Folkestad Designs</a> som eksempel-onepager
+</div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="brand">
+      <span class="brand-mark">V</span>
+      Vindfanget
+      <span class="brand-sub">Bistro &amp; Vinbar</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#meny">Meny</a></li>
+      <li><a href="#om">Om oss</a></li>
+      <li><a href="#vin">Vinkart</a></li>
+      <li><a href="#finn">Finn oss</a></li>
+    </ul>
+    <a href="#reserver" class="nav-cta">Reserver bord &rarr;</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow">[ Bryne &middot; Siden 2022 ]</div>
+        <h1>Naturvin og sm&aring; retter, <em>i l&aelig; for J&aelig;rvinden.</em></h1>
+        <p class="hero-sub">Lite bistro to kvartal fra Bryne stasjon. Vin fra sm&aring; produsenter, korte menyer som endres med sesongen, og et kj&oslash;kken som ikke roper. &Aring;pent fra klokken fem, onsdag til l&oslash;rdag.</p>
+        <div class="hero-cta">
+          <a href="#reserver" class="btn-primary">Reserver bord &rarr;</a>
+          <a href="#meny" class="btn-outline">Se menyen</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-visual-card">
+          <div class="glass">
+            <div class="glass-bowl"></div>
+            <div class="glass-stem"></div>
+            <div class="glass-base"></div>
+          </div>
+          <div class="hero-visual-tag">&mdash; Pinot fra Loire &middot; servert kj&oslash;lig</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- STRIP -->
+<div class="strip">
+  <div class="container">
+    <div class="strip-track">
+      <span>Naturvin</span>
+      <span class="dot"></span>
+      <span>Sm&aring;retter</span>
+      <span class="dot"></span>
+      <span>Sesongmeny</span>
+      <span class="dot"></span>
+      <span>Kveldsservering</span>
+      <span class="dot"></span>
+      <span>Onsdag&ndash;l&oslash;rdag</span>
+    </div>
+  </div>
+</div>
+
+<!-- MENY I UTDRAG -->
+<section class="section" id="meny">
+  <div class="container">
+    <div class="meny-head">
+      <div>
+        <div class="section-eyebrow">[ 01 &middot; Meny i utdrag ]</div>
+        <h2>Korte menyer, lange kvelder. <em>Det vi har n&aring; &mdash; det skiftes.</em></h2>
+      </div>
+      <p class="lead">Menyen endres hver tredje uke. Vi tar inn det som er friskt fra J&aelig;ren og det som passer til vinene vi har p&aring; glass. Vi serverer to faste retter og fire som roterer.</p>
+    </div>
+
+    <div class="dishes">
+      <article class="dish">
+        <div class="dish-tag">[ 01 &middot; Smakebit ]</div>
+        <div class="dish-row">
+          <h3>Marinert sild p&aring; rugkn&aelig;kk</h3>
+          <span class="dish-price">95 kr</span>
+        </div>
+        <p>Sild fra Sirevaag, syltet i eddik og einer. Servert p&aring; rugkn&aelig;kk med cr&egrave;me fra Voll g&aring;rd og dill fra hagen v&aring;r.</p>
+        <div class="dish-meta">[ Fast p&aring; menyen ]</div>
+      </article>
+
+      <article class="dish">
+        <div class="dish-tag">[ 02 &middot; Liten rett ]</div>
+        <div class="dish-row">
+          <h3>Bakt sellerirot, brunet sm&oslash;r</h3>
+          <span class="dish-price">145 kr</span>
+        </div>
+        <p>Sellerirot bakt langsomt i sm&oslash;r og timian, toppet med hasselnotter og en skje fermentert rips. Vegetarisk.</p>
+        <div class="dish-meta">[ Sesong &middot; til juni ]</div>
+      </article>
+
+      <article class="dish">
+        <div class="dish-tag">[ 03 &middot; Hovedrett ]</div>
+        <div class="dish-row">
+          <h3>Lammeskank fra Orre</h3>
+          <span class="dish-price">285 kr</span>
+        </div>
+        <p>Lam fra Tone p&aring; Orre, braisert seks timer i r&oslash;dvin og l&oslash;k. Servert med polenta og en skje brunet sm&oslash;r p&aring; toppen.</p>
+        <div class="dish-meta">[ Sesong &middot; v&aring;rmeny ]</div>
+      </article>
+
+      <article class="dish">
+        <div class="dish-tag">[ 04 &middot; Hovedrett ]</div>
+        <div class="dish-row">
+          <h3>Hel grillet kveite</h3>
+          <span class="dish-price">320 kr</span>
+        </div>
+        <p>Kveite fra Karm&oslash;y, grillet hel over bjerkeved og servert med beurre blanc og syltede sj&oslash;belter. For to personer.</p>
+        <div class="dish-meta">[ Bestilles dagen f&oslash;r ]</div>
+      </article>
+
+      <article class="dish">
+        <div class="dish-tag">[ 05 &middot; Ost ]</div>
+        <div class="dish-row">
+          <h3>Tre oster fra J&aelig;ren</h3>
+          <span class="dish-price">155 kr</span>
+        </div>
+        <p>Tre oster fra Stavanger Ysteri og Voll g&aring;rd. Servert med valn&oslash;ttebr&oslash;d, honning fra Klepp og syltede p&aelig;rer.</p>
+        <div class="dish-meta">[ Fast p&aring; menyen ]</div>
+      </article>
+
+      <article class="dish">
+        <div class="dish-tag">[ 06 &middot; S&oslash;tt ]</div>
+        <div class="dish-row">
+          <h3>Br&aelig;ndt fl&oslash;te, havtorn</h3>
+          <span class="dish-price">115 kr</span>
+        </div>
+        <p>Tykk fl&oslash;te br&aelig;ndt i pannen, kj&oslash;lt ned og servert med havtorn fra Jadarhus og en skje r&aring;sukker.</p>
+        <div class="dish-meta">[ Sesong &middot; april&ndash;juni ]</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- OM VINDFANGET -->
+<section class="section om" id="om">
+  <div class="container">
+    <div class="om-grid">
+      <div class="om-visual">
+        <div class="om-visual-inner">
+          <div class="om-visual-mark">V</div>
+          <div class="om-visual-name">Vindfanget</div>
+          <div class="om-visual-meta">Bryne &middot; Siden 2022</div>
+        </div>
+      </div>
+
+      <div class="om-body">
+        <div class="section-eyebrow">[ 02 &middot; Om Vindfanget ]</div>
+        <h2>Vi &aring;pnet d&oslash;ren en onsdag i september 2022.</h2>
+        <p>Cathrine driver baren. Per er kj&oslash;kkensjef. Vi hadde jobbet sammen p&aring; et restaurantkj&oslash;kken i Stavanger i seks &aring;r, og s&aring; en kveld bestemte vi oss for &aring; gj&oslash;re det vi snakket om &mdash; et lite sted p&aring; J&aelig;ren der vinen er hovedsaken og maten f&oslash;lger.</p>
+        <p>Vi har tjueto plasser. Vi tar imot to seatings p&aring; kveldene, og vi holder stengt s&oslash;ndag til tirsdag. Det er ikke fordi vi er late. Det er fordi en god kveldsservering krever at b&aring;de Per og Cathrine sover normalt to netter i strekk.</p>
+        <p class="om-signature">&mdash; Cathrine Try &amp; Per Hovland</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VINKART -->
+<section class="section vin" id="vin">
+  <div class="container">
+    <div class="section-eyebrow">[ 03 &middot; Vinkart ]</div>
+    <h2>Naturvin, lavt inntak av svovel. <em>Sm&aring; produsenter vi tror p&aring;.</em></h2>
+    <p class="lead">Vi har tretti viner p&aring; flaske og &aring;tte p&aring; glass. Det meste er fransk og italiensk &mdash; med innslag fra Slovenia og &Oslash;sterrike n&aring;r vi finner noe vi liker.</p>
+
+    <div class="vin-grid">
+      <div class="vin-note">
+        <h4>P&aring; glass denne uken</h4>
+        <p>&Aring;tte glass roterer hver onsdag. Vi serverer alle viner i hele Zalto-glass &mdash; ogs&aring; den rimeligste. Be servit&oslash;ren om en smak f&oslash;r du bestemmer deg.</p>
+      </div>
+
+      <ul class="vin-list">
+        <li>
+          <div>
+            <span class="name">Domaine Mosse &middot; Anjou Blanc</span>
+            <span class="meta">Chenin Blanc &middot; Loire, Frankrike</span>
+          </div>
+          <span class="price">145&thinsp;kr / glass</span>
+        </li>
+        <li>
+          <div>
+            <span class="name">Frank Cornelissen &middot; Susucaru</span>
+            <span class="meta">Nerello Mascalese &middot; Etna, Sicilia</span>
+          </div>
+          <span class="price">155&thinsp;kr / glass</span>
+        </li>
+        <li>
+          <div>
+            <span class="name">Radikon &middot; Slatnik</span>
+            <span class="meta">Friulano &middot; Oslavia, Friuli</span>
+          </div>
+          <span class="price">175&thinsp;kr / glass</span>
+        </li>
+        <li>
+          <div>
+            <span class="name">Gut Oggau &middot; Theodora</span>
+            <span class="meta">Gr&uuml;ner / Welschriesling &middot; Burgenland</span>
+          </div>
+          <span class="price">165&thinsp;kr / glass</span>
+        </li>
+        <li>
+          <div>
+            <span class="name">Marto &middot; Pet-nat Riesling</span>
+            <span class="meta">Riesling &middot; Rheinhessen, Tyskland</span>
+          </div>
+          <span class="price">135&thinsp;kr / glass</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- RESERVER BORD -->
+<section class="section" id="reserver">
+  <div class="container">
+    <div class="section-eyebrow">[ 04 &middot; Reserver bord ]</div>
+    <h2>Tjueto plasser. <em>Vi anbefaler &aring; reservere.</em></h2>
+
+    <div class="reserve-grid">
+      <div class="reserve-info">
+        <p>Vi tar imot to seatings hver kveld &mdash; klokken 17 og klokken 20. Sm&aring; selskap (to til seks) kan reserveres p&aring; skjema. St&oslash;rre selskap eller hele lokalet, ring Cathrine direkte.</p>
+        <p>Vi serverer ikke etter klokken 22. Siste bestilling i baren er 22.30.</p>
+        <p><strong>Ring oss:</strong></p>
+        <a href="tel:+4751000000" class="phone">+47&thinsp;51&thinsp;00&thinsp;00&thinsp;00</a>
+      </div>
+
+      <form class="reserve-form" onsubmit="event.preventDefault();" novalidate>
+        <h3>Reservasjon p&aring; skjema</h3>
+
+        <div class="field">
+          <label for="navn">Navn</label>
+          <input type="text" id="navn" name="navn" placeholder="Fornavn og etternavn" autocomplete="name">
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="antall">Antall</label>
+            <select id="antall" name="antall">
+              <option>2 personer</option>
+              <option>3 personer</option>
+              <option>4 personer</option>
+              <option>5 personer</option>
+              <option>6 personer</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="klokken">Klokken</label>
+            <select id="klokken" name="klokken">
+              <option>17.00</option>
+              <option>20.00</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="dato">Dato</label>
+            <input type="date" id="dato" name="dato">
+          </div>
+          <div class="field">
+            <label for="telefon">Telefon</label>
+            <input type="tel" id="telefon" name="telefon" placeholder="+47" autocomplete="tel">
+          </div>
+        </div>
+
+        <button type="submit">Send reservasjon &rarr;</button>
+        <p class="note">Du f&aring;r bekreftelse p&aring; SMS innen en time.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FINN OSS -->
+<section class="section" id="finn" style="background: var(--vf-paper);">
+  <div class="container">
+    <div class="section-eyebrow">[ 05 &middot; Finn oss ]</div>
+    <h2>Storgata 18, Bryne. <em>To kvartal fra stasjonen.</em></h2>
+
+    <div class="finn-grid" style="margin-top: 48px;">
+      <div class="finn-info">
+        <h3>&Aring;pningstider</h3>
+        <ul class="finn-hours">
+          <li><span>Onsdag &ndash; Torsdag</span><span>17&ndash;22</span></li>
+          <li><span>Fredag</span><span>17&ndash;23</span></li>
+          <li><span>L&oslash;rdag</span><span>16&ndash;23</span></li>
+          <li><span>S&oslash;n &ndash; Tir</span><span>Stengt</span></li>
+        </ul>
+        <p class="finn-address">
+          <strong>Adresse</strong>
+          Storgata 18<br>
+          4340 Bryne<br>
+          (to kvartal fra Bryne stasjon)
+        </p>
+      </div>
+
+      <div class="finn-map" role="img" aria-label="Stilisert kart som viser Vindfangets posisjon p&aring; Bryne">
+        <div class="finn-map-pin"></div>
+        <span class="finn-map-meta">[ Konsept-kart &middot; Bryne ]</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <a href="#" class="brand">
+          <span class="brand-mark">V</span>
+          Vindfanget
+        </a>
+        <p class="footer-tagline">Lite bistro og vinbar p&aring; Bryne. Naturvin og sesongmat siden 2022.</p>
+      </div>
+      <div>
+        <h4>Finn oss</h4>
+        <ul>
+          <li>Storgata 18</li>
+          <li>4340 Bryne</li>
+          <li>On&ndash;l&oslash; &middot; fra kl. 17</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <ul>
+          <li>bord@vindfanget.no</li>
+          <li>+47 51 00 00 00</li>
+          <li>@vindfanget.bryne</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>&copy; 2025 Vindfanget Bistro &amp; Vinbar (fiktivt konsept)</div>
+      <div>Konsept-onepager bygget av <a href="/">Folkestad Designs</a></div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

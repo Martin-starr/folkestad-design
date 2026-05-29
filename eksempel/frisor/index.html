@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saltkroken Frisør &mdash; Konsept fra Folkestad Designs</title>
+<meta name="description" content="Konsept-onepager bygget av Folkestad Designs. En fiktiv frisørsalong på Jæren, brukt for å vise hva en eksempel-onepager kan inneholde av innhold, design og mobil.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="canonical" href="https://folkestad.design/eksempel/frisor">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* =====================================================================
+   SALTKROKEN FRISØR — Konsept
+   Dusty-rose + deep mauve palette, Cormorant Garamond + Inter body.
+   Built as a one-page demo for Folkestad Designs.
+   ===================================================================== */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --sk-cream: #F5EDE8;        /* warm cream surface */
+  --sk-blush: #E8C5BC;        /* dusty rose */
+  --sk-blush-soft: #F2D8D0;   /* lighter rose */
+  --sk-mauve: #4A2C2A;        /* deep mauve ink */
+  --sk-mauve-soft: #6B3F3C;   /* mid mauve */
+  --sk-brown: #2D1B1A;        /* near-black brown */
+  --sk-muted: #8A6C68;        /* muted warm grey */
+  --sk-border: #E6D2CB;       /* hairline */
+  --sk-white: #FBF6F3;        /* off-white */
+  --sk-gold: #B08968;         /* warm beige accent for prices */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: var(--sk-cream);
+  color: var(--sk-mauve);
+  line-height: 1.65;
+  font-weight: 400;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, svg { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+@media (max-width: 700px) {
+  .container { padding: 0 22px; }
+}
+
+/* ----- KONSEPT-banner ----- */
+.concept-banner {
+  background: var(--sk-mauve);
+  color: var(--sk-cream);
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  padding: 10px 16px;
+}
+.concept-banner a {
+  color: var(--sk-blush);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* ----- Nav ----- */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(245, 237, 232, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--sk-border);
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 40px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.brand {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  font-size: 24px;
+  letter-spacing: 0.02em;
+  color: var(--sk-mauve);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.brand-mark {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--sk-blush);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  font-style: italic;
+  font-size: 18px;
+  color: var(--sk-mauve);
+}
+.nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--sk-mauve);
+  transition: color 0.3s var(--ease);
+}
+.nav-links a:hover { color: var(--sk-mauve-soft); }
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  background: var(--sk-mauve);
+  color: var(--sk-cream);
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  min-height: 40px;
+  transition: background 0.3s var(--ease);
+}
+.nav-cta:hover { background: var(--sk-brown); }
+@media (max-width: 760px) {
+  .nav-inner { padding: 14px 22px; }
+  .nav-links { display: none; }
+  .brand { font-size: 22px; }
+}
+
+/* ----- Hero ----- */
+.hero {
+  padding: 80px 0 100px;
+  position: relative;
+  overflow: hidden;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: 64px;
+  align-items: center;
+}
+@media (max-width: 880px) {
+  .hero { padding: 48px 0 56px; }
+  .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+}
+
+.eyebrow {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--sk-mauve-soft);
+  margin-bottom: 24px;
+  display: inline-block;
+}
+
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(40px, 5.6vw, 74px);
+  font-weight: 500;
+  line-height: 1.04;
+  letter-spacing: -0.01em;
+  color: var(--sk-mauve);
+  margin-bottom: 24px;
+}
+.hero h1 em {
+  font-style: italic;
+  font-weight: 500;
+  color: var(--sk-mauve-soft);
+}
+
+.hero-sub {
+  font-size: clamp(16px, 1.2vw, 18px);
+  color: var(--sk-muted);
+  max-width: 480px;
+  margin-bottom: 36px;
+  line-height: 1.7;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.btn-primary,
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 26px;
+  border-radius: 999px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  min-height: 48px;
+  transition: all 0.3s var(--ease);
+}
+.btn-primary {
+  background: var(--sk-mauve);
+  color: var(--sk-cream);
+}
+.btn-primary:hover {
+  background: var(--sk-brown);
+  transform: translateY(-1px);
+}
+.btn-outline {
+  background: transparent;
+  color: var(--sk-mauve);
+  border: 1.5px solid var(--sk-mauve);
+}
+.btn-outline:hover {
+  background: var(--sk-mauve);
+  color: var(--sk-cream);
+}
+
+/* Hero visual — stylized scissors + rose-tinted card */
+.hero-visual {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  max-width: 420px;
+  margin-left: auto;
+}
+@media (max-width: 880px) { .hero-visual { margin: 0 auto; } }
+.hero-visual-card {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, var(--sk-blush) 0%, var(--sk-blush-soft) 100%);
+  border-radius: 24px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-visual-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 28% 30%, rgba(251, 246, 243, 0.55) 0%, transparent 55%),
+    radial-gradient(circle at 75% 75%, rgba(74, 44, 42, 0.10) 0%, transparent 55%);
+}
+.hero-scissors {
+  position: relative;
+  width: 56%;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-scissors svg {
+  width: 100%;
+  height: 100%;
+}
+.hero-visual-tag {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 15px;
+  color: var(--sk-mauve);
+  background: rgba(251, 246, 243, 0.92);
+  padding: 6px 14px;
+  border-radius: 999px;
+}
+
+/* ----- Trust strip ----- */
+.trust {
+  background: var(--sk-white);
+  border-top: 1px solid var(--sk-border);
+  border-bottom: 1px solid var(--sk-border);
+  padding: 26px 0;
+  overflow: hidden;
+}
+.trust-track {
+  display: flex;
+  gap: 56px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: clamp(16px, 1.6vw, 21px);
+  font-weight: 500;
+  color: var(--sk-mauve);
+}
+.trust-track span { display: inline-flex; align-items: center; }
+.trust-track .dot {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--sk-blush);
+  margin-left: 56px;
+}
+@media (max-width: 700px) {
+  .trust-track .dot { display: none; }
+  .trust-track { gap: 14px 26px; }
+}
+
+/* ----- Sections (shared) ----- */
+.section {
+  padding: 96px 0;
+}
+@media (max-width: 700px) {
+  .section { padding: 68px 0; }
+}
+
+.section-eyebrow {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--sk-mauve-soft);
+  margin-bottom: 18px;
+}
+.section h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(32px, 4.2vw, 54px);
+  font-weight: 500;
+  line-height: 1.06;
+  letter-spacing: -0.01em;
+  color: var(--sk-mauve);
+  margin-bottom: 24px;
+}
+.section h2 em {
+  font-style: italic;
+  font-weight: 500;
+  color: var(--sk-mauve-soft);
+}
+.section .lead {
+  font-size: clamp(16px, 1.2vw, 18px);
+  color: var(--sk-muted);
+  max-width: 580px;
+  line-height: 1.7;
+}
+
+/* ----- Hva vi gjør ----- */
+.services-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 48px;
+  align-items: end;
+  margin-bottom: 56px;
+}
+@media (max-width: 880px) {
+  .services-head { grid-template-columns: 1fr; gap: 22px; margin-bottom: 36px; }
+}
+
+.services {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+@media (max-width: 880px) {
+  .services { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+}
+@media (max-width: 540px) {
+  .services { grid-template-columns: 1fr; gap: 14px; }
+}
+
+.service {
+  background: var(--sk-white);
+  border: 1px solid var(--sk-border);
+  border-radius: 14px;
+  padding: 26px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: border-color 0.3s var(--ease), transform 0.3s var(--ease);
+  min-height: 180px;
+}
+.service:hover {
+  border-color: var(--sk-blush);
+  transform: translateY(-2px);
+}
+.service-tag {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--sk-mauve-soft);
+}
+.service h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  color: var(--sk-mauve);
+  line-height: 1.15;
+}
+.service p {
+  font-size: 14.5px;
+  color: var(--sk-muted);
+  line-height: 1.6;
+  flex: 1;
+}
+.service-price {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: 600;
+  font-style: italic;
+  color: var(--sk-gold);
+  margin-top: 6px;
+}
+
+/* ----- Ring oss strip ----- */
+.ring {
+  background: var(--sk-mauve);
+  color: var(--sk-cream);
+  border-radius: 20px;
+  padding: 56px 48px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 40px;
+  align-items: center;
+  margin-top: 8px;
+}
+@media (max-width: 880px) {
+  .ring { grid-template-columns: 1fr; padding: 40px 28px; gap: 28px; text-align: left; }
+}
+.ring-eyebrow {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--sk-blush);
+  margin-bottom: 14px;
+}
+.ring h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(28px, 3vw, 38px);
+  font-weight: 500;
+  line-height: 1.1;
+  color: var(--sk-cream);
+  margin-bottom: 10px;
+}
+.ring h3 em { font-style: italic; color: var(--sk-blush); }
+.ring p {
+  font-size: 15.5px;
+  color: rgba(245, 237, 232, 0.78);
+  line-height: 1.65;
+  max-width: 440px;
+}
+.ring-cta {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-start;
+}
+@media (min-width: 881px) { .ring-cta { align-items: flex-end; } }
+.ring-phone {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(28px, 3.4vw, 40px);
+  font-weight: 600;
+  color: var(--sk-cream);
+  letter-spacing: -0.005em;
+  font-variant-numeric: tabular-nums;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  transition: color 0.3s var(--ease);
+}
+.ring-phone:hover { color: var(--sk-blush); }
+.ring-note {
+  font-family: 'Inter', sans-serif;
+  font-size: 12.5px;
+  color: rgba(245, 237, 232, 0.65);
+  letter-spacing: 0.04em;
+}
+
+/* ----- Om Saltkroken ----- */
+.om {
+  background: var(--sk-white);
+}
+.om-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+  gap: 64px;
+  align-items: center;
+}
+@media (max-width: 880px) {
+  .om-grid { grid-template-columns: 1fr; gap: 40px; }
+}
+
+.om-visual {
+  aspect-ratio: 4 / 5;
+  background: linear-gradient(180deg, var(--sk-blush-soft) 0%, var(--sk-cream) 100%);
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.om-visual::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(232, 197, 188, 0.5) 0%, transparent 55%),
+    radial-gradient(circle at 75% 75%, rgba(74, 44, 42, 0.06) 0%, transparent 55%);
+}
+.om-visual-card {
+  position: relative;
+  background: var(--sk-cream);
+  padding: 36px;
+  border-radius: 14px;
+  box-shadow: 0 12px 32px rgba(74, 44, 42, 0.10);
+  text-align: center;
+  max-width: 260px;
+}
+.om-visual-card-mark {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--sk-blush);
+  margin: 0 auto 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  font-style: italic;
+  font-size: 32px;
+  color: var(--sk-mauve);
+}
+.om-visual-card-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--sk-mauve);
+  margin-bottom: 4px;
+}
+.om-visual-card-meta {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--sk-muted);
+}
+
+.om-body p {
+  font-size: 17px;
+  color: var(--sk-mauve);
+  line-height: 1.75;
+  margin-bottom: 18px;
+}
+.om-body p:first-of-type::first-letter {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 60px;
+  font-weight: 600;
+  float: left;
+  line-height: 0.9;
+  margin: 6px 12px 0 0;
+  color: var(--sk-blush);
+}
+.om-signature {
+  margin-top: 28px;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 19px;
+  color: var(--sk-mauve);
+}
+
+/* ----- Besøk oss ----- */
+.besok-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+  gap: 40px;
+  align-items: stretch;
+}
+@media (max-width: 880px) {
+  .besok-grid { grid-template-columns: 1fr; gap: 28px; }
+}
+
+.besok-info {
+  background: var(--sk-mauve);
+  color: var(--sk-cream);
+  padding: 44px;
+  border-radius: 16px;
+}
+@media (max-width: 700px) {
+  .besok-info { padding: 32px 26px; }
+}
+.besok-info h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 22px;
+  letter-spacing: -0.005em;
+  color: var(--sk-cream);
+}
+.besok-hours {
+  list-style: none;
+  margin: 0 0 32px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.besok-hours li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(245, 237, 232, 0.14);
+  font-size: 15px;
+}
+.besok-hours li span:first-child {
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+.besok-hours li span:last-child {
+  color: var(--sk-blush);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+.besok-address {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 17px;
+  color: var(--sk-cream);
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+.besok-address strong {
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  color: var(--sk-blush);
+  margin-bottom: 6px;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.besok-map {
+  background: var(--sk-blush-soft);
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.besok-map::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(74, 44, 42, 0.06) 39px, rgba(74, 44, 42, 0.06) 40px),
+    repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(74, 44, 42, 0.06) 39px, rgba(74, 44, 42, 0.06) 40px);
+}
+.besok-map-pin {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--sk-mauve);
+  border: 4px solid var(--sk-cream);
+  box-shadow: 0 8px 20px rgba(74, 44, 42, 0.22);
+  z-index: 1;
+}
+.besok-map-pin::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 12px solid var(--sk-mauve);
+}
+.besok-map-meta {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--sk-mauve);
+  background: rgba(251, 246, 243, 0.92);
+  padding: 6px 12px;
+  border-radius: 999px;
+}
+
+/* ----- Footer ----- */
+.footer {
+  background: var(--sk-mauve);
+  color: var(--sk-cream);
+  padding: 64px 0 32px;
+  margin-top: 80px;
+}
+.footer-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 48px;
+}
+@media (max-width: 700px) {
+  .footer-top { grid-template-columns: 1fr; gap: 28px; margin-bottom: 32px; }
+}
+.footer h4 {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--sk-blush);
+  margin-bottom: 14px;
+}
+.footer-tagline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 21px;
+  font-style: italic;
+  color: var(--sk-cream);
+  margin-top: 12px;
+  max-width: 340px;
+  line-height: 1.5;
+}
+.footer ul { list-style: none; margin: 0; padding: 0; }
+.footer ul li { padding: 6px 0; font-size: 14px; color: rgba(245, 237, 232, 0.78); }
+.footer-bottom {
+  padding-top: 28px;
+  border-top: 1px solid rgba(245, 237, 232, 0.14);
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: 12px;
+  color: rgba(245, 237, 232, 0.55);
+}
+.footer-bottom a {
+  color: var(--sk-blush);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+</style>
+</head>
+<body>
+
+<!-- Konsept-banner: explicit "not a real salon" -->
+<div class="concept-banner">
+  Fiktivt konsept &middot; Bygget av <a href="/">Folkestad Designs</a> som eksempel-onepager
+</div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="brand">
+      <span class="brand-mark">S</span>
+      Saltkroken
+    </a>
+    <ul class="nav-links">
+      <li><a href="#tjenester">Hva vi gj&oslash;r</a></li>
+      <li><a href="#om">Om oss</a></li>
+      <li><a href="#besok">Bes&oslash;k oss</a></li>
+    </ul>
+    <a href="tel:+4751770800" class="nav-cta">Ring 51&nbsp;77&nbsp;08&nbsp;00</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow">[ Bryne &middot; Siden 2011 ]</div>
+        <h1>Klipp og farge <em>p&aring; J&aelig;ren-vis.</em></h1>
+        <p class="hero-sub">Liten salong midt i Bryne sentrum. Hilde har klippet J&aelig;ren siden 2008, Tone kom til i 2017. Vi tar tiden det tar, og vi tar telefonen n&aring;r du ringer.</p>
+        <div class="hero-cta">
+          <a href="tel:+4751770800" class="btn-primary">Ring 51&nbsp;77&nbsp;08&nbsp;00</a>
+          <a href="#tjenester" class="btn-outline">Se priser</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-visual-card">
+          <div class="hero-scissors" aria-hidden="true">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <!-- Stylized open scissors -->
+              <circle cx="60" cy="60" r="22" fill="none" stroke="#4A2C2A" stroke-width="4"/>
+              <circle cx="60" cy="140" r="22" fill="none" stroke="#4A2C2A" stroke-width="4"/>
+              <line x1="76" y1="76" x2="170" y2="115" stroke="#4A2C2A" stroke-width="4" stroke-linecap="round"/>
+              <line x1="76" y1="124" x2="170" y2="85" stroke="#4A2C2A" stroke-width="4" stroke-linecap="round"/>
+              <circle cx="170" cy="100" r="5" fill="#4A2C2A"/>
+            </svg>
+          </div>
+          <div class="hero-visual-tag">&mdash; Hilde &amp; Tone &middot; klippetid</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- TRUST -->
+<div class="trust">
+  <div class="container">
+    <div class="trust-track">
+      <span>Klipp</span>
+      <span class="dot"></span>
+      <span>Farge</span>
+      <span class="dot"></span>
+      <span>Balayage</span>
+      <span class="dot"></span>
+      <span>Skjegg</span>
+      <span class="dot"></span>
+      <span>&Aring;pent ti&ndash;l&oslash;</span>
+    </div>
+  </div>
+</div>
+
+<!-- HVA VI GJØR -->
+<section class="section" id="tjenester">
+  <div class="container">
+    <div class="services-head">
+      <div>
+        <div class="section-eyebrow">[ 01 &middot; Hva vi gj&oslash;r ]</div>
+        <h2>Seks tjenester. <em>Faste priser, ingen overraskelser.</em></h2>
+      </div>
+      <p class="lead">Vi bruker fargene fra Wella og Maria Nila. Klippet tar tiden det skal &mdash; en time for dame, 45 minutter for herre. Du f&aring;r kaffe mens du venter.</p>
+    </div>
+
+    <div class="services">
+      <article class="service">
+        <div class="service-tag">[ 01 &middot; Klipp ]</div>
+        <h3>Klipp dame</h3>
+        <p>Vask, klipp og f&oslash;n. Vi tar oss tid til &aring; se p&aring; hvordan h&aring;ret faller f&oslash;r vi begynner.</p>
+        <div class="service-price">fra 750&nbsp;kr</div>
+      </article>
+
+      <article class="service">
+        <div class="service-tag">[ 02 &middot; Klipp ]</div>
+        <h3>Klipp herre</h3>
+        <p>Saks eller maskin, slik du vil ha det. Inkluderer vask og kort styling.</p>
+        <div class="service-price">fra 490&nbsp;kr</div>
+      </article>
+
+      <article class="service">
+        <div class="service-tag">[ 03 &middot; Klipp ]</div>
+        <h3>Klipp og skjegg</h3>
+        <p>Hele pakka for herre &mdash; klipp, skjeggtrim og varmt h&aring;ndkle. Tar en time.</p>
+        <div class="service-price">fra 640&nbsp;kr</div>
+      </article>
+
+      <article class="service">
+        <div class="service-tag">[ 04 &middot; Farge ]</div>
+        <h3>Farge eller striper</h3>
+        <p>Helfarge eller folier. Vi bruker Wella Koleston og fargen sitter i 6&ndash;8 uker.</p>
+        <div class="service-price">fra 1&thinsp;350&nbsp;kr</div>
+      </article>
+
+      <article class="service">
+        <div class="service-tag">[ 05 &middot; Farge ]</div>
+        <h3>Balayage</h3>
+        <p>H&aring;ndmalte striper for et naturlig avbleket uttrykk. Tar tre timer, varer i fire m&aring;neder.</p>
+        <div class="service-price">fra 1&thinsp;850&nbsp;kr</div>
+      </article>
+
+      <article class="service">
+        <div class="service-tag">[ 06 &middot; Barn ]</div>
+        <h3>Klipp barn</h3>
+        <p>Opp til 12 &aring;r. Vi har bok og tegnesaker, og vi blir ikke stresset av at de er stresset.</p>
+        <div class="service-price">fra 320&nbsp;kr</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- RING OSS -->
+<section class="section" style="padding-top: 0;">
+  <div class="container">
+    <div class="ring">
+      <div>
+        <div class="ring-eyebrow">[ 02 &middot; Bestill time ]</div>
+        <h3>Vi tar ikke <em>online booking.</em></h3>
+        <p>Bare ring oss. Vi svarer mellom 09 og 17 alle hverdager, og l&oslash;rdag mellom 10 og 14. Vi finner en tid som passer &mdash; vanligvis innen uken.</p>
+      </div>
+      <div class="ring-cta">
+        <a href="tel:+4751770800" class="ring-phone">
+          &#9742; 51&nbsp;77&nbsp;08&nbsp;00
+        </a>
+        <div class="ring-note">eller stikk innom &mdash; vi har som regel plass</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OM SALTKROKEN -->
+<section class="section om" id="om">
+  <div class="container">
+    <div class="om-grid">
+      <div class="om-visual">
+        <div class="om-visual-card">
+          <div class="om-visual-card-mark">H</div>
+          <div class="om-visual-card-name">Hilde</div>
+          <div class="om-visual-card-meta">Frisør &middot; Siden 2008</div>
+        </div>
+      </div>
+
+      <div class="om-body">
+        <div class="section-eyebrow">[ 03 &middot; Om Saltkroken ]</div>
+        <h2>Vi startet i en kjellerstue p&aring; Klepp.</h2>
+        <p>Saltkroken begynte ikke som en plan. Hilde hadde klippet venner og familie i flere &aring;r, og i 2011 leide hun et lite lokale i Storgata p&aring; Bryne. Det var &eacute;n stol, ett speil og en kaffetrakter. Tone kom til i 2017, og siden har vi v&aelig;rt to.</p>
+        <p>Vi tar inn f&aring; kunder om dagen. Det er fordi vi vil gj&oslash;re jobben skikkelig, ikke fordi vi er fancy. Du f&aring;r en time som er din time &mdash; ingen som klipper p&aring; tre stoler samtidig. Det blir litt dyrere, men det blir bedre.</p>
+        <p class="om-signature">&mdash; Hilde &amp; Tone, fris&oslash;rer</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BESØK OSS -->
+<section class="section" id="besok">
+  <div class="container">
+    <div class="section-eyebrow">[ 04 &middot; Finn oss ]</div>
+    <h2>Storgata 18, Bryne. <em>Like ved torget.</em></h2>
+
+    <div class="besok-grid" style="margin-top: 44px;">
+      <div class="besok-info">
+        <h3>&Aring;pningstider</h3>
+        <ul class="besok-hours">
+          <li><span>Tirsdag &ndash; Fredag</span><span>09&ndash;17</span></li>
+          <li><span>L&oslash;rdag</span><span>10&ndash;14</span></li>
+          <li><span>S&oslash;ndag &amp; mandag</span><span>Stengt</span></li>
+          <li><span>Telefon</span><span>51&nbsp;77&nbsp;08&nbsp;00</span></li>
+        </ul>
+        <p class="besok-address">
+          <strong>Adresse</strong>
+          Storgata 18<br>
+          4340 Bryne<br>
+          (inng&aring;ng fra torgsiden)
+        </p>
+      </div>
+
+      <div class="besok-map" role="img" aria-label="Stilisert kart som viser Saltkrokens posisjon ved torget i Bryne">
+        <div class="besok-map-pin"></div>
+        <span class="besok-map-meta">[ Konsept-kart &middot; Bryne sentrum ]</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <a href="#" class="brand" style="color: var(--sk-cream);">
+          <span class="brand-mark">S</span>
+          Saltkroken
+        </a>
+        <p class="footer-tagline">Liten fris&oslash;rsalong p&aring; Bryne. Hilde og Tone har klippet J&aelig;ren siden 2011.</p>
+      </div>
+      <div>
+        <h4>Finn oss</h4>
+        <ul>
+          <li>Storgata 18</li>
+          <li>4340 Bryne</li>
+          <li>&Aring;pent ti&ndash;l&oslash;</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <ul>
+          <li>51&nbsp;77&nbsp;08&nbsp;00</li>
+          <li>hei@saltkroken.no</li>
+          <li>@saltkroken.frisor</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>&copy; 2025 Saltkroken Fris&oslash;r (fiktivt konsept)</div>
+      <div>Konsept-onepager bygget av <a href="/" rel="noopener">Folkestad Designs</a></div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
