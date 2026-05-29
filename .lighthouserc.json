@@ -3,10 +3,10 @@
     "collect": {
       "url": [
         "https://folkestad.design/",
-        "https://folkestad.design/case/verminord",
-        "https://folkestad.design/case/ese-solution",
-        "https://folkestad.design/blogg",
-        "https://folkestad.design/blogg/byraa-vs-jaeren-designer"
+        "https://folkestad.design/case/verminord/",
+        "https://folkestad.design/case/ese-solution/",
+        "https://folkestad.design/blogg/",
+        "https://folkestad.design/blogg/byraa-vs-jaeren-designer/"
       ],
       "settings": {
         "preset": "desktop",
