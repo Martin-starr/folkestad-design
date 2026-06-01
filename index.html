@@ -331,6 +331,70 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   animation: fadeIn 0.8s var(--ease) 0.9s forwards;
 }
 
+/* ============================================
+   Trust strip — minimal "I bruk hos" band
+   ============================================ */
+.trust-strip {
+  background: var(--bg-primary);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 28px 0;
+}
+.trust-strip-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.trust-strip-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.trust-strip-marks {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+.trust-mark {
+  color: var(--text-primary);
+  opacity: 0.62;
+  transition: opacity 0.25s var(--ease), color 0.25s var(--ease);
+  letter-spacing: -0.005em;
+}
+.trust-mark:hover {
+  opacity: 1;
+  color: var(--accent);
+}
+.trust-mark-text {
+  font-size: 18px;
+  font-weight: 700;
+}
+.trust-mark-ese .trust-mark-text {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 600;
+  font-style: italic;
+}
+.trust-mark-vn .trust-mark-text {
+  letter-spacing: 0.18em;
+  font-weight: 700;
+}
+.trust-strip-divider {
+  display: inline-block;
+  width: 1px;
+  height: 16px;
+  background: var(--border-subtle);
+}
+@media (max-width: 540px) {
+  .trust-strip { padding: 22px 0; }
+  .trust-strip-inner { gap: 18px; flex-direction: column; }
+  .trust-strip-marks { gap: 20px; }
+  .trust-mark-text { font-size: 16px; }
+}
+
 .btn-primary {
   background: var(--accent);
   color: #FFFFFF;
@@ -349,6 +413,65 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   background: var(--accent-dark);
   transform: translateY(-2px);
   box-shadow: 0 12px 28px rgba(232, 90, 60, 0.35);
+}
+
+/* ============================================
+   Sticky CTA — appears after hero, hides at kontakt
+   ============================================ */
+.sticky-cta {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--bg-contrast);
+  color: #FFFFFF;
+  padding: 14px 24px;
+  z-index: 100;
+  transform: translateY(110%);
+  transition: transform 0.45s var(--ease);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  pointer-events: none;
+}
+.sticky-cta.visible {
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.sticky-cta-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.sticky-cta-msg {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.78);
+  letter-spacing: 0.01em;
+}
+.sticky-cta-btn {
+  background: var(--accent);
+  color: #FFFFFF;
+  padding: 11px 22px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  transition: background 0.3s var(--ease), transform 0.3s var(--ease);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.sticky-cta-btn:hover {
+  background: var(--accent-dark);
+  transform: translateY(-1px);
+}
+@media (max-width: 640px) {
+  .sticky-cta { padding: 12px 16px; }
+  .sticky-cta-msg { display: none; }
+  .sticky-cta-inner { justify-content: center; }
+  .sticky-cta-btn { width: 100%; justify-content: center; padding: 13px 22px; }
 }
 
 .btn-outline {
@@ -785,6 +908,14 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   display: inline-block;
 }
 
+.studies-foot-link {
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--accent);
+  font-weight: 600;
+  transition: color 0.2s var(--ease);
+}
+.studies-foot-link:hover { color: var(--accent); }
+
 @media (max-width: 600px) {
   .studies-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
   .study { padding: 10px; }
@@ -955,6 +1086,32 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
   opacity: 1;
   transform: translateX(0);
 }
+
+/* Compact deliverables list inside each bento card */
+.bento-deliverables {
+  list-style: none;
+  margin: 14px 0 18px;
+  padding: 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+.bento-deliverables li {
+  position: relative;
+  padding-left: 14px;
+  margin-bottom: 4px;
+}
+.bento-deliverables li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+.bento-deliverables li:last-child { margin-bottom: 0; }
 
 /* Mockup styles */
 .mock-laptop {
@@ -2842,6 +2999,22 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
   padding: 0 8px 28px 60px;
 }
 
+.faq-foot {
+  text-align: center;
+  margin: 56px auto 0;
+  font-size: 15px;
+  color: var(--text-muted);
+  letter-spacing: 0.005em;
+}
+.faq-foot-link {
+  color: var(--text-primary);
+  font-weight: 600;
+  border-bottom: 1px solid var(--accent);
+  transition: color 0.2s var(--ease);
+  margin-left: 6px;
+}
+.faq-foot-link:hover { color: var(--accent); }
+
 /* ============================================
    SECTION 11 — CONTACT (dark)
    ============================================ */
@@ -2929,7 +3102,7 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
 
 .footer-top {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
   gap: 40px;
   margin-bottom: 56px;
 }
@@ -3069,22 +3242,29 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
       </div>
     </div>
 
-    <!-- =======================================================
-         Hero testimonial — reusable pull-quote component
-         Slots: quote · author · company
-         Styled to match the Verminord founder-quote treatment.
-         ======================================================= -->
-    <figure class="pull-quote reveal" data-component="pull-quote">
-      <blockquote class="pull-quote-text">
-        &ldquo;I was pleased by how efficiently this project unfolded. Submitted requirements in the morning and received refined, enterprise-level designs by evening &mdash; work that rivals much higher-budget agency outputs.&rdquo;
-        <cite class="pull-quote-cite">
-          &mdash; <span class="pull-quote-author">Svein Folkestad</span>,
-          <span class="pull-quote-company">ESE Solution Norway</span>
-        </cite>
-      </blockquote>
-    </figure>
   </div>
 </header>
+
+<!-- ============================================
+     TRUST STRIP — I bruk hos
+     Two real wordmarks, no quotes, no claims.
+     ============================================ -->
+<section class="trust-strip reveal" aria-label="Brukt av disse bedriftene">
+  <div class="container">
+    <div class="trust-strip-inner">
+      <span class="trust-strip-label">I bruk hos</span>
+      <div class="trust-strip-marks">
+        <a href="/case/ese-solution" class="trust-mark trust-mark-ese">
+          <span class="trust-mark-text">ESE Solution</span>
+        </a>
+        <span class="trust-strip-divider" aria-hidden="true"></span>
+        <a href="/case/verminord" class="trust-mark trust-mark-vn">
+          <span class="trust-mark-text">VERMINORD</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ============================================
      01 KAPABILITETER
@@ -3125,8 +3305,13 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
           <div class="eyebrow">[ 01 ]</div>
           <h3>Nettsider</h3>
           <p class="desc">Raske sider som funker på mobil. Klar for Google. Ferdig på 7–14 dager.</p>
+          <ul class="bento-deliverables">
+            <li>Responsiv design — mobil og desktop</li>
+            <li>SEO, analytics og kontaktskjema</li>
+            <li>30 dager support etter lansering</li>
+          </ul>
           <div class="bento-platform">Du eier <strong>alle filene</strong> — ingen plattform-lås</div>
-          <div class="price">Fra 12 000 kr <span class="arrow">→</span></div>
+          <div class="price">Fra 12 000 kr</div>
         </div>
       </div>
 
@@ -3143,7 +3328,12 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
           <div class="eyebrow">[ 02 ]</div>
           <h3>Logo &amp; merkevare</h3>
           <p class="desc">Komplett identitet med wordmark, fargesystem og typografi. Bygget for å holde i ti år.</p>
-          <div class="price">Fra 8 000 kr <span class="arrow">→</span></div>
+          <ul class="bento-deliverables">
+            <li>Primær- og sekundær-wordmark</li>
+            <li>Fargesystem og typografi-pakke</li>
+            <li>Brand book PDF (12+ sider)</li>
+          </ul>
+          <div class="price">Fra 8 000 kr</div>
         </div>
       </div>
 
@@ -3176,7 +3366,12 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
           <div class="eyebrow">[ 03 ]</div>
           <h3>Visittkort</h3>
           <p class="desc">Trykt på 350g matt papir. Skal kjennes ekte i hånda.</p>
-          <div class="price">Fra 2 500 kr <span class="arrow">→</span></div>
+          <ul class="bento-deliverables">
+            <li>Front- og bakside-design</li>
+            <li>500 stk på 350g matt papir</li>
+            <li>Levert ferdig trykt</li>
+          </ul>
+          <div class="price">Fra 2 500 kr</div>
         </div>
       </div>
 
@@ -3198,7 +3393,12 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
           <div class="eyebrow">[ 04 ]</div>
           <h3>Trykksaker</h3>
           <p class="desc">Plakater, brosjyrer, menyer og skilt. Ferdig levert til din dør.</p>
-          <div class="price">Fra 3 500 kr <span class="arrow">→</span></div>
+          <ul class="bento-deliverables">
+            <li>Plakater, brosjyrer og menyer</li>
+            <li>Skilt og dekaler</li>
+            <li>Trykk og levering inkludert</li>
+          </ul>
+          <div class="price">Fra 3 500 kr</div>
         </div>
       </div>
 
@@ -3225,7 +3425,12 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
           <div class="eyebrow">[ 05 ]</div>
           <h3>Sosiale medier</h3>
           <p class="desc">Instagram-maler du bare fyller ut. Stopper aldri å se ut som <em>deg</em>.</p>
-          <div class="price">Fra 4 500 kr <span class="arrow">→</span></div>
+          <ul class="bento-deliverables">
+            <li>12 Instagram-maler (feed)</li>
+            <li>Story-templates</li>
+            <li>Caption-eksempler og hashtag-pakke</li>
+          </ul>
+          <div class="price">Fra 4 500 kr</div>
         </div>
       </div>
 
@@ -3260,7 +3465,12 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
           <div class="eyebrow">[ 06 ]</div>
           <h3>Dokumentasjon</h3>
           <p class="desc">SOPer, intern brand book og Mattilsynet-pakker. Bygget av en som har vært gjennom det.</p>
-          <div class="price">Fra 1 990 kr <span class="arrow">→</span></div>
+          <ul class="bento-deliverables">
+            <li>SOPer — skriveklare maler</li>
+            <li>Intern brand book</li>
+            <li>Mattilsynet-pakker og datablad</li>
+          </ul>
+          <div class="price">Fra 1 990 kr</div>
         </div>
       </div>
     </div>
@@ -3275,7 +3485,7 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
     <div class="section-head reveal">
       <div class="eyebrow accent">[ 02 / Studier ]</div>
       <h2>Levert. Bygget.<br>Eller eid selv.</h2>
-      <p class="lead">To leverte klienter og tre fiktive konsepter — bygget for å vise hva en komplett pakke faktisk inneholder. Først ute: <em>ESE Solution</em> — min første ekte kunde. Resten finner du i biblioteket lenger ned.</p>
+      <p class="lead">To leverte klienter — <em>ESE Solution</em>, min første eksterne kunde, og <em>Verminord</em>, mitt eget firma. Ferdige konsept-demoer finner du i biblioteket lenger ned.</p>
     </div>
 
     <!-- Featured case: first real client -->
@@ -3334,72 +3544,6 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
       </div>
     </a>
 
-    <div class="cases reveal">
-      <a href="/eksempel/onepager" class="case">
-        <div class="case-cover case-cover-a">
-          <div class="case-cover-phone">
-            <div class="case-cover-phone-screen">
-              <div class="case-cover-phone-logo">Solhuset</div>
-              <div class="case-cover-phone-bar"></div>
-              <div class="case-cover-phone-block"></div>
-            </div>
-          </div>
-        </div>
-        <div class="case-body">
-          <div class="case-tags">Konsept &middot; Onepager &middot; Bakeri + Caf&eacute;</div>
-          <h3>Solhuset Bakeri &amp; Caf&eacute;</h3>
-          <p class="case-sub">Et fiktivt l&aring;v-aktig bakeri p&aring; J&aelig;ren. Komplett onepager bygd for &aring; vise hva 12k-pakken faktisk leverer &mdash; design, kopi, mobil.</p>
-          <span class="case-link">Se konseptet &rarr;</span>
-        </div>
-      </a>
-
-      <a href="#kvernhuset" class="case">
-        <div class="case-cover case-cover-b">
-          <div class="case-cover-brandbook">
-            <div class="case-cover-brandbook-title">KVERNHUSET</div>
-            <div class="case-cover-brandbook-swatches">
-              <div class="case-cover-brandbook-swatch" style="background: #4A4A4A"></div>
-              <div class="case-cover-brandbook-swatch" style="background: #D4A65A"></div>
-              <div class="case-cover-brandbook-swatch" style="background: #FAF7F0"></div>
-              <div class="case-cover-brandbook-swatch" style="background: #B87333"></div>
-              <div class="case-cover-brandbook-swatch" style="background: #302817"></div>
-            </div>
-          </div>
-        </div>
-        <div class="case-body">
-          <div class="case-tags">Konsept &middot; Komplett merkevare &middot; 7 dager</div>
-          <h3>Kvernhuset Kaf&eacute;</h3>
-          <p class="case-sub">Et fiktivt Klepp-bakeri. Jeg bygde hele merkevaren p&aring; 7 dager for &aring; vise hva pakken faktisk inneholder.</p>
-          <span class="case-link">Les hele studien &rarr;</span>
-        </div>
-      </a>
-
-      <a href="/eksempel/femsider" class="case">
-        <div class="case-cover case-cover-c">
-          <div class="case-cover-docs">
-            <div class="case-cover-doc d1">
-              <div class="case-cover-doc-bar accent"></div>
-              <div class="case-cover-doc-bar"></div>
-              <div class="case-cover-doc-bar short"></div>
-              <div class="case-cover-doc-bar"></div>
-              <div class="case-cover-doc-bar short"></div>
-            </div>
-            <div class="case-cover-doc d2">
-              <div class="case-cover-doc-bar accent"></div>
-              <div class="case-cover-doc-bar"></div>
-              <div class="case-cover-doc-bar short"></div>
-              <div class="case-cover-doc-bar"></div>
-            </div>
-          </div>
-        </div>
-        <div class="case-body">
-          <div class="case-tags">Konsept &middot; Fem sider &middot; Byggfirma</div>
-          <h3>Strandhus Bygg</h3>
-          <p class="case-sub">Et fiktivt byggfirma. Komplett fem-siders nettside med hjem, om, tjenester, prosjekter og kontakt &mdash; viser hva 18&ndash;25k-pakken inkluderer.</p>
-          <span class="case-link">Se konseptet &rarr;</span>
-        </div>
-      </a>
-    </div>
   </div>
 </section>
 
@@ -3414,12 +3558,457 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
          /eksempel/{onepager,femsider,frisor,bilverksted,bistro}
      No real prospect names appear here — prospect lists stay private.
      ============================================ -->
+<!-- ============================================================
+     SECTION 09 — OM MARTIN
+     Editorial 2-column profile. Drops into folkestad-designs page
+     between cream/white sections. Uses parent --bg-surface (white)
+     so it contrasts with surrounding cream blocks.
+     ============================================================ -->
+
+<style>
+/* ============================================================
+   OM MARTIN — scoped styles (om-* prefix)
+   ============================================================ */
+
+#om-martin {
+  background: var(--bg-surface);
+  position: relative;
+  overflow: hidden;
+}
+
+#om-martin::before {
+  content: '';
+  position: absolute;
+  top: 80px;
+  left: -120px;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(232, 90, 60, 0.06) 0%, transparent 70%);
+  filter: blur(40px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.om-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.66fr) minmax(0, 1fr);
+  gap: 88px;
+  align-items: start;
+  position: relative;
+  z-index: 1;
+}
+
+/* ---------- LEFT: Portrait + identity card ---------- */
+
+.om-left {
+  position: sticky;
+  top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.om-portrait {
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  max-width: 360px;
+  border-radius: 999px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-subtle);
+  position: relative;
+  overflow: hidden;
+}
+
+/* layered abstract silhouette — cream + coral */
+.om-portrait::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 50% 110%, rgba(232, 90, 60, 0.22) 0%, transparent 55%),
+    radial-gradient(circle at 50% 40%, rgba(232, 90, 60, 0.10) 0%, transparent 60%);
+}
+
+/* The shoulders */
+.om-portrait::after {
+  content: '';
+  position: absolute;
+  bottom: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 130%;
+  height: 70%;
+  background: linear-gradient(180deg, rgba(232, 90, 60, 0.32) 0%, rgba(232, 90, 60, 0.18) 100%);
+  border-radius: 50% 50% 0 0 / 60% 60% 0 0;
+}
+
+/* The head */
+.om-portrait-head {
+  position: absolute;
+  top: 22%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 42%;
+  aspect-ratio: 1 / 1.15;
+  background: linear-gradient(180deg, rgba(232, 90, 60, 0.45) 0%, rgba(232, 90, 60, 0.28) 100%);
+  border-radius: 50% 50% 48% 48% / 60% 60% 40% 40%;
+  z-index: 2;
+}
+
+/* Subtle initials watermark */
+.om-portrait-initials {
+  position: absolute;
+  bottom: 22px;
+  right: 28px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: rgba(26, 26, 26, 0.32);
+  z-index: 3;
+}
+
+/* Thin ring */
+.om-portrait-ring {
+  position: absolute;
+  inset: 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(232, 90, 60, 0.18);
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* Real portrait — sits above the abstract; abstract acts as fallback */
+.om-portrait-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 28%;
+  border-radius: 999px;
+  z-index: 4;
+}
+
+.om-portrait-caption {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: -20px;
+  max-width: 360px;
+}
+
+.om-identity {
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 28px;
+}
+
+.om-name {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.om-role {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 28px;
+}
+
+.om-facts {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.om-fact {
+  display: flex;
+  gap: 14px;
+  align-items: baseline;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+.om-fact-marker {
+  flex: 0 0 auto;
+  width: 10px;
+  height: 1px;
+  background: var(--accent);
+  position: relative;
+  top: -4px;
+}
+
+.om-fact strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* ---------- RIGHT: Story ---------- */
+
+.om-right {
+  max-width: 620px;
+}
+
+.om-eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 32px;
+  display: inline-block;
+}
+
+.om-headline {
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  color: var(--text-primary);
+  margin: 0 0 48px;
+}
+
+.om-headline em {
+  font-style: italic;
+  font-weight: 500;
+  color: var(--accent);
+}
+
+.om-story {
+  font-size: 18px;
+  line-height: 1.75;
+  color: var(--text-primary);
+  max-width: 580px;
+}
+
+.om-story p {
+  margin: 0 0 26px;
+}
+
+.om-story p:last-child {
+  margin-bottom: 0;
+}
+
+.om-story em {
+  font-style: italic;
+  font-weight: 500;
+}
+
+.om-story strong {
+  font-weight: 600;
+}
+
+.om-inline-link {
+  color: inherit;
+  border-bottom: 1px solid var(--accent);
+  font-weight: 500;
+  transition: color 0.2s var(--ease);
+}
+.om-inline-link:hover {
+  color: var(--accent);
+}
+
+/* Pull-quote — single accented line set apart from the prose */
+.om-pull {
+  margin: 44px 0;
+  padding: 0 0 0 24px;
+  border-left: 2px solid var(--accent);
+  font-size: 22px;
+  font-weight: 500;
+  font-style: italic;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+  max-width: 540px;
+}
+
+.om-signature {
+  margin-top: 56px;
+  padding-top: 28px;
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.om-signature-mark {
+  font-family: 'Poppins', sans-serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 28px;
+  color: var(--accent);
+  letter-spacing: -0.02em;
+}
+
+.om-signature-meta {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted);
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 900px) {
+  .om-grid {
+    grid-template-columns: 1fr;
+    gap: 56px;
+  }
+  .om-left {
+    position: static;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+  .om-portrait {
+    width: 160px;
+    max-width: 160px;
+    flex: 0 0 auto;
+  }
+  .om-identity {
+    flex: 1 1 240px;
+    border-top: none;
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .om-left {
+    flex-direction: column;
+    gap: 32px;
+  }
+  .om-portrait {
+    width: 140px;
+    max-width: 140px;
+  }
+  .om-identity {
+    width: 100%;
+  }
+  .om-headline {
+    margin-bottom: 32px;
+  }
+  .om-story {
+    font-size: 17px;
+    line-height: 1.7;
+  }
+  .om-pull {
+    font-size: 19px;
+    margin: 32px 0;
+  }
+}
+</style>
+
+
+<section class="white" id="om-martin">
+  <div class="container">
+
+    <div class="om-grid">
+
+      <!-- ============== LEFT: Portrait + identity ============== -->
+      <aside class="om-left reveal">
+        <div class="om-portrait" role="img" aria-label="Portrett av Martin Folkestad">
+          <!--
+            TODO: drop /images/martin-portrait.jpg into the deploy root
+            (folkestad-design repo, /images/). Until the file is uploaded,
+            the inline onerror hides the broken img and the abstract
+            silhouette below shows through as a graceful placeholder.
+          -->
+          <img
+            src="/images/martin-portrait.jpg"
+            alt="Martin Folkestad"
+            class="om-portrait-img"
+            loading="lazy"
+            decoding="async"
+            width="360"
+            height="360"
+            onerror="this.style.display='none'">
+          <div class="om-portrait-head" aria-hidden="true"></div>
+          <div class="om-portrait-ring" aria-hidden="true"></div>
+          <div class="om-portrait-initials" aria-hidden="true">MF</div>
+        </div>
+        <div class="om-portrait-caption">Martin Folkestad &middot; Klepp Stasjon</div>
+
+        <div class="om-identity">
+          <div class="om-name">Martin Folkestad</div>
+          <div class="om-role">Grunnlegger &middot; Folkestad Designs &amp; Verminord</div>
+
+          <ul class="om-facts">
+            <li class="om-fact">
+              <span class="om-fact-marker"></span>
+              <span>Bor i <strong>Klepp Stasjon</strong>, Jæren</span>
+            </li>
+            <li class="om-fact">
+              <span class="om-fact-marker"></span>
+              <span>Født og oppvokst i Rogaland</span>
+            </li>
+            <li class="om-fact">
+              <span class="om-fact-marker"></span>
+              <span>Driver to bedrifter: <strong>Folkestad Designs</strong> (design) og <strong>Verminord</strong> (vermikompost)</span>
+            </li>
+            <li class="om-fact">
+              <span class="om-fact-marker"></span>
+              <span>Tilgjengelig på <strong>hei@folkestad.design</strong></span>
+            </li>
+          </ul>
+        </div>
+      </aside>
+
+
+      <!-- ============== RIGHT: The story ============== -->
+      <article class="om-right reveal">
+
+        <div class="om-eyebrow">[ 03 / Om Martin ]</div>
+
+        <h2 class="om-headline">Det startet med en <em>mappe Word-dokumenter</em>.</h2>
+
+        <div class="om-story">
+
+          <p>I 2024 startet jeg Verminord — Norges nyeste produsent av vermikompost, drevet fra et bygg på Jæren. Den første måneden gikk ikke til mark eller substrat. Den gikk til en mappe på skrivebordet mitt: produksjonslogger, batchsporing, hygieniseringsrutiner, papirarbeid for Mattilsynet. Word-dokumenter, alle sammen. Times New Roman 11pt.</p>
+
+          <p>Jeg printet det ut og la det ved siden av en konkurrents brosjyre. Forskjellen var ikke i innholdet — mitt var mer grundig. Forskjellen var at hans så ut som det kom fra en bedrift, og mitt så ut som det kom fra en mappe.</p>
+
+          <p>Så jeg brukte to uker på å lære meg å designe. Ikke fordi jeg ville bli designer — men fordi jeg trengte at en kjøper i Bryne skulle åpne et dokument fra Verminord og <em>tro</em> på det før han leste første setning. Brand book, etiketter, SOP-er, datablader. Alt fikk en ny form.</p>
+
+          <div class="om-pull">Jeg er ikke en designer som ble bedriftseier. Jeg er en bedriftseier som ble designer.</div>
+
+          <p>Det rare skjedde etterpå. Andre Jæren-bedrifter — en murmester i Klepp, en kafé i Sandnes, en blikkenslager på Gjesdal — begynte å spørre hvem som hadde laget materialet til Verminord. Svaret var meg, på kjøkkenbordet, mellom matinger av kompostormer.</p>
+
+          <p>Folkestad Designs ble til av nødvendighet, ikke ambisjon. Jeg designer for Verminord hver dag. Nå gjør jeg det for andre lokale bedrifter også — og det jeg har lært er enkelt: en god håndverker, kafé eller fagbedrift på Jæren trenger ikke <a href="/blogg/byraa-vs-jaeren-designer" class="om-inline-link">et byrå fra Oslo</a>. De trenger noen som forstår at det viktigste dokumentet er det neste kunden åpner.</p>
+
+          <p>Jeg vet hva det koster å være ny. Jeg er fortsatt ny. Det er ikke en svakhet jeg prøver å skjule — det er grunnen til at jeg vet nøyaktig hva en bedrift på Jæren faktisk har bruk for.</p>
+
+          <div class="om-signature">
+            <div class="om-signature-mark">— Martin</div>
+            <div class="om-signature-meta">Klepp Stasjon, 2025</div>
+          </div>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
 <section class="cream" id="biblioteket">
   <div class="container">
     <div class="section-head reveal" style="max-width: 720px;">
-      <div class="eyebrow accent">[ 03 / Eksempler ]</div>
-      <h2>Ni studier. <em>Hele spennvidden.</em></h2>
-      <p class="lead">To leverte klienter pluss sju konsept-eksempler &mdash; bygd for &aring; vise hva pakken inneholder, ikke for &aring; vise en lang kundeliste. (&#9733;) markerer ekte leveranser. Resten er ferdig-bygde demoer.</p>
+      <div class="eyebrow accent">[ 04 / Eksempler ]</div>
+      <h2>Fire studier. <em>Hele spennvidden.</em></h2>
+      <p class="lead">To leverte klienter og to ferdige konsept-demoer &mdash; fra D2C-produkt og B2B-tjenester til kaf&eacute;-identitet og fem-siders byggside. (&#9733;) markerer leverte klienter. Konseptene kan klikkes gjennom som ferdige nettsider.</p>
     </div>
 
     <div class="studies-grid reveal">
@@ -3459,29 +4048,7 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
         </div>
       </a>
 
-      <a href="#merkevare" class="study">
-        <div class="study-thumb study-thumb--brand">
-          <span class="study-thumb-mark">JC</span>
-          <span class="study-badge study-badge--concept">Konsept</span>
-        </div>
-        <div class="study-meta">
-          <span class="study-type">Merkevare &middot; F&aring; identitet for prisen av en logo</span>
-          <span class="study-name">J&aelig;rcaf&eacute;</span>
-        </div>
-      </a>
-
-      <!-- Standalone mockup sites (full HTML demos) -->
-      <a href="/eksempel/onepager" class="study">
-        <div class="study-thumb study-thumb--web">
-          <span class="study-thumb-mark">SB</span>
-          <span class="study-badge study-badge--concept">Konsept</span>
-        </div>
-        <div class="study-meta">
-          <span class="study-type">Nettside &middot; Onepager</span>
-          <span class="study-name">Solhuset Bakeri &amp; Caf&eacute;</span>
-        </div>
-      </a>
-
+      <!-- Standalone mockup site — depth demo (5 pages) -->
       <a href="/eksempel/femsider" class="study">
         <div class="study-thumb study-thumb--web">
           <span class="study-thumb-mark">SH</span>
@@ -3493,44 +4060,11 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
         </div>
       </a>
 
-      <a href="/eksempel/frisor" class="study">
-        <div class="study-thumb study-thumb--web">
-          <span class="study-thumb-mark">SF</span>
-          <span class="study-badge study-badge--concept">Konsept</span>
-        </div>
-        <div class="study-meta">
-          <span class="study-type">Nettside &middot; Onepager</span>
-          <span class="study-name">Saltkroken Fris&oslash;r</span>
-        </div>
-      </a>
-
-      <a href="/eksempel/bilverksted" class="study">
-        <div class="study-thumb study-thumb--web">
-          <span class="study-thumb-mark">S&Oslash;</span>
-          <span class="study-badge study-badge--concept">Konsept</span>
-        </div>
-        <div class="study-meta">
-          <span class="study-type">Nettside &middot; Tre sider</span>
-          <span class="study-name">S&oslash;regga Auto</span>
-        </div>
-      </a>
-
-      <a href="/eksempel/bistro" class="study">
-        <div class="study-thumb study-thumb--web">
-          <span class="study-thumb-mark">VB</span>
-          <span class="study-badge study-badge--concept">Konsept</span>
-        </div>
-        <div class="study-meta">
-          <span class="study-type">Nettside &middot; Onepager</span>
-          <span class="study-name">Vindfanget Bistro</span>
-        </div>
-      </a>
-
     </div>
 
     <p class="studies-foot">
       <span class="dot" aria-hidden="true"></span>
-      &nbsp;Stjernemerkede (&#9733;) er leverte klienter. &laquo;Konsept&raquo;-merkede er fiktive studier som viser hva pakken faktisk inneholder.
+      &nbsp;Stjernemerkede (&#9733;) er leverte klienter. &laquo;Konsept&raquo;-merkede viser hva pakken inneholder. Flere demoer p&aring; <a href="/eksempel/onepager" class="studies-foot-link">/eksempel</a>.
     </p>
   </div>
 </section>
@@ -3541,7 +4075,7 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
 <section class="white" id="kvernhuset">
   <div class="container">
     <div class="section-head reveal">
-      <div class="eyebrow accent">[ 04 / Kvernhuset / Designstudie ]</div>
+      <div class="eyebrow accent">[ 05 / Kvernhuset / Designstudie ]</div>
       <h2>Fra ingenting til komplett identitet på 7 dager.</h2>
       <p class="lead">Jeg tok et fiktivt navn — <em>Kvernhuset Kafé</em> — og bygde alt en åpningsklar kafé hadde trengt: navn-stempel, fargesystem, typografi, visittkort, meny, skilt og nettside. Sju dager fra blankt ark til ferdig brand book. Slik ser pakken ut i praksis.</p>
     </div>
@@ -4556,7 +5090,7 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
 <section class="white vmb-section" id="brand-i-bruk">
   <div class="container">
     <div class="section-head reveal">
-      <div class="eyebrow accent">[ 05 / Brand i bruk ]</div>
+      <div class="eyebrow accent">[ 06 / Brand i bruk ]</div>
       <h2>Verminord — <em>brand i bruk</em>.</h2>
       <p class="lead">Logo og fargesystem er én ting. Faktisk applikasjon over fire forskjellige flater er det som beviser at merkevaren funker. Her er Verminord-systemet i praksis — fra visittkort til produktsekk.</p>
     </div>
@@ -4658,7 +5192,7 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
 <section class="white" id="produkter">
   <div class="container">
     <div class="section-head reveal">
-      <div class="eyebrow accent">[ 06 / Produkter / Digitale nedlastinger ]</div>
+      <div class="eyebrow accent">[ 07 / Produkter / Digitale nedlastinger ]</div>
       <h2>Ferdige designpakker.</h2>
       <p class="lead">Last ned, tilpass med din bedrift, og bruk. Alle pakker leveres som InDesign + PDF + Word, og er bygget for små bedrifter på Jæren som trenger noe profesjonelt — raskt.</p>
     </div>
@@ -4748,7 +5282,7 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
 <section class="cream">
   <div class="container">
     <div class="section-head reveal">
-      <div class="eyebrow accent">[ 07 / Prosess ]</div>
+      <div class="eyebrow accent">[ 08 / Prosess ]</div>
       <h2>Fra første prat til lansering.</h2>
       <p class="lead">Fire steg. Ingen byråspråk. Du eier alle filer fra dag én.</p>
     </div>
@@ -4823,139 +5357,7 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
 </section>
 
 <!-- ============================================
-     07 COMPARISON
-     ============================================ -->
-<section class="white">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="eyebrow accent">[ 08 / Sammenligning ]</div>
-      <h2>Hvorfor Folkestad — og ikke noe annet.</h2>
-      <p class="lead">Du har valg. Her er hva som faktisk skiller oss fra alternativene.</p>
-    </div>
-
-    <span class="compare-hint" aria-hidden="true">&larr; Sveip horisontalt &rarr;</span>
-    <div class="compare reveal">
-      <table>
-        <thead>
-          <tr>
-            <th></th>
-            <th class="col-folkestad">Folkestad</th>
-            <th>Storbyrå</th>
-            <th>Frilanser</th>
-            <th>Wix selv</th>
-            <th>Ingenting</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Ferdig levert under 14 dager</td>
-            <td class="col-folkestad"><span class="yes">✓</span></td>
-            <td><span class="no">✕</span></td>
-            <td><span class="no">✕</span></td>
-            <td class="yes">✓</td>
-            <td class="no">✕</td>
-          </tr>
-          <tr>
-            <td>Komplett pakke (web + trykk + brand)</td>
-            <td class="col-folkestad"><span class="yes">✓</span></td>
-            <td class="yes">✓</td>
-            <td class="no">✕</td>
-            <td class="no">✕</td>
-            <td class="no">✕</td>
-          </tr>
-          <tr>
-            <td>Du betaler kun om fornøyd</td>
-            <td class="col-folkestad"><span class="yes">✓</span></td>
-            <td class="no">✕</td>
-            <td class="no">✕</td>
-            <td class="no">✕</td>
-            <td class="no">✕</td>
-          </tr>
-          <tr>
-            <td>Faste, transparente priser</td>
-            <td class="col-folkestad"><span class="yes">✓</span></td>
-            <td class="no">✕</td>
-            <td class="no">✕</td>
-            <td class="yes">✓</td>
-            <td class="no">✕</td>
-          </tr>
-          <tr>
-            <td>Lokal — møtes ansikt til ansikt</td>
-            <td class="col-folkestad"><span class="yes">✓</span></td>
-            <td class="no">✕</td>
-            <td class="yes">✓</td>
-            <td class="no">✕</td>
-            <td class="no">✕</td>
-          </tr>
-          <tr>
-            <td>Du eier alle filer</td>
-            <td class="col-folkestad"><span class="yes">✓</span></td>
-            <td class="no">✕</td>
-            <td class="yes">✓</td>
-            <td class="no">✕</td>
-            <td class="no">✕</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <!-- Mobile card view (shown <701px) -->
-      <div class="compare-mobile">
-        <div class="compare-card">
-          <div class="compare-card-title">Ferdig levert under 14 dager</div>
-          <div class="compare-card-row is-folkestad"><span class="label">Folkestad</span><span class="mark yes">✓</span></div>
-          <div class="compare-card-row"><span class="label">Storbyrå</span><span class="mark no">✕</span></div>
-          <div class="compare-card-row"><span class="label">Frilanser</span><span class="mark no">✕</span></div>
-          <div class="compare-card-row"><span class="label">Wix selv</span><span class="mark yes">✓</span></div>
-          <div class="compare-card-row"><span class="label">Ingenting</span><span class="mark no">✕</span></div>
-        </div>
-        <div class="compare-card">
-          <div class="compare-card-title">Komplett pakke (web + trykk + brand)</div>
-          <div class="compare-card-row is-folkestad"><span class="label">Folkestad</span><span class="mark yes">✓</span></div>
-          <div class="compare-card-row"><span class="label">Storbyrå</span><span class="mark yes">✓</span></div>
-          <div class="compare-card-row"><span class="label">Frilanser</span><span class="mark no">✕</span></div>
-          <div class="compare-card-row"><span class="label">Wix selv</span><span class="mark no">✕</span></div>
-          <div class="compare-card-row"><span class="label">Ingenting</span><span class="mark no">✕</span></div>
-        </div>
-        <div class="compare-card">
-          <div class="compare-card-title">Du betaler kun om fornøyd</div>
-          <div class="compare-card-row is-folkestad"><span class="label">Folkestad</span><span class="mark yes">✓</span></div>
-          <div class="compare-card-row"><span class="label">Storbyrå</span><span class="mark no">✕</span></div>
-          <div class="compare-card-row"><span class="label">Frilanser</span><span class="mark no">✕</span></div>
-          <div class="compare-card-row"><span class="label">Wix selv</span><span class="mark no">✕</span></div>
-          <div class="compare-card-row"><span class="label">Ingenting</span><span class="mark no">✕</span></div>
-        </div>
-        <div class="compare-card">
-          <div class="compare-card-title">Faste, transparente priser</div>
-          <div class="compare-card-row is-folkestad"><span class="label">Folkestad</span><span class="mark yes">✓</span></div>
-          <div class="compare-card-row"><span class="label">Storbyrå</span><span class="mark no">✕</span></div>
-          <div class="compare-card-row"><span class="label">Frilanser</span><span class="mark no">✕</span></div>
-          <div class="compare-card-row"><span class="label">Wix selv</span><span class="mark yes">✓</span></div>
-          <div class="compare-card-row"><span class="label">Ingenting</span><span class="mark no">✕</span></div>
-        </div>
-        <div class="compare-card">
-          <div class="compare-card-title">Lokal — møtes ansikt til ansikt</div>
-          <div class="compare-card-row is-folkestad"><span class="label">Folkestad</span><span class="mark yes">✓</span></div>
-          <div class="compare-card-row"><span class="label">Storbyrå</span><span class="mark no">✕</span></div>
-          <div class="compare-card-row"><span class="label">Frilanser</span><span class="mark yes">✓</span></div>
-          <div class="compare-card-row"><span class="label">Wix selv</span><span class="mark no">✕</span></div>
-          <div class="compare-card-row"><span class="label">Ingenting</span><span class="mark no">✕</span></div>
-        </div>
-        <div class="compare-card">
-          <div class="compare-card-title">Du eier alle filer</div>
-          <div class="compare-card-row is-folkestad"><span class="label">Folkestad</span><span class="mark yes">✓</span></div>
-          <div class="compare-card-row"><span class="label">Storbyrå</span><span class="mark no">✕</span></div>
-          <div class="compare-card-row"><span class="label">Frilanser</span><span class="mark yes">✓</span></div>
-          <div class="compare-card-row"><span class="label">Wix selv</span><span class="mark no">✕</span></div>
-          <div class="compare-card-row"><span class="label">Ingenting</span><span class="mark no">✕</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================
-     09 SPARING — Hva sparer du på ekte tall?
-     Inserted between Sammenligning (08) and Jærcafé (09).
+     SPARING — Hva sparer du på ekte tall?
      Numbers pulled from a Nov 2026 market research run; all
      sources are in /blogg/byraa-vs-jaeren-designer.
      ============================================ -->
@@ -5052,1034 +5454,12 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
 </section>
 
 <!-- ============================================
-     SECTION 08 — JÆRCAFE / Merkevare-eksempel
-     Drop-in section. Inserts between comparison (07) and pricing.
-     All CSS scoped under .jaercafe-* to avoid parent collisions.
-     ============================================ -->
-<style>
-  /* ---------- JÆRCAFE brand tokens (scoped to this section) ---------- */
-  .jaercafe-section {
-    --jc-espresso: #2B1A0F;
-    --jc-cream: #F4ECDF;
-    --jc-brass: #B89968;
-    --jc-brass-soft: #C9A87A;
-    --jc-latte: #C9B79F;
-    --jc-ink: #1A0F08;
-    --jc-cream-deep: #EFE4D2;
-    --jc-divider: rgba(184, 153, 104, 0.35);
-    --jc-ease: cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  /* ---------- Section head italic accent (matches parent type system) ---------- */
-  .jaercafe-section .jaercafe-headline-italic {
-    display: block;
-    font-style: italic;
-    font-weight: 500;
-    color: var(--text-muted);
-    letter-spacing: -0.02em;
-    margin-top: 6px;
-  }
-
-  /* ---------- The bento showcase grid ---------- */
-  .jaercafe-grid {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-auto-rows: minmax(220px, auto);
-    gap: 20px;
-  }
-
-  /* Generic mockup card */
-  .jc-mock {
-    position: relative;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 30px 60px -25px rgba(0, 0, 0, 0.28),
-                0 8px 20px -10px rgba(0, 0, 0, 0.12);
-    transition: transform 0.6s var(--jc-ease), box-shadow 0.6s var(--jc-ease);
-    will-change: transform;
-  }
-
-  .jc-mock:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 40px 80px -25px rgba(0, 0, 0, 0.32),
-                0 14px 30px -10px rgba(0, 0, 0, 0.16);
-  }
-
-  /* Subtle grain texture for luxury feel */
-  .jc-grain::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: radial-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-                      radial-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px);
-    background-size: 3px 3px, 4px 4px;
-    background-position: 0 0, 1px 2px;
-    mix-blend-mode: overlay;
-    pointer-events: none;
-    opacity: 0.6;
-  }
-
-  /* ---------- Grid placements (desktop 12-col) ---------- */
-  .jc-mock--logo     { grid-column: span 7; grid-row: span 2; }
-  .jc-mock--web      { grid-column: span 5; grid-row: span 1; }
-  .jc-mock--cards    { grid-column: span 5; grid-row: span 2; }
-  .jc-mock--doc      { grid-column: span 4; grid-row: span 2; }
-  .jc-mock--slides   { grid-column: span 3; grid-row: span 2; }
-  .jc-mock--poster   { grid-column: span 12; grid-row: span 2; min-height: 520px; }
-
-  /* ============================================
-     MOCKUP 1 — Logo presentation
-     ============================================ */
-  .jc-mock--logo {
-    background: var(--jc-espresso);
-    color: var(--jc-cream);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 56px 64px;
-    min-height: 460px;
-  }
-
-  .jc-mock--logo .jc-logo-corner {
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--jc-brass);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .jc-mock--logo .jc-logo-corner span:last-child {
-    color: rgba(244, 236, 223, 0.5);
-  }
-
-  .jc-mock--logo .jc-logo-stage {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 22px;
-  }
-
-  .jc-mock--logo .jc-wordmark {
-    font-size: clamp(40px, 6vw, 78px);
-    font-weight: 800;
-    letter-spacing: 0.15em;
-    line-height: 1;
-    color: var(--jc-cream);
-    text-indent: 0.15em; /* optical centering for tracked text */
-  }
-
-  .jc-mock--logo .jc-divider-line {
-    width: 64px;
-    height: 1px;
-    background: var(--jc-brass);
-  }
-
-  .jc-mock--logo .jc-tagline {
-    font-style: italic;
-    font-weight: 500;
-    font-size: 15px;
-    color: var(--jc-latte);
-    letter-spacing: 0.01em;
-    max-width: 360px;
-  }
-
-  /* Bean ornament — pure CSS */
-  .jc-bean {
-    width: 28px;
-    height: 18px;
-    background: var(--jc-brass);
-    border-radius: 50%;
-    position: relative;
-    opacity: 0.75;
-  }
-  .jc-bean::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 10%;
-    right: 10%;
-    height: 1px;
-    background: var(--jc-espresso);
-    transform: translateY(-50%);
-  }
-
-  /* ============================================
-     MOCKUP 2 — Website mockup
-     ============================================ */
-  .jc-mock--web {
-    background: var(--jc-cream);
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-  }
-
-  .jc-browser-bar {
-    background: #E5DBC7;
-    height: 26px;
-    display: flex;
-    align-items: center;
-    padding: 0 12px;
-    gap: 8px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-  }
-  .jc-browser-bar .jc-dot {
-    width: 8px; height: 8px; border-radius: 50%;
-    background: rgba(43, 26, 15, 0.18);
-  }
-  .jc-browser-bar .jc-url {
-    margin-left: 14px;
-    font-size: 10px;
-    color: rgba(43, 26, 15, 0.5);
-    letter-spacing: 0.04em;
-    font-weight: 500;
-  }
-
-  .jc-web-header {
-    background: var(--jc-espresso);
-    color: var(--jc-cream);
-    padding: 14px 28px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 11px;
-    letter-spacing: 0.22em;
-    font-weight: 600;
-    text-transform: uppercase;
-  }
-  .jc-web-header .jc-web-wordmark {
-    letter-spacing: 0.18em;
-    font-weight: 800;
-  }
-  .jc-web-header nav { display: flex; gap: 18px; color: var(--jc-latte); }
-
-  .jc-web-hero {
-    padding: 36px 28px 32px;
-    background: var(--jc-cream);
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 16px;
-    position: relative;
-  }
-  .jc-web-eyebrow {
-    font-size: 9px;
-    font-weight: 600;
-    letter-spacing: 0.28em;
-    text-transform: uppercase;
-    color: var(--jc-brass);
-  }
-  .jc-web-h1 {
-    font-size: clamp(20px, 2.2vw, 26px);
-    font-weight: 800;
-    letter-spacing: -0.02em;
-    line-height: 1.1;
-    color: var(--jc-espresso);
-    max-width: 80%;
-  }
-  .jc-web-h1 em {
-    font-style: italic;
-    font-weight: 500;
-    color: var(--jc-brass);
-  }
-  .jc-web-cta {
-    display: inline-flex;
-    align-self: flex-start;
-    background: var(--jc-brass);
-    color: var(--jc-espresso);
-    font-size: 10px;
-    letter-spacing: 0.24em;
-    font-weight: 700;
-    padding: 10px 18px;
-    border-radius: 2px;
-    margin-top: 8px;
-  }
-  .jc-web-bean-deco {
-    position: absolute;
-    right: 24px;
-    bottom: 22px;
-    opacity: 0.4;
-    transform: rotate(-14deg) scale(1.4);
-  }
-
-  /* ============================================
-     MOCKUP 3 — Business card stack
-     ============================================ */
-  .jc-mock--cards {
-    background: linear-gradient(140deg, #F4ECDF 0%, #E5DBC7 100%);
-    padding: 36px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    min-height: 460px;
-  }
-
-  .jc-card-stack {
-    position: relative;
-    width: 100%;
-    max-width: 340px;
-    aspect-ratio: 1.6 / 1;
-  }
-
-  .jc-card {
-    position: absolute;
-    inset: 0;
-    border-radius: 4px;
-    box-shadow: 0 18px 40px -12px rgba(43, 26, 15, 0.35),
-                0 4px 10px -2px rgba(43, 26, 15, 0.15);
-    padding: 22px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: transform 0.5s var(--jc-ease);
-  }
-
-  .jc-card--back {
-    background: var(--jc-brass);
-    color: var(--jc-espresso);
-    transform: translate(-22px, 18px) rotate(-6deg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .jc-card--back .jc-bean { opacity: 0.95; background: var(--jc-espresso); width: 38px; height: 24px;}
-  .jc-card--back .jc-bean::before { background: var(--jc-brass); }
-
-  .jc-card--mid {
-    background: var(--jc-cream);
-    color: var(--jc-espresso);
-    transform: translate(-10px, 8px) rotate(-2deg);
-    border: 1px solid rgba(184, 153, 104, 0.25);
-  }
-  .jc-card--mid .jc-card-name { font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; }
-
-  .jc-card--front {
-    background: var(--jc-espresso);
-    color: var(--jc-cream);
-    transform: translate(8px, -4px) rotate(3deg);
-  }
-  .jc-card--front .jc-card-wordmark {
-    font-weight: 800;
-    letter-spacing: 0.18em;
-    font-size: 14px;
-    color: var(--jc-cream);
-  }
-  .jc-card--front .jc-card-rule {
-    width: 28px; height: 1px; background: var(--jc-brass); margin: 8px 0 12px;
-  }
-  .jc-card--front .jc-card-name {
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.01em;
-    color: var(--jc-cream);
-  }
-  .jc-card--front .jc-card-title {
-    font-size: 10px;
-    font-weight: 500;
-    font-style: italic;
-    color: var(--jc-brass-soft);
-    margin-top: 2px;
-  }
-  .jc-card--front .jc-card-meta {
-    font-size: 9px;
-    color: var(--jc-latte);
-    letter-spacing: 0.04em;
-    line-height: 1.5;
-  }
-  .jc-card--front .jc-card-meta span {
-    display: block;
-  }
-
-  .jc-mock--cards:hover .jc-card--back  { transform: translate(-28px, 22px) rotate(-7deg); }
-  .jc-mock--cards:hover .jc-card--mid   { transform: translate(-12px, 10px) rotate(-2deg); }
-  .jc-mock--cards:hover .jc-card--front { transform: translate(12px, -8px) rotate(4deg); }
-
-  /* ============================================
-     MOCKUP 4 — Internal document template
-     ============================================ */
-  .jc-mock--doc {
-    background: linear-gradient(135deg, #EFE4D2 0%, #E5DBC7 100%);
-    padding: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 460px;
-  }
-  .jc-doc-sheet {
-    width: 100%;
-    max-width: 280px;
-    aspect-ratio: 0.71 / 1; /* A4-ish */
-    background: var(--jc-cream);
-    padding: 26px 22px;
-    border-radius: 2px;
-    box-shadow: 0 22px 48px -12px rgba(43, 26, 15, 0.28),
-                0 6px 14px -4px rgba(43, 26, 15, 0.15);
-    transform: rotate(-2deg);
-    transition: transform 0.5s var(--jc-ease);
-    display: flex;
-    flex-direction: column;
-    color: var(--jc-espresso);
-    position: relative;
-  }
-  .jc-mock--doc:hover .jc-doc-sheet { transform: rotate(-1deg) translateY(-4px); }
-
-  .jc-doc-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 12px;
-    border-bottom: 1px solid var(--jc-divider);
-    margin-bottom: 18px;
-  }
-  .jc-doc-mini {
-    font-size: 9px;
-    font-weight: 800;
-    letter-spacing: 0.18em;
-    color: var(--jc-espresso);
-  }
-  .jc-doc-label {
-    font-size: 7px;
-    font-weight: 600;
-    letter-spacing: 0.22em;
-    color: var(--jc-brass);
-    text-transform: uppercase;
-  }
-  .jc-doc-title {
-    font-size: 13px;
-    font-weight: 800;
-    letter-spacing: -0.01em;
-    line-height: 1.2;
-    margin-bottom: 4px;
-  }
-  .jc-doc-sub {
-    font-size: 8px;
-    font-weight: 500;
-    font-style: italic;
-    color: rgba(43, 26, 15, 0.55);
-    margin-bottom: 16px;
-  }
-  .jc-doc-lines {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    flex: 1;
-  }
-  .jc-doc-line {
-    height: 4px;
-    background: rgba(43, 26, 15, 0.12);
-    border-radius: 1px;
-  }
-  .jc-doc-line.short { width: 60%; }
-  .jc-doc-line.med   { width: 80%; }
-  .jc-doc-line.long  { width: 100%; }
-  .jc-doc-h {
-    height: 6px;
-    background: var(--jc-brass);
-    width: 40%;
-    border-radius: 1px;
-    margin-top: 8px;
-    margin-bottom: 3px;
-  }
-  .jc-doc-footer {
-    display: flex;
-    justify-content: space-between;
-    font-size: 7px;
-    color: rgba(43, 26, 15, 0.45);
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    font-weight: 600;
-    padding-top: 12px;
-    border-top: 1px solid var(--jc-divider);
-    margin-top: 10px;
-  }
-
-  /* ============================================
-     MOCKUP 5 — Presentation slides
-     ============================================ */
-  .jc-mock--slides {
-    background: linear-gradient(160deg, #F4ECDF 0%, #E5DBC7 100%);
-    padding: 26px 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 14px;
-    align-items: center;
-    min-height: 460px;
-  }
-  .jc-slide {
-    width: 100%;
-    max-width: 230px;
-    aspect-ratio: 16 / 9;
-    border-radius: 3px;
-    box-shadow: 0 14px 28px -10px rgba(43, 26, 15, 0.3),
-                0 4px 8px -2px rgba(43, 26, 15, 0.12);
-    padding: 12px 14px;
-    transition: transform 0.5s var(--jc-ease);
-    position: relative;
-    overflow: hidden;
-  }
-  .jc-mock--slides:hover .jc-slide:nth-child(1) { transform: translate(-8px, -4px); }
-  .jc-mock--slides:hover .jc-slide:nth-child(3) { transform: translate(8px, 4px); }
-
-  .jc-slide--cover {
-    background: var(--jc-espresso);
-    color: var(--jc-cream);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transform: translate(-4px, 0) rotate(-1.5deg);
-  }
-  .jc-slide--cover .jc-slide-eyebrow {
-    font-size: 6px;
-    font-weight: 700;
-    letter-spacing: 0.28em;
-    color: var(--jc-brass);
-    text-transform: uppercase;
-  }
-  .jc-slide--cover .jc-slide-title {
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: 0.04em;
-    line-height: 1.15;
-  }
-  .jc-slide--cover .jc-slide-title em {
-    font-style: italic;
-    font-weight: 500;
-    color: var(--jc-brass);
-    letter-spacing: 0;
-    display: block;
-    font-size: 9px;
-    margin-top: 2px;
-  }
-  .jc-slide--cover .jc-slide-foot {
-    font-size: 5px;
-    letter-spacing: 0.22em;
-    color: var(--jc-latte);
-    font-weight: 600;
-  }
-
-  .jc-slide--content {
-    background: var(--jc-cream);
-    color: var(--jc-espresso);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 6px;
-    border-left: 3px solid var(--jc-brass);
-    transform: rotate(0.5deg);
-  }
-  .jc-slide--content .jc-slide-h {
-    font-size: 10px;
-    font-weight: 800;
-    letter-spacing: -0.01em;
-  }
-  .jc-slide--content .jc-slide-h em {
-    font-style: italic; font-weight: 500; color: var(--jc-brass);
-  }
-  .jc-slide--content .jc-mini-line {
-    height: 2px;
-    background: rgba(43, 26, 15, 0.16);
-    border-radius: 1px;
-  }
-  .jc-slide--content .jc-mini-line.s { width: 50%; }
-  .jc-slide--content .jc-mini-line.m { width: 75%; }
-
-  .jc-slide--data {
-    background: var(--jc-brass);
-    color: var(--jc-espresso);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transform: translate(4px, 0) rotate(1.5deg);
-  }
-  .jc-slide--data .jc-slide-h {
-    font-size: 8px;
-    font-weight: 800;
-    letter-spacing: 0.02em;
-  }
-  .jc-slide-chart {
-    display: flex;
-    align-items: flex-end;
-    gap: 4px;
-    height: 36px;
-  }
-  .jc-bar {
-    flex: 1;
-    background: var(--jc-espresso);
-    border-radius: 1px 1px 0 0;
-    opacity: 0.85;
-  }
-  .jc-bar:nth-child(1) { height: 40%; }
-  .jc-bar:nth-child(2) { height: 65%; }
-  .jc-bar:nth-child(3) { height: 55%; }
-  .jc-bar:nth-child(4) { height: 88%; }
-  .jc-bar:nth-child(5) { height: 72%; }
-  .jc-slide--data .jc-slide-foot {
-    font-size: 5px;
-    letter-spacing: 0.22em;
-    color: rgba(43, 26, 15, 0.6);
-    font-weight: 600;
-  }
-
-  /* ============================================
-     MOCKUP 6 — Poster on wall
-     ============================================ */
-  .jc-mock--poster {
-    background:
-      radial-gradient(ellipse at 30% 20%, rgba(255, 255, 255, 0.06) 0%, transparent 60%),
-      linear-gradient(135deg, #1A0F08 0%, #2B1A0F 60%, #1F140A 100%);
-    padding: 60px 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    perspective: 1400px;
-  }
-  /* Subtle wall noise */
-  .jc-mock--poster::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image:
-      radial-gradient(rgba(184, 153, 104, 0.04) 1px, transparent 1px),
-      radial-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-    background-size: 5px 5px, 7px 7px;
-    pointer-events: none;
-    opacity: 0.7;
-  }
-
-  .jc-poster {
-    position: relative;
-    width: 100%;
-    max-width: 460px;
-    aspect-ratio: 0.71 / 1;
-    background: var(--jc-espresso);
-    color: var(--jc-cream);
-    padding: 38px 36px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transform: rotateY(3deg) rotateX(-1deg);
-    transform-origin: center;
-    box-shadow:
-      0 60px 100px -30px rgba(0, 0, 0, 0.7),
-      0 30px 50px -20px rgba(0, 0, 0, 0.5),
-      inset 0 0 80px rgba(184, 153, 104, 0.04);
-    transition: transform 0.7s var(--jc-ease);
-    border: 1px solid rgba(184, 153, 104, 0.15);
-  }
-  .jc-mock--poster:hover .jc-poster {
-    transform: rotateY(1deg) rotateX(-0.5deg) translateY(-4px);
-  }
-
-  /* Pin shadows */
-  .jc-poster::before,
-  .jc-poster::after {
-    content: "";
-    position: absolute;
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: radial-gradient(circle at 30% 30%, #D4B486, #8A6F44);
-    top: 14px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
-  }
-  .jc-poster::before { left: 22px; }
-  .jc-poster::after  { right: 22px; }
-
-  .jc-poster-top {
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.32em;
-    color: var(--jc-brass);
-    text-transform: uppercase;
-    text-align: center;
-    padding-bottom: 12px;
-    border-bottom: 1px solid rgba(184, 153, 104, 0.3);
-  }
-
-  .jc-poster-center {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    gap: 18px;
-    padding: 24px 0;
-  }
-  .jc-poster-headline {
-    font-size: clamp(22px, 3vw, 36px);
-    font-weight: 500;
-    font-style: italic;
-    letter-spacing: 0.01em;
-    line-height: 1.15;
-    color: var(--jc-cream);
-  }
-  .jc-poster-headline strong {
-    display: block;
-    font-style: normal;
-    font-weight: 800;
-    letter-spacing: -0.015em;
-    color: var(--jc-brass);
-  }
-  .jc-poster-sub {
-    font-size: 13px;
-    font-weight: 400;
-    color: var(--jc-latte);
-    letter-spacing: 0.02em;
-    max-width: 80%;
-    margin: 0 auto;
-  }
-  .jc-poster-ornament {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 12px;
-  }
-  .jc-poster-ornament .jc-rule {
-    width: 40px; height: 1px; background: var(--jc-brass);
-  }
-
-  .jc-poster-bottom {
-    text-align: center;
-    padding-top: 16px;
-    border-top: 1px solid rgba(184, 153, 104, 0.3);
-  }
-  .jc-poster-wordmark {
-    font-size: 14px;
-    font-weight: 800;
-    letter-spacing: 0.22em;
-    color: var(--jc-cream);
-    margin-bottom: 6px;
-  }
-  .jc-poster-addr {
-    font-size: 9px;
-    font-weight: 500;
-    letter-spacing: 0.22em;
-    color: var(--jc-brass-soft);
-    text-transform: uppercase;
-  }
-
-  /* ============================================
-     Bottom CTA
-     ============================================ */
-  .jaercafe-cta {
-    margin-top: 80px;
-    text-align: center;
-    max-width: 760px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .jaercafe-cta-head {
-    font-size: clamp(26px, 3vw, 38px);
-    font-weight: 800;
-    letter-spacing: -0.025em;
-    line-height: 1.15;
-    color: var(--text-primary);
-    margin-bottom: 14px;
-  }
-  .jaercafe-cta-head em {
-    font-style: italic;
-    font-weight: 500;
-    color: var(--accent);
-    letter-spacing: -0.01em;
-  }
-  .jaercafe-cta-sub {
-    font-size: 17px;
-    color: var(--text-muted);
-    line-height: 1.7;
-    margin-bottom: 28px;
-  }
-  .jaercafe-cta-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: var(--text-primary);
-    color: var(--bg-surface);
-    padding: 18px 32px;
-    border-radius: 4px;
-    font-size: 15px;
-    font-weight: 600;
-    letter-spacing: 0.02em;
-    text-decoration: none;
-    transition: transform 0.4s var(--jc-ease), background 0.4s var(--jc-ease);
-    box-shadow: 0 14px 30px -10px rgba(0, 0, 0, 0.25);
-  }
-  .jaercafe-cta-btn:hover {
-    transform: translateY(-3px);
-    background: var(--accent);
-  }
-
-  /* ============================================
-     Staggered reveal
-     ============================================ */
-  .jaercafe-grid .jc-mock {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s var(--jc-ease), transform 0.8s var(--jc-ease);
-  }
-  .jaercafe-grid.is-visible .jc-mock,
-  .jaercafe-grid .jc-mock.is-visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  .jaercafe-grid .jc-mock:nth-child(1) { transition-delay: 0.05s; }
-  .jaercafe-grid .jc-mock:nth-child(2) { transition-delay: 0.15s; }
-  .jaercafe-grid .jc-mock:nth-child(3) { transition-delay: 0.25s; }
-  .jaercafe-grid .jc-mock:nth-child(4) { transition-delay: 0.35s; }
-  .jaercafe-grid .jc-mock:nth-child(5) { transition-delay: 0.45s; }
-  .jaercafe-grid .jc-mock:nth-child(6) { transition-delay: 0.55s; }
-
-  /* ============================================
-     Responsive — tablet (700-1024)
-     ============================================ */
-  @media (max-width: 1024px) {
-    .jaercafe-grid {
-      grid-template-columns: repeat(6, 1fr);
-      grid-auto-rows: minmax(200px, auto);
-    }
-    .jc-mock--logo    { grid-column: span 6; grid-row: span 2; min-height: 380px; }
-    .jc-mock--web     { grid-column: span 3; grid-row: span 2; }
-    .jc-mock--cards   { grid-column: span 3; grid-row: span 2; }
-    .jc-mock--doc     { grid-column: span 3; grid-row: span 2; }
-    .jc-mock--slides  { grid-column: span 3; grid-row: span 2; }
-    .jc-mock--poster  { grid-column: span 6; grid-row: span 2; min-height: 460px; }
-
-    .jc-mock--logo { padding: 44px 40px; }
-  }
-
-  /* ============================================
-     Responsive — mobile (<700)
-     ============================================ */
-  @media (max-width: 700px) {
-    .jaercafe-grid {
-      grid-template-columns: 1fr;
-      gap: 18px;
-    }
-    .jc-mock--logo,
-    .jc-mock--web,
-    .jc-mock--cards,
-    .jc-mock--doc,
-    .jc-mock--slides,
-    .jc-mock--poster {
-      grid-column: 1 / -1;
-      grid-row: auto;
-      min-height: 320px;
-    }
-    .jc-mock--logo { padding: 36px 28px; min-height: 340px; }
-    .jc-mock--logo .jc-wordmark { font-size: 38px; letter-spacing: 0.12em; }
-    .jc-mock--cards { padding: 28px; min-height: 360px; }
-    .jc-mock--doc { padding: 24px; min-height: 380px; }
-    .jc-mock--slides { padding: 24px 18px; gap: 12px; min-height: 360px; }
-    .jc-mock--poster { padding: 40px 24px; min-height: 460px; }
-    .jc-poster { padding: 30px 26px; }
-    .jc-poster-headline { font-size: 22px; }
-    .jaercafe-cta { margin-top: 56px; }
-    .jaercafe-cta-head { font-size: 24px; }
-  }
-</style>
-
-<section class="cream jaercafe-section" id="merkevare">
-  <div class="container">
-
-    <div class="section-head reveal">
-      <div class="eyebrow accent">[ 10 / Merkevare-eksempel ]</div>
-      <h2>
-        Trenger merkevaren din løft?
-        <span class="jaercafe-headline-italic">Få komplett identitet for prisen av en logo.</span>
-      </h2>
-      <p class="lead">
-        Byrå-pris for en logo alene: ofte 30 000 kr og oppover. Hos meg får du hele
-        merkevaren — logo, nettside, visittkort, dokumentmaler, presentasjon og plakat —
-        for samme prislapp. <em>Slik kan det se ut for en tenkt Jæren-kafé.</em>
-      </p>
-    </div>
-
-    <div class="jaercafe-grid reveal">
-
-      <!-- MOCKUP 1 — Logo presentation -->
-      <article class="jc-mock jc-mock--logo jc-grain" aria-label="JÆRCAFE logo presentation">
-        <div class="jc-logo-corner">
-          <span>EST. 2025</span>
-          <span>KLEPP STASJON</span>
-        </div>
-        <div class="jc-logo-stage">
-          <div class="jc-wordmark">JÆRCAFE</div>
-          <div class="jc-divider-line"></div>
-          <div class="jc-tagline">Kaffe brent på Klepp.<br>Servert på Jæren.</div>
-        </div>
-        <div class="jc-logo-corner">
-          <span>SINGLE ORIGIN</span>
-          <span>NO 03</span>
-        </div>
-      </article>
-
-      <!-- MOCKUP 2 — Website mockup -->
-      <article class="jc-mock jc-mock--web" aria-label="JÆRCAFE website mockup">
-        <div class="jc-browser-bar">
-          <span class="jc-dot"></span><span class="jc-dot"></span><span class="jc-dot"></span>
-          <span class="jc-url">jærcafe.no</span>
-        </div>
-        <div class="jc-web-header">
-          <span class="jc-web-wordmark">JÆRCAFE</span>
-          <nav>
-            <span>MENY</span>
-            <span>OM</span>
-            <span>BESTILL</span>
-          </nav>
-        </div>
-        <div class="jc-web-hero">
-          <div class="jc-web-eyebrow">Daglig brenning</div>
-          <div class="jc-web-h1">
-            Brent i dag.<br>
-            <em>Servert i morgen.</em>
-          </div>
-          <span class="jc-web-cta">BESTILL  &rarr;</span>
-          <div class="jc-web-bean-deco"><div class="jc-bean"></div></div>
-        </div>
-      </article>
-
-      <!-- MOCKUP 3 — Business card stack -->
-      <article class="jc-mock jc-mock--cards" aria-label="JÆRCAFE business cards">
-        <div class="jc-card-stack">
-          <div class="jc-card jc-card--back">
-            <div class="jc-bean"></div>
-          </div>
-          <div class="jc-card jc-card--mid">
-            <div class="jc-card-name">JÆRCAFE</div>
-            <div style="display:flex; gap:4px;">
-              <div style="width:18px;height:1px;background:var(--jc-brass);align-self:center;"></div>
-              <div style="font-size:9px;letter-spacing:0.18em;font-weight:600;color:var(--jc-brass);text-transform:uppercase;">single origin</div>
-            </div>
-          </div>
-          <div class="jc-card jc-card--front">
-            <div>
-              <div class="jc-card-wordmark">JÆRCAFE</div>
-              <div class="jc-card-rule"></div>
-              <div class="jc-card-name">Astrid Folkestad</div>
-              <div class="jc-card-title">Hodebarista &amp; brenner</div>
-            </div>
-            <div class="jc-card-meta">
-              <span>astrid@jærcafe.no</span>
-              <span>+47 458 23 110</span>
-              <span>Klepp Stasjon, 4352</span>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- MOCKUP 4 — Internal document template -->
-      <article class="jc-mock jc-mock--doc" aria-label="JÆRCAFE document template">
-        <div class="jc-doc-sheet">
-          <div class="jc-doc-header">
-            <span class="jc-doc-mini">JÆRCAFE</span>
-            <span class="jc-doc-label">RUTINE  04</span>
-          </div>
-          <div>
-            <div class="jc-doc-title">SOP: Brewing pour-over</div>
-            <div class="jc-doc-sub">For nye baristaer  Versjon 2.1</div>
-          </div>
-          <div class="jc-doc-lines">
-            <div class="jc-doc-h"></div>
-            <div class="jc-doc-line long"></div>
-            <div class="jc-doc-line med"></div>
-            <div class="jc-doc-line long"></div>
-            <div class="jc-doc-line short"></div>
-            <div class="jc-doc-h"></div>
-            <div class="jc-doc-line long"></div>
-            <div class="jc-doc-line med"></div>
-            <div class="jc-doc-line short"></div>
-            <div class="jc-doc-line long"></div>
-          </div>
-          <div class="jc-doc-footer">
-            <span>kapittel 04</span>
-            <span>side 12</span>
-          </div>
-        </div>
-      </article>
-
-      <!-- MOCKUP 5 — Presentation slides -->
-      <article class="jc-mock jc-mock--slides" aria-label="JÆRCAFE presentation deck">
-        <div class="jc-slide jc-slide--cover">
-          <div class="jc-slide-eyebrow">2025</div>
-          <div class="jc-slide-title">
-            JÆRCAFE
-            <em>Investorpresentasjon</em>
-          </div>
-          <div class="jc-slide-foot">KONFIDENSIELT  01 / 24</div>
-        </div>
-        <div class="jc-slide jc-slide--content">
-          <div class="jc-slide-h">Vårt produkt<em> en kopp</em></div>
-          <div class="jc-mini-line m"></div>
-          <div class="jc-mini-line s"></div>
-          <div class="jc-mini-line m"></div>
-        </div>
-        <div class="jc-slide jc-slide--data">
-          <div class="jc-slide-h">Vekst 2024-25</div>
-          <div class="jc-slide-chart">
-            <div class="jc-bar"></div>
-            <div class="jc-bar"></div>
-            <div class="jc-bar"></div>
-            <div class="jc-bar"></div>
-            <div class="jc-bar"></div>
-          </div>
-          <div class="jc-slide-foot">+248% YoY  Q1-Q4</div>
-        </div>
-      </article>
-
-      <!-- MOCKUP 6 — Poster -->
-      <article class="jc-mock jc-mock--poster jc-grain" aria-label="JÆRCAFE opening poster">
-        <div class="jc-poster">
-          <div class="jc-poster-top">AAPNING  &middot;  06.09.2025</div>
-          <div class="jc-poster-center">
-            <div class="jc-poster-ornament">
-              <span class="jc-rule"></span>
-              <div class="jc-bean"></div>
-              <span class="jc-rule"></span>
-            </div>
-            <div class="jc-poster-headline">
-              Smak hva som er
-              <strong>brent i dag.</strong>
-            </div>
-            <div class="jc-poster-sub">Hver morgen fra 07:00. Single origin. Brent for hånd på Klepp.</div>
-          </div>
-          <div class="jc-poster-bottom">
-            <div class="jc-poster-wordmark">JÆRCAFE</div>
-            <div class="jc-poster-addr">KLEPP STASJON  &middot;  JÆREN</div>
-          </div>
-        </div>
-      </article>
-
-    </div>
-
-    <div class="jaercafe-cta reveal">
-      <div class="jaercafe-cta-head">
-        Dette koster <em>fra 18 000 kr</em> hos meg.<br>
-        Hos et byrå: ofte 30 000+ for logoen alene.
-      </div>
-      <p class="jaercafe-cta-sub">
-        Velg pakken under, eller send mail hvis du trenger noe tilpasset.
-      </p>
-      <a href="#priser" class="jaercafe-cta-btn">
-        <span>[ Se priser  &rarr; ]</span>
-      </a>
-    </div>
-
-  </div>
-</section>
-
-<!-- ============================================
      08 PRICING
      ============================================ -->
 <section class="cream" id="priser">
   <div class="container">
     <div class="section-head reveal">
-      <div class="eyebrow accent">[ 11 / Priser ]</div>
+      <div class="eyebrow accent">[ 10 / Priser ]</div>
       <h2>Enkle priser. Ingen overraskelser.</h2>
       <p class="lead">Du betaler aldri før du har sett utkastet. Alle pakker inkluderer 30 dager support etter lansering.</p>
     </div>
@@ -6137,7 +5517,7 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
 <section class="white">
   <div class="container">
     <div class="section-head reveal" style="text-align: center; margin: 0 auto 56px;">
-      <div class="eyebrow accent">[ 12 / Garanti ]</div>
+      <div class="eyebrow accent">[ 11 / Garanti ]</div>
       <h2>Fortsatt nye.<br>Risikoen er fortsatt null.</h2>
       <p class="lead" style="margin: 0 auto;">Folkestad Designs startet i 2025. Jeg har levert <strong>ESE Solution Norway</strong> som første eksterne klient og bygget <strong>Verminord</strong> internt fra grunnen av. Du blir blant de første fem ekte kundene. Det betyr du får mer av min tid og oppmerksomhet enn en kunde fem år frem i tid noensinne vil få. Risikoen er fortsatt min, ikke din.</p>
       <p class="lead" style="margin: 18px auto 0; font-size: 14px; color: var(--text-muted); font-style: italic;">Note: ESE Solution-siden er fersk fra trykkeriet — den oppdateres med mer detaljert innhold om bedriftens norske operasjoner i ukene som kommer.</p>
@@ -6221,441 +5601,6 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
 }
 </style>
 
-<!-- ============================================================
-     SECTION 09 — OM MARTIN
-     Editorial 2-column profile. Drops into folkestad-designs page
-     between cream/white sections. Uses parent --bg-surface (white)
-     so it contrasts with surrounding cream blocks.
-     ============================================================ -->
-
-<style>
-/* ============================================================
-   OM MARTIN — scoped styles (om-* prefix)
-   ============================================================ */
-
-#om-martin {
-  background: var(--bg-surface);
-  position: relative;
-  overflow: hidden;
-}
-
-#om-martin::before {
-  content: '';
-  position: absolute;
-  top: 80px;
-  left: -120px;
-  width: 320px;
-  height: 320px;
-  background: radial-gradient(circle, rgba(232, 90, 60, 0.06) 0%, transparent 70%);
-  filter: blur(40px);
-  pointer-events: none;
-  z-index: 0;
-}
-
-.om-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 0.66fr) minmax(0, 1fr);
-  gap: 88px;
-  align-items: start;
-  position: relative;
-  z-index: 1;
-}
-
-/* ---------- LEFT: Portrait + identity card ---------- */
-
-.om-left {
-  position: sticky;
-  top: 100px;
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-}
-
-.om-portrait {
-  aspect-ratio: 1 / 1;
-  width: 100%;
-  max-width: 360px;
-  border-radius: 999px;
-  background: var(--bg-primary);
-  border: 1px solid var(--border-subtle);
-  position: relative;
-  overflow: hidden;
-}
-
-/* layered abstract silhouette — cream + coral */
-.om-portrait::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle at 50% 110%, rgba(232, 90, 60, 0.22) 0%, transparent 55%),
-    radial-gradient(circle at 50% 40%, rgba(232, 90, 60, 0.10) 0%, transparent 60%);
-}
-
-/* The shoulders */
-.om-portrait::after {
-  content: '';
-  position: absolute;
-  bottom: -20%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 130%;
-  height: 70%;
-  background: linear-gradient(180deg, rgba(232, 90, 60, 0.32) 0%, rgba(232, 90, 60, 0.18) 100%);
-  border-radius: 50% 50% 0 0 / 60% 60% 0 0;
-}
-
-/* The head */
-.om-portrait-head {
-  position: absolute;
-  top: 22%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 42%;
-  aspect-ratio: 1 / 1.15;
-  background: linear-gradient(180deg, rgba(232, 90, 60, 0.45) 0%, rgba(232, 90, 60, 0.28) 100%);
-  border-radius: 50% 50% 48% 48% / 60% 60% 40% 40%;
-  z-index: 2;
-}
-
-/* Subtle initials watermark */
-.om-portrait-initials {
-  position: absolute;
-  bottom: 22px;
-  right: 28px;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  color: rgba(26, 26, 26, 0.32);
-  z-index: 3;
-}
-
-/* Thin ring */
-.om-portrait-ring {
-  position: absolute;
-  inset: 14px;
-  border-radius: 999px;
-  border: 1px solid rgba(232, 90, 60, 0.18);
-  pointer-events: none;
-  z-index: 3;
-}
-
-/* Real portrait — sits above the abstract; abstract acts as fallback */
-.om-portrait-img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 28%;
-  border-radius: 999px;
-  z-index: 4;
-}
-
-.om-portrait-caption {
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  margin-top: -20px;
-  max-width: 360px;
-}
-
-.om-identity {
-  border-top: 1px solid var(--border-subtle);
-  padding-top: 28px;
-}
-
-.om-name {
-  font-size: 22px;
-  font-weight: 700;
-  letter-spacing: -0.015em;
-  color: var(--text-primary);
-  margin-bottom: 6px;
-}
-
-.om-role {
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--text-muted);
-  line-height: 1.5;
-  margin-bottom: 28px;
-}
-
-.om-facts {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.om-fact {
-  display: flex;
-  gap: 14px;
-  align-items: baseline;
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--text-muted);
-  line-height: 1.55;
-}
-
-.om-fact-marker {
-  flex: 0 0 auto;
-  width: 10px;
-  height: 1px;
-  background: var(--accent);
-  position: relative;
-  top: -4px;
-}
-
-.om-fact strong {
-  color: var(--text-primary);
-  font-weight: 600;
-}
-
-/* ---------- RIGHT: Story ---------- */
-
-.om-right {
-  max-width: 620px;
-}
-
-.om-eyebrow {
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 32px;
-  display: inline-block;
-}
-
-.om-headline {
-  font-size: clamp(32px, 4vw, 48px);
-  font-weight: 800;
-  line-height: 1.05;
-  letter-spacing: -0.025em;
-  color: var(--text-primary);
-  margin: 0 0 48px;
-}
-
-.om-headline em {
-  font-style: italic;
-  font-weight: 500;
-  color: var(--accent);
-}
-
-.om-story {
-  font-size: 18px;
-  line-height: 1.75;
-  color: var(--text-primary);
-  max-width: 580px;
-}
-
-.om-story p {
-  margin: 0 0 26px;
-}
-
-.om-story p:last-child {
-  margin-bottom: 0;
-}
-
-.om-story em {
-  font-style: italic;
-  font-weight: 500;
-}
-
-.om-story strong {
-  font-weight: 600;
-}
-
-/* Pull-quote — single accented line set apart from the prose */
-.om-pull {
-  margin: 44px 0;
-  padding: 0 0 0 24px;
-  border-left: 2px solid var(--accent);
-  font-size: 22px;
-  font-weight: 500;
-  font-style: italic;
-  line-height: 1.4;
-  letter-spacing: -0.01em;
-  color: var(--text-primary);
-  max-width: 540px;
-}
-
-.om-signature {
-  margin-top: 56px;
-  padding-top: 28px;
-  border-top: 1px solid var(--border-subtle);
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.om-signature-mark {
-  font-family: 'Poppins', sans-serif;
-  font-style: italic;
-  font-weight: 500;
-  font-size: 28px;
-  color: var(--accent);
-  letter-spacing: -0.02em;
-}
-
-.om-signature-meta {
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--text-muted);
-  line-height: 1.5;
-  letter-spacing: 0.01em;
-}
-
-/* ---------- Responsive ---------- */
-
-@media (max-width: 900px) {
-  .om-grid {
-    grid-template-columns: 1fr;
-    gap: 56px;
-  }
-  .om-left {
-    position: static;
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 28px;
-    flex-wrap: wrap;
-  }
-  .om-portrait {
-    width: 160px;
-    max-width: 160px;
-    flex: 0 0 auto;
-  }
-  .om-identity {
-    flex: 1 1 240px;
-    border-top: none;
-    padding-top: 0;
-  }
-}
-
-@media (max-width: 600px) {
-  .om-left {
-    flex-direction: column;
-    gap: 32px;
-  }
-  .om-portrait {
-    width: 140px;
-    max-width: 140px;
-  }
-  .om-identity {
-    width: 100%;
-  }
-  .om-headline {
-    margin-bottom: 32px;
-  }
-  .om-story {
-    font-size: 17px;
-    line-height: 1.7;
-  }
-  .om-pull {
-    font-size: 19px;
-    margin: 32px 0;
-  }
-}
-</style>
-
-
-<section class="white" id="om-martin">
-  <div class="container">
-
-    <div class="om-grid">
-
-      <!-- ============== LEFT: Portrait + identity ============== -->
-      <aside class="om-left reveal">
-        <div class="om-portrait" role="img" aria-label="Portrett av Martin Folkestad">
-          <!--
-            TODO: drop /images/martin-portrait.jpg into the deploy root
-            (folkestad-design repo, /images/). Until the file is uploaded,
-            the inline onerror hides the broken img and the abstract
-            silhouette below shows through as a graceful placeholder.
-          -->
-          <img
-            src="/images/martin-portrait.jpg"
-            alt="Martin Folkestad"
-            class="om-portrait-img"
-            loading="lazy"
-            decoding="async"
-            width="360"
-            height="360"
-            onerror="this.style.display='none'">
-          <div class="om-portrait-head" aria-hidden="true"></div>
-          <div class="om-portrait-ring" aria-hidden="true"></div>
-          <div class="om-portrait-initials" aria-hidden="true">MF</div>
-        </div>
-        <div class="om-portrait-caption">Martin Folkestad &middot; Klepp Stasjon</div>
-
-        <div class="om-identity">
-          <div class="om-name">Martin Folkestad</div>
-          <div class="om-role">Grunnlegger &middot; Folkestad Designs &amp; Verminord</div>
-
-          <ul class="om-facts">
-            <li class="om-fact">
-              <span class="om-fact-marker"></span>
-              <span>Bor i <strong>Klepp Stasjon</strong>, Jæren</span>
-            </li>
-            <li class="om-fact">
-              <span class="om-fact-marker"></span>
-              <span>Født og oppvokst i Rogaland</span>
-            </li>
-            <li class="om-fact">
-              <span class="om-fact-marker"></span>
-              <span>Driver to bedrifter: <strong>Folkestad Designs</strong> (design) og <strong>Verminord</strong> (vermikompost)</span>
-            </li>
-            <li class="om-fact">
-              <span class="om-fact-marker"></span>
-              <span>Tilgjengelig på <strong>hei@folkestad.design</strong></span>
-            </li>
-          </ul>
-        </div>
-      </aside>
-
-
-      <!-- ============== RIGHT: The story ============== -->
-      <article class="om-right reveal">
-
-        <div class="om-eyebrow">[ 13 / Om Martin ]</div>
-
-        <h2 class="om-headline">Det startet med en <em>mappe Word-dokumenter</em>.</h2>
-
-        <div class="om-story">
-
-          <p>I 2024 startet jeg Verminord — Norges nyeste produsent av vermikompost, drevet fra et bygg på Jæren. Den første måneden gikk ikke til mark eller substrat. Den gikk til en mappe på skrivebordet mitt: produksjonslogger, batchsporing, hygieniseringsrutiner, papirarbeid for Mattilsynet. Word-dokumenter, alle sammen. Times New Roman 11pt.</p>
-
-          <p>Jeg printet det ut og la det ved siden av en konkurrents brosjyre. Forskjellen var ikke i innholdet — mitt var mer grundig. Forskjellen var at hans så ut som det kom fra en bedrift, og mitt så ut som det kom fra en mappe.</p>
-
-          <p>Så jeg brukte to uker på å lære meg å designe. Ikke fordi jeg ville bli designer — men fordi jeg trengte at en kjøper i Bryne skulle åpne et dokument fra Verminord og <em>tro</em> på det før han leste første setning. Brand book, etiketter, SOP-er, datablader. Alt fikk en ny form.</p>
-
-          <div class="om-pull">Jeg er ikke en designer som ble bedriftseier. Jeg er en bedriftseier som ble designer.</div>
-
-          <p>Det rare skjedde etterpå. Andre Jæren-bedrifter — en murmester i Klepp, en kafé i Sandnes, en blikkenslager på Gjesdal — begynte å spørre hvem som hadde laget materialet til Verminord. Svaret var meg, på kjøkkenbordet, mellom matinger av kompostormer.</p>
-
-          <p>Folkestad Designs ble til av nødvendighet, ikke ambisjon. Jeg designer for Verminord hver dag. Nå gjør jeg det for andre lokale bedrifter også — og det jeg har lært er enkelt: en god håndverker, kafé eller fagbedrift på Jæren trenger ikke et byrå fra Oslo. De trenger noen som forstår at det viktigste dokumentet er det neste kunden åpner.</p>
-
-          <p>Jeg vet hva det koster å være ny. Jeg er fortsatt ny. Det er ikke en svakhet jeg prøver å skjule — det er grunnen til at jeg vet nøyaktig hva en bedrift på Jæren faktisk har bruk for.</p>
-
-          <div class="om-signature">
-            <div class="om-signature-mark">— Martin</div>
-            <div class="om-signature-meta">Klepp Stasjon, 2025</div>
-          </div>
-
-        </div>
-
-      </article>
-
-    </div>
-
-  </div>
-</section>
-
 <!-- ============================================
      TESTIMONIAL
      ============================================ -->
@@ -6663,7 +5608,7 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
   <div class="container">
     <div class="testimonial reveal">
       <blockquote class="testimonial-quote">
-        &ldquo;The experience was frictionless, communication was precise, and the outcome is something our team is now proud to showcase. Excellent value and execution.&rdquo;
+        &ldquo;Opplevelsen var friksjonsfri, kommunikasjonen presis, og resultatet er noe teamet v&aring;rt er stolt av &aring; vise frem. Utmerket verdi og gjennomf&oslash;ring.&rdquo;
       </blockquote>
       <div class="testimonial-attribution">
         <div class="testimonial-portrait">SF</div>
@@ -6677,12 +5622,12 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
 </section>
 
 <!-- ============================================
-     10 FAQ
+     14 FAQ
      ============================================ -->
 <section class="cream">
   <div class="container">
     <div class="section-head reveal" style="text-align: center; margin: 0 auto 72px;">
-      <div class="eyebrow accent">[ 14 / FAQ ]</div>
+      <div class="eyebrow accent">[ 12 / FAQ ]</div>
       <h2>Vanlige spørsmål.</h2>
     </div>
 
@@ -6797,6 +5742,10 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
         <div class="faq-a">Send en mail til hei@folkestad.design eller bruk skjemaet under. Martin svarer personlig innen samme dag på hverdager, og dere bestemmer sammen om det skal bli en kort prat på telefon.</div>
       </div>
     </div>
+
+    <p class="faq-foot reveal">
+      Spørsmål jeg ikke har svart på? <a href="mailto:hei@folkestad.design" class="faq-foot-link">Skriv direkte til meg &rarr;</a>
+    </p>
   </div>
 </section>
 
@@ -7138,7 +6087,7 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
 <section class="contact" id="kontakt">
   <div class="container">
     <div class="contact-inner reveal">
-      <div class="eyebrow">[ 15 / Kontakt ]</div>
+      <div class="eyebrow">[ 13 / Kontakt ]</div>
       <h2>Klar?<br>La oss bygge.</h2>
       <p class="contact-sub">Send en kort melding — Martin svarer personlig innen samme dag. Første samtale er alltid gratis: ingen salgspresentasjon, bare en prat om bedriften din.</p>
 
@@ -7345,15 +6294,6 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
         </ul>
       </div>
 
-      <div class="footer-col">
-        <h5>Sosial</h5>
-        <ul>
-          <!-- TODO: replace placeholder URLs with real social profiles when ready -->
-          <li><a href="{{ TODO: instagram-url }}" target="_blank" rel="noopener me">Instagram</a></li>
-          <li><a href="{{ TODO: linkedin-url }}" target="_blank" rel="noopener me">LinkedIn</a></li>
-          <li><a href="{{ TODO: behance-url }}" target="_blank" rel="noopener me">Behance</a></li>
-        </ul>
-      </div>
     </div>
 
     <div class="footer-bottom">
@@ -7479,7 +6419,44 @@ if (contactForm) {
     window.location.href = mailto;
   });
 }
+
+/* ============================================
+   Sticky CTA — show after hero scrolls out, hide near kontakt
+   ============================================ */
+(function () {
+  var sticky = document.getElementById('sticky-cta');
+  var hero = document.querySelector('.hero');
+  var contact = document.getElementById('kontakt');
+  if (!sticky || !hero) return;
+
+  var ticking = false;
+  function update() {
+    var heroBottom = hero.getBoundingClientRect().bottom;
+    var contactTop = contact ? contact.getBoundingClientRect().top : Infinity;
+    var vh = window.innerHeight;
+    var shouldShow = heroBottom < 80 && contactTop > vh * 0.6;
+    sticky.classList.toggle('visible', shouldShow);
+    sticky.setAttribute('aria-hidden', shouldShow ? 'false' : 'true');
+    ticking = false;
+  }
+  function onScroll() {
+    if (!ticking) {
+      window.requestAnimationFrame(update);
+      ticking = true;
+    }
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll, { passive: true });
+  update();
+})();
 </script>
+
+<aside id="sticky-cta" class="sticky-cta" aria-hidden="true">
+  <div class="sticky-cta-inner">
+    <span class="sticky-cta-msg">Klar når du er — kostnadsfritt utkast først.</span>
+    <a href="#kontakt" class="sticky-cta-btn">Få gratis utkast →</a>
+  </div>
+</aside>
 
 </body>
 </html>
