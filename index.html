@@ -396,6 +396,63 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .trust-mark-text { font-size: 16px; }
 }
 
+/* ============================================
+   Brand-i-kontekst band — silent mockup strip
+   ============================================ */
+.brand-band {
+  background: var(--bg-primary);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 96px 0;
+}
+.bik-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+.bik-tile {
+  background: var(--bg-surface);
+  border-radius: 16px;
+  border: 1px solid var(--border-subtle);
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 28px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.55s var(--ease), border-color 0.55s var(--ease);
+  opacity: 0;
+  transform: translateY(32px);
+}
+.brand-band.is-visible .bik-tile {
+  opacity: 1;
+  transform: translateY(0);
+}
+.brand-band.is-visible .bik-tile[data-bik="0"] { transition: opacity 0.85s var(--ease) 0.0s, transform 0.85s var(--ease) 0.0s, border-color 0.4s var(--ease); }
+.brand-band.is-visible .bik-tile[data-bik="1"] { transition: opacity 0.85s var(--ease) 0.12s, transform 0.85s var(--ease) 0.12s, border-color 0.4s var(--ease); }
+.brand-band.is-visible .bik-tile[data-bik="2"] { transition: opacity 0.85s var(--ease) 0.24s, transform 0.85s var(--ease) 0.24s, border-color 0.4s var(--ease); }
+.brand-band.is-visible .bik-tile[data-bik="3"] { transition: opacity 0.85s var(--ease) 0.36s, transform 0.85s var(--ease) 0.36s, border-color 0.4s var(--ease); }
+.bik-tile:hover {
+  transform: translateY(-3px);
+  border-color: rgba(232, 90, 60, 0.35);
+}
+.bik-art {
+  width: 100%;
+  height: 100%;
+  max-width: 160px;
+  max-height: 160px;
+}
+@media (max-width: 900px) {
+  .bik-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+}
+@media (max-width: 480px) {
+  .brand-band { padding: 64px 0; }
+  .bik-tile { padding: 20px; }
+}
+
 .btn-primary {
   background: var(--accent);
   color: #FFFFFF;
@@ -1035,13 +1092,32 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
 /* Reveal */
 .reveal {
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+  transform: translateY(36px);
+  transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
 }
 
 .reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Stagger children of .reveal-group on viewport entry */
+.reveal-group > .reveal-item {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.85s var(--ease), transform 0.85s var(--ease);
+}
+.reveal-group.is-visible > .reveal-item:nth-child(1) { transition-delay: 0s; }
+.reveal-group.is-visible > .reveal-item:nth-child(2) { transition-delay: 0.1s; }
+.reveal-group.is-visible > .reveal-item:nth-child(3) { transition-delay: 0.2s; }
+.reveal-group.is-visible > .reveal-item:nth-child(4) { transition-delay: 0.3s; }
+.reveal-group.is-visible > .reveal-item:nth-child(5) { transition-delay: 0.4s; }
+.reveal-group.is-visible > .reveal-item { opacity: 1; transform: translateY(0); }
+
+/* Subtle parallax — used on backgrounds / decorative elements */
+.parallax-slow {
+  will-change: transform;
+  transition: transform 0.05s linear;
 }
 
 /* ============================================
@@ -3501,16 +3577,68 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
 </section>
 
 <!-- ============================================
-     03 EKSEMPLER — Ni studier
-     -------------------------------------------------------------
-     Two real, sold clients (Verminord, ESE Solution) marked with ★.
-     Seven fictional concepts:
-       - Kvernhuset and Jærcafé are deep-dives elsewhere on this page
-       - Solhuset Bakeri, Strandhus Bygg, Saltkroken Frisør, Søregga
-         Auto, and Vindfanget Bistro are standalone mockup sites at
-         /eksempel/{onepager,femsider,frisor,bilverksted,bistro}
-     No real prospect names appear here — prospect lists stay private.
+     BRAND I KONTEKST — silent mockup band
+     4 SVG mockups showing brand on common deliverables.
+     No header, no labels. Visual rhythm only.
      ============================================ -->
+<section class="brand-band reveal" aria-label="Brand applied on common deliverables">
+  <div class="container">
+    <div class="bik-grid">
+
+      <!-- 01 — Storefront sign -->
+      <div class="bik-tile" data-bik="0">
+        <svg class="bik-art" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Skilt">
+          <rect x="28" y="22" width="84" height="50" rx="3" fill="none" stroke="#1A1A1A" stroke-width="1.5"/>
+          <text x="70" y="44" text-anchor="middle" font-family="Poppins, sans-serif" font-weight="800" font-size="10" letter-spacing="2" fill="#1A1A1A">FOLKESTAD</text>
+          <line x1="50" y1="52" x2="90" y2="52" stroke="#E85A3C" stroke-width="1.2"/>
+          <text x="70" y="64" text-anchor="middle" font-family="Poppins, sans-serif" font-weight="600" font-size="6" letter-spacing="2.4" fill="#E85A3C">JÆREN</text>
+          <line x1="70" y1="72" x2="70" y2="116" stroke="#1A1A1A" stroke-width="2"/>
+          <line x1="26" y1="120" x2="114" y2="120" stroke="#1A1A1A" stroke-width="1"/>
+        </svg>
+      </div>
+
+      <!-- 02 — Vehicle wrap -->
+      <div class="bik-tile" data-bik="1">
+        <svg class="bik-art" viewBox="0 0 140 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bil-skilt">
+          <path d="M14 38 L14 72 Q14 76 18 76 L122 76 Q126 76 126 72 L126 38 L98 38 L92 27 L42 27 L36 38 Z" fill="none" stroke="#1A1A1A" stroke-width="1.5" stroke-linejoin="round"/>
+          <line x1="42" y1="38" x2="42" y2="27" stroke="#1A1A1A" stroke-width="1.2"/>
+          <line x1="67" y1="38" x2="67" y2="27" stroke="#1A1A1A" stroke-width="1.2"/>
+          <line x1="92" y1="38" x2="92" y2="27" stroke="#1A1A1A" stroke-width="1.2"/>
+          <text x="70" y="58" text-anchor="middle" font-family="Poppins, sans-serif" font-weight="800" font-size="9" letter-spacing="2" fill="#1A1A1A">FOLKESTAD</text>
+          <line x1="50" y1="62" x2="90" y2="62" stroke="#E85A3C" stroke-width="1"/>
+          <text x="70" y="71" text-anchor="middle" font-family="Poppins, sans-serif" font-weight="600" font-size="5" letter-spacing="2" fill="#E85A3C">DESIGN</text>
+          <circle cx="36" cy="80" r="9" fill="#1A1A1A"/>
+          <circle cx="36" cy="80" r="3" fill="#F5F0E8"/>
+          <circle cx="106" cy="80" r="9" fill="#1A1A1A"/>
+          <circle cx="106" cy="80" r="3" fill="#F5F0E8"/>
+        </svg>
+      </div>
+
+      <!-- 03 — T-shirt -->
+      <div class="bik-tile" data-bik="2">
+        <svg class="bik-art" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Tr&oslash;ye">
+          <path d="M20 32 L48 18 Q56 28 70 28 Q84 28 92 18 L120 32 L114 52 L100 48 L100 122 L40 122 L40 48 L26 52 Z" fill="none" stroke="#1A1A1A" stroke-width="1.5" stroke-linejoin="round"/>
+          <path d="M58 22 Q70 33 82 22" fill="none" stroke="#1A1A1A" stroke-width="1.5"/>
+          <circle cx="70" cy="74" r="12" fill="none" stroke="#E85A3C" stroke-width="1.8"/>
+          <text x="70" y="78" text-anchor="middle" font-family="Poppins, sans-serif" font-weight="800" font-size="10" fill="#E85A3C">FK</text>
+        </svg>
+      </div>
+
+      <!-- 04 — Tote / bag -->
+      <div class="bik-tile" data-bik="3">
+        <svg class="bik-art" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bag">
+          <path d="M30 48 L30 122 Q30 126 34 126 L106 126 Q110 126 110 122 L110 48 Z" fill="none" stroke="#1A1A1A" stroke-width="1.5"/>
+          <path d="M50 48 Q50 24 70 24 Q90 24 90 48" fill="none" stroke="#1A1A1A" stroke-width="1.5"/>
+          <text x="70" y="84" text-anchor="middle" font-family="Poppins, sans-serif" font-weight="800" font-size="10" letter-spacing="2" fill="#1A1A1A">FOLKESTAD</text>
+          <line x1="50" y1="91" x2="90" y2="91" stroke="#E85A3C" stroke-width="1.2"/>
+          <text x="70" y="102" text-anchor="middle" font-family="Poppins, sans-serif" font-weight="600" font-size="6" letter-spacing="2.4" fill="#E85A3C">DESIGN</text>
+        </svg>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- ============================================================
      SECTION 09 — OM MARTIN
      Editorial 2-column profile. Drops into folkestad-designs page
@@ -4739,7 +4867,7 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
 
 <style>
 .contact-form {
-  margin: 40px auto 28px;
+  margin: 40px 0 28px;
   max-width: 580px;
   text-align: left;
   display: flex;
@@ -5032,6 +5160,50 @@ if (contactForm) {
     window.location.href = mailto;
   });
 }
+
+/* ============================================
+   Subtle parallax — marinkurir-style scroll lag
+   ============================================ */
+(function () {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  // Auto-mark hero-orb and Jaeren atmospheric sun for parallax
+  document.querySelectorAll('.hero-orb').forEach(el => {
+    el.classList.add('parallax-slow');
+    el.dataset.parallaxFactor = '0.22';
+  });
+  document.querySelectorAll('.jaeren-sun').forEach(el => {
+    el.classList.add('parallax-slow');
+    el.dataset.parallaxFactor = '0.18';
+  });
+
+  var targets = document.querySelectorAll('.parallax-slow');
+  if (!targets.length) return;
+
+  var ticking = false;
+  function update() {
+    var vh = window.innerHeight;
+    var center = vh / 2;
+    targets.forEach(function (el) {
+      var rect = el.getBoundingClientRect();
+      if (rect.bottom < -200 || rect.top > vh + 200) return; // skip far-offscreen
+      var elementCenter = rect.top + rect.height / 2;
+      var distFromCenter = center - elementCenter;
+      var factor = parseFloat(el.dataset.parallaxFactor || '0.15');
+      el.style.transform = 'translateY(' + (-distFromCenter * factor).toFixed(1) + 'px)';
+    });
+    ticking = false;
+  }
+  function onScroll() {
+    if (!ticking) {
+      window.requestAnimationFrame(update);
+      ticking = true;
+    }
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll, { passive: true });
+  update();
+})();
 
 /* ============================================
    Cursor follower — track + hover state
