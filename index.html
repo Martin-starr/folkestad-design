@@ -397,60 +397,72 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 
 /* ============================================
-   Brand-i-kontekst band — silent mockup strip
+   Flip-card pattern — hover hint + press flips to back
+   Used on bento (Tjenester) + prosess cards.
    ============================================ */
-.brand-band {
-  background: var(--bg-primary);
-  border-top: 1px solid var(--border-subtle);
-  border-bottom: 1px solid var(--border-subtle);
-  padding: 96px 0;
-}
-.bik-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  max-width: 1080px;
-  margin: 0 auto;
-}
-.bik-tile {
-  background: var(--bg-surface);
-  border-radius: 16px;
-  border: 1px solid var(--border-subtle);
-  aspect-ratio: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 28px;
+.flip-card {
+  perspective: 1400px;
   position: relative;
-  overflow: hidden;
-  transition: transform 0.55s var(--ease), border-color 0.55s var(--ease);
-  opacity: 0;
-  transform: translateY(32px);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
-.brand-band.is-visible .bik-tile {
-  opacity: 1;
-  transform: translateY(0);
-}
-.brand-band.is-visible .bik-tile[data-bik="0"] { transition: opacity 0.85s var(--ease) 0.0s, transform 0.85s var(--ease) 0.0s, border-color 0.4s var(--ease); }
-.brand-band.is-visible .bik-tile[data-bik="1"] { transition: opacity 0.85s var(--ease) 0.12s, transform 0.85s var(--ease) 0.12s, border-color 0.4s var(--ease); }
-.brand-band.is-visible .bik-tile[data-bik="2"] { transition: opacity 0.85s var(--ease) 0.24s, transform 0.85s var(--ease) 0.24s, border-color 0.4s var(--ease); }
-.brand-band.is-visible .bik-tile[data-bik="3"] { transition: opacity 0.85s var(--ease) 0.36s, transform 0.85s var(--ease) 0.36s, border-color 0.4s var(--ease); }
-.bik-tile:hover {
-  transform: translateY(-3px);
-  border-color: rgba(232, 90, 60, 0.35);
-}
-.bik-art {
+.flip-card-inner {
+  position: relative;
   width: 100%;
   height: 100%;
-  max-width: 160px;
-  max-height: 160px;
+  transition: transform 0.75s cubic-bezier(0.4, 0.2, 0, 1);
+  transform-style: preserve-3d;
 }
-@media (max-width: 900px) {
-  .bik-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.flip-card.is-flipped .flip-card-inner {
+  transform: rotateY(180deg);
 }
-@media (max-width: 480px) {
-  .brand-band { padding: 64px 0; }
-  .bik-tile { padding: 20px; }
+.flip-card-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  border-radius: inherit;
+  overflow: hidden;
+}
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+.flip-card-hint {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  opacity: 0.55;
+  transition: opacity 0.4s var(--ease), color 0.4s var(--ease);
+  pointer-events: none;
+  z-index: 2;
+}
+.flip-card:hover .flip-card-hint {
+  opacity: 1;
+  color: var(--accent);
+}
+.flip-card.is-flipped .flip-card-hint {
+  opacity: 0.7;
+  color: var(--accent);
+}
+.flip-card-hint::before {
+  content: '↻';
+  margin-right: 6px;
+  display: inline-block;
+  transition: transform 0.55s var(--ease);
+}
+.flip-card.is-flipped .flip-card-hint::before {
+  transform: rotate(180deg);
+}
+@media (prefers-reduced-motion: reduce) {
+  .flip-card-inner { transition: none; }
+  .flip-card-hint::before { transition: none; }
 }
 
 .btn-primary {
@@ -1150,6 +1162,91 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
   transform: translateY(-4px);
   box-shadow: var(--shadow-md);
   border-color: rgba(232, 90, 60, 0.35);
+}
+
+/* ============================================
+   Bento card as flip-card: outer is the shell,
+   faces handle the visible content.
+   ============================================ */
+.bento-card.flip-card {
+  padding: 0;
+  background: transparent;
+  overflow: hidden;
+  min-height: 380px;
+}
+.bento-card.flip-card .flip-card-inner {
+  min-height: 100%;
+  width: 100%;
+  position: relative;
+}
+.bento-card.flip-card .flip-card-front {
+  position: relative;
+  width: 100%;
+  background: var(--bg-surface);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 380px;
+  transition: background 0.5s var(--ease);
+}
+.bento-card.flip-card .flip-card-back {
+  position: absolute;
+  inset: 0;
+  background: var(--bg-surface);
+  padding: 36px 32px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.bento-card.cream.flip-card .flip-card-front { background: var(--bg-primary); }
+.bento-card.cream.flip-card .flip-card-back { background: var(--bg-primary); }
+
+/* Hover-only color hint on the front face */
+.bento-card.flip-card:hover .flip-card-front {
+  background: linear-gradient(180deg, var(--bg-surface) 0%, rgba(232, 90, 60, 0.04) 100%);
+}
+.bento-card.cream.flip-card:hover .flip-card-front {
+  background: linear-gradient(180deg, var(--bg-primary) 0%, rgba(232, 90, 60, 0.06) 100%);
+}
+
+/* Back-face content */
+.flip-back-eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+.flip-back-title {
+  font-size: clamp(22px, 1.9vw, 26px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+.flip-back-lead {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--text-muted);
+  margin: 0 0 6px;
+}
+.flip-back-link {
+  margin-top: auto;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: gap 0.35s var(--ease), color 0.35s var(--ease);
+}
+.flip-back-link:hover {
+  gap: 12px;
+  color: var(--accent-dark);
 }
 
 .bento-card.wide { grid-column: span 2; }
@@ -2661,6 +2758,76 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
   padding: 8px 12px 0;
 }
 
+/* ============================================
+   Process-step as flip-card
+   ============================================ */
+.process-step.flip-card {
+  background: transparent;
+  padding: 0;
+  min-height: 240px;
+  border-radius: 10px;
+  transition: box-shadow 0.4s var(--ease);
+}
+.process-step.flip-card:hover {
+  box-shadow: 0 0 0 1px rgba(232, 90, 60, 0.45);
+}
+.process-step.flip-card .flip-card-inner {
+  width: 100%;
+  min-height: 240px;
+  position: relative;
+}
+.process-step.flip-card .flip-card-face {
+  background: var(--bg-primary);
+  padding: 8px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border-radius: 10px;
+  transition: background 0.5s var(--ease);
+}
+.process-step.flip-card .flip-card-front {
+  position: relative;
+}
+.process-step.flip-card .flip-card-back {
+  position: absolute;
+  inset: 0;
+  padding: 22px 18px;
+  justify-content: space-between;
+  gap: 14px;
+}
+.process-step.flip-card:hover .flip-card-front {
+  background: linear-gradient(180deg, var(--bg-primary) 0%, rgba(232, 90, 60, 0.05) 100%);
+}
+.process-step.flip-card .flip-card-hint {
+  top: 14px;
+  right: 14px;
+  font-size: 9px;
+}
+.process-back-num {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--accent);
+  line-height: 1;
+}
+.process-back-title {
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.012em;
+  color: var(--text-primary);
+  margin-top: 4px;
+}
+.process-back-body {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--text-primary);
+  margin-top: 6px;
+}
+.process-back-body strong {
+  color: var(--accent);
+  font-weight: 600;
+}
+
 .process-num {
   font-size: clamp(72px, 8vw, 96px);
   font-weight: 800;
@@ -3420,85 +3587,121 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
     </div>
 
     <div class="bento reveal">
-      <div class="bento-card">
-        <div class="bento-mockup">
-          <div class="mock-laptop">
-            <div class="mock-laptop-screen">
-              <div class="mock-laptop-chrome">
-                <span class="mock-dot d1"></span>
-                <span class="mock-dot d2"></span>
-                <span class="mock-dot d3"></span>
-                <span class="mock-url">ese-solution.no</span>
-              </div>
-              <div class="mock-laptop-content">
-                <div class="mock-laptop-eyebrow">[ 01 / FORSIDEN ]</div>
-                <div class="mock-laptop-title">Design som virker.</div>
-                <div class="mock-laptop-bar accent"></div>
-                <div class="mock-laptop-bar"></div>
-                <div class="mock-laptop-bar short"></div>
-                <div class="mock-laptop-block">
-                  <span class="mock-laptop-block-label">PRAT &middot; UTKAST &middot; LANSER</span>
+      <!-- Card 1: Nettsider -->
+      <div class="bento-card flip-card" aria-label="Nettsider — snu kortet for detaljer">
+        <span class="flip-card-hint">SNU</span>
+        <div class="flip-card-inner">
+          <div class="flip-card-face flip-card-front">
+            <div class="bento-mockup">
+              <div class="mock-laptop">
+                <div class="mock-laptop-screen">
+                  <div class="mock-laptop-chrome">
+                    <span class="mock-dot d1"></span>
+                    <span class="mock-dot d2"></span>
+                    <span class="mock-dot d3"></span>
+                    <span class="mock-url">ese-solution.no</span>
+                  </div>
+                  <div class="mock-laptop-content">
+                    <div class="mock-laptop-eyebrow">[ 01 / FORSIDEN ]</div>
+                    <div class="mock-laptop-title">Design som virker.</div>
+                    <div class="mock-laptop-bar accent"></div>
+                    <div class="mock-laptop-bar"></div>
+                    <div class="mock-laptop-bar short"></div>
+                    <div class="mock-laptop-block">
+                      <span class="mock-laptop-block-label">PRAT &middot; UTKAST &middot; LANSER</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
+            <div class="bento-text">
+              <h3>Nettsider</h3>
+              <p class="desc">Responsive sider. Klar for Google. 14 dager.</p>
+              <div class="price">Fra 12 000 kr</div>
+            </div>
           </div>
-        </div>
-        <div class="bento-text">
-          <h3>Nettsider</h3>
-          <p class="desc">Responsive sider. Klar for Google. 14 dager.</p>
-          <ul class="bento-deliverables">
-            <li>Responsiv mobil + desktop</li>
-            <li>SEO + kontaktskjema</li>
-            <li>30 dagers support</li>
-          </ul>
-          <div class="price">Fra 12 000 kr</div>
+          <div class="flip-card-face flip-card-back">
+            <div class="flip-back-eyebrow">Hva er inkludert</div>
+            <h3 class="flip-back-title">Nettsider</h3>
+            <p class="flip-back-lead">Komplett pakke: design, kode og lansering.</p>
+            <ul class="bento-deliverables">
+              <li>Responsiv mobil + desktop</li>
+              <li>SEO + kontaktskjema</li>
+              <li>30 dagers support etter lansering</li>
+            </ul>
+            <a href="https://ese-solution.no" target="_blank" rel="noopener" class="flip-back-link">Se eksempel live: ese-solution.no &rarr;</a>
+          </div>
         </div>
       </div>
 
-      <div class="bento-card cream">
-        <div class="bento-mockup">
-          <div class="mock-logo-grid">
-            <div class="mock-logo coral">VERMI</div>
-            <div class="mock-logo dark">ESE</div>
-            <div class="mock-logo">KVERN</div>
-            <div class="mock-logo">JÆR</div>
+      <!-- Card 2: Logo & merkevare -->
+      <div class="bento-card cream flip-card" aria-label="Logo og merkevare — snu kortet for detaljer">
+        <span class="flip-card-hint">SNU</span>
+        <div class="flip-card-inner">
+          <div class="flip-card-face flip-card-front">
+            <div class="bento-mockup">
+              <div class="mock-logo-grid">
+                <div class="mock-logo coral">VERMI</div>
+                <div class="mock-logo dark">ESE</div>
+                <div class="mock-logo">KVERN</div>
+                <div class="mock-logo">JÆR</div>
+              </div>
+            </div>
+            <div class="bento-text">
+              <h3>Logo &amp; merkevare</h3>
+              <p class="desc">Wordmark, farger, typografi. Bygget for ti år.</p>
+              <div class="price">Fra 8 000 kr</div>
+            </div>
           </div>
-        </div>
-        <div class="bento-text">
-          <h3>Logo &amp; merkevare</h3>
-          <p class="desc">Wordmark, farger, typografi. Bygget for ti år.</p>
-          <ul class="bento-deliverables">
-            <li>Primær + sekundær wordmark</li>
-            <li>Fargesystem + typografi</li>
-            <li>Brand book PDF (12+ sider)</li>
-          </ul>
-          <div class="price">Fra 8 000 kr</div>
+          <div class="flip-card-face flip-card-back">
+            <div class="flip-back-eyebrow">Hva er inkludert</div>
+            <h3 class="flip-back-title">Logo &amp; merkevare</h3>
+            <p class="flip-back-lead">Komplett identitet du kan bygge p&aring; i ti &aring;r.</p>
+            <ul class="bento-deliverables">
+              <li>Prim&aelig;r + sekund&aelig;r wordmark</li>
+              <li>Fargesystem + typografi</li>
+              <li>Brand book PDF (12+ sider)</li>
+            </ul>
+            <a href="/case/verminord" class="flip-back-link">Se eksempel: Verminord-systemet &rarr;</a>
+          </div>
         </div>
       </div>
 
-      <div class="bento-card">
-        <div class="bento-mockup">
-          <div class="mock-poster">
-            <div class="mock-poster-top">
-              <span class="mock-poster-label">PLAKAT &middot; 2025</span>
-              <span class="mock-poster-label" style="color: var(--accent); opacity: 0.85;">A2</span>
+      <!-- Card 3: Trykksaker -->
+      <div class="bento-card flip-card" aria-label="Trykksaker — snu kortet for detaljer">
+        <span class="flip-card-hint">SNU</span>
+        <div class="flip-card-inner">
+          <div class="flip-card-face flip-card-front">
+            <div class="bento-mockup">
+              <div class="mock-poster">
+                <div class="mock-poster-top">
+                  <span class="mock-poster-label">PLAKAT &middot; 2025</span>
+                  <span class="mock-poster-label" style="color: var(--accent); opacity: 0.85;">A2</span>
+                </div>
+                <div class="mock-poster-title">Bygd<br>for<br>Jæren.</div>
+                <div class="mock-poster-foot">
+                  <span class="mock-poster-label" style="color: var(--bg-primary); opacity: 0.55;">FOLKESTAD</span>
+                  <span class="mock-poster-label" style="color: var(--bg-primary); opacity: 0.35;">2025</span>
+                </div>
+              </div>
             </div>
-            <div class="mock-poster-title">Bygd<br>for<br>Jæren.</div>
-            <div class="mock-poster-foot">
-              <span class="mock-poster-label" style="color: var(--bg-primary); opacity: 0.55;">FOLKESTAD</span>
-              <span class="mock-poster-label" style="color: var(--bg-primary); opacity: 0.35;">2025</span>
+            <div class="bento-text">
+              <h3>Trykksaker</h3>
+              <p class="desc">Plakater, brosjyrer, skilt. Levert til d&oslash;ra.</p>
+              <div class="price">Fra 3 500 kr</div>
             </div>
           </div>
-        </div>
-        <div class="bento-text">
-          <h3>Trykksaker</h3>
-          <p class="desc">Plakater, brosjyrer, skilt. Levert til d&oslash;ra.</p>
-          <ul class="bento-deliverables">
-            <li>Plakater, brosjyrer, menyer</li>
-            <li>Skilt og dekaler</li>
-            <li>Trykk + levering inkludert</li>
-          </ul>
-          <div class="price">Fra 3 500 kr</div>
+          <div class="flip-card-face flip-card-back">
+            <div class="flip-back-eyebrow">Hva er inkludert</div>
+            <h3 class="flip-back-title">Trykksaker</h3>
+            <p class="flip-back-lead">Trykt lokalt p&aring; J&aelig;ren. Levert til d&oslash;ra.</p>
+            <ul class="bento-deliverables">
+              <li>Plakater, brosjyrer, menyer</li>
+              <li>Skilt, dekaler, bil-folie</li>
+              <li>Standard 350g matt &mdash; oppgraderes p&aring; foresp&oslash;rsel</li>
+            </ul>
+            <a href="#kontakt" class="flip-back-link">Be om trykk-spesifikasjoner &rarr;</a>
+          </div>
         </div>
       </div>
 
@@ -3575,70 +3778,6 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
 
   </div>
 </section>
-
-<!-- ============================================
-     BRAND I KONTEKST — silent mockup band
-     4 SVG mockups showing brand on common deliverables.
-     No header, no labels. Visual rhythm only.
-     ============================================ -->
-<section class="brand-band reveal" aria-label="Brand applied on common deliverables">
-  <div class="container">
-    <div class="bik-grid">
-
-      <!-- 01 — Storefront sign -->
-      <div class="bik-tile" data-bik="0">
-        <svg class="bik-art" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Skilt">
-          <rect x="28" y="22" width="84" height="50" rx="3" fill="none" stroke="#1A1A1A" stroke-width="1.5"/>
-          <text x="70" y="44" text-anchor="middle" font-family="Poppins, sans-serif" font-weight="800" font-size="10" letter-spacing="2" fill="#1A1A1A">FOLKESTAD</text>
-          <line x1="50" y1="52" x2="90" y2="52" stroke="#E85A3C" stroke-width="1.2"/>
-          <text x="70" y="64" text-anchor="middle" font-family="Poppins, sans-serif" font-weight="600" font-size="6" letter-spacing="2.4" fill="#E85A3C">JÆREN</text>
-          <line x1="70" y1="72" x2="70" y2="116" stroke="#1A1A1A" stroke-width="2"/>
-          <line x1="26" y1="120" x2="114" y2="120" stroke="#1A1A1A" stroke-width="1"/>
-        </svg>
-      </div>
-
-      <!-- 02 — Vehicle wrap -->
-      <div class="bik-tile" data-bik="1">
-        <svg class="bik-art" viewBox="0 0 140 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bil-skilt">
-          <path d="M14 38 L14 72 Q14 76 18 76 L122 76 Q126 76 126 72 L126 38 L98 38 L92 27 L42 27 L36 38 Z" fill="none" stroke="#1A1A1A" stroke-width="1.5" stroke-linejoin="round"/>
-          <line x1="42" y1="38" x2="42" y2="27" stroke="#1A1A1A" stroke-width="1.2"/>
-          <line x1="67" y1="38" x2="67" y2="27" stroke="#1A1A1A" stroke-width="1.2"/>
-          <line x1="92" y1="38" x2="92" y2="27" stroke="#1A1A1A" stroke-width="1.2"/>
-          <text x="70" y="58" text-anchor="middle" font-family="Poppins, sans-serif" font-weight="800" font-size="9" letter-spacing="2" fill="#1A1A1A">FOLKESTAD</text>
-          <line x1="50" y1="62" x2="90" y2="62" stroke="#E85A3C" stroke-width="1"/>
-          <text x="70" y="71" text-anchor="middle" font-family="Poppins, sans-serif" font-weight="600" font-size="5" letter-spacing="2" fill="#E85A3C">DESIGN</text>
-          <circle cx="36" cy="80" r="9" fill="#1A1A1A"/>
-          <circle cx="36" cy="80" r="3" fill="#F5F0E8"/>
-          <circle cx="106" cy="80" r="9" fill="#1A1A1A"/>
-          <circle cx="106" cy="80" r="3" fill="#F5F0E8"/>
-        </svg>
-      </div>
-
-      <!-- 03 — T-shirt -->
-      <div class="bik-tile" data-bik="2">
-        <svg class="bik-art" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Tr&oslash;ye">
-          <path d="M20 32 L48 18 Q56 28 70 28 Q84 28 92 18 L120 32 L114 52 L100 48 L100 122 L40 122 L40 48 L26 52 Z" fill="none" stroke="#1A1A1A" stroke-width="1.5" stroke-linejoin="round"/>
-          <path d="M58 22 Q70 33 82 22" fill="none" stroke="#1A1A1A" stroke-width="1.5"/>
-          <circle cx="70" cy="74" r="12" fill="none" stroke="#E85A3C" stroke-width="1.8"/>
-          <text x="70" y="78" text-anchor="middle" font-family="Poppins, sans-serif" font-weight="800" font-size="10" fill="#E85A3C">FK</text>
-        </svg>
-      </div>
-
-      <!-- 04 — Tote / bag -->
-      <div class="bik-tile" data-bik="3">
-        <svg class="bik-art" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bag">
-          <path d="M30 48 L30 122 Q30 126 34 126 L106 126 Q110 126 110 122 L110 48 Z" fill="none" stroke="#1A1A1A" stroke-width="1.5"/>
-          <path d="M50 48 Q50 24 70 24 Q90 24 90 48" fill="none" stroke="#1A1A1A" stroke-width="1.5"/>
-          <text x="70" y="84" text-anchor="middle" font-family="Poppins, sans-serif" font-weight="800" font-size="10" letter-spacing="2" fill="#1A1A1A">FOLKESTAD</text>
-          <line x1="50" y1="91" x2="90" y2="91" stroke="#E85A3C" stroke-width="1.2"/>
-          <text x="70" y="102" text-anchor="middle" font-family="Poppins, sans-serif" font-weight="600" font-size="6" letter-spacing="2.4" fill="#E85A3C">DESIGN</text>
-        </svg>
-      </div>
-
-    </div>
-  </div>
-</section>
-
 <!-- ============================================================
      SECTION 09 — OM MARTIN
      Editorial 2-column profile. Drops into folkestad-designs page
@@ -4132,26 +4271,79 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
     </svg>
 
     <div class="process reveal">
-      <div class="process-step">
-        <div class="process-num">01</div>
-        <h4>Vi snakker</h4>
-        <p>20 min p&aring; telefon. Jeg forst&aring;r bedriften din.</p>
+
+      <div class="process-step flip-card" aria-label="Steg 1 — Vi snakker. Snu kortet for fleksibilitet.">
+        <span class="flip-card-hint">SNU</span>
+        <div class="flip-card-inner">
+          <div class="flip-card-face flip-card-front">
+            <div class="process-num">01</div>
+            <h4>Vi snakker</h4>
+            <p>20 min p&aring; telefon. Jeg forst&aring;r bedriften din.</p>
+          </div>
+          <div class="flip-card-face flip-card-back">
+            <div>
+              <div class="process-back-num">01</div>
+              <div class="process-back-title">Vi snakker</div>
+            </div>
+            <p class="process-back-body">Telefon, <strong>e-post</strong>, SMS, eller en kaffe &mdash; du velger kanalen. 20 min er nok for &aring; se om vi passer sammen.</p>
+          </div>
+        </div>
       </div>
-      <div class="process-step">
-        <div class="process-num">02</div>
-        <h4>Vi bygger utkast</h4>
-        <p>2&ndash;3 dager. Du ser hva du f&aring;r f&oslash;r du betaler.</p>
+
+      <div class="process-step flip-card" aria-label="Steg 2 — Vi bygger utkast. Snu kortet for tempo-fleksibilitet.">
+        <span class="flip-card-hint">SNU</span>
+        <div class="flip-card-inner">
+          <div class="flip-card-face flip-card-front">
+            <div class="process-num">02</div>
+            <h4>Vi bygger utkast</h4>
+            <p>2&ndash;3 dager. Du ser hva du f&aring;r f&oslash;r du betaler.</p>
+          </div>
+          <div class="flip-card-face flip-card-back">
+            <div>
+              <div class="process-back-num">02</div>
+              <div class="process-back-title">Vi bygger utkast</div>
+            </div>
+            <p class="process-back-body">Mest vanlig: <strong>2&ndash;3 dager</strong>. Eller en <strong>2-ukers tr&aring;d</strong> over e-post om du vil tenke. Du bestemmer tempoet.</p>
+          </div>
+        </div>
       </div>
-      <div class="process-step">
-        <div class="process-num">03</div>
-        <h4>Vi finpusser</h4>
-        <p>Maks 2 runder. Endringer p&aring; 24 timer.</p>
+
+      <div class="process-step flip-card" aria-label="Steg 3 — Vi finpusser. Snu kortet for runde-detaljer.">
+        <span class="flip-card-hint">SNU</span>
+        <div class="flip-card-inner">
+          <div class="flip-card-face flip-card-front">
+            <div class="process-num">03</div>
+            <h4>Vi finpusser</h4>
+            <p>Maks 2 runder. Endringer p&aring; 24 timer.</p>
+          </div>
+          <div class="flip-card-face flip-card-back">
+            <div>
+              <div class="process-back-num">03</div>
+              <div class="process-back-title">Vi finpusser</div>
+            </div>
+            <p class="process-back-body">Inntil <strong>2 runder</strong> med justeringer. Trenger du flere? Snakk med meg &mdash; vi finner ut av det. Aldri ekstra hvis ting tar litt mer.</p>
+          </div>
+        </div>
       </div>
-      <div class="process-step">
-        <div class="process-num">04</div>
-        <h4>Vi lanserer</h4>
-        <p>Ferdig p&aring; 14 dager. Du eier alle filer.</p>
+
+      <div class="process-step flip-card" aria-label="Steg 4 — Vi lanserer. Snu kortet for hva som f&oslash;lger med.">
+        <span class="flip-card-hint">SNU</span>
+        <div class="flip-card-inner">
+          <div class="flip-card-face flip-card-front">
+            <div class="process-num">04</div>
+            <h4>Vi lanserer</h4>
+            <p>Ferdig p&aring; 14 dager. Du eier alle filer.</p>
+          </div>
+          <div class="flip-card-face flip-card-back">
+            <div>
+              <div class="process-back-num">04</div>
+              <div class="process-back-title">Vi lanserer</div>
+            </div>
+            <p class="process-back-body">Hosting, domene, e-post &mdash; jeg hjelper deg gjennom alt. <strong>30 dagers gratis support</strong> inkludert etter lansering.</p>
+          </div>
+        </div>
       </div>
+
     </div>
   </div>
 </section>
@@ -5160,6 +5352,44 @@ if (contactForm) {
     window.location.href = mailto;
   });
 }
+
+/* ============================================
+   Flip-card — click/tap/keyboard toggles flip
+   ============================================ */
+(function () {
+  var cards = document.querySelectorAll('.flip-card');
+  if (!cards.length) return;
+
+  function toggle(card) {
+    var nowFlipped = card.classList.toggle('is-flipped');
+    card.setAttribute('aria-pressed', nowFlipped ? 'true' : 'false');
+  }
+
+  cards.forEach(function (card) {
+    // Initial ARIA
+    card.setAttribute('role', 'button');
+    card.setAttribute('tabindex', '0');
+    card.setAttribute('aria-pressed', 'false');
+
+    card.addEventListener('click', function (e) {
+      // Let inner links/buttons handle their own click
+      if (e.target.closest('a[href], button')) return;
+      toggle(card);
+    });
+
+    card.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        if (e.target.closest('a[href], button')) return;
+        e.preventDefault();
+        toggle(card);
+      }
+      if (e.key === 'Escape' && card.classList.contains('is-flipped')) {
+        card.classList.remove('is-flipped');
+        card.setAttribute('aria-pressed', 'false');
+      }
+    });
+  });
+})();
 
 /* ============================================
    Subtle parallax — marinkurir-style scroll lag
