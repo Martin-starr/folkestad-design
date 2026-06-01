@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Folkestad Designs — Design som virker for ekte bedrifter</title>
+<title>Folkestad Designs — Nettside og merkevare på 14 dager. Halv pris av byrå.</title>
 <meta name="description" content="Nettsider, merkevare og dokumentasjon for håndverkere, restauranter og fagbedrifter på Jæren. Levert på 14 dager. Du betaler kun om du er fornøyd.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -294,6 +294,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 .hero h1 .line:nth-child(1) { animation-delay: 0.1s; }
 .hero h1 .line:nth-child(2) { animation-delay: 0.3s; }
+.hero h1 .line:nth-child(3) { animation-delay: 0.5s; }
 
 @keyframes lineReveal {
   to { opacity: 1; transform: translateY(0); }
@@ -414,6 +415,55 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   transform: translateY(-2px);
   box-shadow: 0 12px 28px rgba(232, 90, 60, 0.35);
 }
+
+/* ============================================
+   Cursor follower — premium pointer effect
+   ============================================ */
+.cursor-dot,
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  border-radius: 50%;
+  opacity: 0;
+  will-change: transform, width, height, opacity;
+}
+.cursor-dot {
+  width: 7px;
+  height: 7px;
+  margin: -3.5px 0 0 -3.5px;
+  background: var(--accent);
+  transition: opacity 0.4s var(--ease), background 0.3s var(--ease);
+}
+.cursor-ring {
+  width: 36px;
+  height: 36px;
+  margin: -18px 0 0 -18px;
+  border: 1.5px solid var(--accent);
+  background: transparent;
+  transition: opacity 0.4s var(--ease), width 0.35s var(--ease), height 0.35s var(--ease), margin 0.35s var(--ease), border-color 0.3s var(--ease), background 0.3s var(--ease);
+}
+@media (hover: hover) and (pointer: fine) {
+  .cursor-dot,
+  .cursor-ring { opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cursor-dot,
+  .cursor-ring { display: none; }
+}
+.cursor-ring.is-active {
+  width: 56px;
+  height: 56px;
+  margin: -28px 0 0 -28px;
+  background: rgba(232, 90, 60, 0.08);
+}
+.cursor-dot.is-active {
+  background: var(--accent-dark);
+}
+body.cursor-hidden .cursor-dot,
+body.cursor-hidden .cursor-ring { opacity: 0; }
 
 /* ============================================
    Sticky CTA — appears after hero, hides at kontakt
@@ -770,10 +820,10 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   flex-direction: column;
   gap: 12px;
   background: var(--bg-surface);
-  border-radius: 10px;
+  border-radius: 14px;
   border: 1px solid var(--border-subtle);
   padding: 14px;
-  transition: transform 0.3s var(--ease), border-color 0.3s var(--ease), box-shadow 0.3s var(--ease);
+  transition: transform 0.5s var(--ease), border-color 0.5s var(--ease), box-shadow 0.5s var(--ease);
   color: var(--text-primary);
 }
 
@@ -785,7 +835,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 .study-thumb {
   aspect-ratio: 16 / 10;
-  border-radius: 6px;
+  border-radius: 10px;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -908,13 +958,28 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   display: inline-block;
 }
 
-.studies-foot-link {
+.studies-foot-link,
+.faq-foot-link,
+.om-inline-link {
+  position: relative;
+  display: inline-block;
   color: var(--text-primary);
-  border-bottom: 1px solid var(--accent);
   font-weight: 600;
-  transition: color 0.2s var(--ease);
+  background-image:
+    linear-gradient(var(--accent), var(--accent)),
+    linear-gradient(var(--accent), var(--accent));
+  background-size: 100% 1px, 0% 2px;
+  background-position: 0 100%, 0 100%;
+  background-repeat: no-repeat;
+  padding-bottom: 1px;
+  transition: background-size 0.55s var(--ease), color 0.35s var(--ease);
 }
-.studies-foot-link:hover { color: var(--accent); }
+.studies-foot-link:hover,
+.faq-foot-link:hover,
+.om-inline-link:hover {
+  color: var(--accent);
+  background-size: 100% 1px, 100% 2px;
+}
 
 @media (max-width: 600px) {
   .studies-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
@@ -928,11 +993,11 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
    ============================================ */
 
 section {
-  padding: 120px 0;
+  padding: 144px 0;
   position: relative;
 }
 @media (max-width: 1024px) {
-  section { padding: 96px 0; }
+  section { padding: 112px 0; }
 }
 @media (max-width: 700px) {
   section { padding: 80px 0; }
@@ -992,10 +1057,10 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
 
 .bento-card {
   background: var(--bg-surface);
-  border-radius: 12px;
+  border-radius: 16px;
   padding: 32px;
   border: 1px solid var(--border-subtle);
-  transition: all 0.4s var(--ease);
+  transition: transform 0.55s var(--ease), border-color 0.55s var(--ease), box-shadow 0.55s var(--ease);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -1007,8 +1072,8 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
 
 .bento-card:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
-  border-color: rgba(232, 90, 60, 0.25);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(232, 90, 60, 0.35);
 }
 
 .bento-card.wide { grid-column: span 2; }
@@ -1772,10 +1837,10 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
 
 .case {
   background: var(--bg-surface);
-  border-radius: 12px;
+  border-radius: 16px;
   overflow: hidden;
   border: 1px solid var(--border-subtle);
-  transition: all 0.4s var(--ease);
+  transition: transform 0.55s var(--ease), border-color 0.55s var(--ease), box-shadow 0.55s var(--ease);
   display: flex;
   flex-direction: column;
   box-shadow: var(--shadow-sm);
@@ -1784,7 +1849,8 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
 
 .case:hover {
   transform: translateY(-6px);
-  box-shadow: var(--shadow-lg);
+  border-color: rgba(232, 90, 60, 0.35);
+  box-shadow: var(--shadow-md);
 }
 
 .case-cover {
@@ -3006,14 +3072,7 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
   color: var(--text-muted);
   letter-spacing: 0.005em;
 }
-.faq-foot-link {
-  color: var(--text-primary);
-  font-weight: 600;
-  border-bottom: 1px solid var(--accent);
-  transition: color 0.2s var(--ease);
-  margin-left: 6px;
-}
-.faq-foot-link:hover { color: var(--accent); }
+.faq-foot-link { margin-left: 6px; }
 
 /* ============================================
    SECTION 11 — CONTACT (dark)
@@ -3188,6 +3247,13 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
 <body>
 
 <!-- ============================================
+     CURSOR FOLLOWER — premium pointer
+     Hidden on touch + reduced-motion devices.
+     ============================================ -->
+<div class="cursor-dot" aria-hidden="true"></div>
+<div class="cursor-ring" aria-hidden="true"></div>
+
+<!-- ============================================
      NAV
      ============================================ -->
 <nav class="nav" id="nav">
@@ -3217,11 +3283,12 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
   <div class="container hero-inner">
     <div class="eyebrow">[ Folkestad Designs · Jæren, Norge · 2025 ]</div>
     <h1>
-      <span class="line">Design som virker</span>
-      <span class="line">for ekte bedrifter.</span>
+      <span class="line">Halv tid.</span>
+      <span class="line">Halv pris.</span>
+      <span class="line">Du eier alt.</span>
     </h1>
     <p class="hero-sub">
-      Nettsider, merkevare og dokumentasjon for håndverkere, restauranter og fagbedrifter på Jæren. Komplett pakke på 14 dager. Du betaler kun om utkastet er godkjent.
+      Nettside, merkevare og dokumentasjon. Levert p&aring; 14 dager. 12 000 kr &mdash; i stedet for 80 000.
     </p>
     <div class="hero-cta">
       <a href="#kontakt" class="btn-primary">Få gratis utkast →</a>
@@ -3808,15 +3875,7 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
   font-weight: 600;
 }
 
-.om-inline-link {
-  color: inherit;
-  border-bottom: 1px solid var(--accent);
-  font-weight: 500;
-  transition: color 0.2s var(--ease);
-}
-.om-inline-link:hover {
-  color: var(--accent);
-}
+.om-inline-link { font-weight: 500; }
 
 /* Pull-quote — single accented line set apart from the prose */
 .om-pull {
@@ -6419,6 +6478,64 @@ if (contactForm) {
     window.location.href = mailto;
   });
 }
+
+/* ============================================
+   Cursor follower — track + hover state
+   ============================================ */
+(function () {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+
+  var dot = document.querySelector('.cursor-dot');
+  var ring = document.querySelector('.cursor-ring');
+  if (!dot || !ring) return;
+
+  var mouseX = window.innerWidth / 2;
+  var mouseY = window.innerHeight / 2;
+  var dotX = mouseX, dotY = mouseY;
+  var ringX = mouseX, ringY = mouseY;
+  var running = true;
+
+  document.addEventListener('mousemove', function (e) {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  }, { passive: true });
+
+  document.addEventListener('mouseleave', function () {
+    document.body.classList.add('cursor-hidden');
+  });
+  document.addEventListener('mouseenter', function () {
+    document.body.classList.remove('cursor-hidden');
+  });
+
+  function tick() {
+    // Dot follows tight
+    dotX += (mouseX - dotX) * 0.45;
+    dotY += (mouseY - dotY) * 0.45;
+    // Ring lags slightly for premium "trailing" feel
+    ringX += (mouseX - ringX) * 0.18;
+    ringY += (mouseY - ringY) * 0.18;
+    dot.style.transform = 'translate3d(' + dotX + 'px,' + dotY + 'px,0)';
+    ring.style.transform = 'translate3d(' + ringX + 'px,' + ringY + 'px,0)';
+    if (running) requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+
+  // Hover state on interactive elements
+  var interactiveSel = 'a, button, [role="button"], input, textarea, .bento-card, .case, .study, .faq-q, .product-card';
+  document.addEventListener('mouseover', function (e) {
+    if (e.target.closest(interactiveSel)) {
+      ring.classList.add('is-active');
+      dot.classList.add('is-active');
+    }
+  });
+  document.addEventListener('mouseout', function (e) {
+    if (e.target.closest(interactiveSel)) {
+      ring.classList.remove('is-active');
+      dot.classList.remove('is-active');
+    }
+  });
+})();
 
 /* ============================================
    Sticky CTA — show after hero scrolls out, hide near kontakt
