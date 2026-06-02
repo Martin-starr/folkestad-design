@@ -3696,7 +3696,7 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
     <div class="section-head reveal">
       <div class="eyebrow accent">[ 02 / Studier ]</div>
       <h2>Levert. Bygget.<br>Eller eid selv.</h2>
-      <p class="lead">To leverte klienter — <em>ESE Solution</em>, min første eksterne kunde, og <em>Verminord</em>, mitt eget firma. Ferdige konsept-demoer finner du i biblioteket lenger ned.</p>
+      <p class="lead">To leverte klienter &mdash; <em>ESE Solution</em>, min f&oslash;rste eksterne kunde, og <em>Verminord</em>, mitt eget firma.</p>
     </div>
 
     <!-- Featured case: first real client -->
@@ -3947,7 +3947,7 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
           <li>1-side merkevareguide (PDF)</li>
           <li>Ferdig på 7 dager</li>
         </ul>
-        <a href="#kontakt" class="price-btn">Velg Oppstart →</a>
+        <a href="#kontakt" class="price-btn" data-package="oppstart">Velg Oppstart →</a>
       </div>
 
       <div class="price-card dark">
@@ -3962,7 +3962,7 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
           <li>Sosiale medier-maler (Instagram)</li>
           <li>Ferdig på 14 dager</li>
         </ul>
-        <a href="#kontakt" class="price-btn">Velg Komplett →</a>
+        <a href="#kontakt" class="price-btn" data-package="komplett">Velg Komplett →</a>
       </div>
 
       <div class="price-card">
@@ -3976,7 +3976,7 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
           <li>Full kreativ retning</li>
           <li>Tidslinje etter avtale</li>
         </ul>
-        <a href="#kontakt" class="price-btn">Ta kontakt →</a>
+        <a href="#kontakt" class="price-btn" data-package="tilpasset">Ta kontakt →</a>
       </div>
     </div>
   </div>
@@ -5271,6 +5271,48 @@ if (contactForm) {
     window.location.href = mailto;
   });
 }
+
+/* ============================================
+   Pre-fill contact form when a package CTA is clicked
+   ============================================ */
+(function () {
+  var packages = {
+    oppstart: {
+      label: 'Oppstart-pakken (9 000 kr)',
+      message: 'Hei Martin,\n\nJeg er interessert i Oppstart-pakken (9 000 kr).\n\nKort om bedriften: '
+    },
+    komplett: {
+      label: 'Komplett merkevare (18 000 kr)',
+      message: 'Hei Martin,\n\nJeg er interessert i Komplett merkevare-pakken (18 000 kr).\n\nKort om bedriften: '
+    },
+    tilpasset: {
+      label: 'Tilpasset løsning',
+      message: 'Hei Martin,\n\nJeg trenger en tilpasset løsning.\n\nKort om bedriften og hva jeg tenker: '
+    }
+  };
+
+  document.querySelectorAll('.price-btn[data-package]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var key = btn.getAttribute('data-package');
+      var pkg = packages[key];
+      if (!pkg) return;
+      var textarea = document.querySelector('#contactForm textarea[name="melding"]');
+      if (!textarea) return;
+      // Only pre-fill if textarea is empty (don't clobber user input)
+      var current = textarea.value.trim();
+      if (current === '' || current === textarea.getAttribute('placeholder')) {
+        textarea.value = pkg.message;
+      }
+      // Focus after the scroll completes
+      setTimeout(function () {
+        textarea.focus();
+        // Place cursor at end of pre-fill so user types into the gap
+        var end = textarea.value.length;
+        try { textarea.setSelectionRange(end, end); } catch (e) {}
+      }, 700);
+    });
+  });
+})();
 
 /* ============================================
    Flip-card — click/tap/keyboard toggles flip
