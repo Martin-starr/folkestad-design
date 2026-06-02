@@ -2764,68 +2764,47 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
 .process-step.flip-card {
   background: transparent;
   padding: 0;
-  min-height: 240px;
-  border-radius: 10px;
-  transition: box-shadow 0.4s var(--ease);
-}
-.process-step.flip-card:hover {
-  box-shadow: 0 0 0 1px rgba(232, 90, 60, 0.45);
+  min-height: 280px;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: border-color 0.55s var(--ease), box-shadow 0.55s var(--ease), transform 0.55s var(--ease);
 }
 .process-step.flip-card .flip-card-inner {
   width: 100%;
-  min-height: 240px;
+  min-height: 280px;
   position: relative;
 }
 .process-step.flip-card .flip-card-face {
   background: var(--bg-primary);
-  padding: 8px 14px;
+  padding: 28px 24px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  border-radius: 10px;
+  gap: 14px;
+  border-radius: 12px;
   transition: background 0.5s var(--ease);
 }
 .process-step.flip-card .flip-card-front {
   position: relative;
+  min-height: 280px;
 }
 .process-step.flip-card .flip-card-back {
   position: absolute;
   inset: 0;
-  padding: 22px 18px;
-  justify-content: space-between;
-  gap: 14px;
+  padding: 32px 26px 28px;
+  justify-content: flex-start;
+  gap: 10px;
+}
+.process-step.flip-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(232, 90, 60, 0.12);
 }
 .process-step.flip-card:hover .flip-card-front {
-  background: linear-gradient(180deg, var(--bg-primary) 0%, rgba(232, 90, 60, 0.05) 100%);
+  background: linear-gradient(180deg, var(--bg-primary) 0%, rgba(232, 90, 60, 0.06) 100%);
 }
 .process-step.flip-card .flip-card-hint {
-  top: 14px;
-  right: 14px;
-  font-size: 9px;
-}
-.process-back-num {
-  font-size: 28px;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  color: var(--accent);
-  line-height: 1;
-}
-.process-back-title {
-  font-size: 17px;
-  font-weight: 700;
-  letter-spacing: -0.012em;
-  color: var(--text-primary);
-  margin-top: 4px;
-}
-.process-back-body {
-  font-size: 14px;
-  line-height: 1.55;
-  color: var(--text-primary);
-  margin-top: 6px;
-}
-.process-back-body strong {
-  color: var(--accent);
-  font-weight: 600;
+  top: 16px;
+  right: 18px;
+  font-size: 10px;
 }
 
 .process-num {
@@ -4281,11 +4260,9 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
             <p>20 min p&aring; telefon. Jeg forst&aring;r bedriften din.</p>
           </div>
           <div class="flip-card-face flip-card-back">
-            <div>
-              <div class="process-back-num">01</div>
-              <div class="process-back-title">Vi snakker</div>
-            </div>
-            <p class="process-back-body">Telefon, <strong>e-post</strong>, SMS, eller en kaffe &mdash; du velger kanalen. 20 min er nok for &aring; se om vi passer sammen.</p>
+            <div class="flip-back-eyebrow">Kanaler</div>
+            <h3 class="flip-back-title">Vi snakker</h3>
+            <p class="flip-back-lead">Telefon, e-post, SMS, eller en kaffe &mdash; du velger kanalen. 20 min er nok for &aring; se om vi passer sammen.</p>
           </div>
         </div>
       </div>
@@ -4299,11 +4276,9 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
             <p>2&ndash;3 dager. Du ser hva du f&aring;r f&oslash;r du betaler.</p>
           </div>
           <div class="flip-card-face flip-card-back">
-            <div>
-              <div class="process-back-num">02</div>
-              <div class="process-back-title">Vi bygger utkast</div>
-            </div>
-            <p class="process-back-body">Mest vanlig: <strong>2&ndash;3 dager</strong>. Eller en <strong>2-ukers tr&aring;d</strong> over e-post om du vil tenke. Du bestemmer tempoet.</p>
+            <div class="flip-back-eyebrow">Tempo</div>
+            <h3 class="flip-back-title">Vi bygger utkast</h3>
+            <p class="flip-back-lead">Mest vanlig: 2&ndash;3 dager. Eller en 2-ukers tr&aring;d over e-post om du vil tenke. Du bestemmer tempoet.</p>
           </div>
         </div>
       </div>
@@ -4317,11 +4292,9 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
             <p>Maks 2 runder. Endringer p&aring; 24 timer.</p>
           </div>
           <div class="flip-card-face flip-card-back">
-            <div>
-              <div class="process-back-num">03</div>
-              <div class="process-back-title">Vi finpusser</div>
-            </div>
-            <p class="process-back-body">Inntil <strong>2 runder</strong> med justeringer. Trenger du flere? Snakk med meg &mdash; vi finner ut av det. Aldri ekstra hvis ting tar litt mer.</p>
+            <div class="flip-back-eyebrow">Runder</div>
+            <h3 class="flip-back-title">Vi finpusser</h3>
+            <p class="flip-back-lead">Inntil 2 runder med justeringer. Trenger du flere? Snakk med meg &mdash; vi finner ut av det. Aldri ekstra hvis ting tar litt mer.</p>
           </div>
         </div>
       </div>
@@ -4335,11 +4308,9 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
             <p>Ferdig p&aring; 14 dager. Du eier alle filer.</p>
           </div>
           <div class="flip-card-face flip-card-back">
-            <div>
-              <div class="process-back-num">04</div>
-              <div class="process-back-title">Vi lanserer</div>
-            </div>
-            <p class="process-back-body">Hosting, domene, e-post &mdash; jeg hjelper deg gjennom alt. <strong>30 dagers gratis support</strong> inkludert etter lansering.</p>
+            <div class="flip-back-eyebrow">Etter lansering</div>
+            <h3 class="flip-back-title">Vi lanserer</h3>
+            <p class="flip-back-lead">Hosting, domene, e-post &mdash; jeg hjelper deg gjennom alt. 30 dagers gratis support inkludert etter lansering.</p>
           </div>
         </div>
       </div>
