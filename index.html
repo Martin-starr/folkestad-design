@@ -3464,6 +3464,139 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
   .footer-top { grid-template-columns: 1fr; gap: 28px; }
   .footer-col h5 { margin-bottom: 12px; }
 }
+
+/* ============================================
+   WAVE 12 — Scroll energy & micro-interactions
+   ============================================ */
+
+/* Scroll progress — thin accent line above the nav */
+.scroll-progress {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  z-index: 200;
+  pointer-events: none;
+}
+.scroll-progress span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), var(--accent-dark));
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  will-change: transform;
+}
+
+/* Hero highlight — marker sweep under "eier alt" */
+.hero h1 .hl {
+  background: linear-gradient(to top, var(--accent-tint) 0%, var(--accent-tint) 42%, transparent 42%) no-repeat 0 100% / 0% 100%;
+  animation: hlSweep 0.7s var(--ease) 1.15s forwards;
+}
+@keyframes hlSweep {
+  to { background-size: 100% 100%; }
+}
+
+/* Hero scroll cue — quiet invitation to keep going */
+.hero-scroll-cue {
+  position: absolute;
+  bottom: 26px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  z-index: 2;
+  opacity: 0;
+  animation: fadeIn 0.8s var(--ease) 1.7s forwards;
+  transition: opacity 0.4s var(--ease), visibility 0.4s var(--ease);
+}
+.hero-scroll-cue-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.hero-scroll-cue-line {
+  width: 1px;
+  height: 44px;
+  background: var(--border-subtle);
+  position: relative;
+  overflow: hidden;
+}
+.hero-scroll-cue-line::after {
+  content: '';
+  position: absolute;
+  top: -40%; left: 0;
+  width: 100%;
+  height: 40%;
+  background: var(--accent);
+  animation: cueDrop 1.9s var(--ease) infinite;
+}
+@keyframes cueDrop {
+  0% { top: -40%; }
+  65%, 100% { top: 110%; }
+}
+body.has-scrolled .hero-scroll-cue {
+  opacity: 0 !important;
+  visibility: hidden;
+}
+@media (max-width: 700px) {
+  .hero-scroll-cue { display: none; }
+}
+
+/* Kinetic band — oversized outline marquee, pure ambience */
+.kinetic-band {
+  overflow: hidden;
+  padding: 64px 0 12px;
+  background: var(--bg-primary);
+}
+.kinetic-track {
+  display: flex;
+  white-space: nowrap;
+  width: max-content;
+  animation: kineticScroll 38s linear infinite;
+}
+.kinetic-track span {
+  font-size: clamp(56px, 9vw, 110px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(26, 26, 26, 0.16);
+  padding-right: 0.5em;
+}
+.kinetic-track em {
+  font-style: normal;
+  -webkit-text-stroke: 1.5px rgba(232, 90, 60, 0.45);
+}
+@keyframes kineticScroll {
+  to { transform: translateX(-50%); }
+}
+
+/* Case cards get 3D depth from the tilt script */
+.case { will-change: transform; }
+
+/* Reduced motion — settle everything into its final state */
+@media (prefers-reduced-motion: reduce) {
+  .hero h1 .line, .hero-sub, .hero-cta, .stats-strip {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  .hero h1 .hl {
+    animation: none;
+    background-size: 100% 100%;
+  }
+  .reveal, .reveal-group > .reveal-item {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .kinetic-track { animation: none; }
+  .hero-scroll-cue { display: none; }
+  html { scroll-behavior: auto; }
+}
 </style>
 </head>
 <body>
@@ -3474,6 +3607,9 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
      ============================================ -->
 <div class="cursor-dot" aria-hidden="true"></div>
 <div class="cursor-ring" aria-hidden="true"></div>
+
+<!-- Scroll progress line -->
+<div class="scroll-progress" aria-hidden="true"><span></span></div>
 
 <!-- ============================================
      NAV
@@ -3506,7 +3642,7 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
     <h1>
       <span class="line">Halv tid.</span>
       <span class="line">Halv pris.</span>
-      <span class="line">Du eier alt.</span>
+      <span class="line">Du <span class="hl">eier alt</span>.</span>
     </h1>
     <p class="hero-sub">
       Nettside og merkevare p&aring; 14 dager. 12 000 kr i stedet for 80 000.
@@ -3531,6 +3667,10 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
     </div>
 
   </div>
+  <a href="#tjenester" class="hero-scroll-cue" aria-label="Bla nedover til tjenester">
+    <span class="hero-scroll-cue-label">Bla</span>
+    <span class="hero-scroll-cue-line" aria-hidden="true"></span>
+  </a>
 </header>
 
 <!-- ============================================
@@ -3553,6 +3693,17 @@ section.dark { background: var(--bg-contrast); color: var(--bg-primary); }
     </div>
   </div>
 </section>
+
+<!-- ============================================
+     KINETIC BAND — oversized outline marquee
+     Decorative; the words repeat real content below.
+     ============================================ -->
+<div class="kinetic-band" aria-hidden="true">
+  <div class="kinetic-track">
+    <span>Nettsider &mdash; Logo &mdash; Trykksaker &mdash; 14 dager &mdash; <em>Du eier alt</em> &mdash;&nbsp;</span>
+    <span>Nettsider &mdash; Logo &mdash; Trykksaker &mdash; 14 dager &mdash; <em>Du eier alt</em> &mdash;&nbsp;</span>
+  </div>
+</div>
 
 <!-- ============================================
      01 KAPABILITETER
@@ -5212,6 +5363,11 @@ const statObserver = new IntersectionObserver((entries) => {
     if (entry.isIntersecting) {
       const el = entry.target;
       const target = parseInt(el.getAttribute('data-target'), 10);
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        el.textContent = target;
+        statObserver.unobserve(el);
+        return;
+      }
       const duration = 1400;
       const start = performance.now();
       function tick(now) {
@@ -5482,6 +5638,75 @@ if (contactForm) {
   window.addEventListener('scroll', onScroll, { passive: true });
   window.addEventListener('resize', onScroll, { passive: true });
   update();
+})();
+
+/* ============================================
+   Scroll progress line + scroll-cue dismissal
+   ============================================ */
+(function () {
+  var bar = document.querySelector('.scroll-progress span');
+  if (!bar) return;
+
+  var ticking = false;
+  function update() {
+    var doc = document.documentElement;
+    var max = doc.scrollHeight - window.innerHeight;
+    var p = max > 0 ? Math.min(window.scrollY / max, 1) : 0;
+    bar.style.transform = 'scaleX(' + p.toFixed(4) + ')';
+    document.body.classList.toggle('has-scrolled', window.scrollY > 60);
+    ticking = false;
+  }
+  function onScroll() {
+    if (!ticking) {
+      window.requestAnimationFrame(update);
+      ticking = true;
+    }
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll, { passive: true });
+  update();
+})();
+
+/* ============================================
+   Magnetic CTAs — buttons lean toward the cursor
+   ============================================ */
+(function () {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+
+  var strength = 0.28;
+  document.querySelectorAll('.hero-cta a, .nav-cta, .form-submit, .sticky-cta-btn').forEach(function (btn) {
+    btn.addEventListener('mousemove', function (e) {
+      var r = btn.getBoundingClientRect();
+      var x = (e.clientX - r.left - r.width / 2) * strength;
+      var y = (e.clientY - r.top - r.height / 2) * strength;
+      btn.style.transform = 'translate(' + x.toFixed(1) + 'px,' + (y - 2).toFixed(1) + 'px)';
+    });
+    btn.addEventListener('mouseleave', function () {
+      btn.style.transform = '';
+    });
+  });
+})();
+
+/* ============================================
+   Case-card tilt — subtle 3D depth on hover
+   ============================================ */
+(function () {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+
+  var maxDeg = 5;
+  document.querySelectorAll('.case').forEach(function (card) {
+    card.addEventListener('mousemove', function (e) {
+      var r = card.getBoundingClientRect();
+      var px = (e.clientX - r.left) / r.width - 0.5;
+      var py = (e.clientY - r.top) / r.height - 0.5;
+      card.style.transform = 'perspective(1000px) rotateX(' + (-py * maxDeg).toFixed(2) + 'deg) rotateY(' + (px * maxDeg).toFixed(2) + 'deg) translateY(-6px)';
+    });
+    card.addEventListener('mouseleave', function () {
+      card.style.transform = '';
+    });
+  });
 })();
 </script>
 
