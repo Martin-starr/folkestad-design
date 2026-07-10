@@ -336,96 +336,114 @@ textarea.fin{min-height:120px;resize:vertical}
    CARD HOVER — COLOUR INVERSION
    Invert each card's colours on hover while preserving the
    section's existing scroll / subtle motion.
-   Light cards  -> --ink bg + paper text + --mint accent.
-   Dark  cards  -> paper bg + --ink text + --acc  accent.
+   Light cards -> --ink bg + paper text + --mint accent.
+   Dark  cards -> paper bg + --ink text + --acc  accent.
+   Hover ACTIVATIONS live in the @media (hover:hover) block at the
+   bottom so touch taps never latch a card in the inverted state.
    ============================================================ */
 
-/* ---------- 1 · PROBLEMET  (.scard : cream --card -> dark ink) ----------
-   position:sticky stacked-scroll is untouched; only colours transition. */
+/* ---------- rest-state setup (safe on every device) ---------- */
+
+/* 1 · PROBLEMET · .scard (cream --card -> dark ink) · sticky stack untouched */
 .scard{transition:background-color .5s cubic-bezier(.16,.84,.24,1),border-color .5s cubic-bezier(.16,.84,.24,1),box-shadow .5s cubic-bezier(.16,.84,.24,1)}
 .scard h3,.scard p,.scard .snum{transition:color .5s cubic-bezier(.16,.84,.24,1)}
-.scard:hover{background:var(--ink);border-color:var(--ink);box-shadow:0 20px 64px rgba(20,23,26,.24),0 -12px 44px rgba(20,23,26,.10)}
-.scard:hover h3{color:var(--bg)}
-.scard:hover p{color:rgba(245,243,238,.66)}
-.scard:hover .snum{color:var(--mint)}
 
-/* ---------- 2 · LØSNINGEN  (.shbox : outlined-on-dark -> light paper) ----------
-   .shbox also carries .rv (scroll-reveal). The transition below UNIONS the reveal
-   props (opacity/transform/filter) with the hover invert so the reveal is preserved;
-   transition-delay:0 stops box 2's inline transition-delay:.35s leaking a
-   dark-text-on-dark readability flash on hover. Label/subtext use >=4.5:1 on paper. */
-.shbox{transition:opacity .9s cubic-bezier(.16,.84,.24,1),transform .9s cubic-bezier(.16,.84,.24,1),filter .9s cubic-bezier(.16,.84,.24,1),background-color .5s cubic-bezier(.16,.84,.24,1),border-color .5s cubic-bezier(.16,.84,.24,1),box-shadow .5s cubic-bezier(.16,.84,.24,1);transition-delay:0s!important}
+/* 2 · LØSNINGEN · .shbox (outlined-on-dark -> light paper)
+   Inverted through an inset pseudo so the element's inline .rv reveal
+   stagger (transition-delay) stays on the reveal only — the invert fades
+   in with no delay and no dark-text-on-dark flash. */
+.shbox{position:relative}
+.shbox>*{position:relative;z-index:1}
+.shbox:before{content:"";position:absolute;inset:-1px;background:var(--bg);border-radius:24px;opacity:0;transition:opacity .5s cubic-bezier(.16,.84,.24,1);box-shadow:0 28px 60px rgba(0,0,0,.45);pointer-events:none;z-index:0}
 .shbox .shlab,.shbox .shbig,.shbox .shsub{transition:color .5s cubic-bezier(.16,.84,.24,1)}
-.shbox:hover{background:var(--bg);border-color:var(--bg)!important;box-shadow:0 24px 64px rgba(0,0,0,.4)}
-.shbox:hover .shlab{color:rgba(20,23,26,.66)!important}
-.shbox:hover .shbig{color:var(--ink)!important}
-.shbox:hover .shsub{color:rgba(20,23,26,.66)}
 
-/* ---------- 3 · TJENESTER  (.svcrow : row -> dark ink) ----------
-   The existing left->right wash (.svcrow:before) becomes the dark fill, so
-   the invert slides in with the same subtle motion; .svct keeps its shift. */
+/* 3 · TJENESTER · .svcrow (row -> dark ink)
+   The existing wash layer becomes the dark fill, FADED (not L->R swept) so
+   the background and text recolour in sync — no light-text-on-paper flash.
+   The .svct title shift (the design's own subtle effect) is kept. */
 .svcrow>*{position:relative;z-index:1}
-.svcrow:before{background:var(--ink)}
+.svcrow:before{background:var(--ink);transform:none;opacity:0;transition:opacity .5s cubic-bezier(.16,.84,.24,1)}
 .svct{transition:transform .5s cubic-bezier(.16,.84,.24,1),color .5s cubic-bezier(.16,.84,.24,1)}
 .svcd,.svcp,.svcrow .snum{transition:color .5s cubic-bezier(.16,.84,.24,1)}
-.svcrow:hover .svct{color:var(--bg)}
-.svcrow:hover .svcd{color:rgba(245,243,238,.6)}
-.svcrow:hover .svcp{color:var(--mint)}
-.svcrow:hover .snum{color:var(--mint)}
 
-/* ---------- 4 · PROSESS  (.pstep : row -> floating dark card) ----------
-   Inset pseudo card so the .procfill timeline + row rhythm stay put. */
-.pstep{position:relative}
+/* 4 · PROSESS · .pstep (row -> floating dark card)
+   Inset pseudo card so the .procfill timeline + row rhythm stay put; the
+   union transition keeps the .rv reveal (this element carries .rv vl). */
+.pstep{position:relative;transition:opacity .9s cubic-bezier(.16,.84,.24,1),transform .9s cubic-bezier(.16,.84,.24,1),filter .9s cubic-bezier(.16,.84,.24,1),border-color .45s ease}
 .pstep>*{position:relative;z-index:1}
 .pstep:after{content:"";position:absolute;top:6px;bottom:6px;left:calc(-1 * clamp(16px,1.8vw,26px));right:calc(-1 * clamp(16px,1.8vw,26px));background:var(--ink);border-radius:16px;opacity:0;transform:scale(.98);transition:opacity .45s ease,transform .5s cubic-bezier(.16,.84,.24,1);pointer-events:none;z-index:0}
-.pstep:hover:after{opacity:1;transform:none}
-/* union transition preserves the .rv reveal (.pstep carries .rv vl) + border fade */
-.pstep{transition:opacity .9s cubic-bezier(.16,.84,.24,1),transform .9s cubic-bezier(.16,.84,.24,1),filter .9s cubic-bezier(.16,.84,.24,1),border-color .45s ease}
-.pstep:hover{border-bottom-color:transparent}
 .pday,.pstep h3,.pstep p{transition:color .5s cubic-bezier(.16,.84,.24,1)}
-.pstep:hover .pday{color:var(--mint)}
-.pstep:hover h3{color:var(--bg)}
-.pstep:hover p{color:rgba(245,243,238,.6)}
 
-/* ---------- 5 · PRISER  (.pcard : white -> dark  |  .hot dark -> white) ----------
-   Keep the lift + rotate; invert fill + all inner text, flip the CTA pill. */
+/* 5 · PRISER · .pcard (white -> dark  |  .hot dark -> white)
+   Base .pcard already redeclares transition, so the union below keeps
+   transform/box-shadow/border-color for the lift and adds the colour invert. */
 .pcard{transition:transform .55s cubic-bezier(.16,.84,.24,1),box-shadow .55s,border-color .55s,background-color .55s,color .55s}
 .pcard h3,.pcard .ptier,.pcard .pprice,.pcard .pprice small,.pcard .pinc,.pcard .pinc li,.pcard .pinc li:before{transition:color .5s cubic-bezier(.16,.84,.24,1),background-color .5s cubic-bezier(.16,.84,.24,1),border-color .5s cubic-bezier(.16,.84,.24,1)}
-/* keep the CTA pill's transform micro-lift (base .pill transitions transform) */
-.pcard .pbtn{transition:color .5s cubic-bezier(.16,.84,.24,1),background-color .5s cubic-bezier(.16,.84,.24,1),border-color .5s cubic-bezier(.16,.84,.24,1),transform .35s}
-/* white card -> dark */
-.pcard:hover{background:var(--ink);color:var(--bg)}
-.pcard:hover h3{color:var(--bg)}
-.pcard:hover .ptier{color:var(--mint)}
-.pcard:hover .pprice{color:var(--mint)}
-.pcard:hover .pprice small{color:rgba(245,243,238,.5)}
-.pcard:hover .pinc{color:rgba(245,243,238,.62)}
-.pcard:hover .pinc li:before{color:var(--mint)}
-.pcard:hover .pbtn{background:var(--bg);color:var(--ink)}
-.pcard:hover .pbtn:hover{background:var(--mint);color:var(--ink)}
-/* already-dark "hot" card -> invert to light */
-.pcard.hot:hover{background:var(--bg);color:var(--ink);border-color:var(--acc)}
-.pcard.hot:hover h3{color:var(--ink)}
-.pcard.hot:hover .ptier{color:var(--acc)}
-.pcard.hot:hover .pprice{color:var(--acc)}
-.pcard.hot:hover .pprice small{color:rgba(20,23,26,.66)}
-.pcard.hot:hover .pinc{color:rgba(20,23,26,.62)}
-.pcard.hot:hover .pinc li:before{color:var(--acc)}
-.pcard.hot:hover .pbtn{background:var(--ink);color:var(--bg)}
-.pcard.hot:hover .pbtn:hover{background:var(--acc);color:#fff}
+.pcard .pbtn{transition:color .5s cubic-bezier(.16,.84,.24,1),background-color .5s cubic-bezier(.16,.84,.24,1),border-color .5s cubic-bezier(.16,.84,.24,1),transform .35s cubic-bezier(.16,.84,.24,1)}
 
-/* ---------- 6 · FAQ  (.faq details : row -> dark ink) · keeps open animation ---------- */
+/* 6 · FAQ · .faq details (row -> dark ink, open + closed)
+   Inset pseudo (top/bottom -1px) covers the base border hairlines. */
 .faq details{position:relative;transition:border-color .4s ease}
 .faq summary,.faq .qa{position:relative;z-index:1}
-/* top/bottom:-1px so the dark card covers the base border hairlines; border also
-   neutralised on hover so no faint light line leaks across the inverted row */
 .faq details:before{content:"";position:absolute;left:-18px;right:-18px;top:-1px;bottom:-1px;background:var(--ink);border-radius:14px;opacity:0;transition:opacity .4s ease;pointer-events:none;z-index:0}
-.faq details:hover:before{opacity:1}
-.faq details:hover{border-color:transparent}
 .faq .qa{transition:color .4s ease}
-.faq details:hover summary{color:var(--bg)}
-.faq details:hover .qplus{color:var(--mint)}
-.faq details:hover .qa{color:rgba(245,243,238,.6)}
+
+/* ---------- hover ACTIVATIONS — pointer devices only ---------- */
+@media (hover:hover) and (pointer:fine){
+  /* 1 · PROBLEMET */
+  .scard:hover{background:var(--ink);border-color:var(--ink);box-shadow:0 20px 64px rgba(20,23,26,.24),0 -12px 44px rgba(20,23,26,.10)}
+  .scard:hover h3{color:var(--bg)}
+  .scard:hover p{color:rgba(245,243,238,.66)}
+  .scard:hover .snum{color:var(--mint)}
+
+  /* 2 · LØSNINGEN */
+  .shbox:hover:before{opacity:1}
+  .shbox:hover .shlab{color:rgba(20,23,26,.66)}
+  .shbox:hover .shbig{color:var(--ink)}
+  .shbox:hover .shsub{color:rgba(20,23,26,.66)}
+
+  /* 3 · TJENESTER */
+  .svcrow:hover:before{opacity:1;transform:none}
+  .svcrow:hover .svct{color:var(--bg)}
+  .svcrow:hover .svcd{color:rgba(245,243,238,.6)}
+  .svcrow:hover .svcp{color:var(--mint)}
+  .svcrow:hover .snum{color:var(--mint)}
+
+  /* 4 · PROSESS */
+  .pstep:hover:after{opacity:1;transform:none}
+  .pstep:hover{border-bottom-color:transparent}
+  .pstep:hover .pday{color:var(--mint)}
+  .pstep:hover h3{color:var(--bg)}
+  .pstep:hover p{color:rgba(245,243,238,.6)}
+
+  /* 5 · PRISER — white card -> dark (delay:0 so cards 2 & 3 don't lag their reveal-stagger into the hover) */
+  .pcard:hover{background:var(--ink);color:var(--bg);transition-delay:0s!important}
+  .pcard:hover h3{color:var(--bg)}
+  .pcard:hover .ptier{color:var(--mint)}
+  .pcard:hover .pprice{color:var(--mint)}
+  .pcard:hover .pprice small{color:rgba(245,243,238,.5)}
+  .pcard:hover .pinc{color:rgba(245,243,238,.62)}
+  .pcard:hover .pinc li:before{color:var(--mint)}
+  .pcard:hover .pbtn{background:var(--bg);color:var(--ink)}
+  .pcard:hover .pbtn:hover{background:var(--mint);color:var(--ink)}
+  /* 5 · PRISER — already-dark "hot" card -> light */
+  .pcard.hot:hover{background:var(--bg);color:var(--ink);border-color:var(--acc)}
+  .pcard.hot:hover h3{color:var(--ink)}
+  .pcard.hot:hover .ptier{color:var(--acc)}
+  .pcard.hot:hover .pprice{color:var(--acc)}
+  .pcard.hot:hover .pprice small{color:rgba(20,23,26,.66)}
+  .pcard.hot:hover .pinc{color:rgba(20,23,26,.62)}
+  .pcard.hot:hover .pinc li:before{color:var(--acc)}
+  .pcard.hot:hover .pbtn{background:var(--ink);color:var(--bg)}
+  .pcard.hot:hover .pbtn:hover{background:var(--acc);color:#fff}
+
+  /* 6 · FAQ */
+  .faq details:hover:before{opacity:1}
+  .faq details:hover{border-color:transparent}
+  .faq details:hover summary{color:var(--bg)}
+  .faq details:hover .qplus{color:var(--mint)}
+  .faq details:hover .qa{color:rgba(245,243,238,.6)}
+}
 
 
 </style>
