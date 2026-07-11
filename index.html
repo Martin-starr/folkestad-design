@@ -1,166 +1,61 @@
 <!DOCTYPE html>
-<html><head>
+<html lang="no"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="assets/react.production.min.js"></script><script src="assets/react-dom.production.min.js"></script><script src="assets/dc-runtime.js"></script>
-
 <title>Folkestad Designs — nettside og merkevare på 14 dager, halve prisen</title>
 <meta name="description" content="Nettside, merkevare og trykk for bedrifter på Jæren, bygget av én designer. Fra 12 000 kr, levert på 7–14 dager. Du betaler først når utkastet er godkjent, og du eier alle filene.">
-</head>
-<body>
-<x-dc>
-<helmet data-dc-atomics="">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<style>/* latin-ext */
-@font-face {
-  font-family: 'Instrument Serif';
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-  src: url("fonts/eb2f9be3-2e9b-47b9-8692-035f709450f7.woff2") format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Instrument Serif';
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-  src: url("fonts/53a2af45-a3d1-4aea-8254-35b386e8a9df.woff2") format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Instrument Serif';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("fonts/a8d8793f-46a8-4863-9f98-a83825fb60de.woff2") format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Instrument Serif';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("fonts/14da84a7-a5e0-4c0c-8ce8-2768fc7275e2.woff2") format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Schibsted Grotesk';
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-  src: url("fonts/f3b85cab-6f22-4bac-a5e0-765c9682ead1.woff2") format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Schibsted Grotesk';
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-  src: url("fonts/9c809632-c9b7-4a20-aff4-00d1d77434fc.woff2") format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Schibsted Grotesk';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("fonts/527802b3-b6a3-48e5-b7e8-a09d235aea99.woff2") format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Schibsted Grotesk';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("fonts/acd1f605-60b5-4735-a4d5-6aa6faa64e2f.woff2") format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Schibsted Grotesk';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("fonts/527802b3-b6a3-48e5-b7e8-a09d235aea99.woff2") format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Schibsted Grotesk';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("fonts/acd1f605-60b5-4735-a4d5-6aa6faa64e2f.woff2") format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Schibsted Grotesk';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url("fonts/527802b3-b6a3-48e5-b7e8-a09d235aea99.woff2") format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Schibsted Grotesk';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url("fonts/acd1f605-60b5-4735-a4d5-6aa6faa64e2f.woff2") format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Schibsted Grotesk';
-  font-style: normal;
-  font-weight: 800;
-  font-display: swap;
-  src: url("fonts/527802b3-b6a3-48e5-b7e8-a09d235aea99.woff2") format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Schibsted Grotesk';
-  font-style: normal;
-  font-weight: 800;
-  font-display: swap;
-  src: url("fonts/acd1f605-60b5-4735-a4d5-6aa6faa64e2f.woff2") format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Schibsted Grotesk';
-  font-style: normal;
-  font-weight: 900;
-  font-display: swap;
-  src: url("fonts/527802b3-b6a3-48e5-b7e8-a09d235aea99.woff2") format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Schibsted Grotesk';
-  font-style: normal;
-  font-weight: 900;
-  font-display: swap;
-  src: url("fonts/acd1f605-60b5-4735-a4d5-6aa6faa64e2f.woff2") format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-</style>
+<link rel="canonical" href="https://folkestad.design/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://folkestad.design/">
+<meta property="og:title" content="Folkestad Designs — nettside og merkevare på 14 dager, halve prisen">
+<meta property="og:description" content="Nettside, merkevare og trykk for bedrifter på Jæren, bygget av én designer. Du betaler først når utkastet er godkjent.">
+<meta property="og:image" content="https://folkestad.design/images/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#F5F3EE">
+<link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="/images/site.webmanifest">
+<link rel="preload" href="fonts/acd1f605-60b5-4735-a4d5-6aa6faa64e2f.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/53a2af45-a3d1-4aea-8254-35b386e8a9df.woff2" as="font" type="font/woff2" crossorigin>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Folkestad Designs","url":"https://folkestad.design/","email":"hei@folkestad.design","address":{"@type":"PostalAddress","addressLocality":"Klepp Stasjon","addressRegion":"Jæren","addressCountry":"NO"},"description":"Nettside, merkevare og trykk for bedrifter på Jæren — bygget av én designer.","priceRange":"9000–25000 kr"}</script>
 <style>
+/* latin-ext */
+@font-face{font-family:'Instrument Serif';font-style:italic;font-weight:400;font-display:swap;src:url("fonts/eb2f9be3-2e9b-47b9-8692-035f709450f7.woff2") format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+/* latin */
+@font-face{font-family:'Instrument Serif';font-style:italic;font-weight:400;font-display:swap;src:url("fonts/53a2af45-a3d1-4aea-8254-35b386e8a9df.woff2") format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+/* latin-ext */
+@font-face{font-family:'Instrument Serif';font-style:normal;font-weight:400;font-display:swap;src:url("fonts/a8d8793f-46a8-4863-9f98-a83825fb60de.woff2") format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+/* latin */
+@font-face{font-family:'Instrument Serif';font-style:normal;font-weight:400;font-display:swap;src:url("fonts/14da84a7-a5e0-4c0c-8ce8-2768fc7275e2.woff2") format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+/* latin-ext */
+@font-face{font-family:'Schibsted Grotesk';font-style:italic;font-weight:400;font-display:swap;src:url("fonts/f3b85cab-6f22-4bac-a5e0-765c9682ead1.woff2") format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+/* latin */
+@font-face{font-family:'Schibsted Grotesk';font-style:italic;font-weight:400;font-display:swap;src:url("fonts/9c809632-c9b7-4a20-aff4-00d1d77434fc.woff2") format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+/* latin-ext */
+@font-face{font-family:'Schibsted Grotesk';font-style:normal;font-weight:400;font-display:swap;src:url("fonts/527802b3-b6a3-48e5-b7e8-a09d235aea99.woff2") format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+/* latin */
+@font-face{font-family:'Schibsted Grotesk';font-style:normal;font-weight:400;font-display:swap;src:url("fonts/acd1f605-60b5-4735-a4d5-6aa6faa64e2f.woff2") format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+/* latin-ext */
+@font-face{font-family:'Schibsted Grotesk';font-style:normal;font-weight:500;font-display:swap;src:url("fonts/527802b3-b6a3-48e5-b7e8-a09d235aea99.woff2") format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+/* latin */
+@font-face{font-family:'Schibsted Grotesk';font-style:normal;font-weight:500;font-display:swap;src:url("fonts/acd1f605-60b5-4735-a4d5-6aa6faa64e2f.woff2") format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+/* latin-ext */
+@font-face{font-family:'Schibsted Grotesk';font-style:normal;font-weight:700;font-display:swap;src:url("fonts/527802b3-b6a3-48e5-b7e8-a09d235aea99.woff2") format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+/* latin */
+@font-face{font-family:'Schibsted Grotesk';font-style:normal;font-weight:700;font-display:swap;src:url("fonts/acd1f605-60b5-4735-a4d5-6aa6faa64e2f.woff2") format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+/* latin-ext */
+@font-face{font-family:'Schibsted Grotesk';font-style:normal;font-weight:800;font-display:swap;src:url("fonts/527802b3-b6a3-48e5-b7e8-a09d235aea99.woff2") format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+/* latin */
+@font-face{font-family:'Schibsted Grotesk';font-style:normal;font-weight:800;font-display:swap;src:url("fonts/acd1f605-60b5-4735-a4d5-6aa6faa64e2f.woff2") format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+/* latin-ext */
+@font-face{font-family:'Schibsted Grotesk';font-style:normal;font-weight:900;font-display:swap;src:url("fonts/527802b3-b6a3-48e5-b7e8-a09d235aea99.woff2") format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+/* latin */
+@font-face{font-family:'Schibsted Grotesk';font-style:normal;font-weight:900;font-display:swap;src:url("fonts/acd1f605-60b5-4735-a4d5-6aa6faa64e2f.woff2") format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+
 html{scroll-behavior:smooth}body{margin:0;background:#F5F3EE}
 ::selection{background:#1F4E43;color:#F5F3EE}
-.site{--bg:#F5F3EE;--ink:#14171A;--mut:rgba(20,23,26,.48);--line:rgba(20,23,26,.11);--acc:#1F4E43;--card:#ECE9E1;--mint:#9ED8C6;background:var(--bg);color:var(--ink);font-family:'Schibsted Grotesk',sans-serif;font-size:17px;line-height:1.65;overflow-x:clip}
+.site{--bg:#F5F3EE;--ink:#14171A;--mut:rgba(20,23,26,.58);--line:rgba(20,23,26,.11);--acc:#1F4E43;--card:#ECE9E1;--mint:#9ED8C6;background:var(--bg);color:var(--ink);font-family:'Schibsted Grotesk',sans-serif;font-size:17px;line-height:1.65;overflow-x:clip}
 .cwrap{max-width:1360px;margin:0 auto;padding:0 clamp(24px,4vw,64px)}
 .eyebrow{display:flex;align-items:center;gap:12px;font-weight:500;font-size:11.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--mut)}
 .eyebrow:before{content:"";width:40px;height:1.5px;background:var(--acc)}
@@ -173,14 +68,14 @@ html{scroll-behavior:smooth}body{margin:0;background:#F5F3EE}
 .lr>span{display:block;transform:translateY(115%) rotate(2deg);transform-origin:0 100%;transition:transform 1.2s cubic-bezier(.16,.84,.24,1)}
 .on .lr>span,.lr.on>span{transform:none}
 .rv{opacity:0;transform:translateY(34px);transition:opacity .9s cubic-bezier(.16,.84,.24,1),transform .9s cubic-bezier(.16,.84,.24,1),filter .9s cubic-bezier(.16,.84,.24,1),clip-path 1.2s cubic-bezier(.16,.84,.24,1)}
-.rv.on{opacity:1;transform:none;filter:none}
 .rv.vl{transform:translateX(-48px)}.rv.vr{transform:translateX(48px)}.rv.vs{transform:scale(.92) translateY(20px)}.rv.vb{transform:translateY(14px);filter:blur(16px)}
+.rv.on{opacity:1;transform:none;filter:none}
 .rv.vw{opacity:1;transform:none;clip-path:inset(0 100% 0 0)}.rv.vw.on{clip-path:inset(0 -2% 0 0)}
 .grain{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:999;opacity:.04;mix-blend-mode:multiply}
-@media(pointer:fine) and (min-width:961px){.site,.site *{cursor:none}}
+@media(pointer:fine) and (min-width:961px) and (prefers-reduced-motion:no-preference){.site,.site *{cursor:none}}
 .cur{display:none;position:fixed;width:14px;height:14px;border-radius:50%;background:var(--acc);pointer-events:none;z-index:10000;transform:translate(-50%,-50%);transition:width .4s cubic-bezier(.16,.84,.24,1),height .4s cubic-bezier(.16,.84,.24,1),background .3s,border .3s,opacity .3s}
 .cur.big{width:56px;height:56px;background:transparent;border:1.5px solid var(--acc)}
-@media(pointer:fine) and (min-width:961px){.cur{display:block}}
+@media(pointer:fine) and (min-width:961px) and (prefers-reduced-motion:no-preference){.cur{display:block}}
 .loader{position:fixed;inset:0;background:var(--ink);color:var(--bg);z-index:100;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;transition:clip-path 1s cubic-bezier(.7,0,.15,1);clip-path:inset(0)}
 .loader.off{clip-path:inset(0 0 100% 0)}
 .lpct{font-weight:900;font-size:clamp(80px,18vw,240px);line-height:.85;letter-spacing:-.05em;font-variant-numeric:tabular-nums}
@@ -196,7 +91,10 @@ html{scroll-behavior:smooth}body{margin:0;background:#F5F3EE}
 .pill{display:inline-block;white-space:nowrap;background:var(--ink);color:var(--bg);text-decoration:none;font-size:14px;font-weight:500;padding:12px 28px;border-radius:100px;transition:background .35s,transform .35s}
 .pill:hover{background:var(--acc);transform:translateY(-2px)}
 .pill.inv{background:var(--bg);color:var(--ink)}.pill.inv:hover{background:#fff}
-.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:clip;padding-top:clamp(120px,18vh,180px);box-sizing:border-box}
+.skip{position:fixed;top:-100px;left:16px;z-index:200;background:var(--ink);color:var(--bg);padding:12px 20px;border-radius:8px;text-decoration:none;font-size:14px;transition:top .3s}
+.skip:focus-visible{top:16px}
+a:focus-visible,button:focus-visible,summary:focus-visible,.fin:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+.hero{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:clip;padding-top:clamp(120px,18vh,180px);box-sizing:border-box}
 .hbg{position:absolute;inset:0;background:radial-gradient(ellipse 90% 70% at 75% 25%,rgba(31,78,67,.05),transparent 70%);z-index:0}
 .hwm{position:absolute;right:-4vw;top:42%;transform:translateY(-50%);font-family:'Instrument Serif',serif;font-style:italic;font-size:clamp(300px,52vw,750px);color:var(--ink);opacity:.025;line-height:.75;pointer-events:none;z-index:0;user-select:none}
 .hin{position:relative;z-index:2}
@@ -217,14 +115,130 @@ html{scroll-behavior:smooth}body{margin:0;background:#F5F3EE}
 .body p{margin:0 0 20px;color:rgba(20,23,26,.68)}
 .tlink{display:inline-flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;font-weight:500;border-bottom:1.5px solid var(--ink);padding-bottom:4px;transition:color .3s,border-color .3s,gap .4s cubic-bezier(.16,.84,.24,1)}
 .tlink:hover{color:var(--acc);border-color:var(--acc);gap:16px}
-.stack{margin-top:clamp(50px,6vw,80px)}
-.scard{position:sticky;background:var(--card);border:1px solid var(--line);border-radius:28px;padding:clamp(36px,4vw,60px);display:grid;grid-template-columns:80px 1fr 1fr;gap:clamp(20px,3vw,50px);align-items:start;margin-bottom:18px;box-shadow:0 -12px 44px rgba(20,23,26,.05);will-change:transform}
-.snum{font-weight:500;font-size:12px;color:var(--acc);letter-spacing:.12em;padding-top:6px}
-.scard h3{font-weight:800;font-size:clamp(24px,2.8vw,40px);letter-spacing:-.025em;line-height:1.08;margin:0}
-.scard p{margin:0;color:rgba(20,23,26,.62);font-size:16px;max-width:44ch}
+
+/* ============================================================
+   SHOWCASE — Wix-Studio-style pinned scroll-through chapters.
+   Each .chap = a runway (height set by JS) with a sticky 100svh
+   stage. Page scroll scrubs the mockup through its frame, then
+   the next chapter slides up and covers (cover chains get a
+   -100svh margin from JS). All motion is transform/opacity in
+   one rAF loop. To swap in a new mockup: duplicate a site
+   chapter, replace img src/srcset + width/height + alt, update
+   title/tags/url/link. Everything else derives automatically.
+   ============================================================ */
+.chap{position:relative}
+.chap-runway{position:relative}
+.chap-stage{position:sticky;top:0;height:100vh;height:100svh;overflow:clip;background:var(--bg);display:grid;grid-template-columns:minmax(270px,360px) 1fr;align-items:center;column-gap:clamp(28px,4vw,72px);padding:0 clamp(24px,4vw,64px);box-sizing:border-box;z-index:1}
+.chap-meta{position:relative;z-index:2}
+.chap-idx{display:block;font-weight:500;font-size:11.5px;letter-spacing:.15em;color:var(--mut);margin-bottom:18px}
+.chap-idx b{color:var(--acc);font-weight:500}
+.chap-meta h3{font-weight:800;font-size:clamp(26px,2.6vw,40px);letter-spacing:-.03em;line-height:1.05;margin:0 0 10px}
+.chap-tags{font-family:'Instrument Serif',serif;font-style:italic;font-size:clamp(17px,1.4vw,20px);color:var(--acc);margin:0 0 18px}
+.chap-desc{font-size:15px;color:rgba(20,23,26,.62);max-width:34ch;margin:0 0 26px}
+.chap-frame{position:relative;width:100%;height:min(80svh,calc(100svh - 132px));border:1px solid var(--line);border-radius:20px;background:var(--card);box-shadow:0 44px 90px rgba(20,23,26,.14);overflow:clip;align-self:center}
+.chap-bar{height:44px;display:flex;align-items:center;gap:14px;padding:0 20px;border-bottom:1px solid var(--line);background:var(--card);box-sizing:border-box;position:relative}
+.chap-dots{display:flex;gap:6px;flex:none}
+.chap-dots i{width:9px;height:9px;border-radius:50%;background:rgba(20,23,26,.16)}
+.chap-url{font-size:12.5px;letter-spacing:.02em;color:var(--mut);background:var(--bg);border-radius:100px;padding:6px 16px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:70%}
+.chap-innerbar{position:absolute;left:0;bottom:-1px;height:2px;width:100%;background:var(--acc);transform:scaleX(0);transform-origin:0 50%;z-index:2}
+.chap-view{position:relative;height:calc(100% - 44px);overflow:clip;background:var(--card)}
+.chap-frame.plain .chap-view{height:100%}
+.chap-scroll{display:block;width:100%;height:auto}
+img.chap-scroll{opacity:0;transition:opacity .6s ease}
+img.chap-scroll.ld{opacity:1}
+.chap.live .chap-frame,.chap.live .chap-scroll,.chap.live .chap-wipe{will-change:transform}
+/* logo chapter — two grounds, scrub-driven blind wipe (transform-only) */
+.chap-ground{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+.chap-ground img{width:min(46%,520px);height:auto}
+.chap-ground .glab{position:absolute;left:28px;bottom:22px;font-weight:500;font-size:11px;letter-spacing:.14em;text-transform:uppercase;opacity:.5}
+.chap-wipe{position:absolute;inset:0;overflow:clip;transform:translate3d(0,100%,0)}
+.chap-wipe>.chap-ground{transform:translate3d(0,-100%,0)}
+/* brand chapter — tall DOM sheet, scrubbed like a site capture */
+.brandsheet{background:#F6F2EA;color:#1A1A1A}
+.brandsheet img{height:auto}
+.bs-row{padding:clamp(28px,4svh,44px) clamp(28px,3vw,48px);border-bottom:1px solid rgba(26,26,26,.08)}
+.bs-lab{font-weight:500;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#5A6270;margin:0 0 18px}
+.bs-hero{background:#1C3A5C;display:flex;align-items:center;justify-content:center;min-height:44svh}
+.bs-hero img{width:min(52%,460px)}
+.bs-swatches{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.bs-sw{border-radius:14px;height:110px;position:relative;border:1px solid rgba(26,26,26,.08)}
+.bs-sw span{position:absolute;left:14px;bottom:12px;font-size:11.5px;font-weight:500;letter-spacing:.06em}
+.bs-type{font-weight:700;font-size:clamp(24px,2.2vw,34px);letter-spacing:.19em;margin:6px 0 4px;color:#1C3A5C;text-transform:uppercase}
+.bs-type-sub{font-size:13px;color:#5A6270;margin:0}
+.bs-apps{display:grid;grid-template-columns:1.2fr 1fr;gap:16px;align-items:stretch}
+.bs-card{background:#1C3A5C;border-radius:14px;padding:26px;aspect-ratio:17/10;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 18px 40px rgba(28,58,92,.25)}
+.bs-card img{width:56%}
+.bs-card p{margin:0;color:rgba(246,242,234,.75);font-size:11.5px;letter-spacing:.08em;line-height:1.7}
+.bs-label{background:#E8E2D5;border-radius:14px;padding:26px;display:flex;flex-direction:column;justify-content:space-between;border:1px solid rgba(26,26,26,.08)}
+.bs-label img{width:64%}
+.bs-label p{margin:0;color:#5A6270;font-size:11.5px;letter-spacing:.08em;line-height:1.7}
+/* case chapter — typographic stage (ESE) */
+.chap-case{position:relative;height:100%;background:linear-gradient(135deg,#1F4E43,#0E2B25);display:flex;align-items:center;justify-content:center;overflow:clip}
+.chap-case:after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(135deg,transparent,transparent 50px,rgba(255,255,255,.035) 50px,rgba(255,255,255,.035) 51px);pointer-events:none}
+.chap-wm{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;font-size:clamp(90px,13vw,220px);letter-spacing:-.03em;color:rgba(245,243,238,.9);line-height:1;user-select:none}
+.chap-quote{position:absolute;left:clamp(24px,4vw,56px);right:clamp(24px,4vw,56px);bottom:clamp(24px,5svh,52px);opacity:0}
+.chap-quote .aq{color:rgba(245,243,238,.92);font-size:clamp(17px,1.7vw,24px);max-width:52ch}
+.chap-quote .asig{color:rgba(245,243,238,.55)}
+/* chapter progress rail */
+.chaprail{position:fixed;right:clamp(10px,1.6vw,26px);top:50%;transform:translateY(-50%);display:grid;gap:10px;z-index:40;opacity:0;transition:opacity .5s;pointer-events:none}
+.chaprail i{width:2px;height:16px;border-radius:2px;background:rgba(20,23,26,.18);transition:background .4s,transform .4s;transform-origin:50% 50%}
+.chaprail i.on{background:var(--acc);transform:scaleY(1.5)}
+.chaprail.show{opacity:1}
+/* statement slides */
+.sview{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:center;box-sizing:border-box;padding:clamp(90px,13vh,150px) 0}
+
+/* ============================================================
+   VOYAGE — Wix-Studio-style camera-on-canvas (desktop, motion-ok).
+   One sticky stage; the whole portfolio sits on a 7400x5000 canvas.
+   Page scroll drives a camera path: land zoomed-in on a work ->
+   its content scrolls -> zoom OUT to the huge canvas -> travel in
+   a new direction -> land on the next -> ... -> final overview of
+   everything. Mobile/reduced-motion/no-JS keep the .chapfall
+   chapters instead (same content, same swap contract).
+   ============================================================ */
+.voyage{display:none;position:relative}
+.v-runway{position:relative;height:1840svh} /* pre-JS-plassholder = vGeom-total, så scroll-gjenoppretting lander riktig */
+.v-stage{position:sticky;top:0;height:100vh;height:100svh;overflow:clip;background:var(--bg)}
+.v-canvas{position:absolute;left:0;top:0;width:7400px;height:5000px;transform-origin:0 0;will-change:transform;background-image:radial-gradient(rgba(20,23,26,.07) 1.5px,transparent 1.5px);background-size:56px 56px}
+.v-item{position:absolute}
+.v-lab{position:absolute;top:-30px;left:2px;font-weight:500;font-size:12.5px;letter-spacing:.08em;color:var(--mut);white-space:nowrap}
+.v-lab b{color:var(--acc);font-weight:500}
+.v-frame{position:relative;width:100%;height:100%;border:1px solid var(--line);border-radius:18px;background:var(--card);box-shadow:0 40px 80px rgba(20,23,26,.13);overflow:clip;margin:0}
+.v-view{position:relative;height:calc(100% - 44px);overflow:clip;background:var(--card)}
+.v-frame.plain .v-view{height:100%}
+.v-scroll{display:block;width:100%;height:auto}
+.v-board{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+.v-board img{height:auto}
+.v-ese{position:relative;width:100%;height:100%;border-radius:18px;background:linear-gradient(135deg,#1F4E43,#0E2B25);display:flex;align-items:center;justify-content:center;overflow:clip;box-shadow:0 40px 80px rgba(20,23,26,.13)}
+.v-ese:after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(135deg,transparent,transparent 50px,rgba(255,255,255,.035) 50px,rgba(255,255,255,.035) 51px);pointer-events:none}
+.v-ese .chap-wm{font-size:220px}
+.v-ese .chap-quote{left:380px;right:48px;bottom:40px}
+.v-bs{position:absolute;border-radius:16px;border:1px solid rgba(26,26,26,.08);background:#F6F2EA;color:#1A1A1A;box-shadow:0 24px 56px rgba(20,23,26,.1);padding:26px;box-sizing:border-box;overflow:clip}
+.v-bs .bs-lab{margin-bottom:14px}
+.v-bs .bs-swatches{grid-template-columns:repeat(3,1fr);gap:12px}
+.v-bs .bs-sw{height:150px}
+.v-cap{position:absolute;left:clamp(24px,4vw,64px);bottom:clamp(24px,4svh,48px);z-index:3;max-width:400px;background:rgba(245,243,238,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:18px;padding:22px 26px;opacity:0;transform:translateY(14px);pointer-events:none}
+.v-cap.on{pointer-events:auto}
+.v-cap .chap-idx{margin-bottom:10px}
+.v-cap h3{font-weight:800;font-size:24px;letter-spacing:-.03em;line-height:1.05;margin:0 0 4px}
+.v-cap .vtags{font-family:'Instrument Serif',serif;font-style:italic;font-size:17px;color:var(--acc);margin:0 0 12px}
+.v-cap .tlink{font-size:14px}
+.v-hint{position:absolute;right:clamp(24px,4vw,64px);bottom:clamp(24px,4svh,48px);z-index:3;font-weight:500;font-size:11.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--mut);opacity:0;transition:opacity .6s;background:rgba(245,243,238,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:999px;padding:9px 16px}
+.v-cap.ov{left:auto;right:clamp(24px,4vw,64px)}
+.v-hint.on{opacity:1}
+@media (min-width:961px) and (prefers-reduced-motion:no-preference){
+.voyage{display:block}
+.chapfall{display:none}
+}
+
+.stack{margin-top:clamp(50px,6vw,80px);display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.scard{background:var(--card);border:1px solid var(--line);border-radius:28px;padding:clamp(28px,3vw,44px);box-shadow:0 -12px 44px rgba(20,23,26,.05)}
+.snum{font-weight:500;font-size:12px;color:var(--acc);letter-spacing:.12em;display:block;margin-bottom:14px}
+.scard h3{font-weight:800;font-size:clamp(20px,2vw,28px);letter-spacing:-.025em;line-height:1.08;margin:0 0 12px}
+.scard p{margin:0;color:rgba(20,23,26,.62);font-size:15px;max-width:44ch}
 .dark{background:var(--ink);color:var(--bg);border-radius:36px;margin:0 14px;position:relative;overflow:clip;will-change:transform,border-radius}
-.dark .eyebrow{color:rgba(245,243,238,.4)}.dark .eyebrow:before{background:var(--mint)}
-.dark .mut{color:rgba(245,243,238,.5)}.dark .h2{max-width:16ch}
+.dark .eyebrow{color:rgba(245,243,238,.55)}.dark .eyebrow:before{background:var(--mint)}
+.dark .mut{color:rgba(245,243,238,.6)}.dark .h2{max-width:16ch}
 .dorb{position:absolute;border-radius:50%;filter:blur(120px);pointer-events:none;opacity:.1}
 .dorb1{width:500px;height:500px;background:#1F4E43;top:-120px;right:-100px}
 .dorb2{width:400px;height:400px;background:#2C5E50;bottom:-100px;left:-80px}
@@ -232,7 +246,7 @@ html{scroll-behavior:smooth}body{margin:0;background:#F5F3EE}
 .shbox{border:1px solid rgba(245,243,238,.15);border-radius:24px;padding:clamp(30px,3vw,48px);text-align:center}
 .shbig{font-weight:900;font-size:clamp(30px,3.6vw,52px);letter-spacing:-.03em;line-height:1}
 .sharrow{font-size:clamp(30px,4vw,54px);color:var(--mint)}
-.shlab{font-weight:500;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(245,243,238,.4);display:block;margin-bottom:14px}
+.shlab{font-weight:500;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(245,243,238,.55);display:block;margin-bottom:14px}
 .shsub{font-size:15px;color:rgba(245,243,238,.5);margin:10px 0 0}
 .bigstats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(245,243,238,.12);margin-top:clamp(60px,7vw,100px)}
 .bstat{padding:clamp(30px,3vw,48px) clamp(18px,2vw,34px);border-left:1px solid rgba(245,243,238,.12)}
@@ -279,19 +293,6 @@ html{scroll-behavior:smooth}body{margin:0;background:#F5F3EE}
 .pinc li:before{content:"→";position:absolute;left:0;color:var(--acc)}
 .hot .pinc li:before{color:var(--mint)}
 .pbtn{margin-top:auto;text-align:center}
-.cgrid{display:grid;grid-template-columns:1.3fr 1fr;gap:24px;margin-top:clamp(50px,6vw,80px);align-items:start}
-.ccard{display:block;text-decoration:none;color:var(--ink);border:1px solid var(--line);border-radius:28px;overflow:hidden;background:#fff;transition:transform .55s cubic-bezier(.16,.84,.24,1),box-shadow .55s}
-.ccard:hover{transform:translateY(-10px);box-shadow:0 28px 64px rgba(20,23,26,.12)}
-.ccard:nth-child(2){margin-top:64px}
-.cvis{height:clamp(240px,30vw,400px);display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
-.cvis:after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(135deg,transparent,transparent 50px,rgba(255,255,255,.035) 50px,rgba(255,255,255,.035) 51px);pointer-events:none}
-.cvis span{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;font-size:clamp(44px,7vw,96px);letter-spacing:-.03em;color:rgba(245,243,238,.85);transition:transform .7s cubic-bezier(.16,.84,.24,1)}
-.ccard:hover .cvis span{transform:scale(1.08)}
-.cv1{background:linear-gradient(135deg,#1F4E43,#0E2B25)}.cv2{background:linear-gradient(135deg,#2A5D4F,#132F28)}
-.cmeta{padding:30px 32px 34px;display:flex;justify-content:space-between;gap:20px;align-items:flex-start}
-.cmeta h3{margin:0 0 6px}.cmeta p{margin:0;color:var(--mut);font-size:15px;max-width:42ch}
-.carr{font-size:22px;color:var(--acc);flex:none;transition:transform .4s cubic-bezier(.16,.84,.24,1)}
-.ccard:hover .carr{transform:translate(6px,-6px)}
 .why{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(28px,4vw,60px);margin-top:clamp(50px,6vw,80px)}
 .wcol{border-top:2px solid var(--acc);padding-top:26px}
 .wcol h3{margin:0 0 12px;font-size:clamp(19px,1.8vw,24px);font-weight:700}
@@ -314,9 +315,13 @@ html{scroll-behavior:smooth}body{margin:0;background:#F5F3EE}
 .fin{background:transparent;border:0;border-bottom:1px solid var(--line);padding:22px 0;color:var(--ink);font-family:'Schibsted Grotesk',sans-serif;font-size:17px;outline:none;transition:border-color .3s;width:100%;box-sizing:border-box}
 .fin:focus{border-color:var(--acc)}.fin::placeholder{color:var(--mut)}
 textarea.fin{min-height:120px;resize:vertical}
-.fbtn{margin-top:32px;background:var(--ink);color:var(--bg);border:0;border-radius:100px;padding:18px 36px;font-family:'Schibsted Grotesk',sans-serif;font-size:16px;font-weight:500;transition:background .35s,transform .35s;width:max-content;white-space:nowrap}
+.fbtn{margin-top:32px;background:var(--ink);color:var(--bg);border:0;border-radius:100px;padding:18px 36px;font-family:'Schibsted Grotesk',sans-serif;font-size:16px;font-weight:500;transition:background .35s,transform .35s;width:max-content;white-space:nowrap;cursor:pointer}
 .fbtn:hover{background:var(--acc);transform:translateY(-2px)}
+.fbtn[disabled]{opacity:.55;pointer-events:none}
 .sent{border:1px solid var(--acc);border-radius:20px;padding:28px;background:rgba(31,78,67,.05)}
+.ferr{display:none;margin-top:18px;font-size:15px;color:rgba(20,23,26,.68)}
+.ferr.show{display:block}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 .klist{display:grid;gap:0;font-size:15px}
 .krow{display:grid;grid-template-columns:110px 1fr;gap:20px;padding:20px 0;border-top:1px solid var(--line)}
 .klab{font-weight:500;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);padding-top:3px}
@@ -328,133 +333,135 @@ textarea.fin{min-height:120px;resize:vertical}
 .ctain em{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:var(--mint)}
 .foot{padding:60px 0 70px;border-top:1px solid var(--line)}
 .footin{display:flex;justify-content:space-between;align-items:end;flex-wrap:wrap;gap:24px}
+.fx{display:flex}.gap20{gap:20px}
 .flink{color:var(--mut);text-decoration:none;font-size:14px;transition:color .3s}.flink:hover{color:var(--ink)}
 .fcopy{font-size:13px;color:var(--mut);width:100%;margin:12px 0 0}
-@media(max-width:960px){.nlinks{display:none}.hmeta,.introgrid,.cgrid,.faqw,.kwrap,.about2{grid-template-columns:1fr}.hkpis{justify-content:flex-start}.hkpi{text-align:left}.scard{grid-template-columns:1fr;gap:14px}.why{grid-template-columns:1fr}.bigstats{grid-template-columns:1fr 1fr}.bstat{padding-left:0;border-left:0;border-top:1px solid rgba(245,243,238,.12)}.svcrow{grid-template-columns:1fr;gap:10px}.pgrid{grid-template-columns:1fr}.pstep{grid-template-columns:1fr;gap:8px}.svcp{text-align:left}.shift{grid-template-columns:1fr}.sharrow{transform:rotate(90deg);text-align:center}.ccard:nth-child(2){margin-top:0}.hwm{display:none}.cur{display:none!important}}
-@media(prefers-reduced-motion:reduce){.rv,.lr>span{opacity:1;transform:none;transition:none;filter:none;clip-path:none}.sdin,.ctain{animation-duration:200s}.grain{display:none}}
+@media(max-width:960px){
+.nlinks{display:none}
+.hmeta,.introgrid,.faqw,.kwrap,.about2{grid-template-columns:1fr}
+.hkpis{justify-content:flex-start}.hkpi{text-align:left}
+.stack{grid-template-columns:1fr}
+.why{grid-template-columns:1fr}
+.bigstats{grid-template-columns:1fr 1fr}
+.bstat{padding-left:0;border-left:0;border-top:1px solid rgba(245,243,238,.12)}
+.svcrow{grid-template-columns:1fr;gap:10px}
+.pgrid{grid-template-columns:1fr}
+.pstep{grid-template-columns:1fr;gap:8px}
+.svcp{text-align:left}
+.shift{grid-template-columns:1fr}
+.sharrow{transform:rotate(90deg);text-align:center}
+.hwm{display:none}
+.cur{display:none!important}
+.chap-stage{grid-template-columns:1fr;grid-template-rows:auto minmax(0,1fr);row-gap:14px;align-items:start;padding-top:86px;padding-bottom:20px}
+.chap-runway{height:440svh} /* pre-JS-plassholder ≈ mobil-geometri */
+.chap[data-chap="logo"] .chap-runway,.chap[data-chap="brand"] .chap-runway{height:315svh}
+.chap[data-chap="case"] .chap-runway{height:215svh}
+.chap-meta h3{font-size:24px;margin-bottom:4px;display:inline}
+.chap-idx{margin-bottom:8px}
+.chap-tags{display:inline;margin:0 0 0 10px;font-size:16px}
+.chap-desc{display:none}
+.chap-meta .tlink{margin-top:8px;font-size:14px}
+.chap-frame{height:100%;max-height:none;border-radius:16px}
+.chap-bar{height:38px;padding:0 14px}
+.bs-swatches{grid-template-columns:1fr 1fr}
+.bs-apps{grid-template-columns:1fr}
+.chaprail{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+.rv,.lr>span{opacity:1;transform:none;transition:none;filter:none;clip-path:none}
+.sdin,.ctain{animation:none}
+.grain{display:none}
+.chap-runway{height:auto!important}
+.chap-stage{position:static;height:auto;min-height:0;padding-top:110px;padding-bottom:40px}
+.chap-frame{height:70svh}
+.chap-wipe{transform:none;position:relative;height:50%}
+.chap-wipe>.chap-ground{transform:none}
+.chap-ground{position:relative;height:50svh}
+.chap-quote{opacity:1;position:relative;left:0;right:0;bottom:0;padding:24px}
+.chap-case{flex-direction:column;gap:0;height:auto;min-height:70svh}
+img.chap-scroll{opacity:1;transition:none}
+}
 /* ============================================================
-   CARD HOVER — COLOUR INVERSION
-   Invert each card's colours on hover while preserving the
-   section's existing scroll / subtle motion.
-   Light cards -> --ink bg + paper text + --mint accent.
-   Dark  cards -> paper bg + --ink text + --acc  accent.
-   Hover ACTIVATIONS live in the @media (hover:hover) block at the
-   bottom so touch taps never latch a card in the inverted state.
+   CARD HOVER — COLOUR INVERSION (pointer devices only)
    ============================================================ */
-
-/* ---------- rest-state setup (safe on every device) ---------- */
-
-/* 1 · PROBLEMET · .scard (cream --card -> dark ink) · sticky stack untouched */
 .scard{transition:background-color .5s cubic-bezier(.16,.84,.24,1),border-color .5s cubic-bezier(.16,.84,.24,1),box-shadow .5s cubic-bezier(.16,.84,.24,1)}
 .scard h3,.scard p,.scard .snum{transition:color .5s cubic-bezier(.16,.84,.24,1)}
-
-/* 2 · LØSNINGEN · .shbox (outlined-on-dark -> light paper)
-   Inverted through an inset pseudo so the element's inline .rv reveal
-   stagger (transition-delay) stays on the reveal only — the invert fades
-   in with no delay and no dark-text-on-dark flash. */
 .shbox{position:relative}
 .shbox>*{position:relative;z-index:1}
 .shbox:before{content:"";position:absolute;inset:-1px;background:var(--bg);border-radius:24px;opacity:0;transition:opacity .5s cubic-bezier(.16,.84,.24,1);box-shadow:0 28px 60px rgba(0,0,0,.45);pointer-events:none;z-index:0}
 .shbox .shlab,.shbox .shbig,.shbox .shsub{transition:color .5s cubic-bezier(.16,.84,.24,1)}
-
-/* 3 · TJENESTER · .svcrow (row -> dark ink)
-   The existing wash layer becomes the dark fill, FADED (not L->R swept) so
-   the background and text recolour in sync — no light-text-on-paper flash.
-   The .svct title shift (the design's own subtle effect) is kept. */
 .svcrow>*{position:relative;z-index:1}
 .svcrow:before{background:var(--ink);transform:none;opacity:0;transition:opacity .5s cubic-bezier(.16,.84,.24,1)}
 .svct{transition:transform .5s cubic-bezier(.16,.84,.24,1),color .5s cubic-bezier(.16,.84,.24,1)}
 .svcd,.svcp,.svcrow .snum{transition:color .5s cubic-bezier(.16,.84,.24,1)}
-
-/* 4 · PROSESS · .pstep (row -> floating dark card)
-   Inset pseudo card so the .procfill timeline + row rhythm stay put; the
-   union transition keeps the .rv reveal (this element carries .rv vl). */
 .pstep{position:relative;transition:opacity .9s cubic-bezier(.16,.84,.24,1),transform .9s cubic-bezier(.16,.84,.24,1),filter .9s cubic-bezier(.16,.84,.24,1),border-color .45s ease}
 .pstep>*{position:relative;z-index:1}
 .pstep:after{content:"";position:absolute;top:6px;bottom:6px;left:calc(-1 * clamp(16px,1.8vw,26px));right:calc(-1 * clamp(16px,1.8vw,26px));background:var(--ink);border-radius:16px;opacity:0;transform:scale(.98);transition:opacity .45s ease,transform .5s cubic-bezier(.16,.84,.24,1);pointer-events:none;z-index:0}
 .pday,.pstep h3,.pstep p{transition:color .5s cubic-bezier(.16,.84,.24,1)}
-
-/* 5 · PRISER · .pcard (white -> dark  |  .hot dark -> white)
-   Base .pcard already redeclares transition, so the union below keeps
-   transform/box-shadow/border-color for the lift and adds the colour invert. */
 .pcard{transition:transform .55s cubic-bezier(.16,.84,.24,1),box-shadow .55s,border-color .55s,background-color .55s,color .55s}
 .pcard h3,.pcard .ptier,.pcard .pprice,.pcard .pprice small,.pcard .pinc,.pcard .pinc li,.pcard .pinc li:before{transition:color .5s cubic-bezier(.16,.84,.24,1),background-color .5s cubic-bezier(.16,.84,.24,1),border-color .5s cubic-bezier(.16,.84,.24,1)}
 .pcard .pbtn{transition:color .5s cubic-bezier(.16,.84,.24,1),background-color .5s cubic-bezier(.16,.84,.24,1),border-color .5s cubic-bezier(.16,.84,.24,1),transform .35s cubic-bezier(.16,.84,.24,1)}
-
-/* 6 · FAQ · .faq details (row -> dark ink, open + closed)
-   Inset pseudo (top/bottom -1px) covers the base border hairlines. */
 .faq details{position:relative;transition:border-color .4s ease}
 .faq summary,.faq .qa{position:relative;z-index:1}
 .faq details:before{content:"";position:absolute;left:-18px;right:-18px;top:-1px;bottom:-1px;background:var(--ink);border-radius:14px;opacity:0;transition:opacity .4s ease;pointer-events:none;z-index:0}
 .faq .qa{transition:color .4s ease}
-
-/* ---------- hover ACTIVATIONS — pointer devices only ---------- */
 @media (hover:hover) and (pointer:fine){
-  /* 1 · PROBLEMET */
-  .scard:hover{background:var(--ink);border-color:var(--ink);box-shadow:0 20px 64px rgba(20,23,26,.24),0 -12px 44px rgba(20,23,26,.10)}
-  .scard:hover h3{color:var(--bg)}
-  .scard:hover p{color:rgba(245,243,238,.66)}
-  .scard:hover .snum{color:var(--mint)}
-
-  /* 2 · LØSNINGEN */
-  .shbox:hover:before{opacity:1}
-  .shbox:hover .shlab{color:rgba(20,23,26,.66)}
-  .shbox:hover .shbig{color:var(--ink)}
-  .shbox:hover .shsub{color:rgba(20,23,26,.66)}
-
-  /* 3 · TJENESTER */
-  .svcrow:hover:before{opacity:1;transform:none}
-  .svcrow:hover .svct{color:var(--bg)}
-  .svcrow:hover .svcd{color:rgba(245,243,238,.6)}
-  .svcrow:hover .svcp{color:var(--mint)}
-  .svcrow:hover .snum{color:var(--mint)}
-
-  /* 4 · PROSESS */
-  .pstep:hover:after{opacity:1;transform:none}
-  .pstep:hover{border-bottom-color:transparent}
-  .pstep:hover .pday{color:var(--mint)}
-  .pstep:hover h3{color:var(--bg)}
-  .pstep:hover p{color:rgba(245,243,238,.6)}
-
-  /* 5 · PRISER — white card -> dark (delay:0 so cards 2 & 3 don't lag their reveal-stagger into the hover) */
-  .pcard:hover{background:var(--ink);color:var(--bg);transition-delay:0s!important}
-  .pcard:hover h3{color:var(--bg)}
-  .pcard:hover .ptier{color:var(--mint)}
-  .pcard:hover .pprice{color:var(--mint)}
-  .pcard:hover .pprice small{color:rgba(245,243,238,.5)}
-  .pcard:hover .pinc{color:rgba(245,243,238,.62)}
-  .pcard:hover .pinc li:before{color:var(--mint)}
-  .pcard:hover .pbtn{background:var(--bg);color:var(--ink)}
-  .pcard:hover .pbtn:hover{background:var(--mint);color:var(--ink)}
-  /* 5 · PRISER — already-dark "hot" card -> light */
-  .pcard.hot:hover{background:var(--bg);color:var(--ink);border-color:var(--acc)}
-  .pcard.hot:hover h3{color:var(--ink)}
-  .pcard.hot:hover .ptier{color:var(--acc)}
-  .pcard.hot:hover .pprice{color:var(--acc)}
-  .pcard.hot:hover .pprice small{color:rgba(20,23,26,.66)}
-  .pcard.hot:hover .pinc{color:rgba(20,23,26,.62)}
-  .pcard.hot:hover .pinc li:before{color:var(--acc)}
-  .pcard.hot:hover .pbtn{background:var(--ink);color:var(--bg)}
-  .pcard.hot:hover .pbtn:hover{background:var(--acc);color:#fff}
-
-  /* 6 · FAQ */
-  .faq details:hover:before{opacity:1}
-  .faq details:hover{border-color:transparent}
-  .faq details:hover summary{color:var(--bg)}
-  .faq details:hover .qplus{color:var(--mint)}
-  .faq details:hover .qa{color:rgba(245,243,238,.6)}
+.scard:hover{background:var(--ink);border-color:var(--ink);box-shadow:0 20px 64px rgba(20,23,26,.24),0 -12px 44px rgba(20,23,26,.10)}
+.scard:hover h3{color:var(--bg)}
+.scard:hover p{color:rgba(245,243,238,.66)}
+.scard:hover .snum{color:var(--mint)}
+.shbox:hover:before{opacity:1}
+.shbox:hover .shlab{color:rgba(20,23,26,.66)}
+.shbox:hover .shbig{color:var(--ink)}
+.shbox:hover .shsub{color:rgba(20,23,26,.66)}
+.svcrow:hover:before{opacity:1;transform:none}
+.svcrow:hover .svct{color:var(--bg)}
+.svcrow:hover .svcd{color:rgba(245,243,238,.6)}
+.svcrow:hover .svcp{color:var(--mint)}
+.svcrow:hover .snum{color:var(--mint)}
+.pstep:hover:after{opacity:1;transform:none}
+.pstep:hover{border-bottom-color:transparent}
+.pstep:hover .pday{color:var(--mint)}
+.pstep:hover h3{color:var(--bg)}
+.pstep:hover p{color:rgba(245,243,238,.6)}
+.pcard:hover{background:var(--ink);color:var(--bg);transition-delay:0s!important}
+.pcard:hover h3{color:var(--bg)}
+.pcard:hover .ptier{color:var(--mint)}
+.pcard:hover .pprice{color:var(--mint)}
+.pcard:hover .pprice small{color:rgba(245,243,238,.5)}
+.pcard:hover .pinc{color:rgba(245,243,238,.62)}
+.pcard:hover .pinc li:before{color:var(--mint)}
+.pcard:hover .pbtn{background:var(--bg);color:var(--ink)}
+.pcard:hover .pbtn:hover{background:var(--mint);color:var(--ink)}
+.pcard.hot:hover{background:var(--bg);color:var(--ink);border-color:var(--acc)}
+.pcard.hot:hover h3{color:var(--ink)}
+.pcard.hot:hover .ptier{color:var(--acc)}
+.pcard.hot:hover .pprice{color:var(--acc)}
+.pcard.hot:hover .pprice small{color:rgba(20,23,26,.66)}
+.pcard.hot:hover .pinc{color:rgba(20,23,26,.62)}
+.pcard.hot:hover .pinc li:before{color:var(--acc)}
+.pcard.hot:hover .pbtn{background:var(--ink);color:var(--bg)}
+.pcard.hot:hover .pbtn:hover{background:var(--acc);color:#fff}
+.faq details:hover:before{opacity:1}
+.faq details:hover{border-color:transparent}
+.faq details:hover summary{color:var(--bg)}
+.faq details:hover .qplus{color:var(--mint)}
+.faq details:hover .qa{color:rgba(245,243,238,.6)}
 }
-
-
 </style>
-</helmet>
+<noscript><style>.loader{display:none}.rv,.lr>span{opacity:1;transform:none;filter:none}.mw{opacity:1}.site,.site *{cursor:auto!important}.voyage{display:none!important}.chapfall{display:block!important}.chap-runway{height:auto!important}.chap-stage{position:static;height:auto;padding-top:110px;padding-bottom:40px}.chap-frame{height:70svh}img.chap-scroll{opacity:1}.chap-quote{opacity:1;position:relative;left:0;right:0;bottom:0;padding:24px}.chap-wipe{transform:none;position:relative;height:50%}.chap-wipe>.chap-ground{transform:none}</style></noscript>
+</head>
+<body>
 <svg class="grain" aria-hidden="true" width="100%" height="100%"><filter id="gn"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"></feTurbulence></filter><rect width="100%" height="100%" filter="url(#gn)"></rect></svg>
 <div class="site">
+<a class="skip" href="#tjenester">Hopp over arbeidsvisningen</a>
 <div class="cur" id="cur"></div>
 <div class="progress" id="pbar"></div>
 <div class="loader" id="loader"><span class="lpct" id="lpct">00%</span><div class="lbar"><div class="lbarfill" id="lbarfill"></div></div></div>
-<nav class="nav" id="nav"><a class="logo" href="#top">Folkestad<span style="color:var(--acc)">.</span></a><div class="nlinks"><a class="nlink" href="#selskap">Selskap</a><a class="nlink" href="#problem">Problemet</a><a class="nlink" href="#tjenester">Tjenester</a><a class="nlink" href="#priser">Priser</a><a class="nlink" href="#arbeid">Arbeid</a><a class="nlink" href="#faq">FAQ</a></div><a class="pill" href="#kontakt">Få gratis utkast</a></nav>
-<header class="hero cwrap" id="top" data-screen-label="Hero">
+<nav class="nav" id="nav"><a class="logo" href="#top">Folkestad<span style="color:var(--acc)">.</span></a><div class="nlinks"><a class="nlink" href="#selskap">Selskap</a><a class="nlink" href="#arbeid">Arbeid</a><a class="nlink" href="#problem">Problemet</a><a class="nlink" href="#tjenester">Tjenester</a><a class="nlink" href="#priser">Priser</a><a class="nlink" href="#faq">FAQ</a></div><a class="pill" href="#kontakt">Få gratis utkast</a></nav>
+<div class="chaprail" id="chaprail" aria-hidden="true"></div>
+
+<header class="hero cwrap" id="top">
 <div class="hbg"></div>
 <div class="hwm" aria-hidden="true">F</div>
 <div class="hin">
@@ -462,15 +469,18 @@ textarea.fin{min-height:120px;resize:vertical}
 <div class="hmeta rv on" style="transition-delay:1.85s">
 <p class="hsub">Nettside, merkevare og trykk for bedrifter på Jæren — bygget av én designer, uten byråtimer. Du betaler først når du har godkjent utkastet, og du eier alle filene.</p>
 <div class="hkpis">
-<div class="hkpi"><div class="hknum" data-count="14">0</div><div class="hklab">dager til levert</div></div>
-<div class="hkpi"><div class="hknum" data-count="12" data-suffix="k">0</div><div class="hklab">kr — ikke 80k</div></div>
+<div class="hkpi"><div class="hknum" data-count="14">14</div><div class="hklab">dager til levert</div></div>
+<div class="hkpi"><div class="hknum" data-count="12" data-suffix="k">12k</div><div class="hklab">kr — ikke 80k</div></div>
 <div class="hkpi"><div class="hknum">0 kr</div><div class="hklab">før godkjent utkast</div></div>
 </div>
 </div>
 </div>
-<div class="scrolldown rv on" style="transition-delay:2.1s"><div class="sdin"><span>Scroll ned for å se hvordan det funker ◆</span><span>Scroll ned for å se hvordan det funker ◆</span><span>Scroll ned for å se hvordan det funker ◆</span><span>Scroll ned for å se hvordan det funker ◆</span></div></div>
+<div class="scrolldown rv on" style="transition-delay:2.1s"><div class="sdin"><span>Scroll ned for å bla gjennom arbeidet ◆</span><span>Scroll ned for å bla gjennom arbeidet ◆</span><span>Scroll ned for å bla gjennom arbeidet ◆</span><span>Scroll ned for å bla gjennom arbeidet ◆</span></div></div>
 </header>
-<section class="sec cwrap" id="selskap" data-screen-label="Selskap">
+
+<!-- S1 · statement — Selskap + inngang til visningen -->
+<section class="cwrap" id="selskap">
+<div class="sview">
 <p class="eyebrow rv vl">Selskap</p>
 <h2 class="h2"><span class="lr">Velkommen til Folkestad Designs — der <em>bedriftseiere</em> designer for bedriftseiere</span></h2>
 <div class="introgrid">
@@ -478,21 +488,319 @@ textarea.fin{min-height:120px;resize:vertical}
 <div class="body rv" style="transition-delay:.15s">
 <p>Folkestad Designs er et enkeltpersonsstudio på Klepp Stasjon, Jæren. Det ble til i 2025 — av nødvendighet, ikke ambisjon — da materialet jeg laget for mitt eget selskap Verminord fikk andre lokale bedrifter til å spørre hvem som stod bak.</p>
 <p>Jeg er overbevist om at en kafé i Sandnes eller en blikkenslager på Gjesdal ikke trenger et byrå fra Oslo. De trenger noen som vet hva det viktigste dokumentet er: det neste kunden åpner.</p>
-<a class="tlink" href="#arbeid">Se arbeidet →</a>
+<a class="tlink" href="#arbeid">Bla gjennom arbeidet →</a>
+</div>
 </div>
 </div>
 </section>
-<section class="sec cwrap" id="problem" data-screen-label="Problemet" style="padding-top:0">
+
+<!-- SHOWCASE ······································································
+     Kapittel-kontrakt (for å bytte inn egne mockups):
+     <section class="chap" data-chap="site|logo|brand|case">
+       .chap-runway > .chap-stage > .chap-meta + .chap-frame
+       site-kapittel: bytt <img> src/srcset + width/height (ekte piksler) + alt,
+       oppdater tittel/tags/url/lenke. Resten (høyde, fart, koreografi) regnes ut.
+     ································································· -->
+
+<div class="showcase" id="arbeid">
+<div class="chapfall">
+<!-- CH1 · Solhuset Bakeri (konsept) -->
+<section class="chap" data-chap="site" aria-label="Nettside-konsept: Solhuset Bakeri">
+<div class="chap-runway"><div class="chap-stage">
+<aside class="chap-meta">
+<span class="chap-idx"><b>01</b> / 08</span>
+<h3>Solhuset Bakeri</h3>
+<p class="chap-tags">Nettside · Konsept</p>
+<p class="chap-desc">Onepager for et bakeri på Klepp Stasjon — varm, brødnær og åpen fra klokken sju.</p>
+<a class="tlink" href="/eksempel/onepager/" target="_blank" rel="noopener">Åpne demoen ↗</a>
+</aside>
+<figure class="chap-frame" style="margin:0">
+<div class="chap-bar" aria-hidden="true"><span class="chap-dots"><i></i><i></i><i></i></span><span class="chap-url">folkestad.design/eksempel/onepager</span><span class="chap-innerbar"></span></div>
+<div class="chap-view">
+<picture>
+<source media="(max-width:960px)" srcset="/images/showcase/solhuset-420.webp">
+<img class="chap-scroll" src="/images/showcase/solhuset-1440.webp" width="2160" height="5952" alt="Nettside-konsept for Solhuset Bakeri — hele siden fra topp til bunn" loading="eager" decoding="async">
+</picture>
+</div>
+</figure>
+</div></div>
+</section>
+
+<!-- CH2 · Vindfanget Bistro (konsept) — dekkes av forrige via cover-kjede -->
+<section class="chap" data-chap="site" aria-label="Nettside-konsept: Vindfanget Bistro og Vinbar">
+<div class="chap-runway"><div class="chap-stage">
+<aside class="chap-meta">
+<span class="chap-idx"><b>02</b> / 08</span>
+<h3>Vindfanget Bistro</h3>
+<p class="chap-tags">Nettside · Konsept</p>
+<p class="chap-desc">Kveldsbistro to kvartal fra Bryne stasjon — naturvin, små retter og et kjøkken som ikke roper.</p>
+<a class="tlink" href="/eksempel/bistro/" target="_blank" rel="noopener">Åpne demoen ↗</a>
+</aside>
+<figure class="chap-frame" style="margin:0">
+<div class="chap-bar" aria-hidden="true"><span class="chap-dots"><i></i><i></i><i></i></span><span class="chap-url">folkestad.design/eksempel/bistro</span><span class="chap-innerbar"></span></div>
+<div class="chap-view">
+<picture>
+<source media="(max-width:960px)" srcset="/images/showcase/vindfanget-420.webp">
+<img class="chap-scroll" src="/images/showcase/vindfanget-1440.webp" width="2160" height="8795" alt="Nettside-konsept for Vindfanget Bistro og Vinbar — hele siden fra topp til bunn" loading="lazy" decoding="async">
+</picture>
+</div>
+</figure>
+</div></div>
+</section>
+
+<!-- CH3 · Verminord logo (levert) -->
+<section class="chap" data-chap="logo" aria-label="Logo: Verminord AS">
+<div class="chap-runway"><div class="chap-stage">
+<aside class="chap-meta">
+<span class="chap-idx"><b>03</b> / 08</span>
+<h3>Verminord</h3>
+<p class="chap-tags">Logo · Levert 2024</p>
+<p class="chap-desc">Wordmark satt for ti år, ikke én sesong — i bruk hver dag på etiketter, datablad og bil.</p>
+<a class="tlink" href="/case/verminord" target="_blank" rel="noopener">Les caset ↗</a>
+</aside>
+<figure class="chap-frame plain" style="margin:0">
+<div class="chap-view">
+<div class="chap-ground" style="background:#1C3A5C"><img src="/images/showcase/verminord-white.webp" width="1280" height="853" alt="Verminord-logo, hvit på marineblå" loading="lazy" decoding="async"><span class="glab" style="color:rgba(246,242,234,.6)">Primær · på navy</span></div>
+<div class="chap-wipe"><div class="chap-ground" style="background:#F6F2EA"><img src="/images/showcase/verminord-dark.webp" width="1280" height="853" alt="Verminord-logo, mørk på cream" loading="lazy" decoding="async"><span class="glab" style="color:#5A6270">Sekundær · på cream</span></div></div>
+</div>
+</figure>
+</div></div>
+</section>
+
+<!-- CH4 · Saltkroken Frisør (konsept) -->
+<section class="chap" data-chap="site" aria-label="Nettside-konsept: Saltkroken Frisør">
+<div class="chap-runway"><div class="chap-stage">
+<aside class="chap-meta">
+<span class="chap-idx"><b>04</b> / 08</span>
+<h3>Saltkroken Frisør</h3>
+<p class="chap-tags">Nettside · Konsept</p>
+<p class="chap-desc">Frisørsalong med drop-in og faste stoler — rolig, ryddig og lett å booke.</p>
+<a class="tlink" href="/eksempel/frisor/" target="_blank" rel="noopener">Åpne demoen ↗</a>
+</aside>
+<figure class="chap-frame" style="margin:0">
+<div class="chap-bar" aria-hidden="true"><span class="chap-dots"><i></i><i></i><i></i></span><span class="chap-url">folkestad.design/eksempel/frisor</span><span class="chap-innerbar"></span></div>
+<div class="chap-view">
+<picture>
+<source media="(max-width:960px)" srcset="/images/showcase/saltkroken-420.webp">
+<img class="chap-scroll" src="/images/showcase/saltkroken-1440.webp" width="2160" height="6173" alt="Nettside-konsept for Saltkroken Frisør — hele siden fra topp til bunn" loading="lazy" decoding="async">
+</picture>
+</div>
+</figure>
+</div></div>
+</section>
+
+<!-- CH5 · Verminord merkevaresystem (levert) — dekkes via cover-kjede -->
+<section class="chap" data-chap="brand" aria-label="Merkevaresystem: Verminord AS">
+<div class="chap-runway"><div class="chap-stage">
+<aside class="chap-meta">
+<span class="chap-idx"><b>05</b> / 08</span>
+<h3>Verminord AS</h3>
+<p class="chap-tags">Merkevaresystem · Levert 2024</p>
+<p class="chap-desc">Komplett merkevare fra bunnen for eget selskap — logo, brand book, etiketter, datablad. I bruk hver dag.</p>
+<a class="tlink" href="/case/verminord" target="_blank" rel="noopener">Les caset ↗</a>
+</aside>
+<figure class="chap-frame plain" style="margin:0">
+<div class="chap-view">
+<div class="chap-scroll brandsheet">
+<div class="bs-row bs-hero" style="border:0"><img src="/images/showcase/verminord-white.webp" width="1280" height="853" alt="Verminord-wordmark" loading="lazy" decoding="async"></div>
+<div class="bs-row"><p class="bs-lab">Fargesystem — maks tre per flate</p><div class="bs-swatches">
+<div class="bs-sw" style="background:#1C3A5C"><span style="color:rgba(246,242,234,.8)">Navy #1C3A5C</span></div>
+<div class="bs-sw" style="background:#B8993A"><span style="color:#1A1A1A">Gull #B8993A</span></div>
+<div class="bs-sw" style="background:#F6F2EA"><span style="color:#5A6270">Cream #F6F2EA</span></div>
+<div class="bs-sw" style="background:#E8E2D5"><span style="color:#5A6270">Sand #E8E2D5</span></div>
+<div class="bs-sw" style="background:#5A6270"><span style="color:rgba(246,242,234,.85)">Grå #5A6270</span></div>
+<div class="bs-sw" style="background:#1A1A1A"><span style="color:rgba(246,242,234,.8)">Ink #1A1A1A</span></div>
+</div></div>
+<div class="bs-row"><p class="bs-lab">Typografi</p><p class="bs-type">Verminord</p><p class="bs-type-sub">IBM Plex Sans · Bold · 0.18–0.22 em tracking · maks to snitt per design</p></div>
+<div class="bs-row" style="border:0"><p class="bs-lab">I bruk</p><div class="bs-apps">
+<div class="bs-card"><img src="/images/showcase/verminord-white.webp" alt="" loading="lazy" decoding="async"><p>MARTIN FOLKESTAD<br>VERMINORD AS · JÆREN<br>VERMINORD.NO</p></div>
+<div class="bs-label"><img src="/images/showcase/verminord-dark.webp" alt="" loading="lazy" decoding="async"><p>ETIKETT · SUBSTRAT 5 KG<br>BATCH 24-117 · KLEPP</p></div>
+</div></div>
+</div>
+</div>
+</figure>
+</div></div>
+</section>
+
+<!-- CH6 · Søregga Auto (konsept) -->
+<section class="chap" data-chap="site" aria-label="Nettside-konsept: Søregga Auto">
+<div class="chap-runway"><div class="chap-stage">
+<aside class="chap-meta">
+<span class="chap-idx"><b>06</b> / 08</span>
+<h3>Søregga Auto</h3>
+<p class="chap-tags">Nettside · Konsept</p>
+<p class="chap-desc">Bilverksted med fast pris før løftet — direkte, ærlig og bygget for booking.</p>
+<a class="tlink" href="/eksempel/bilverksted/" target="_blank" rel="noopener">Åpne demoen ↗</a>
+</aside>
+<figure class="chap-frame" style="margin:0">
+<div class="chap-bar" aria-hidden="true"><span class="chap-dots"><i></i><i></i><i></i></span><span class="chap-url">folkestad.design/eksempel/bilverksted</span><span class="chap-innerbar"></span></div>
+<div class="chap-view">
+<picture>
+<source media="(max-width:960px)" srcset="/images/showcase/soregga-420.webp">
+<img class="chap-scroll" src="/images/showcase/soregga-1440.webp" width="2160" height="5627" alt="Nettside-konsept for Søregga Auto — hele siden fra topp til bunn" loading="lazy" decoding="async">
+</picture>
+</div>
+</figure>
+</div></div>
+</section>
+
+<!-- CH7 · Strandhus Bygg (konsept) — dekkes via cover-kjede -->
+<section class="chap" data-chap="site" aria-label="Nettside-konsept: Strandhus Bygg">
+<div class="chap-runway"><div class="chap-stage">
+<aside class="chap-meta">
+<span class="chap-idx"><b>07</b> / 08</span>
+<h3>Strandhus Bygg</h3>
+<p class="chap-tags">Nettside · Konsept · 5 sider</p>
+<p class="chap-desc">Byggfirma på Klepp — fem sider med prosjekter, tjenester og befaring, bygget for tillit.</p>
+<a class="tlink" href="/eksempel/femsider/" target="_blank" rel="noopener">Åpne demoen ↗</a>
+</aside>
+<figure class="chap-frame" style="margin:0">
+<div class="chap-bar" aria-hidden="true"><span class="chap-dots"><i></i><i></i><i></i></span><span class="chap-url">folkestad.design/eksempel/femsider</span><span class="chap-innerbar"></span></div>
+<div class="chap-view">
+<picture>
+<source media="(max-width:960px)" srcset="/images/showcase/strandhus-420.webp">
+<img class="chap-scroll" src="/images/showcase/strandhus-1440.webp" width="2160" height="5340" alt="Nettside-konsept for Strandhus Bygg — hele siden fra topp til bunn" loading="lazy" decoding="async">
+</picture>
+</div>
+</figure>
+</div></div>
+</section>
+
+<!-- CH8 · ESE Solution Norway (levert) — dekkes via cover-kjede; avslutter visningen -->
+<section class="chap" data-chap="case" aria-label="Levert arbeid: ESE Solution Norway">
+<div class="chap-runway"><div class="chap-stage">
+<aside class="chap-meta">
+<span class="chap-idx"><b>08</b> / 08</span>
+<h3>ESE Solution Norway</h3>
+<p class="chap-tags">Nettside · Levert 2025</p>
+<p class="chap-desc">Bilingual NO/EN nettside for koreansk presisjonsproduksjon — første eksterne klient, levert og live.</p>
+<a class="tlink" href="/case/ese-solution" target="_blank" rel="noopener">Les caset ↗</a>
+</aside>
+<figure class="chap-frame plain" style="margin:0">
+<div class="chap-view">
+<div class="chap-case">
+<span class="chap-wm" aria-hidden="true">ESE</span>
+<div class="chap-quote"><p class="aq">«Opplevelsen var friksjonsfri, kommunikasjonen presis, og resultatet er noe teamet vårt er stolt av å vise frem. Utmerket verdi og gjennomføring.»</p><p class="asig">SF — Svein Folkestad · ESE Solution Norway</p></div>
+</div>
+</div>
+</figure>
+</div></div>
+</section>
+
+
+</div>
+<!-- VOYAGE · kamera-på-lerret (desktop + motion). Innholdet speiler .chapfall-kapitlene. -->
+<section class="voyage" aria-label="Utvalgt arbeid — kamerareise over lerretet" data-ov-title="Alt arbeidet. Ett studio." data-ov-tags="Nettsider · Logo · Merkevare">
+<div class="v-runway"><div class="v-stage">
+<div class="v-canvas" id="vcanvas">
+
+<article class="v-item v-stop" style="left:410px;top:470px;width:1180px;height:760px" data-dwell="1.15" data-idx="01" data-title="Solhuset Bakeri" data-tags="Nettside · Konsept" data-href="/eksempel/onepager/" data-link="Åpne demoen ↗">
+<span class="v-lab" aria-hidden="true"><b>01</b> · Solhuset Bakeri — Nettside · Konsept</span>
+<figure class="v-frame">
+<div class="chap-bar" aria-hidden="true"><span class="chap-dots"><i></i><i></i><i></i></span><span class="chap-url">folkestad.design/eksempel/onepager</span><span class="chap-innerbar"></span></div>
+<div class="v-view"><img class="v-scroll" src="/images/showcase/solhuset-1440.webp" width="2160" height="5952" alt="Nettside-konsept for Solhuset Bakeri — hele siden fra topp til bunn" loading="lazy" decoding="async"></div>
+</figure>
+</article>
+
+<article class="v-item v-stop" style="left:2260px;top:1270px;width:1180px;height:760px" data-dwell="1.15" data-idx="02" data-title="Vindfanget Bistro" data-tags="Nettside · Konsept" data-href="/eksempel/bistro/" data-link="Åpne demoen ↗">
+<span class="v-lab" aria-hidden="true"><b>02</b> · Vindfanget Bistro — Nettside · Konsept</span>
+<figure class="v-frame">
+<div class="chap-bar" aria-hidden="true"><span class="chap-dots"><i></i><i></i><i></i></span><span class="chap-url">folkestad.design/eksempel/bistro</span><span class="chap-innerbar"></span></div>
+<div class="v-view"><img class="v-scroll" src="/images/showcase/vindfanget-1440.webp" width="2160" height="8795" alt="Nettside-konsept for Vindfanget Bistro og Vinbar — hele siden fra topp til bunn" loading="lazy" decoding="async"></div>
+</figure>
+</article>
+
+<article class="v-item v-stop" style="left:4110px;top:570px;width:1180px;height:760px" data-dwell="0.9" data-idx="03" data-title="Verminord" data-tags="Logo · Levert 2024" data-href="/case/verminord" data-link="Les caset ↗">
+<span class="v-lab" aria-hidden="true"><b>03</b> · Verminord — Logo · Levert 2024</span>
+<figure class="v-frame plain">
+<div class="v-view">
+<div class="chap-ground" style="background:#1C3A5C"><img src="/images/showcase/verminord-white.webp" width="1280" height="853" alt="Verminord-logo, hvit på marineblå" loading="lazy" decoding="async"><span class="glab" style="color:rgba(246,242,234,.6)">Primær · på navy</span></div>
+<div class="chap-wipe"><div class="chap-ground" style="background:#F6F2EA"><img src="/images/showcase/verminord-dark.webp" width="1280" height="853" alt="Verminord-logo, mørk på cream" loading="lazy" decoding="async"><span class="glab" style="color:#5A6270">Sekundær · på cream</span></div></div>
+</div>
+</figure>
+</article>
+
+<article class="v-item v-stop" style="left:5710px;top:1370px;width:1180px;height:760px" data-dwell="1.15" data-idx="04" data-title="Saltkroken Frisør" data-tags="Nettside · Konsept" data-href="/eksempel/frisor/" data-link="Åpne demoen ↗">
+<span class="v-lab" aria-hidden="true"><b>04</b> · Saltkroken Frisør — Nettside · Konsept</span>
+<figure class="v-frame">
+<div class="chap-bar" aria-hidden="true"><span class="chap-dots"><i></i><i></i><i></i></span><span class="chap-url">folkestad.design/eksempel/frisor</span><span class="chap-innerbar"></span></div>
+<div class="v-view"><img class="v-scroll" src="/images/showcase/saltkroken-1440.webp" width="2160" height="6173" alt="Nettside-konsept for Saltkroken Frisør — hele siden fra topp til bunn" loading="lazy" decoding="async"></div>
+</figure>
+</article>
+
+<div class="v-item v-stop" style="left:5380px;top:2960px;width:1530px;height:990px" data-dwell="0.75" data-idx="05" data-title="Verminord AS" data-tags="Merkevaresystem · Levert 2024" data-href="/case/verminord" data-link="Les caset ↗">
+<span class="v-lab" aria-hidden="true"><b>05</b> · Verminord AS — Merkevaresystem · Levert 2024</span>
+<div class="v-bs" style="left:0;top:0;width:900px;height:540px">
+<p class="bs-lab">Fargesystem — maks tre per flate</p>
+<div class="bs-swatches">
+<div class="bs-sw" style="background:#1C3A5C"><span style="color:rgba(246,242,234,.8)">Navy #1C3A5C</span></div>
+<div class="bs-sw" style="background:#B8993A"><span style="color:#1A1A1A">Gull #B8993A</span></div>
+<div class="bs-sw" style="background:#F6F2EA"><span style="color:#5A6270">Cream #F6F2EA</span></div>
+<div class="bs-sw" style="background:#E8E2D5"><span style="color:#5A6270">Sand #E8E2D5</span></div>
+<div class="bs-sw" style="background:#5A6270"><span style="color:rgba(246,242,234,.85)">Grå #5A6270</span></div>
+<div class="bs-sw" style="background:#1A1A1A"><span style="color:rgba(246,242,234,.8)">Ink #1A1A1A</span></div>
+</div>
+</div>
+<div class="v-bs" style="left:950px;top:0;width:580px;height:400px">
+<p class="bs-lab">Typografi</p><p class="bs-type">Verminord</p><p class="bs-type-sub">IBM Plex Sans · Bold · 0.18–0.22 em tracking</p>
+<p style="font-weight:800;font-size:46px;letter-spacing:-.01em;margin:26px 0 6px;color:#1A1A1A">Aa Bb 0123</p>
+<p class="bs-type-sub">Maks to snitt per design · tabulære tall på datablad og etikett</p>
+</div>
+<div class="v-bs" style="left:70px;top:590px;width:640px;height:400px;background:#1C3A5C;border:0;display:flex;flex-direction:column;justify-content:space-between">
+<img src="/images/showcase/verminord-white.webp" width="1280" height="853" alt="" style="width:52%" loading="lazy" decoding="async"><p style="margin:0;color:rgba(246,242,234,.75);font-size:13px;letter-spacing:.08em;line-height:1.7">MARTIN FOLKESTAD<br>VERMINORD AS · JÆREN<br>VERMINORD.NO</p>
+</div>
+<div class="v-bs" style="left:790px;top:520px;width:560px;height:400px;background:#E8E2D5;display:flex;flex-direction:column;justify-content:space-between">
+<img src="/images/showcase/verminord-dark.webp" width="1280" height="853" alt="" style="width:52%" loading="lazy" decoding="async"><p style="margin:0;color:#5A6270;font-size:13px;letter-spacing:.08em;line-height:1.7">ETIKETT · SUBSTRAT 5 KG<br>BATCH 24-117 · KLEPP</p>
+</div>
+</div>
+
+<article class="v-item v-stop" style="left:3910px;top:3670px;width:1180px;height:760px" data-dwell="1.15" data-idx="06" data-title="Søregga Auto" data-tags="Nettside · Konsept" data-href="/eksempel/bilverksted/" data-link="Åpne demoen ↗">
+<span class="v-lab" aria-hidden="true"><b>06</b> · Søregga Auto — Nettside · Konsept</span>
+<figure class="v-frame">
+<div class="chap-bar" aria-hidden="true"><span class="chap-dots"><i></i><i></i><i></i></span><span class="chap-url">folkestad.design/eksempel/bilverksted</span><span class="chap-innerbar"></span></div>
+<div class="v-view"><img class="v-scroll" src="/images/showcase/soregga-1440.webp" width="2160" height="5627" alt="Nettside-konsept for Søregga Auto — hele siden fra topp til bunn" loading="lazy" decoding="async"></div>
+</figure>
+</article>
+
+<article class="v-item v-stop" style="left:2060px;top:2970px;width:1180px;height:760px" data-dwell="1.15" data-idx="07" data-title="Strandhus Bygg" data-tags="Nettside · Konsept · 5 sider" data-href="/eksempel/femsider/" data-link="Åpne demoen ↗">
+<span class="v-lab" aria-hidden="true"><b>07</b> · Strandhus Bygg — Nettside · Konsept · 5 sider</span>
+<figure class="v-frame">
+<div class="chap-bar" aria-hidden="true"><span class="chap-dots"><i></i><i></i><i></i></span><span class="chap-url">folkestad.design/eksempel/femsider</span><span class="chap-innerbar"></span></div>
+<div class="v-view"><img class="v-scroll" src="/images/showcase/strandhus-1440.webp" width="2160" height="5340" alt="Nettside-konsept for Strandhus Bygg — hele siden fra topp til bunn" loading="lazy" decoding="async"></div>
+</figure>
+</article>
+
+<article class="v-item v-stop" style="left:360px;top:3620px;width:1180px;height:760px" data-dwell="1" data-idx="08" data-title="ESE Solution Norway" data-tags="Nettside · Levert 2025" data-href="/case/ese-solution" data-link="Les caset ↗">
+<span class="v-lab" aria-hidden="true"><b>08</b> · ESE Solution Norway — Nettside · Levert 2025</span>
+<div class="v-ese">
+<span class="chap-wm" aria-hidden="true">ESE</span>
+<div class="chap-quote"><p class="aq">«Opplevelsen var friksjonsfri, kommunikasjonen presis, og resultatet er noe teamet vårt er stolt av å vise frem. Utmerket verdi og gjennomføring.»</p><p class="asig">SF — Svein Folkestad · ESE Solution Norway</p></div>
+</div>
+</article>
+
+</div>
+<div class="v-cap" id="vcap"></div>
+<div class="v-hint" id="vhint" aria-hidden="true">Scroll — utforsk lerretet</div>
+</div></div>
+</section>
+</div>
+
+<!-- Problemet -->
+<section class="cwrap" id="problem">
+<div class="sview">
 <p class="eyebrow rv vl">Problemet</p>
 <h2 class="h2"><span class="lr">Å kjøpe design er det billigste løftet en liten bedrift kan gjøre, <em>men…</em></span></h2>
-<div class="stack" id="stack">
-<div class="scard" style="top:100px"><span class="snum">/01</span><h3>…byråprisene er skrudd for konsern</h3><p>Et mid-tier byrå i Oslo tar rundt 300 000 kr for brand og nettside. Prisen dekker møter, mellomledd og timeføring — ikke bedre design. For en enkeltperson eller småbedrift er det rett og slett uaktuelt.</p></div>
-<div class="scard" style="top:130px"><span class="snum">/02</span><h3>…leveringstiden måles i måneder</h3><p>3–5 måneder fra oppstart til lansering er normalt hos byrå. I mellomtiden taper du kundene som googler deg i dag og finner ingenting — eller verre: finner konkurrenten.</p></div>
-<div class="scard" style="top:160px"><span class="snum">/03</span><h3>…malene ser ut som alle andre</h3><p>Wix og Squarespace funker — hvis du har god tid og et trent øye. Men driver du bedriften 60 timer i uka, ender du med mal #4827: en side som ser ut som alles, og ingen sin.</p></div>
-<div class="scard" style="top:190px"><span class="snum">/04</span><h3>…du eier sjelden det du betaler for</h3><p>Kildefiler, fonter og vektorlogo blir liggende hos leverandøren. Bytter du senere, starter du på null. Det er innlåsing forkledd som service.</p></div>
+<div class="stack">
+<div class="scard rv vs"><span class="snum">/01</span><h3>…byråprisene er skrudd for konsern</h3><p>Et mid-tier byrå i Oslo tar rundt 300 000 kr for brand og nettside. Prisen dekker møter, mellomledd og timeføring — ikke bedre design. For en enkeltperson eller småbedrift er det rett og slett uaktuelt.</p></div>
+<div class="scard rv vs" style="transition-delay:.08s"><span class="snum">/02</span><h3>…leveringstiden måles i måneder</h3><p>3–5 måneder fra oppstart til lansering er normalt hos byrå. I mellomtiden taper du kundene som googler deg i dag og finner ingenting — eller verre: finner konkurrenten.</p></div>
+<div class="scard rv vs" style="transition-delay:.16s"><span class="snum">/03</span><h3>…malene ser ut som alle andre</h3><p>Wix og Squarespace funker — hvis du har god tid og et trent øye. Men driver du bedriften 60 timer i uka, ender du med mal #4827: en side som ser ut som alles, og ingen sin.</p></div>
+<div class="scard rv vs" style="transition-delay:.24s"><span class="snum">/04</span><h3>…du eier sjelden det du betaler for</h3><p>Kildefiler, fonter og vektorlogo blir liggende hos leverandøren. Bytter du senere, starter du på null. Det er innlåsing forkledd som service.</p></div>
+</div>
 </div>
 </section>
-<section class="sec" data-screen-label="Løsningen"><div class="dark"><div class="dorb dorb1"></div><div class="dorb dorb2"></div><div class="cwrap" style="padding-top:clamp(80px,10vw,140px);padding-bottom:clamp(80px,10vw,140px);position:relative;z-index:1">
+
+<!-- Løsningen -->
+<section class="sec" style="padding-top:clamp(60px,8vw,120px)"><div class="dark"><div class="dorb dorb1"></div><div class="dorb dorb2"></div><div class="cwrap" style="padding-top:clamp(80px,10vw,140px);padding-bottom:clamp(80px,10vw,140px);position:relative;z-index:1">
 <p class="eyebrow rv vl">Løsningen</p>
 <h2 class="h2"><span class="lr">Svaret er <em>én designer.</em> Hele kjeden. Fast pris.</span></h2>
 <div class="shift">
@@ -501,13 +809,15 @@ textarea.fin{min-height:120px;resize:vertical}
 <div class="shbox rv vr" style="transition-delay:.35s;border-color:rgba(158,216,198,.35)"><span class="shlab" style="color:var(--mint)">Til</span><div class="shbig" style="color:var(--mint)">Én designer</div><p class="shsub">Direkte linje, fast pris, 7–14 dager, fra 12 000 kr</p></div>
 </div>
 <div class="bigstats">
-<div class="bstat rv vb"><div class="bnum" data-count="14">0</div><p class="blab">dager fra første prat til lansert nettside og merkevare</p></div>
-<div class="bstat rv vb" style="transition-delay:.1s"><div class="bnum"><span data-count="12">0</span>–<span data-count="25">0</span>k</div><p class="blab">kroner fast totalpris for komplett pakke — brand, web og trykk</p></div>
-<div class="bstat rv vb" style="transition-delay:.2s"><div class="bnum" data-count="2">0</div><p class="blab">runder finpuss inkludert, endringer levert innen 24 timer</p></div>
-<div class="bstat rv vb" style="transition-delay:.3s"><div class="bnum" data-count="30">0</div><p class="blab">dager gratis support etter lansering — bugs, endringer, spørsmål</p></div>
+<div class="bstat rv vb"><div class="bnum" data-count="14">14</div><p class="blab">dager fra første prat til lansert nettside og merkevare</p></div>
+<div class="bstat rv vb" style="transition-delay:.1s"><div class="bnum"><span data-count="12">12</span>–<span data-count="25">25</span>k</div><p class="blab">kroner fast totalpris for komplett pakke — brand, web og trykk</p></div>
+<div class="bstat rv vb" style="transition-delay:.2s"><div class="bnum" data-count="2">2</div><p class="blab">runder finpuss inkludert, endringer levert innen 24 timer</p></div>
+<div class="bstat rv vb" style="transition-delay:.3s"><div class="bnum" data-count="30">30</div><p class="blab">dager gratis support etter lansering — bugs, endringer, spørsmål</p></div>
 </div>
 </div></div></section>
-<section class="mani" id="manifest" data-screen-label="Manifest">
+
+<!-- S4 · statement — Manifest -->
+<section class="mani" id="manifest">
 <div class="cwrap maniin">
 <div>
 <p class="eyebrow rv vl" style="margin-bottom:8px">Manifest</p>
@@ -515,7 +825,9 @@ textarea.fin{min-height:120px;resize:vertical}
 </div>
 </div>
 </section>
-<section class="sec cwrap" id="tjenester" data-screen-label="Tjenester">
+
+<!-- LANDING ZONE — rolig, statisk, konverterende -->
+<section class="sec cwrap" id="tjenester">
 <p class="eyebrow rv vl">Tjenester</p>
 <h2 class="h2"><span class="lr">Tre ting. Gjort <em>skikkelig.</em></span></h2>
 <div style="margin-top:clamp(50px,6vw,80px)">
@@ -525,7 +837,7 @@ textarea.fin{min-height:120px;resize:vertical}
 </div>
 <p class="rv" style="margin-top:34px"><a class="tlink" href="#kontakt">Usikker på hva du trenger? Ta en gratis prat →</a></p>
 </section>
-<section class="sec cwrap" id="prosess" data-screen-label="Prosess" style="padding-top:0">
+<section class="sec cwrap" id="prosess" style="padding-top:0">
 <p class="eyebrow rv vl">Prosess</p>
 <h2 class="h2"><span class="lr">Fra første prat til lansering — <em>fire steg</em></span></h2>
 <div class="proc" id="proc">
@@ -536,7 +848,7 @@ textarea.fin{min-height:120px;resize:vertical}
 <div class="pstep rv vl"><span class="pday">Dag 14</span><div><h3>Vi lanserer</h3><p>Hosting, domene, e-post — jeg hjelper deg gjennom alt. Du eier alle filer, og 30 dagers gratis support følger med.</p></div></div>
 </div>
 </section>
-<section class="sec cwrap" id="priser" data-screen-label="Priser" style="padding-top:0">
+<section class="sec cwrap" id="priser" style="padding-top:0">
 <p class="eyebrow rv vl">Priser</p>
 <h2 class="h2"><span class="lr">Enkle priser. <em>Ingen overraskelser.</em></span></h2>
 <p class="mut rv" style="max-width:52ch;margin-top:26px">Du betaler aldri før du har sett utkastet. Alle pakker inkluderer 30 dager support etter lansering.</p>
@@ -546,15 +858,7 @@ textarea.fin{min-height:120px;resize:vertical}
 <div class="pcard rv vs" style="transition-delay:.24s"><span class="ptier">Pakke 03 — Tilpasset</span><h3>Tilpasset</h3><div class="pprice">Kontakt</div><ul class="pinc"><li>Bygd for din situasjon</li><li>E-handel, booking, integrasjoner</li><li>Compliance-dokumentasjon</li><li>Full kreativ retning</li><li>Tidslinje etter avtale</li></ul><a class="pill pbtn" href="#kontakt">Ta kontakt</a></div>
 </div>
 </section>
-<section class="sec cwrap" id="arbeid" data-screen-label="Arbeid" style="padding-top:0">
-<p class="eyebrow rv vl">Arbeid</p>
-<h2 class="h2"><span class="lr">Levert. Bygget. <em>Eid selv.</em></span></h2>
-<div class="cgrid">
-<a class="ccard rv vs" href="https://folkestad.design/case/ese-solution" target="_blank" rel="noopener"><div class="cvis cv1"><span>ESE</span></div><div class="cmeta"><div><h3 class="h3">ESE Solution Norway</h3><p>Bilingual NO/EN nettside for koreansk presisjonsproduksjon — første eksterne klient, levert og live.</p></div><span class="carr">↗</span></div></a>
-<a class="ccard rv vs" href="https://folkestad.design/case/verminord" target="_blank" rel="noopener" style="transition-delay:.15s"><div class="cvis cv2"><span>Verminord</span></div><div class="cmeta"><div><h3 class="h3">Verminord AS</h3><p>Komplett merkevare fra bunnen for eget selskap — logo, brand book, etiketter, datablad. I bruk hver dag.</p></div><span class="carr">↗</span></div></a>
-</div>
-</section>
-<section class="sec cwrap" data-screen-label="Hvorfor meg" style="padding-top:0">
+<section class="sec cwrap" style="padding-top:0">
 <p class="eyebrow rv vl">Hvorfor meg</p>
 <h2 class="h2"><span class="lr">Risikoen er <em>min,</em> ikke din</span></h2>
 <div class="why">
@@ -563,15 +867,15 @@ textarea.fin{min-height:120px;resize:vertical}
 <div class="wcol rv vw" style="transition-delay:.24s"><h3>Du eier alt</h3><p>Vektor, fonter, PSD, InDesign — alle kildefiler overleveres ved lansering. Du står helt fritt til å bytte leverandør senere uten å miste noe.</p></div>
 </div>
 </section>
-<section class="sec cwrap" data-screen-label="Historien" style="padding-top:0">
+<section class="sec cwrap" style="padding-top:0">
 <p class="eyebrow rv vl">Historien</p>
 <h2 class="h2"><span class="lr">Det startet med en mappe <em>Word-dokumenter</em></span></h2>
 <div class="about2">
-<div class="body rv"><p>I 2024 startet jeg Verminord på Jæren. Den første måneden gikk ikke til mark eller substrat — den gikk til en mappe Word-dokumenter i Times New Roman, 11 punkt. Jeg printet det ut, la det ved siden av en konkurrents brosjyre, og forskjellen var ikke i innholdet. Forskjellen var at hans så ut som det kom fra en bedrift.</p><p>Så jeg brukte to uker på å lære meg å designe. Ikke fordi jeg ville bli designer — men fordi jeg trengte at en kjøper i Bryne skulle tro på Verminord før han leste første setning.</p><p class="asig">— Martin Folkestad · Klepp Stasjon, Jæren</p></div>
-<div class="rv" style="transition-delay:.15s"><p class="aq">«Opplevelsen var friksjonsfri, kommunikasjonen presis, og resultatet er noe teamet vårt er stolt av å vise frem. Utmerket verdi og gjennomføring.»</p><p class="asig">SF — Svein Folkestad · ESE Solution Norway</p></div>
+<div class="body rv"><p>I 2024 startet jeg Verminord på Jæren. Den første måneden gikk ikke til mark eller substrat — den gikk til en mappe Word-dokumenter i Times New Roman, 11 punkt. Jeg printet det ut, la det ved siden av en konkurrents brosjyre, og forskjellen var ikke i innholdet. Forskjellen var at hans så ut som det kom fra en bedrift.</p><p class="asig">— Martin Folkestad · Klepp Stasjon, Jæren</p></div>
+<div class="body rv" style="transition-delay:.15s"><p>Så jeg brukte to uker på å lære meg å designe. Ikke fordi jeg ville bli designer — men fordi jeg trengte at en kjøper i Bryne skulle tro på Verminord før han leste første setning.</p></div>
 </div>
 </section>
-<section class="sec cwrap" id="faq" data-screen-label="FAQ" style="padding-top:0">
+<section class="sec cwrap" id="faq" style="padding-top:0">
 <div class="faqw">
 <div><p class="eyebrow rv vl">FAQ</p><h2 class="h2"><span class="lr">Raske svar på det du <em>lurer på</em></span></h2><p class="mut rv" style="margin-top:26px;max-width:34ch">Finner du ikke svaret? Skriv direkte:</p><p class="rv"><a class="tlink" href="mailto:hei@folkestad.design">hei@folkestad.design</a></p></div>
 <div class="faq rv">
@@ -584,23 +888,21 @@ textarea.fin{min-height:120px;resize:vertical}
 </div>
 </div>
 </section>
-<section class="sec cwrap" id="kontakt" data-screen-label="Kontakt" style="padding-top:0">
+<section class="sec cwrap" id="kontakt" style="padding-top:0">
 <p class="eyebrow rv vl">Kontakt</p>
 <h2 class="h2"><span class="lr">Få ditt gratis utkast <em>i dag</em></span></h2>
 <div class="kwrap">
 <div class="rv">
 <p class="mut" style="margin-top:0;max-width:52ch">Fortell kort om bedriften din — Martin svarer personlig innen samme dag. Første samtale er alltid gratis: ingen salgspresentasjon, bare en prat.</p>
-<sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
-<form class="form" onsubmit="{{ submit }}">
-<input class="fin" placeholder="Navn" aria-label="Navn">
-<input class="fin" placeholder="Telefon eller e-post" aria-label="Telefon eller e-post">
-<textarea class="fin" placeholder="Hva trenger du?" aria-label="Hva trenger du?"></textarea>
+<form class="form" id="kform" novalidate>
+<input class="fin" name="navn" placeholder="Navn" aria-label="Navn" required autocomplete="name">
+<input class="fin" name="kontakt" placeholder="Telefon eller e-post" aria-label="Telefon eller e-post" required>
+<textarea class="fin" name="melding" placeholder="Hva trenger du?" aria-label="Hva trenger du?"></textarea>
+<input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
 <button class="fbtn" type="submit">Send melding →</button>
+<p class="ferr" id="ferr" role="alert">Kunne ikke sende akkurat nå — <a class="tlink" id="ferrmail" href="mailto:hei@folkestad.design">send e-post direkte</a>, så svarer Martin like raskt.</p>
 </form>
-</sc-if>
-<sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
-<div class="sent">✓ Takk! Martin svarer deg personlig innen samme dag.</div>
-</sc-if>
+<div class="sent" id="ksent" role="status" tabindex="-1" hidden>✓ Takk! Martin svarer deg personlig innen samme dag.</div>
 </div>
 <div class="klist rv" style="transition-delay:.15s">
 <div class="krow"><span class="klab">E-post</span><span class="kval"><a href="mailto:hei@folkestad.design">hei@folkestad.design</a></span></div>
@@ -610,209 +912,461 @@ textarea.fin{min-height:120px;resize:vertical}
 </div>
 </div>
 </section>
-<a class="ctaband" href="#kontakt" data-screen-label="CTA-bånd"><div class="ctain"><span>Er du interessert? <em>La oss snakke.</em></span><span>Er du interessert? <em>La oss snakke.</em></span><span>Er du interessert? <em>La oss snakke.</em></span><span>Er du interessert? <em>La oss snakke.</em></span></div></a>
+<a class="ctaband" href="#kontakt"><div class="ctain"><span>Er du interessert? <em>La oss snakke.</em></span><span>Er du interessert? <em>La oss snakke.</em></span><span>Er du interessert? <em>La oss snakke.</em></span><span>Er du interessert? <em>La oss snakke.</em></span></div></a>
 <div class="cwrap"><div class="foot"><div class="footin"><div><a class="logo" href="#top" style="font-size:22px">Folkestad<span style="color:var(--acc)">.</span></a><p style="font-size:14px;color:var(--mut);margin:8px 0 0">Klepp Stasjon · Jæren · Norge</p></div><div class="fx gap20"><a class="flink" href="#tjenester">Tjenester</a><a class="flink" href="#arbeid">Arbeid</a><a class="flink" href="https://folkestad.design/blogg" target="_blank" rel="noopener">Blogg</a><a class="flink" href="https://folkestad.design/personvern" target="_blank" rel="noopener">Personvern</a></div></div><p class="fcopy">© 2026 Folkestad Designs · Bygd lokalt på Jæren</p></div></div>
 </div>
-</x-dc>
-<script type="text/x-dc" data-dc-script="" data-props="{&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#1F4E43&quot;,&quot;options&quot;:[&quot;#1F4E43&quot;,&quot;#1E3A5F&quot;,&quot;#6B3F1D&quot;,&quot;#4A2D6B&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Tema&quot;},&quot;showGrain&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Tema&quot;}}">
-class Component extends DCLogic {
-  state = { sent: false };
-  componentDidMount() {
-    this.applyAccent();
-    // Preloader
-    const pct = document.getElementById('lpct');
-    const fill = document.getElementById('lbarfill');
-    const loader = document.getElementById('loader');
-    const t0 = performance.now(), dur = 1400;
-    const tick = (t) => {
-      const p = Math.min(1, (t - t0) / dur);
-      const eased = 1 - Math.pow(1 - p, 3);
-      if (pct) pct.textContent = String(Math.round(eased * 100)).padStart(2, '0') + '%';
-      if (fill) fill.style.transform = 'scaleX(' + eased.toFixed(4) + ')';
-      if (p < 1) requestAnimationFrame(tick);
-      else setTimeout(() => loader && loader.classList.add('off'), 200);
-    };
-    requestAnimationFrame(tick);
-    setTimeout(() => {
-      if (loader && !loader.classList.contains('off')) {
-        if (pct) pct.textContent = '100%';
-        if (fill) fill.style.transform = 'scaleX(1)';
-        loader.classList.add('off');
-      }
-    }, 1800);
-    // Reveals
-    this._io = new IntersectionObserver((es) => {
-      es.forEach((e) => {
-        if (!e.isIntersecting) return;
-        e.target.classList.add('on');
-        e.target.querySelectorAll('[data-count]').forEach((el) => this.countUp(el));
-        if (e.target.hasAttribute('data-count')) this.countUp(e.target);
-        this._io.unobserve(e.target);
-      });
-    }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
-    document.querySelectorAll('.rv:not(.on),.lr:not(.on),.bstat,.hmeta').forEach((el) => this._io.observe(el));
-    setTimeout(() => document.querySelectorAll('.hero [data-count]').forEach((el) => this.countUp(el)), 1800);
-    // Nav solid on scroll
-    this._onScroll = () => {
-      const nav = document.getElementById('nav');
-      if (nav) nav.classList.toggle('solid', window.scrollY > 40);
-    };
-    window.addEventListener('scroll', this._onScroll, { passive: true });
-    // Scroll FX
-    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (!reduced) this.startFx();
-    else document.querySelectorAll('.mw').forEach((w) => w.classList.add('lit'));
-    // Magnetic buttons (pointer:fine only)
-    if (!reduced && window.matchMedia('(pointer:fine)').matches) {
-      document.querySelectorAll('.pill,.fbtn').forEach((btn) => {
-        btn.addEventListener('mousemove', (e) => {
-          const r = btn.getBoundingClientRect();
-          btn.style.transform = 'translate(' + ((e.clientX - r.left - r.width / 2) * 0.18).toFixed(1) + 'px,' + ((e.clientY - r.top - r.height / 2) * 0.3).toFixed(1) + 'px)';
-        });
-        btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
-      });
+<script>
+(function(){
+'use strict';
+var reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var clamp01=function(v){return Math.max(0,Math.min(1,v))};
+var lerp=function(a,b,t){return a+(b-a)*t};
+
+/* ---------- preloader (kortere ved gjenbesøk) ---------- */
+var pct=document.getElementById('lpct'),fill=document.getElementById('lbarfill'),loader=document.getElementById('loader');
+var seen=false;try{seen=!!sessionStorage.getItem('fd-intro');sessionStorage.setItem('fd-intro','1')}catch(e){}
+var ldur=seen?400:1200;
+(function(){
+  var t0=performance.now();
+  var tick=function(t){
+    var p=Math.min(1,(t-t0)/ldur),eased=1-Math.pow(1-p,3);
+    if(pct)pct.textContent=String(Math.round(eased*100)).padStart(2,'0')+'%';
+    if(fill)fill.style.transform='scaleX('+eased.toFixed(4)+')';
+    if(p<1)requestAnimationFrame(tick);
+    else setTimeout(function(){loader&&loader.classList.add('off')},150);
+  };
+  requestAnimationFrame(tick);
+  setTimeout(function(){
+    if(loader&&!loader.classList.contains('off')){
+      if(pct)pct.textContent='100%';
+      if(fill)fill.style.transform='scaleX(1)';
+      loader.classList.add('off');
     }
-    // Custom cursor
-    if (window.matchMedia('(pointer:fine) and (min-width:961px)').matches) {
-      const cur = document.getElementById('cur');
-      if (cur) {
-        let cx = -100, cy = -100, tx = -100, ty = -100, curRunning = true;
-        this._stopCur = () => { curRunning = false; };
-        document.addEventListener('mousemove', (e) => { tx = e.clientX; ty = e.clientY; });
-        const ints = 'a,button,summary,.pcard,.svcrow,.ccard';
-        document.addEventListener('mouseover', (e) => { if (e.target.closest(ints)) cur.classList.add('big'); });
-        document.addEventListener('mouseout', (e) => { if (e.target.closest(ints)) cur.classList.remove('big'); });
-        document.addEventListener('mouseenter', () => { cur.style.opacity = '1'; });
-        document.addEventListener('mouseleave', () => { cur.style.opacity = '0'; });
-        const mv = () => {
-          if (!curRunning) return;
-          cx += (tx - cx) * 0.12;
-          cy += (ty - cy) * 0.12;
-          cur.style.left = cx + 'px';
-          cur.style.top = cy + 'px';
-          requestAnimationFrame(mv);
-        };
-        mv();
-      }
+  },ldur+600);
+})();
+
+/* ---------- count-up ---------- */
+function countUp(el){
+  if(el._counted)return;el._counted=true;
+  var target=parseInt(el.dataset.count,10),suffix=el.dataset.suffix||'';
+  var t0=performance.now(),dur=1400;
+  var step=function(t){
+    var p=Math.min(1,(t-t0)/dur),eased=1-Math.pow(1-p,4);
+    el.textContent=Math.round(eased*target)+suffix;
+    if(p<1)requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
+}
+
+/* ---------- reveals ---------- */
+var io=new IntersectionObserver(function(es){
+  es.forEach(function(e){
+    if(!e.isIntersecting)return;
+    e.target.classList.add('on');
+    e.target.querySelectorAll('[data-count]').forEach(countUp);
+    if(e.target.hasAttribute('data-count'))countUp(e.target);
+    io.unobserve(e.target);
+  });
+},{threshold:0.15,rootMargin:'0px 0px -50px 0px'});
+document.querySelectorAll('.rv:not(.on),.lr:not(.on),.bstat,.hmeta').forEach(function(el){io.observe(el)});
+setTimeout(function(){document.querySelectorAll('.hero [data-count]').forEach(countUp)},ldur+400);
+
+/* ---------- nav ---------- */
+var nav=document.getElementById('nav');
+window.addEventListener('scroll',function(){nav&&nav.classList.toggle('solid',window.scrollY>40)},{passive:true});
+
+/* ---------- kontaktskjema (FormSubmit AJAX, mailto-fallback) ---------- */
+var form=document.getElementById('kform');
+if(form){
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var btn=form.querySelector('.fbtn'),err=document.getElementById('ferr');
+    var navn=(form.navn.value||'').trim(),kontakt=(form.kontakt.value||'').trim(),melding=(form.melding.value||'').trim();
+    if(!navn||!kontakt){
+      err.textContent='Fyll inn navn og telefon eller e-post, så svarer Martin i dag.';
+      err.classList.add('show');(navn?form.kontakt:form.navn).focus();return
     }
-  }
-  componentDidUpdate() { this.applyAccent(); }
-  startFx() {
-    const clamp01 = (v) => Math.max(0, Math.min(1, v));
-    const lerp = (a, b, t) => a + (b - a) * t;
-    let lastY = window.scrollY, skew = 0, running = true;
-    this._stopFx = () => { running = false; };
-    const hin = document.querySelector('.hin');
-    const hwm = document.querySelector('.hwm');
-    const dark = document.querySelector('.dark');
-    const tickers = document.querySelectorAll('.sdin,.ctain');
-    const cvis = document.querySelectorAll('.cvis span');
-    const pbar = document.getElementById('pbar');
-    const mani = document.getElementById('mani');
-    const words = mani ? mani.querySelectorAll('.mw') : [];
-    const proc = document.getElementById('proc');
-    const procfill = document.getElementById('procfill');
-    const scards = Array.from(document.querySelectorAll('.scard'));
-    const loop = () => {
-      if (!running) return;
-      const y = window.scrollY, vh = window.innerHeight;
-      const vel = y - lastY; lastY = y;
-      // 1. Velocity skew on marquee bands
-      skew = lerp(skew, Math.max(-10, Math.min(10, vel * 0.35)), 0.12);
-      tickers.forEach((el) => { el.style.transform = 'skewX(' + skew.toFixed(2) + 'deg)'; });
-      // 2. Hero parallax + fade
-      if (hin && y < vh * 1.2) {
-        const p = clamp01(y / (vh * 0.9));
-        hin.style.transform = 'translateY(' + (y * 0.28).toFixed(1) + 'px)';
-        hin.style.opacity = String(1 - p * 0.9);
-      }
-      // 3. Watermark parallax
-      if (hwm && y < vh * 1.4) {
-        hwm.style.transform = 'translateY(calc(-50% + ' + (y * 0.1).toFixed(1) + 'px))';
-      }
-      // 4. Stacking cards depth
-      scards.forEach((c, i) => {
-        const next = scards[i + 1];
-        if (!next) return;
-        const r = c.getBoundingClientRect(), nr = next.getBoundingClientRect();
-        const p = clamp01(1 - (nr.top - r.top) / (r.height || 1));
-        c.style.transform = 'scale(' + (1 - p * 0.06).toFixed(4) + ')';
-        c.style.filter = 'brightness(' + (1 - p * 0.1).toFixed(3) + ')';
+    btn.disabled=true;btn.textContent='Sender…';err.classList.remove('show');
+    var fd=new FormData(form);
+    fd.append('_subject','Ny henvendelse fra folkestad.design');
+    fd.append('_template','table');fd.append('_captcha','false');
+    fetch('https://formsubmit.co/ajax/hei@folkestad.design',{method:'POST',headers:{'Accept':'application/json'},body:fd})
+      .then(function(r){if(!r.ok)throw 0;return r.json()})
+      .then(function(){form.hidden=true;var s=document.getElementById('ksent');s.hidden=false;s.focus()})
+      .catch(function(){
+        var mailto='mailto:hei@folkestad.design?subject='+encodeURIComponent('Henvendelse fra '+navn)+'&body='+encodeURIComponent(melding+'\n\n'+navn+'\n'+kontakt);
+        err.innerHTML='Kunne ikke sende akkurat nå — <a class="tlink" href="'+mailto+'">send e-post direkte</a>, så svarer Martin like raskt.';
+        err.classList.add('show');btn.disabled=false;btn.textContent='Send melding →';
       });
-      // 5. Dark section expand
-      if (dark) {
-        const r = dark.getBoundingClientRect();
-        const p = clamp01((vh - r.top) / (vh * 0.85));
-        const q = clamp01((r.bottom) / (vh * 0.85));
-        const g = Math.min(p, q);
-        dark.style.borderRadius = (36 * (1 - g)).toFixed(1) + 'px';
-        dark.style.marginLeft = dark.style.marginRight = (14 * (1 - g)).toFixed(1) + 'px';
-        dark.style.transform = 'scale(' + (0.96 + 0.04 * g).toFixed(4) + ')';
-      }
-      // 6. Progress bar
-      const doc = document.documentElement;
-      if (pbar) pbar.style.transform = 'scaleX(' + clamp01(y / ((doc.scrollHeight - vh) || 1)).toFixed(4) + ')';
-      // 7. Manifesto word reveal
-      if (mani && words.length) {
-        const r = mani.getBoundingClientRect();
-        if (r.bottom > 0 && r.top < vh) {
-          const p = clamp01((vh * 0.82 - r.top) / (r.height + vh * 0.28));
-          const lit = Math.floor(p * words.length * 1.15);
-          words.forEach((w, i) => w.classList.toggle('lit', i < lit));
-        }
-      }
-      // 8. Process timeline
-      if (proc && procfill) {
-        const r = proc.getBoundingClientRect();
-        procfill.style.transform = 'scaleY(' + clamp01((vh * 0.72 - r.top) / r.height).toFixed(4) + ')';
-      }
-      // 9. Case visual parallax
-      cvis.forEach((el) => {
-        const pr = el.parentElement;
-        if (!pr) return;
-        const r = pr.getBoundingClientRect();
-        if (r.bottom < 0 || r.top > vh) return;
-        const p = (r.top + r.height / 2 - vh / 2) / vh;
-        el.style.transform = 'translateY(' + (p * -30).toFixed(1) + 'px)';
-      });
-      requestAnimationFrame(loop);
-    };
-    requestAnimationFrame(loop);
-  }
-  applyAccent() {
-    const root = document.querySelector('.site');
-    if (root && this.props.accent) root.style.setProperty('--acc', this.props.accent);
-    const grain = document.querySelector('.grain');
-    if (grain) grain.style.display = this.props.showGrain === false ? 'none' : '';
-  }
-  countUp(el) {
-    if (el._counted) return; el._counted = true;
-    const target = parseInt(el.dataset.count, 10);
-    const suffix = el.dataset.suffix || '';
-    const t0 = performance.now(), dur = 1400;
-    const step = (t) => {
-      const p = Math.min(1, (t - t0) / dur);
-      const eased = 1 - Math.pow(1 - p, 4);
-      el.textContent = Math.round(eased * target) + (p === 1 ? suffix : suffix);
-      if (p < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  }
-  componentWillUnmount() {
-    if (this._stopFx) this._stopFx();
-    if (this._stopCur) this._stopCur();
-    window.removeEventListener('scroll', this._onScroll);
-    if (this._io) this._io.disconnect();
-  }
-  renderVals() {
-    return {
-      sent: this.state.sent,
-      notSent: !this.state.sent,
-      submit: (e) => { e.preventDefault(); this.setState({ sent: true }); }
-    };
+  });
+}
+
+/* ---------- magnetiske knapper ---------- */
+if(!reduced&&window.matchMedia('(pointer:fine)').matches){
+  document.querySelectorAll('.pill,.fbtn').forEach(function(btn){
+    btn.addEventListener('mousemove',function(e){
+      var r=btn.getBoundingClientRect();
+      btn.style.transform='translate('+((e.clientX-r.left-r.width/2)*0.18).toFixed(1)+'px,'+((e.clientY-r.top-r.height/2)*0.3).toFixed(1)+'px)';
+    });
+    btn.addEventListener('mouseleave',function(){btn.style.transform=''});
+  });
+}
+
+/* ---------- egen markør ---------- */
+if(!reduced&&window.matchMedia('(pointer:fine) and (min-width:961px)').matches){
+  var cur=document.getElementById('cur');
+  if(cur){
+    var cx=-100,cy=-100,tx=-100,ty=-100;
+    document.addEventListener('mousemove',function(e){tx=e.clientX;ty=e.clientY});
+    var ints='a,button,summary,.pcard,.svcrow,.chap-frame';
+    document.addEventListener('mouseover',function(e){if(e.target.closest(ints))cur.classList.add('big')});
+    document.addEventListener('mouseout',function(e){if(e.target.closest(ints))cur.classList.remove('big')});
+    document.addEventListener('mouseenter',function(){cur.style.opacity='1'});
+    document.addEventListener('mouseleave',function(){cur.style.opacity='0'});
+    (function mv(){
+      cx+=(tx-cx)*0.12;cy+=(ty-cy)*0.12;
+      cur.style.left=cx+'px';cur.style.top=cy+'px';
+      requestAnimationFrame(mv);
+    })();
   }
 }
+
+/* ---------- SHOWCASE geometry ----------
+   Runway = 100svh (pin) + scrubLen (indre scroll) + exitLen (cover-vindu).
+   Kapitler i cover-kjede trekkes opp -100svh slik at neste stage glir OVER
+   forrige mens den fortsatt står pinnet (Wix-kadensen). Ingen layout-lesing
+   i rAF-loopen: alt måles her og caches i dokument-koordinater. */
+var chaps=[];
+function buildChaps(){
+  var els=[].slice.call(document.querySelectorAll('.chap'));
+  chaps=els.map(function(el){
+    var next=el.nextElementSibling;
+    return {
+      el:el,
+      runway:el.querySelector('.chap-runway'),
+      stage:el.querySelector('.chap-stage'),
+      frame:el.querySelector('.chap-frame'),
+      view:el.querySelector('.chap-view'),
+      scroll:el.querySelector('.chap-scroll'),
+      wipe:el.querySelector('.chap-wipe'),
+      wm:el.querySelector('.chap-wm'),
+      quote:el.querySelector('.chap-quote'),
+      meta:el.querySelector('.chap-meta'),
+      bar:el.querySelector('.chap-innerbar'),
+      coverNext:!!(next&&next.classList&&next.classList.contains('chap')),
+      covered:!!(el.previousElementSibling&&el.previousElementSibling.classList&&el.previousElementSibling.classList.contains('chap')),
+      top:0,h:0,vh:0,S:0,scrubLen:1,exitLen:0,
+      en:0,sc:0,ex:0,live:false
+    };
+  });
+}
+function geometry(){
+  if(reduced||!chaps.length)return;
+  var mobile=window.innerWidth<=960;
+  chaps.forEach(function(c){
+    var vh=c.stage.offsetHeight||window.innerHeight;
+    c.el.style.marginTop=c.covered?(-vh+'px'):'';
+    var viewH=c.view?c.view.clientHeight:vh;
+    var S=0;
+    if(c.scroll&&c.scroll.tagName==='IMG'){
+      var w=c.view.clientWidth;
+      var iw=c.scroll.naturalWidth||parseInt(c.scroll.getAttribute('width'),10)||1;
+      var ih=c.scroll.naturalHeight||parseInt(c.scroll.getAttribute('height'),10)||1;
+      S=Math.max(0,w*ih/iw-viewH);
+    }else if(c.scroll){
+      S=Math.max(0,c.scroll.offsetHeight-viewH);
+    }
+    c.S=S;
+    if(c.scroll){
+      var maxScrub=mobile?vh*2.4:3200;
+      c.scrubLen=Math.min(Math.max(S,vh*0.55),maxScrub);
+    }else{
+      c.scrubLen=vh*1.15;
+    }
+    c.exitLen=c.coverNext?vh:0;
+    c.runway.style.height=Math.round(vh+c.scrubLen+c.exitLen)+'px';
+  });
+  var y=window.scrollY;
+  chaps.forEach(function(c){
+    var r=c.runway.getBoundingClientRect();
+    c.top=r.top+y;c.h=r.height;c.vh=c.stage.offsetHeight||window.innerHeight;
+  });
+}
+var rail=document.getElementById('chaprail');
+function buildRail(){
+  if(!rail)return;
+  rail.innerHTML=chaps.map(function(){return '<i></i>'}).join('');
+}
+function markLoaded(){
+  document.querySelectorAll('img.chap-scroll').forEach(function(img){
+    var done=function(){img.classList.add('ld');allGeom()};
+    if(img.complete&&img.naturalWidth)img.classList.add('ld');
+    img.addEventListener('load',done);
+  });
+}
+
+/* ---------- VOYAGE: kamera-på-lerret ----------
+   Lerretet er 7400x5000. Kameraet er (cx, cy, logS), påført som
+   translate3d+scale med origin 0 0. Tidslinjen er faser: dwell
+   (landet på et stopp; nettsteder ruller internt) og flight (zoom
+   ut -> pan -> zoom inn, med dipp i log-skala så hele lerretet
+   åpner seg mellom stoppene). Alt måles i vGeom(); rAF-loopen
+   leser ingen layout. */
+var CW=7400,CH=5000;
+var voy=(function(){
+  var sec=document.querySelector('.voyage');
+  if(!sec)return null;
+  return {
+    sec:sec,runway:sec.querySelector('.v-runway'),stage:sec.querySelector('.v-stage'),
+    canvas:document.getElementById('vcanvas'),
+    cap:document.getElementById('vcap'),hint:document.getElementById('vhint'),
+    stops:[].slice.call(sec.querySelectorAll('.v-stop')).map(function(el){
+      return {el:el,img:el.querySelector('.v-scroll'),view:el.querySelector('.v-view'),
+        wipe:el.querySelector('.chap-wipe'),wm:el.querySelector('.chap-wm'),
+        quote:el.querySelector('.chap-quote'),bar:el.querySelector('.chap-innerbar'),
+        dwell:parseFloat(el.dataset.dwell)||1,cam:null,S:0,dw:0,dwPhase:0};
+    }),
+    phases:[],total:0,top:0,vh:0,on:false,
+    cx:0,cy:0,ls:0,capIdx:-2,fresh:true,railOn:false
+  };
+})();
+function vGeom(){
+  if(!voy)return;
+  if(!voy.stage.offsetParent){voy.on=false;return}
+  voy.on=true;
+  var vw=window.innerWidth,vh=voy.stage.offsetHeight||window.innerHeight;
+  voy.vh=vh;
+  var navEl=document.getElementById('nav');
+  voy.navB=navEl?Math.max(60,Math.round(navEl.getBoundingClientRect().bottom)):90;
+  voy.stops.forEach(function(s){
+    var x=s.el.offsetLeft,y=s.el.offsetTop,w=s.el.offsetWidth,hh=s.el.offsetHeight;
+    s.cam={cx:x+w/2,cy:y+hh/2,s:Math.min(0.92*vw/w,0.84*(vh-voy.navB)/hh,1.15)};
+    if(s.img){
+      var iw=+s.img.getAttribute('width')||1,ih=+s.img.getAttribute('height')||1;
+      var viewW=s.view?s.view.offsetWidth:1180,viewH=s.view?s.view.offsetHeight:716;
+      s.S=Math.max(0,Math.min(viewW*ih/iw-viewH,viewH*2.3));
+    }
+  });
+  voy.ov={cx:CW/2,cy:CH/2,s:Math.min(vw/CW,vh/CH)*0.88};
+  var ph=[];
+  voy.stops.forEach(function(s,i){
+    s.dwPhase=ph.length;
+    ph.push({t:'d',i:i,len:s.dwell*vh});
+    if(i<voy.stops.length-1)ph.push({t:'f',a:i,b:i+1,len:1.05*vh});
+  });
+  ph.push({t:'f',a:voy.stops.length-1,b:-1,len:0.95*vh});
+  ph.push({t:'d',i:-1,len:0.7*vh});
+  var acc=0;ph.forEach(function(p){p.start=acc;acc+=p.len});
+  voy.phases=ph;voy.total=acc;
+  voy.runway.style.height=Math.round(vh+acc)+'px';
+  voy.top=voy.runway.getBoundingClientRect().top+window.scrollY;
+}
+function allGeom(){geometry();vGeom()}
+function vCam(i){return i===-1?voy.ov:voy.stops[i].cam}
+function vSmooth(u){return u*u*u*(u*(u*6-15)+10)}
+function vPrep(i){
+  if(!voy||i<0||i>=voy.stops.length)return;
+  voy.stops[i].el.querySelectorAll('img').forEach(function(im){
+    if(!im.complete){im.loading='eager';if(im.decode)im.decode().catch(function(){})}
+  });
+}
+function vCapSet(i){
+  if(i===voy.capIdx)return;voy.capIdx=i;
+  var d;
+  if(i===-1)d={idx:'',title:voy.sec.dataset.ovTitle,tags:voy.sec.dataset.ovTags,href:'#tjenester',link:'Se hva jeg kan gjøre for deg →'};
+  else{var el=voy.stops[i].el;d={idx:el.dataset.idx,title:el.dataset.title,tags:el.dataset.tags,href:el.dataset.href,link:el.dataset.link}}
+  voy.cap.classList.toggle('ov',i===-1);
+  voy.cap.innerHTML=(d.idx?'<span class="chap-idx"><b>'+d.idx+'</b> / 08</span>':'')+
+    '<h3>'+d.title+'</h3><p class="vtags">'+d.tags+'</p>'+
+    '<a class="tlink" href="'+d.href+'"'+(d.href.charAt(0)==='#'?'':' target="_blank" rel="noopener"')+'>'+d.link+'</a>';
+}
+
+/* ---------- master rAF loop ---------- */
+function startFx(){
+  var lastY=window.scrollY,skew=0;
+  var hin=document.querySelector('.hin');
+  var hwm=document.querySelector('.hwm');
+  var dark=document.querySelector('.dark');
+  var tickers=document.querySelectorAll('.sdin,.ctain');
+  var pbar=document.getElementById('pbar');
+  var mani=document.getElementById('mani');
+  var words=mani?mani.querySelectorAll('.mw'):[];
+  var proc=document.getElementById('proc');
+  var procfill=document.getElementById('procfill');
+  var ticks=rail?rail.children:[];
+  var railOn=false;
+  var loop=function(){
+    var y=window.scrollY,vh=window.innerHeight;
+    var vel=y-lastY;lastY=y;
+    // 1. velocity-skew på marquee-bånd
+    skew=lerp(skew,Math.max(-10,Math.min(10,vel*0.35)),0.12);
+    tickers.forEach(function(el){el.style.transform='skewX('+skew.toFixed(2)+'deg)'});
+    // 2. hero-parallakse + fade
+    if(hin&&y<vh*1.2){
+      var hp=clamp01(y/(vh*0.9));
+      hin.style.transform='translateY('+(y*0.28).toFixed(1)+'px)';
+      hin.style.opacity=String(1-hp*0.9);
+    }
+    // 3. vannmerke-parallakse
+    if(hwm&&y<vh*1.4){
+      hwm.style.transform='translateY(calc(-50% + '+(y*0.1).toFixed(1)+'px))';
+    }
+    // 4. mørk seksjon utvider seg
+    if(dark){
+      var dr=dark.getBoundingClientRect();
+      var dp=clamp01((vh-dr.top)/(vh*0.85)),dq=clamp01(dr.bottom/(vh*0.85)),dg=Math.min(dp,dq);
+      dark.style.borderRadius=(36*(1-dg)).toFixed(1)+'px';
+      dark.style.marginLeft=dark.style.marginRight=(14*(1-dg)).toFixed(1)+'px';
+      dark.style.transform='scale('+(0.96+0.04*dg).toFixed(4)+')';
+    }
+    // 5. progressbar
+    var doc=document.documentElement;
+    if(pbar)pbar.style.transform='scaleX('+clamp01(y/((doc.scrollHeight-vh)||1)).toFixed(4)+')';
+    // 6. manifest ord-for-ord
+    if(mani&&words.length){
+      var mr=mani.getBoundingClientRect();
+      if(mr.bottom>0&&mr.top<vh){
+        var mp=clamp01((vh*0.82-mr.top)/(mr.height+vh*0.28));
+        var lit=Math.floor(mp*words.length*1.15);
+        words.forEach(function(w,i){w.classList.toggle('lit',i<lit)});
+      }
+    }
+    // 7. prosess-tidslinje
+    if(proc&&procfill){
+      var pr=proc.getBoundingClientRect();
+      procfill.style.transform='scaleY('+clamp01((vh*0.72-pr.top)/pr.height).toFixed(4)+')';
+    }
+    // 8. SHOWCASE-kapitler
+    var anyLive=false,activeIdx=-1;
+    for(var i=0;i<chaps.length;i++){
+      var c=chaps[i];
+      if(!c.h)continue;
+      var within=y>c.top-c.vh*1.6&&y<c.top+c.h+c.vh*0.6;
+      if(!within){
+        if(c.live){c.live=false;c.el.classList.remove('live')}
+        continue;
+      }
+      var enter=clamp01((y+c.vh-c.top)/c.vh);
+      var pin=y-c.top;
+      var scrub=clamp01(pin/c.scrubLen);
+      var exit=c.exitLen?clamp01((pin-c.scrubLen)/c.exitLen):0;
+      if(!c.live){
+        c.live=true;c.el.classList.add('live');c.en=enter;c.sc=scrub;c.ex=exit;
+        var nx=chaps[i+1];
+        if(nx&&nx.scroll&&nx.scroll.tagName==='IMG'&&!nx.scroll.complete){nx.scroll.loading='eager';if(nx.scroll.decode)nx.scroll.decode().catch(function(){})}
+      }
+      c.en+=(enter-c.en)*0.22;
+      c.sc+=(scrub-c.sc)*0.14;
+      c.ex+=(exit-c.ex)*0.22;
+      if(c.scroll)c.scroll.style.transform='translate3d(0,'+(-(c.sc*c.S)).toFixed(1)+'px,0)';
+      if(c.wipe){
+        c.wipe.style.transform='translate3d(0,'+((1-c.sc)*100).toFixed(2)+'%,0)';
+        c.wipe.firstElementChild.style.transform='translate3d(0,'+(-(1-c.sc)*100).toFixed(2)+'%,0)';
+      }
+      if(c.wm)c.wm.style.transform='translate3d(0,'+((0.5-c.sc)*0.16*c.vh).toFixed(1)+'px,0)';
+      if(c.quote){
+        var qo=clamp01((c.sc-0.2)/0.45);
+        c.quote.style.opacity=qo.toFixed(3);
+        c.quote.style.transform='translate3d(0,'+((1-qo)*26).toFixed(1)+'px,0)';
+      }
+      if(c.frame){
+        var sc2=0.95+0.05*c.en-0.06*c.ex;
+        var ty=(1-c.en)*0.07*c.vh-c.ex*0.05*c.vh;
+        c.frame.style.transform='translate3d(0,'+ty.toFixed(1)+'px,0) scale('+sc2.toFixed(4)+')';
+        c.frame.style.opacity=String(1-c.ex*0.45);
+      }
+      if(c.meta){
+        c.meta.style.opacity=clamp01(c.en*(1-c.ex*1.6)).toFixed(3);
+        c.meta.style.transform='translate3d(0,'+((1-c.en)*24-c.ex*16).toFixed(1)+'px,0)';
+      }
+      if(c.bar)c.bar.style.transform='scaleX('+c.sc.toFixed(4)+')';
+      if(y>=c.top-c.vh*0.4&&y<c.top+c.h-c.vh*0.4){anyLive=true;if(activeIdx<0)activeIdx=i}
+    }
+    // 9. VOYAGE kamera
+    if(voy&&voy.on&&voy.total){
+      var vin=y>voy.top-vh&&y<voy.top+voy.total+vh;
+      if(vin){
+        var pin2=Math.max(0,Math.min(voy.total,y-voy.top));
+        var vph=voy.phases,cur=vph[0];
+        for(var pi=0;pi<vph.length;pi++){if(pin2>=vph[pi].start)cur=vph[pi]}
+        var vu=clamp01((pin2-cur.start)/(cur.len||1));
+        var tcx,tcy,tls;
+        if(cur.t==='d'){
+          var cm=vCam(cur.i);tcx=cm.cx;tcy=cm.cy;tls=Math.log(cm.s);
+          if(cur.i>=0)vPrep(cur.i+1);
+        }else{
+          var A=vCam(cur.a),B=vCam(cur.b),ue=vSmooth(vu);
+          tls=Math.log(A.s)+(Math.log(B.s)-Math.log(A.s))*ue;
+          if(cur.b!==-1){
+            var dip=Math.min(0,Math.log(voy.ov.s*1.45)-(Math.log(A.s)+Math.log(B.s))/2);
+            tls+=dip*Math.sin(Math.PI*ue);
+          }
+          tcx=A.cx+(B.cx-A.cx)*ue;tcy=A.cy+(B.cy-A.cy)*ue;
+          if(cur.b>=0)vPrep(cur.b);
+        }
+        if(voy.fresh){voy.cx=tcx;voy.cy=tcy;voy.ls=tls;voy.fresh=false}
+        voy.cx+=(tcx-voy.cx)*0.1;voy.cy+=(tcy-voy.cy)*0.1;voy.ls+=(tls-voy.ls)*0.1;
+        var vsc=Math.exp(voy.ls);
+        voy.canvas.style.transform='translate3d('+(window.innerWidth/2-vsc*voy.cx).toFixed(2)+'px,'+(voy.vh/2-vsc*voy.cy+voy.navB/2).toFixed(2)+'px,0) scale('+vsc.toFixed(5)+')';
+        var curPh=vph.indexOf(cur);
+        voy.stops.forEach(function(sp){
+          var tgt=curPh>sp.dwPhase?1:(curPh<sp.dwPhase?0:vu);
+          sp.dw+=(tgt-sp.dw)*0.16;
+          if(sp.img)sp.img.style.transform='translate3d(0,'+(-(sp.dw*sp.S)).toFixed(1)+'px,0)';
+          if(sp.wipe){
+            sp.wipe.style.transform='translate3d(0,'+((1-sp.dw)*100).toFixed(2)+'%,0)';
+            sp.wipe.firstElementChild.style.transform='translate3d(0,'+(-(1-sp.dw)*100).toFixed(2)+'%,0)';
+          }
+          if(sp.wm)sp.wm.style.transform='translate3d(0,'+((0.5-sp.dw)*90).toFixed(1)+'px,0)';
+          if(sp.quote){
+            var qo=clamp01((sp.dw-0.25)/0.5);
+            sp.quote.style.opacity=qo.toFixed(3);
+            sp.quote.style.transform='translate3d(0,'+((1-qo)*26).toFixed(1)+'px,0)';
+          }
+          if(sp.bar)sp.bar.style.transform='scaleX('+sp.dw.toFixed(4)+')';
+        });
+        if(cur.t==='d')vCapSet(cur.i);
+        var capVis=cur.t==='d'?Math.min(clamp01(vu/0.12),clamp01((1-vu)/0.12)):0;
+        if(cur.t==='d'&&cur.i===-1)capVis=clamp01(vu/0.25);
+        voy.cap.style.opacity=capVis.toFixed(3);
+        voy.cap.style.visibility=capVis>0.01?'visible':'hidden';
+        voy.cap.style.transform='translate3d(0,'+((1-capVis)*14).toFixed(1)+'px,0)';
+        voy.cap.classList.toggle('on',capVis>0.5);
+        if(voy.hint)voy.hint.classList.toggle('on',pin2<vph[0].len*0.8);
+        anyLive=true;
+        activeIdx=cur.t==='d'?cur.i:cur.a;
+        if(activeIdx<0)activeIdx=voy.stops.length-1;
+      }else{
+        voy.fresh=true;
+        if(voy.cap.classList.contains('on')){voy.cap.classList.remove('on');voy.cap.style.opacity='0'}
+        voy.cap.style.visibility='hidden';
+        if(voy.hint)voy.hint.classList.remove('on');
+      }
+    }
+    if(rail){
+      if(anyLive!==railOn){railOn=anyLive;rail.classList.toggle('show',anyLive)}
+      for(var t=0;t<ticks.length;t++)ticks[t].classList.toggle('on',t===activeIdx);
+    }
+    requestAnimationFrame(loop);
+  };
+  requestAnimationFrame(loop);
+}
+
+buildChaps();
+if(!reduced){
+  buildRail();
+  markLoaded();
+  allGeom();
+  if(voy&&voy.on)vPrep(0);
+  var rsT;
+  window.addEventListener('resize',function(){clearTimeout(rsT);rsT=setTimeout(allGeom,150)});
+  window.addEventListener('orientationchange',function(){setTimeout(allGeom,300)});
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(allGeom);
+  window.addEventListener('load',allGeom);
+  startFx();
+}else{
+  document.querySelectorAll('.mw').forEach(function(w){w.classList.add('lit')});
+}
+})();
 </script>
-
-
 </body></html>
