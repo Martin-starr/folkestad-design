@@ -25,13 +25,13 @@ for (const s of shots) {
 
 // Gjenopprett prov.html fra forrige (beskyttede) deployment: ekte nettleser
 // fullfører Vercel-SSO-redirecten, response.body() gir rå kildebytes.
-const SHARE = 'https://lagd-hw36nrste-sahithewes-projects.vercel.app/prov.html?_vercel_share=4AjRVm37mx3XG4WXHnmU13FR8MH3dBtf';
+const SHARE = 'https://lagd-hw36nrste-sahithewes-projects.vercel.app/prov.html?_vercel_share=mpa4dieRpm4213AMvosIejdVZx4EynjC';
 const ctx2 = await browser.newContext();
 const p2 = await ctx2.newPage();
 const resp = await p2.goto(SHARE, { waitUntil: 'commit', timeout: 60000 });
 const final = p2.url();
 console.log('prov final url:', final, 'status:', resp && resp.status());
-if (final.includes('lagd-hw36nrste') && resp && resp.ok()) {
+if (final.includes('lagd-hw36nrste') && !final.includes('sso') && resp && resp.ok()) {
   const body = await resp.body();
   const { writeFileSync } = await import('fs');
   writeFileSync('prov-recovered.html', body);
