@@ -22,4 +22,32 @@ for (const s of shots) {
   console.log(s.name, 'ok');
   await ctx.close();
 }
+
+// Gjenopprett prov.html fra forrige (beskyttede) deployment: ekte nettleser
+// fullfører Vercel-SSO-redirecten, response.body() gir rå kildebytes.
+const SHARE = 'https://lagd-hw36nrste-sahithewes-projects.vercel.app/prov.html?_vercel_share=4AjRVm37mx3XG4WXHnmU13FR8MH3dBtf';
+const ctx2 = await browser.newContext();
+const p2 = await ctx2.newPage();
+const resp = await p2.goto(SHARE, { waitUntil: 'commit', timeout: 60000 });
+const final = p2.url();
+console.log('prov final url:', final, 'status:', resp && resp.status());
+if (final.includes('lagd-hw36nrste') && resp && resp.ok()) {
+  const body = await resp.body();
+  const { writeFileSync } = await import('fs');
+  writeFileSync('prov-recovered.html', body);
+  console.log('prov.html recovered:', body.length, 'bytes');
+} else {
+  // redirect-kjede kan lande via mellomsteg — prøv en gang til når cookie er satt
+  const resp2 = await p2.goto('https://lagd-hw36nrste-sahithewes-projects.vercel.app/prov.html', { waitUntil: 'commit', timeout: 60000 });
+  console.log('second try url:', p2.url(), 'status:', resp2 && resp2.status());
+  if (resp2 && resp2.ok() && p2.url().includes('lagd-hw36nrste')) {
+    const body = await resp2.body();
+    const { writeFileSync } = await import('fs');
+    writeFileSync('prov-recovered.html', body);
+    console.log('prov.html recovered on retry:', body.length, 'bytes');
+  } else {
+    console.log('RECOVERY FAILED — leaving no file');
+  }
+}
+await ctx2.close();
 await browser.close();
