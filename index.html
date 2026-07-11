@@ -68,16 +68,9 @@ html{scroll-behavior:smooth}body{margin:0;background:#F5F3EE}
 .rv.vl{transform:translateX(-48px)}.rv.vr{transform:translateX(48px)}.rv.vs{transform:scale(.92) translateY(20px)}.rv.vb{transform:translateY(14px);filter:blur(16px)}
 .rv.on{opacity:1;transform:none;filter:none}
 .rv.vw{opacity:1;transform:none;clip-path:inset(0 100% 0 0)}.rv.vw.on{clip-path:inset(0 -2% 0 0)}
-.grain{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:999;opacity:.04;mix-blend-mode:multiply}
-@media(pointer:fine) and (min-width:961px) and (prefers-reduced-motion:no-preference){.site,.site *{cursor:none}}
-.cur{display:none;position:fixed;width:14px;height:14px;border-radius:50%;background:var(--acc);pointer-events:none;z-index:10000;transform:translate(-50%,-50%);transition:width .4s cubic-bezier(.16,.84,.24,1),height .4s cubic-bezier(.16,.84,.24,1),background .3s,border .3s,opacity .3s}
-.cur.big{width:56px;height:56px;background:transparent;border:1.5px solid var(--acc)}
-@media(pointer:fine) and (min-width:961px) and (prefers-reduced-motion:no-preference){.cur{display:block}}
-.loader{position:fixed;inset:0;background:var(--ink);color:var(--bg);z-index:100;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;transition:clip-path 1s cubic-bezier(.7,0,.15,1);clip-path:inset(0)}
-.loader.off{clip-path:inset(0 0 100% 0)}
-.lpct{font-weight:900;font-size:clamp(80px,18vw,240px);line-height:.85;letter-spacing:-.05em;font-variant-numeric:tabular-nums}
-.lbar{width:120px;height:2px;background:rgba(245,243,238,.15);border-radius:2px;overflow:hidden}
-.lbarfill{height:100%;background:var(--mint);transform-origin:0 50%;transform:scaleX(0);border-radius:2px}
+.loader{position:fixed;inset:0;background:var(--bg);z-index:100;display:flex;align-items:center;justify-content:center;transition:opacity .45s ease;opacity:1}
+.loader.off{opacity:0;pointer-events:none}
+.loadermark{font-weight:900;font-size:26px;letter-spacing:-.02em;color:var(--ink)}
 .progress{position:fixed;top:0;left:0;right:0;height:2px;background:var(--acc);transform-origin:0 50%;transform:scaleX(0);z-index:60}
 .nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:22px clamp(24px,4vw,64px);transition:background .4s,box-shadow .4s}
 .nav.solid{background:rgba(245,243,238,.9);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 1px 0 var(--line)}
@@ -93,18 +86,21 @@ html{scroll-behavior:smooth}body{margin:0;background:#F5F3EE}
 a:focus-visible,button:focus-visible,summary:focus-visible,.fin:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
 .hero{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:clip;padding-top:clamp(120px,18vh,180px);box-sizing:border-box}
 .hbg{position:absolute;inset:0;background:radial-gradient(ellipse 90% 70% at 75% 25%,rgba(31,78,67,.05),transparent 70%);z-index:0}
-.hwm{position:absolute;right:-4vw;top:42%;transform:translateY(-50%);font-family:'Instrument Serif',serif;font-style:italic;font-size:clamp(300px,52vw,750px);color:var(--ink);opacity:.025;line-height:.75;pointer-events:none;z-index:0;user-select:none}
+.hin{text-align:center;display:flex;flex-direction:column;align-items:center}
+.hcta{display:flex;gap:22px;align-items:center;justify-content:center;flex-wrap:wrap;margin-top:6px}
+.happ{position:relative;z-index:2;width:min(1160px,100%);margin:clamp(34px,5vh,54px) auto 0;border-radius:16px;overflow:hidden;background:#101314;border:1px solid rgba(20,23,26,.18);box-shadow:0 30px 90px rgba(20,23,26,.25)}
+.happ-bar{background:#16191b!important}
+.happ img{display:block;width:100%;height:auto}
+.sdhint{display:block;font-weight:500;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--mut);padding:16px 0;text-align:center}
 .hin{position:relative;z-index:2}
 .h1{font-weight:900;font-size:clamp(58px,11.5vw,176px);line-height:.9;letter-spacing:-.05em;margin:0 0 clamp(32px,4.5vw,60px)}
-.hmeta{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;border-top:1px solid var(--line);padding:28px 0 0}
+.hmeta{display:flex;flex-direction:column;align-items:center;gap:18px;border-top:0;padding:8px 0 0;max-width:56ch}
 .hsub{font-size:clamp(17px,1.5vw,20px);line-height:1.55;max-width:42ch;margin:0;color:rgba(20,23,26,.68)}
 .hkpis{display:flex;gap:clamp(24px,3vw,54px);justify-content:flex-end}
 .hkpi{text-align:right}
 .hknum{font-weight:900;font-size:clamp(26px,2.8vw,44px);letter-spacing:-.03em;color:var(--acc)}
 .hklab{font-weight:500;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}
 .scrolldown{overflow:hidden;border-top:1px solid var(--line);margin-top:28px}
-.sdin{display:flex;width:max-content;animation:mq 30s linear infinite;font-weight:500;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--mut);padding:18px 0;white-space:nowrap}
-.sdin>span{padding-right:60px}
 @keyframes mq{to{transform:translateX(-50%)}}
 .introgrid{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(40px,6vw,110px);margin-top:clamp(50px,6vw,90px);align-items:start}
 .lede{font-weight:700;font-size:clamp(24px,2.8vw,40px);line-height:1.25;letter-spacing:-.02em;margin:0;text-wrap:balance}
@@ -325,9 +321,8 @@ textarea.fin{min-height:120px;resize:vertical}
 .kval a{color:var(--ink);text-decoration:none;font-weight:500;transition:color .3s}.kval a:hover{color:var(--acc)}
 .ctaband{display:block;text-decoration:none;background:var(--acc);color:#F5F3EE;overflow:hidden;transition:background .4s}
 .ctaband:hover{background:#173B33}
-.ctain{display:flex;width:max-content;animation:mq 20s linear infinite;font-weight:900;font-size:clamp(42px,7vw,100px);letter-spacing:-.04em;white-space:nowrap;padding:clamp(28px,3.5vw,48px) 0}
-.ctain>span{padding-right:80px}
-.ctain em{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:var(--mint)}
+.ctain-static{display:flex;align-items:center;justify-content:center;text-align:center;font-weight:800;font-size:clamp(30px,4.6vw,64px);letter-spacing:-.03em;padding:clamp(44px,6vw,80px) 24px}
+.ctain-static em{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:var(--mint);margin-left:14px}
 .foot{padding:60px 0 70px;border-top:1px solid var(--line)}
 .footin{display:flex;justify-content:space-between;align-items:end;flex-wrap:wrap;gap:24px}
 .fx{display:flex}.gap20{gap:20px}
@@ -347,8 +342,7 @@ textarea.fin{min-height:120px;resize:vertical}
 .svcp{text-align:left}
 .shift{grid-template-columns:1fr}
 .sharrow{transform:rotate(90deg);text-align:center}
-.hwm{display:none}
-.cur{display:none!important}
+.happ .chap-bar{padding:8px 12px}
 .chap-stage{grid-template-columns:1fr;grid-template-rows:auto minmax(0,1fr);row-gap:14px;align-items:start;padding-top:86px;padding-bottom:20px}
 .chap-runway{height:440svh} /* pre-JS-plassholder ≈ mobil-geometri */
 .chap[data-chap="logo"] .chap-runway,.chap[data-chap="brand"] .chap-runway{height:315svh}
@@ -366,8 +360,8 @@ textarea.fin{min-height:120px;resize:vertical}
 }
 @media(prefers-reduced-motion:reduce){
 .rv,.lr>span{opacity:1;transform:none;transition:none;filter:none;clip-path:none}
-.sdin,.ctain{animation:none}
-.grain{display:none}
+
+
 .chap-runway{height:auto!important}
 .chap-stage{position:static;height:auto;min-height:0;padding-top:110px;padding-bottom:40px}
 .chap-frame{height:70svh}
@@ -449,38 +443,34 @@ img.chap-scroll{opacity:1;transition:none}
 <noscript><style>.loader{display:none}.rv,.lr>span{opacity:1;transform:none;filter:none}.mw{opacity:1}.site,.site *{cursor:auto!important}.voyage{display:none!important}.chapfall{display:block!important}.chap-runway{height:auto!important}.chap-stage{position:static;height:auto;padding-top:110px;padding-bottom:40px}.chap-frame{height:70svh}img.chap-scroll{opacity:1}.chap-quote{opacity:1;position:relative;left:0;right:0;bottom:0;padding:24px}.chap-wipe{transform:none;position:relative;height:50%}.chap-wipe>.chap-ground{transform:none}</style></noscript>
 </head>
 <body>
-<svg class="grain" aria-hidden="true" width="100%" height="100%"><filter id="gn"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"></feTurbulence></filter><rect width="100%" height="100%" filter="url(#gn)"></rect></svg>
 <div class="site">
 <a class="skip" href="#tjenester">Hopp over arbeidsvisningen</a>
-<div class="cur" id="cur"></div>
 <div class="progress" id="pbar"></div>
-<div class="loader" id="loader"><span class="lpct" id="lpct">00%</span><div class="lbar"><div class="lbarfill" id="lbarfill"></div></div></div>
+<div class="loader" id="loader"><span class="loadermark">Lagd<span style="color:var(--mint)">.</span></span></div>
 <nav class="nav" id="nav"><a class="logo" href="#top">Lagd<span style="color:var(--acc)">.</span></a><div class="nlinks"><a class="nlink" href="#selskap">Selskap</a><a class="nlink" href="#arbeid">Arbeid</a><a class="nlink" href="#problem">Problemet</a><a class="nlink" href="#tjenester">Tjenester</a><a class="nlink" href="#priser">Priser</a><a class="nlink" href="#verktoy">Verktøyet</a><a class="nlink" href="#faq">FAQ</a></div><a class="pill" href="#verktoy">Prøv Lagd gratis</a></nav>
 <div class="chaprail" id="chaprail" aria-hidden="true"></div>
 
 <header class="hero cwrap" id="top">
 <div class="hbg"></div>
-<div class="hwm" aria-hidden="true">L</div>
 <div class="hin">
-<h1 class="h1"><span class="lr on"><span style="transition-delay:1.4s">Lagd av deg.</span></span><span class="lr on"><span style="transition-delay:1.6s"><em>Eller lagd for deg.</em></span></span></h1>
-<div class="hmeta rv on" style="transition-delay:1.85s">
-<p class="hsub">Appen som bygger nettsider, app-design og dashbord rett i nettleseren — gratis å prøve, og du eier alt. Vil du heller slippe? Jeg bygger for deg på 14 dager.</p>
-<div class="hkpis">
-<div class="hkpi"><div class="hknum">0 kr</div><div class="hklab">å prøve appen</div></div>
-<div class="hkpi"><div class="hknum">1&nbsp;990</div><div class="hklab">kr én gang — du eier alt</div></div>
-<div class="hkpi"><div class="hknum" data-count="14">14</div><div class="hklab">dager om jeg bygger</div></div>
-</div>
-<div style="margin-top:36px;display:flex;gap:20px;align-items:center;flex-wrap:wrap"><a class="pill" href="https://lagd.app/prov.html" target="_blank" rel="noopener">Prøv appen gratis →</a><a class="tlink" href="#kontakt">…eller få et gratis utkast fra meg →</a></div>
+<h1 class="h1"><span class="lr on"><span style="transition-delay:.25s">Lagd av deg.</span></span><span class="lr on"><span style="transition-delay:.4s"><em>Eller lagd for deg.</em></span></span></h1>
+<div class="hmeta rv on" style="transition-delay:.6s">
+<p class="hsub">Bygg nettsiden selv i nettleseren, gratis. Eller la meg levere den på 14 dager.</p>
+<div class="hcta"><a class="pill" href="https://lagd.app/prov.html" target="_blank" rel="noopener">Prøv appen gratis →</a><a class="tlink" href="#kontakt">…eller få et gratis utkast →</a></div>
 </div>
 </div>
-<div class="scrolldown rv on" style="transition-delay:2.1s"><div class="sdin"><span>Scroll ned for å bla gjennom arbeidet ◆</span><span>Scroll ned for å bla gjennom arbeidet ◆</span><span>Scroll ned for å bla gjennom arbeidet ◆</span><span>Scroll ned for å bla gjennom arbeidet ◆</span></div></div>
+<div class="happ rv on" style="transition-delay:.85s">
+<div class="chap-bar happ-bar" aria-hidden="true"><span class="chap-dots"><i></i><i></i><i></i></span><span class="chap-url">lagd.app</span></div>
+<img src="images/showcase/lagd-app-2880.webp" srcset="images/showcase/lagd-app-1440.webp 1440w, images/showcase/lagd-app-2880.webp 2880w" sizes="(max-width:1200px) 94vw, 1160px" width="2880" height="1720" alt="Lagd-appen i nettleseren — seksjoner til venstre, live forhåndsvisning i midten, innstillinger til høyre" loading="eager" fetchpriority="high" decoding="async">
+</div>
+<div class="scrolldown rv on" style="transition-delay:1.05s"><span class="sdhint">Scroll — alt under er lagd i appen ↓</span></div>
 </header>
 
 <!-- S1 · statement — Selskap + inngang til visningen -->
 <section class="cwrap" id="selskap">
 <div class="sview">
 <p class="eyebrow rv vl">Selskap</p>
-<h2 class="h2"><span class="lr">Velkommen til Lagd — der <em>bedriftseiere</em> designer for bedriftseiere</span></h2>
+<h2 class="h2"><span class="lr">Bedriftseiere designer for <em>bedriftseiere.</em></span></h2>
 <div class="introgrid">
 <p class="lede rv vb">Ett studio. Én app. Alt du ser her er <em>lagd</em> med den.</p>
 <div class="body rv" style="transition-delay:.15s">
@@ -501,102 +491,60 @@ img.chap-scroll{opacity:1;transition:none}
 
 <div class="showcase" id="arbeid">
 <div class="chapfall">
-<!-- CH1 · Solhuset Bakeri (konsept) -->
-<section class="chap" data-chap="site" aria-label="Nettside-konsept: Solhuset Bakeri">
+<!-- CH1 · Lagd-appen (verktøyet) -->
+<section class="chap" data-chap="site" aria-label="Lagd-appen">
 <div class="chap-runway"><div class="chap-stage">
 <aside class="chap-meta">
-<span class="chap-idx"><b>01</b> / 08</span>
-<h3>Solhuset Bakeri</h3>
-<p class="chap-tags">Nettside · Konsept</p>
-<p class="chap-desc">Onepager for et bakeri på Klepp Stasjon — varm, brødnær og åpen fra klokken sju.</p>
-<a class="tlink" href="https://lagd.app/eksempel/onepager/" target="_blank" rel="noopener">Åpne demoen ↗</a>
+<span class="chap-idx"><b>01</b> / 07</span>
+<h3>Lagd</h3>
+<p class="chap-tags">Appen · Alt her er bygd i den</p>
+<p class="chap-desc">Nettsider, app-design og dashbord — rett i nettleseren.</p>
+<a class="tlink" href="https://lagd.app/prov.html" target="_blank" rel="noopener">Prøv appen ↗</a>
 </aside>
 <figure class="chap-frame" style="margin:0">
-<div class="chap-bar" aria-hidden="true"><span class="chap-dots"><i></i><i></i><i></i></span><span class="chap-url">lagd.app/eksempel/onepager</span><span class="chap-innerbar"></span></div>
+<div class="chap-bar" aria-hidden="true"><span class="chap-dots"><i></i><i></i><i></i></span><span class="chap-url">lagd.app</span><span class="chap-innerbar"></span></div>
+<div class="chap-view">
+<img id="mock01" src="images/showcase/lagd-app-2880.webp" srcset="images/showcase/lagd-app-1440.webp 1440w, images/showcase/lagd-app-2880.webp 2880w" sizes="(max-width:960px) 94vw, 62vw" width="2880" height="1720" alt="Lagd-appen i nettleseren — seksjoner, live forhåndsvisning og innstillinger" loading="eager" decoding="async" style="display:block;width:100%;height:auto">
+</div>
+</figure>
+</div></div>
+</section>
+
+<!-- CH2 · verminord.no (levert, live) -->
+<section class="chap" data-chap="site" aria-label="verminord.no">
+<div class="chap-runway"><div class="chap-stage">
+<aside class="chap-meta">
+<span class="chap-idx"><b>02</b> / 07</span>
+<h3>verminord.no</h3>
+<p class="chap-tags">Nettside · Levert · Live</p>
+<p class="chap-desc">VermiCast-lanseringen for eget selskap. Live nå.</p>
+<a class="tlink" href="https://www.verminord.no" target="_blank" rel="noopener">Besøk verminord.no ↗</a>
+</aside>
+<figure class="chap-frame" style="margin:0">
+<div class="chap-bar" aria-hidden="true"><span class="chap-dots"><i></i><i></i><i></i></span><span class="chap-url">verminord.no</span><span class="chap-innerbar"></span></div>
 <div class="chap-view">
 <picture>
-<img class="chap-scroll" id="mock01" src="images/showcase/solhuset-scroll.webp" width="840" height="12440" alt="Nettside-konsept for Solhuset Bakeri — hele siden fra topp til bunn" loading="eager" decoding="async">
+<img class="chap-scroll" id="mock02" src="images/showcase/verminord-site-1600.webp" srcset="images/showcase/verminord-site-1280.webp 1280w, images/showcase/verminord-site-1600.webp 1600w" sizes="(max-width:960px) 94vw, 62vw" width="1600" height="16327" alt="verminord.no — hele siden fra topp til bunn" loading="eager" decoding="async">
 </picture>
 </div>
 </figure>
 </div></div>
 </section>
 
-<!-- CH2 · Vindfanget Bistro (konsept) — dekkes av forrige via cover-kjede -->
-<section class="chap" data-chap="site" aria-label="Nettside-konsept: Atelier">
-<div class="chap-runway"><div class="chap-stage">
-<aside class="chap-meta">
-<span class="chap-idx"><b>02</b> / 08</span>
-<h3>Atelier</h3>
-<p class="chap-tags">Nettside · Konsept</p>
-<p class="chap-desc">Designstudio-konsept — mørkt, typografisk og kompromissløst ryddig. Mindre støy, bedre arbeid.</p>
-<a class="tlink" href="https://lagd.app/demo/atelier" target="_blank" rel="noopener">Åpne demoen ↗</a>
-</aside>
-<figure class="chap-frame" style="margin:0">
-<div class="chap-bar" aria-hidden="true"><span class="chap-dots"><i></i><i></i><i></i></span><span class="chap-url">lagd.app/demo/atelier</span><span class="chap-innerbar"></span></div>
-<div class="chap-view">
-<picture>
-<img class="chap-scroll" id="mock02" src="images/showcase/atelier-scroll.webp" width="1600" height="4741" alt="Nettside-konsept for designstudioet Atelier — hele siden fra topp til bunn" loading="lazy" decoding="async">
-</picture>
-</div>
-</figure>
-</div></div>
-</section>
-
-<!-- CH3 · Verminord logo (levert) -->
-<section class="chap" data-chap="logo" aria-label="Logo: Verminord AS">
-<div class="chap-runway"><div class="chap-stage">
-<aside class="chap-meta">
-<span class="chap-idx"><b>03</b> / 08</span>
-<h3>Verminord</h3>
-<p class="chap-tags">Logo · Levert 2024</p>
-<p class="chap-desc">Wordmark satt for ti år, ikke én sesong — i bruk hver dag på etiketter, datablad og bil.</p>
-<a class="tlink" href="https://lagd.app/case/verminord" target="_blank" rel="noopener">Les caset ↗</a>
-</aside>
-<figure class="chap-frame plain" style="margin:0">
-<div class="chap-view">
-<div class="chap-ground" style="background:#1C3A5C"><img src="images/showcase/verminord-white.webp" width="1280" height="853" alt="Verminord-logo, hvit på marineblå" loading="lazy" decoding="async"><span class="glab" style="color:rgba(246,242,234,.6)">Primær · på navy</span></div>
-<div class="chap-wipe"><div class="chap-ground" style="background:#F6F2EA"><img src="images/showcase/verminord-dark.webp" width="1280" height="853" alt="Verminord-logo, mørk på cream" loading="lazy" decoding="async"><span class="glab" style="color:#5A6270">Sekundær · på cream</span></div></div>
-</div>
-</figure>
-</div></div>
-</section>
-
-<!-- CH4 · Saltkroken Frisør (konsept) -->
-<section class="chap" data-chap="site" aria-label="Nettside-konsept: Design that breathes">
-<div class="chap-runway"><div class="chap-stage">
-<aside class="chap-meta">
-<span class="chap-idx"><b>04</b> / 08</span>
-<h3>Design that breathes</h3>
-<p class="chap-tags">Nettside · Lagd i Lagd</p>
-<p class="chap-desc">Studio-konsept bygd i Lagd-appen — med dashbord og bankapp tegnet i ren kode, rett i siden.</p>
-<a class="tlink" href="https://lagd.app/demo/breathes" target="_blank" rel="noopener">Åpne demoen ↗</a>
-</aside>
-<figure class="chap-frame" style="margin:0">
-<div class="chap-bar" aria-hidden="true"><span class="chap-dots"><i></i><i></i><i></i></span><span class="chap-url">lagd.app/demo/breathes</span><span class="chap-innerbar"></span></div>
-<div class="chap-view">
-<picture>
-<img class="chap-scroll" id="mock04" src="images/showcase/breathes-scroll.webp" width="1600" height="4741" alt="Nettside-konsept «Design that breathes» — hele siden fra topp til bunn" loading="lazy" decoding="async">
-</picture>
-</div>
-</figure>
-</div></div>
-</section>
-
-<!-- CH5 · Verminord merkevaresystem (levert) — dekkes via cover-kjede -->
+<!-- CH3 · Verminord merkevare (levert) -->
 <section class="chap" data-chap="brand" aria-label="Merkevaresystem: Verminord AS">
 <div class="chap-runway"><div class="chap-stage">
 <aside class="chap-meta">
-<span class="chap-idx"><b>05</b> / 08</span>
-<h3>Verminord AS</h3>
-<p class="chap-tags">Merkevaresystem · Levert 2024</p>
-<p class="chap-desc">Komplett merkevare fra bunnen — logo, brand book, etiketter. I bruk hver dag.</p>
-<a class="tlink" href="https://lagd.app/case/verminord" target="_blank" rel="noopener">Les caset ↗</a>
+<span class="chap-idx"><b>03</b> / 07</span>
+<h3>Verminord</h3>
+<p class="chap-tags">Merkevare · Levert 2024</p>
+<p class="chap-desc">Logo, farger, typografi, etiketter. I bruk hver dag.</p>
+<a class="tlink" href="https://folkestad.design/case/verminord" target="_blank" rel="noopener">Les caset ↗</a>
 </aside>
 <figure class="chap-frame plain" style="margin:0">
 <div class="chap-view">
 <div class="chap-scroll brandsheet">
-<div class="bs-row bs-hero" style="border:0"><img src="images/showcase/verminord-white.webp" width="1280" height="853" alt="Verminord-wordmark" loading="lazy" decoding="async"></div>
+<div class="bs-row bs-hero" style="border:0"><img src="images/showcase/verminord-white.webp" width="1280" height="853" alt="Verminord-wordmark" loading="eager" decoding="async"></div>
 <div class="bs-row"><p class="bs-lab">Fargesystem — maks tre per flate</p><div class="bs-swatches">
 <div class="bs-sw" style="background:#1C3A5C"><span style="color:rgba(246,242,234,.8)">Navy #1C3A5C</span></div>
 <div class="bs-sw" style="background:#B8993A"><span style="color:#1A1A1A">Gull #B8993A</span></div>
@@ -607,8 +555,8 @@ img.chap-scroll{opacity:1;transition:none}
 </div></div>
 <div class="bs-row"><p class="bs-lab">Typografi</p><p class="bs-type">Verminord</p><p class="bs-type-sub">IBM Plex Sans · Bold · 0.18–0.22 em tracking · maks to snitt per design</p></div>
 <div class="bs-row" style="border:0"><p class="bs-lab">I bruk</p><div class="bs-apps">
-<div class="bs-card"><img src="images/showcase/verminord-white.webp" alt="" loading="lazy" decoding="async"><p>MARTIN FOLKESTAD<br>VERMINORD AS · JÆREN<br>VERMINORD.NO</p></div>
-<div class="bs-label"><img src="images/showcase/verminord-dark.webp" alt="" loading="lazy" decoding="async"><p>ETIKETT · SUBSTRAT 5 KG<br>BATCH 24-117 · KLEPP</p></div>
+<div class="bs-card"><img src="images/showcase/verminord-white.webp" alt="" loading="eager" decoding="async"><p>MARTIN FOLKESTAD<br>VERMINORD AS · JÆREN<br>VERMINORD.NO</p></div>
+<div class="bs-label"><img src="images/showcase/verminord-dark.webp" alt="" loading="eager" decoding="async"><p>ETIKETT · SUBSTRAT 5 KG<br>BATCH 24-117 · KLEPP</p></div>
 </div></div>
 </div>
 </div>
@@ -616,57 +564,15 @@ img.chap-scroll{opacity:1;transition:none}
 </div></div>
 </section>
 
-<!-- CH6 · Søregga Auto (konsept) -->
-<section class="chap" data-chap="site" aria-label="App-design: Feltro">
-<div class="chap-runway"><div class="chap-stage">
-<aside class="chap-meta">
-<span class="chap-idx"><b>06</b> / 08</span>
-<h3>Feltro</h3>
-<p class="chap-tags">App-design · Lagd i Lagd</p>
-<p class="chap-desc">Feltapp for håndverkere — dagens jobber, jobbkort og sjekk-inn, rett fra verktøybeltet.</p>
-<a class="tlink" href="https://lagd.app/demo/feltro" target="_blank" rel="noopener">Åpne demoen ↗</a>
-</aside>
-<figure class="chap-frame" style="margin:0">
-<div class="chap-bar" aria-hidden="true"><span class="chap-dots"><i></i><i></i><i></i></span><span class="chap-url">lagd.app/demo/feltro</span><span class="chap-innerbar"></span></div>
-<div class="chap-view">
-<picture>
-<img class="chap-scroll" id="mock06" src="images/showcase/feltro-scroll.webp" width="1600" height="4741" alt="App-design for Feltro, feltapp for håndverkere — hele siden fra topp til bunn" loading="lazy" decoding="async">
-</picture>
-</div>
-</figure>
-</div></div>
-</section>
-
-<!-- CH7 · Strandhus Bygg (konsept) — dekkes via cover-kjede -->
-<section class="chap" data-chap="site" aria-label="Dashbord: Northwind">
-<div class="chap-runway"><div class="chap-stage">
-<aside class="chap-meta">
-<span class="chap-idx"><b>07</b> / 08</span>
-<h3>Northwind</h3>
-<p class="chap-tags">Dashbord · Lagd i Lagd</p>
-<p class="chap-desc">SaaS-dashbord med nøkkeltall, fakturaer og salgstrakt — bygd som seksjon i Lagd-appen.</p>
-<a class="tlink" href="https://lagd.app/demo/northwind" target="_blank" rel="noopener">Åpne demoen ↗</a>
-</aside>
-<figure class="chap-frame" style="margin:0">
-<div class="chap-bar" aria-hidden="true"><span class="chap-dots"><i></i><i></i><i></i></span><span class="chap-url">lagd.app/demo/northwind</span><span class="chap-innerbar"></span></div>
-<div class="chap-view">
-<picture>
-<img class="chap-scroll" id="mock07" src="images/showcase/northwind-scroll.webp" width="1600" height="4741" alt="Dashbord-konsept for Northwind — hele siden fra topp til bunn" loading="lazy" decoding="async">
-</picture>
-</div>
-</figure>
-</div></div>
-</section>
-
-<!-- CH8 · ESE Solution Norway (levert) — dekkes via cover-kjede; avslutter visningen -->
+<!-- CH4 · ESE Solution Norway (levert) -->
 <section class="chap" data-chap="case" aria-label="Levert arbeid: ESE Solution Norway">
 <div class="chap-runway"><div class="chap-stage">
 <aside class="chap-meta">
-<span class="chap-idx"><b>08</b> / 08</span>
+<span class="chap-idx"><b>04</b> / 07</span>
 <h3>ESE Solution Norway</h3>
 <p class="chap-tags">Nettside · Levert 2025</p>
-<p class="chap-desc">Tospråklig B2B-nettside for koreansk presisjonsproduksjon — første eksterne klient, levert og live.</p>
-<a class="tlink" href="https://lagd.app/case/ese-solution" target="_blank" rel="noopener">Les caset ↗</a>
+<p class="chap-desc">Tospråklig B2B-nettside. Første eksterne klient.</p>
+<a class="tlink" href="https://folkestad.design/case/ese-solution" target="_blank" rel="noopener">Les caset ↗</a>
 </aside>
 <figure class="chap-frame plain" style="margin:0">
 <div class="chap-view">
@@ -679,49 +585,93 @@ img.chap-scroll{opacity:1;transition:none}
 </div></div>
 </section>
 
+<!-- CH5 · Atelier (konsept) -->
+<section class="chap" data-chap="site" aria-label="Nettside-konsept for designstudioet Atelier">
+<div class="chap-runway"><div class="chap-stage">
+<aside class="chap-meta">
+<span class="chap-idx"><b>05</b> / 07</span>
+<h3>Atelier</h3>
+<p class="chap-tags">Nettside · Konsept</p>
+<p class="chap-desc">Studio-konsept. Mørkt, typografisk, ryddig.</p>
+<a class="tlink" href="#verktoy">Bygd i Lagd-appen →</a>
+</aside>
+<figure class="chap-frame" style="margin:0">
+<div class="chap-bar" aria-hidden="true"><span class="chap-dots"><i></i><i></i><i></i></span><span class="chap-url">konsept · bygd i Lagd</span><span class="chap-innerbar"></span></div>
+<div class="chap-view">
+<picture>
+<img class="chap-scroll" id="mock05" src="images/showcase/atelier-2160.webp" srcset="images/showcase/atelier-1280.webp 1280w, images/showcase/atelier-2160.webp 2160w" sizes="(max-width:960px) 94vw, 62vw" width="2160" height="6400" alt="Nettside-konsept for designstudioet Atelier — hele siden fra topp til bunn" loading="eager" decoding="async">
+</picture>
+</div>
+</figure>
+</div></div>
+</section>
+
+<!-- CH6 · Solhuset Bakeri (konsept) -->
+<section class="chap" data-chap="site" aria-label="Nettside-konsept for Solhuset Bakeri">
+<div class="chap-runway"><div class="chap-stage">
+<aside class="chap-meta">
+<span class="chap-idx"><b>06</b> / 07</span>
+<h3>Solhuset Bakeri</h3>
+<p class="chap-tags">Nettside · Konsept</p>
+<p class="chap-desc">Bakeri-onepager. Varm og brødnær.</p>
+<a class="tlink" href="https://folkestad.design/eksempel/onepager/" target="_blank" rel="noopener">Åpne demoen ↗</a>
+</aside>
+<figure class="chap-frame" style="margin:0">
+<div class="chap-bar" aria-hidden="true"><span class="chap-dots"><i></i><i></i><i></i></span><span class="chap-url">eksempel/onepager</span><span class="chap-innerbar"></span></div>
+<div class="chap-view">
+<picture>
+<img class="chap-scroll" id="mock06" src="images/showcase/solhuset-2160.webp" srcset="images/showcase/solhuset-1280.webp 1280w, images/showcase/solhuset-2160.webp 2160w" sizes="(max-width:960px) 94vw, 62vw" width="2160" height="5953" alt="Nettside-konsept for Solhuset Bakeri — hele siden fra topp til bunn" loading="eager" decoding="async">
+</picture>
+</div>
+</figure>
+</div></div>
+</section>
+
+<!-- CH7 · Northwind (konsept) -->
+<section class="chap" data-chap="site" aria-label="Dashbord-konsept for Northwind">
+<div class="chap-runway"><div class="chap-stage">
+<aside class="chap-meta">
+<span class="chap-idx"><b>07</b> / 07</span>
+<h3>Northwind</h3>
+<p class="chap-tags">Dashbord · Konsept</p>
+<p class="chap-desc">SaaS-dashbord med nøkkeltall og fakturaer.</p>
+<a class="tlink" href="#verktoy">Bygd i Lagd-appen →</a>
+</aside>
+<figure class="chap-frame" style="margin:0">
+<div class="chap-bar" aria-hidden="true"><span class="chap-dots"><i></i><i></i><i></i></span><span class="chap-url">konsept · bygd i Lagd</span><span class="chap-innerbar"></span></div>
+<div class="chap-view">
+<picture>
+<img class="chap-scroll" id="mock07" src="images/showcase/northwind-2160.webp" srcset="images/showcase/northwind-1280.webp 1280w, images/showcase/northwind-2160.webp 2160w" sizes="(max-width:960px) 94vw, 62vw" width="2160" height="6400" alt="Dashbord-konsept for Northwind — hele siden fra topp til bunn" loading="eager" decoding="async">
+</picture>
+</div>
+</figure>
+</div></div>
+</section>
 
 </div>
 <!-- VOYAGE · kamera-på-lerret (desktop + motion). Innholdet speiler .chapfall-kapitlene. -->
-<section class="voyage" aria-label="Utvalgt arbeid — kamerareise over lerretet" data-ov-title="Alt arbeidet. Ett studio." data-ov-tags="Nettsider · Logo · Merkevare">
+<section class="voyage" aria-label="Utvalgt arbeid — kamerareise over lerretet" data-ov-title="Alt arbeidet. Ett studio." data-ov-tags="Nettsider · Merkevare · App">
 <div class="v-runway"><div class="v-stage">
 <div class="v-canvas" id="vcanvas">
 
-<article class="v-item v-stop" style="left:410px;top:470px;width:1180px;height:760px" data-dwell="1.15" data-idx="01" data-title="Solhuset Bakeri" data-tags="Nettside · Konsept" data-href="https://lagd.app/eksempel/onepager/" data-link="Åpne demoen ↗">
-<span class="v-lab" aria-hidden="true"><b>01</b> · Solhuset Bakeri — Nettside · Konsept</span>
+<article class="v-item v-stop" style="left:410px;top:470px;width:1180px;height:760px" data-dwell="1.15" data-idx="01" data-title="Lagd" data-tags="Appen · Alt her er bygd i den" data-href="https://lagd.app/prov.html" data-link="Prøv appen ↗">
+<span class="v-lab" aria-hidden="true"><b>01</b> · Lagd — Appen</span>
 <figure class="v-frame">
-<div class="chap-bar" aria-hidden="true"><span class="chap-dots"><i></i><i></i><i></i></span><span class="chap-url">lagd.app/eksempel/onepager</span><span class="chap-innerbar"></span></div>
-<div class="v-view"><img class="v-scroll" src="" data-clone="mock01" width="840" height="12440" alt="Nettside-konsept for Solhuset Bakeri — hele siden fra topp til bunn" loading="lazy" decoding="async"></div>
+<div class="chap-bar" aria-hidden="true"><span class="chap-dots"><i></i><i></i><i></i></span><span class="chap-url">lagd.app</span><span class="chap-innerbar"></span></div>
+<div class="v-view"><img src="images/showcase/lagd-app-1440.webp" width="1440" height="860" alt="Lagd-appen i nettleseren" loading="eager" decoding="async" style="display:block;width:100%;height:auto"></div>
 </figure>
 </article>
 
-<article class="v-item v-stop" style="left:2260px;top:1270px;width:1180px;height:760px" data-dwell="1.15" data-idx="02" data-title="Atelier" data-tags="Nettside · Konsept" data-href="https://lagd.app/demo/atelier" data-link="Åpne demoen ↗">
-<span class="v-lab" aria-hidden="true"><b>02</b> · Atelier — Nettside · Konsept</span>
+<article class="v-item v-stop" style="left:2260px;top:1270px;width:1180px;height:760px" data-dwell="1.15" data-idx="02" data-title="verminord.no" data-tags="Nettside · Levert · Live" data-href="https://www.verminord.no" data-link="Besøk verminord.no ↗">
+<span class="v-lab" aria-hidden="true"><b>02</b> · verminord.no — Nettside · Levert · Live</span>
 <figure class="v-frame">
-<div class="chap-bar" aria-hidden="true"><span class="chap-dots"><i></i><i></i><i></i></span><span class="chap-url">lagd.app/demo/atelier</span><span class="chap-innerbar"></span></div>
-<div class="v-view"><img class="v-scroll" src="" data-clone="mock02" width="1600" height="4741" alt="Nettside-konsept for designstudioet Atelier — hele siden fra topp til bunn" loading="lazy" decoding="async"></div>
+<div class="chap-bar" aria-hidden="true"><span class="chap-dots"><i></i><i></i><i></i></span><span class="chap-url">verminord.no</span><span class="chap-innerbar"></span></div>
+<div class="v-view"><img class="v-scroll" src="" data-clone="mock02" width="1600" height="16327" alt="verminord.no — hele siden fra topp til bunn" loading="eager" decoding="async"></div>
 </figure>
 </article>
 
-<article class="v-item v-stop" style="left:4110px;top:570px;width:1180px;height:760px" data-dwell="0.9" data-idx="03" data-title="Verminord" data-tags="Logo · Levert 2024" data-href="https://lagd.app/case/verminord" data-link="Les caset ↗">
-<span class="v-lab" aria-hidden="true"><b>03</b> · Verminord — Logo · Levert 2024</span>
-<figure class="v-frame plain">
-<div class="v-view">
-<div class="chap-ground" style="background:#1C3A5C"><img src="images/showcase/verminord-white.webp" width="1280" height="853" alt="Verminord-logo, hvit på marineblå" loading="lazy" decoding="async"><span class="glab" style="color:rgba(246,242,234,.6)">Primær · på navy</span></div>
-<div class="chap-wipe"><div class="chap-ground" style="background:#F6F2EA"><img src="images/showcase/verminord-dark.webp" width="1280" height="853" alt="Verminord-logo, mørk på cream" loading="lazy" decoding="async"><span class="glab" style="color:#5A6270">Sekundær · på cream</span></div></div>
-</div>
-</figure>
-</article>
-
-<article class="v-item v-stop" style="left:5710px;top:1370px;width:1180px;height:760px" data-dwell="1.15" data-idx="04" data-title="Design that breathes" data-tags="Nettside · Lagd i Lagd" data-href="https://lagd.app/demo/breathes" data-link="Åpne demoen ↗">
-<span class="v-lab" aria-hidden="true"><b>04</b> · Design that breathes — Nettside · Lagd i Lagd</span>
-<figure class="v-frame">
-<div class="chap-bar" aria-hidden="true"><span class="chap-dots"><i></i><i></i><i></i></span><span class="chap-url">lagd.app/demo/breathes</span><span class="chap-innerbar"></span></div>
-<div class="v-view"><img class="v-scroll" src="" data-clone="mock04" width="1600" height="4741" alt="Nettside-konsept «Design that breathes» — hele siden fra topp til bunn" loading="lazy" decoding="async"></div>
-</figure>
-</article>
-
-<div class="v-item v-stop" style="left:5380px;top:2960px;width:1530px;height:990px" data-dwell="0.75" data-idx="05" data-title="Verminord AS" data-tags="Merkevaresystem · Levert 2024" data-href="https://lagd.app/case/verminord" data-link="Les caset ↗">
-<span class="v-lab" aria-hidden="true"><b>05</b> · Verminord AS — Merkevaresystem · Levert 2024</span>
+<div class="v-item v-stop" style="left:4110px;top:570px;width:1530px;height:990px" data-dwell="0.75" data-idx="03" data-title="Verminord" data-tags="Merkevare · Levert 2024" data-href="https://folkestad.design/case/verminord" data-link="Les caset ↗">
+<span class="v-lab" aria-hidden="true"><b>03</b> · Verminord — Merkevare · Levert 2024</span>
 <div class="v-bs" style="left:0;top:0;width:900px;height:540px">
 <p class="bs-lab">Fargesystem — maks tre per flate</p>
 <div class="bs-swatches">
@@ -739,35 +689,43 @@ img.chap-scroll{opacity:1;transition:none}
 <p class="bs-type-sub">Maks to snitt per design · tabulære tall på datablad og etikett</p>
 </div>
 <div class="v-bs" style="left:70px;top:590px;width:640px;height:400px;background:#1C3A5C;border:0;display:flex;flex-direction:column;justify-content:space-between">
-<img src="images/showcase/verminord-white.webp" width="1280" height="853" alt="" style="width:52%" loading="lazy" decoding="async"><p style="margin:0;color:rgba(246,242,234,.75);font-size:13px;letter-spacing:.08em;line-height:1.7">MARTIN FOLKESTAD<br>VERMINORD AS · JÆREN<br>VERMINORD.NO</p>
+<img src="images/showcase/verminord-white.webp" width="1280" height="853" alt="" style="width:52%" loading="eager" decoding="async"><p style="margin:0;color:rgba(246,242,234,.75);font-size:13px;letter-spacing:.08em;line-height:1.7">MARTIN FOLKESTAD<br>VERMINORD AS · JÆREN<br>VERMINORD.NO</p>
 </div>
 <div class="v-bs" style="left:790px;top:520px;width:560px;height:400px;background:#E8E2D5;display:flex;flex-direction:column;justify-content:space-between">
-<img src="images/showcase/verminord-dark.webp" width="1280" height="853" alt="" style="width:52%" loading="lazy" decoding="async"><p style="margin:0;color:#5A6270;font-size:13px;letter-spacing:.08em;line-height:1.7">ETIKETT · SUBSTRAT 5 KG<br>BATCH 24-117 · KLEPP</p>
+<img src="images/showcase/verminord-dark.webp" width="1280" height="853" alt="" style="width:52%" loading="eager" decoding="async"><p style="margin:0;color:#5A6270;font-size:13px;letter-spacing:.08em;line-height:1.7">ETIKETT · SUBSTRAT 5 KG<br>BATCH 24-117 · KLEPP</p>
 </div>
 </div>
 
-<article class="v-item v-stop" style="left:3910px;top:3670px;width:1180px;height:760px" data-dwell="1.15" data-idx="06" data-title="Feltro" data-tags="App-design · Lagd i Lagd" data-href="https://lagd.app/demo/feltro" data-link="Åpne demoen ↗">
-<span class="v-lab" aria-hidden="true"><b>06</b> · Feltro — App-design · Lagd i Lagd</span>
-<figure class="v-frame">
-<div class="chap-bar" aria-hidden="true"><span class="chap-dots"><i></i><i></i><i></i></span><span class="chap-url">lagd.app/demo/feltro</span><span class="chap-innerbar"></span></div>
-<div class="v-view"><img class="v-scroll" src="" data-clone="mock06" width="1600" height="4741" alt="App-design for Feltro, feltapp for håndverkere — hele siden fra topp til bunn" loading="lazy" decoding="async"></div>
-</figure>
-</article>
-
-<article class="v-item v-stop" style="left:2060px;top:2970px;width:1180px;height:760px" data-dwell="1.15" data-idx="07" data-title="Northwind" data-tags="Dashbord · Lagd i Lagd" data-href="https://lagd.app/demo/northwind" data-link="Åpne demoen ↗">
-<span class="v-lab" aria-hidden="true"><b>07</b> · Northwind — Dashbord · Lagd i Lagd</span>
-<figure class="v-frame">
-<div class="chap-bar" aria-hidden="true"><span class="chap-dots"><i></i><i></i><i></i></span><span class="chap-url">lagd.app/demo/northwind</span><span class="chap-innerbar"></span></div>
-<div class="v-view"><img class="v-scroll" src="" data-clone="mock07" width="1600" height="4741" alt="Dashbord-konsept for Northwind — hele siden fra topp til bunn" loading="lazy" decoding="async"></div>
-</figure>
-</article>
-
-<article class="v-item v-stop" style="left:360px;top:3620px;width:1180px;height:760px" data-dwell="1" data-idx="08" data-title="ESE Solution Norway" data-tags="Nettside · Levert 2025" data-href="https://lagd.app/case/ese-solution" data-link="Les caset ↗">
-<span class="v-lab" aria-hidden="true"><b>08</b> · ESE Solution Norway — Nettside · Levert 2025</span>
+<article class="v-item v-stop" style="left:5710px;top:1370px;width:1180px;height:760px" data-dwell="1" data-idx="04" data-title="ESE Solution Norway" data-tags="Nettside · Levert 2025" data-href="https://folkestad.design/case/ese-solution" data-link="Les caset ↗">
+<span class="v-lab" aria-hidden="true"><b>04</b> · ESE Solution Norway — Nettside · Levert 2025</span>
 <div class="v-ese">
 <span class="chap-wm" aria-hidden="true">ESE</span>
 <div class="chap-quote"><p class="aq">«Opplevelsen var friksjonsfri, kommunikasjonen presis, og resultatet er noe teamet vårt er stolt av å vise frem. Utmerket verdi og gjennomføring.»</p><p class="asig">SF — Svein Folkestad · ESE Solution Norway</p></div>
 </div>
+</article>
+
+<article class="v-item v-stop" style="left:5380px;top:2960px;width:1180px;height:760px" data-dwell="1.15" data-idx="05" data-title="Atelier" data-tags="Nettside · Konsept" data-href="#verktoy" data-link="Bygd i Lagd-appen →">
+<span class="v-lab" aria-hidden="true"><b>05</b> · Atelier — Nettside · Konsept</span>
+<figure class="v-frame">
+<div class="chap-bar" aria-hidden="true"><span class="chap-dots"><i></i><i></i><i></i></span><span class="chap-url">konsept · bygd i Lagd</span><span class="chap-innerbar"></span></div>
+<div class="v-view"><img class="v-scroll" src="" data-clone="mock05" width="2160" height="6400" alt="Nettside-konsept for designstudioet Atelier" loading="eager" decoding="async"></div>
+</figure>
+</article>
+
+<article class="v-item v-stop" style="left:3910px;top:3670px;width:1180px;height:760px" data-dwell="1.15" data-idx="06" data-title="Solhuset Bakeri" data-tags="Nettside · Konsept" data-href="https://folkestad.design/eksempel/onepager/" data-link="Åpne demoen ↗">
+<span class="v-lab" aria-hidden="true"><b>06</b> · Solhuset Bakeri — Nettside · Konsept</span>
+<figure class="v-frame">
+<div class="chap-bar" aria-hidden="true"><span class="chap-dots"><i></i><i></i><i></i></span><span class="chap-url">eksempel/onepager</span><span class="chap-innerbar"></span></div>
+<div class="v-view"><img class="v-scroll" src="" data-clone="mock06" width="2160" height="5953" alt="Nettside-konsept for Solhuset Bakeri" loading="eager" decoding="async"></div>
+</figure>
+</article>
+
+<article class="v-item v-stop" style="left:2060px;top:2970px;width:1180px;height:760px" data-dwell="1.15" data-idx="07" data-title="Northwind" data-tags="Dashbord · Konsept" data-href="#verktoy" data-link="Bygd i Lagd-appen →">
+<span class="v-lab" aria-hidden="true"><b>07</b> · Northwind — Dashbord · Konsept</span>
+<figure class="v-frame">
+<div class="chap-bar" aria-hidden="true"><span class="chap-dots"><i></i><i></i><i></i></span><span class="chap-url">konsept · bygd i Lagd</span><span class="chap-innerbar"></span></div>
+<div class="v-view"><img class="v-scroll" src="" data-clone="mock07" width="2160" height="6400" alt="Dashbord-konsept for Northwind" loading="eager" decoding="async"></div>
+</figure>
 </article>
 
 </div>
@@ -780,10 +738,15 @@ img.chap-scroll{opacity:1;transition:none}
 <!-- Problemet -->
 <section class="sec cwrap" id="verktoy">
 <p class="eyebrow rv vl">Verktøyet</p>
-<h2 class="h2"><span class="lr">Appen bak alt du nettopp så — <em>prøv den gratis.</em></span></h2>
-<p class="mut rv" style="max-width:58ch;margin-top:26px">Klikk, skriv, se det skje — rett i nettleseren. Og med én forskjell som betyr alt: <b>du eier appen etterpå</b>.</p>
+<h2 class="h2"><span class="lr">Appen bak <em>alt du så.</em></span></h2>
+<p class="mut rv" style="max-width:58ch;margin-top:26px">Klikk, skriv, se det skje. Og med én forskjell som betyr alt: <b>du eier appen etterpå</b>.</p>
+<div class="hkpis rv" style="margin-top:34px;justify-content:flex-start">
+<div class="hkpi" style="text-align:left"><div class="hknum">0 kr</div><div class="hklab">å prøve</div></div>
+<div class="hkpi" style="text-align:left"><div class="hknum">1&nbsp;990 kr</div><div class="hklab">én gang — du eier alt</div></div>
+<div class="hkpi" style="text-align:left"><div class="hknum" data-count="14">14</div><div class="hklab">dager om jeg bygger</div></div>
+</div>
 <div class="rv" id="provdemo" style="margin-top:44px;position:relative;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#101314">
-<img src="images/showcase/lagd-app.webp" width="1920" height="1147" alt="Lagd-appen i nettleseren — seksjoner til venstre, live forhåndsvisning i midten, innstillinger til høyre" style="display:block;width:100%;height:auto" loading="lazy" decoding="async">
+<img src="images/showcase/lagd-app-2880.webp" srcset="images/showcase/lagd-app-1440.webp 1440w, images/showcase/lagd-app-2880.webp 2880w" sizes="(max-width:1200px) 94vw, 1160px" width="2880" height="1720" alt="Lagd-appen i nettleseren — seksjoner til venstre, live forhåndsvisning i midten, innstillinger til høyre" style="display:block;width:100%;height:auto" loading="lazy" decoding="async">
 <button id="provdemo-btn" type="button" style="position:absolute;inset:0;margin:auto;width:min(340px,82%);height:64px;border-radius:999px;border:0;background:var(--ink);color:var(--bg);font-weight:700;font-size:16px;cursor:pointer;box-shadow:0 18px 60px rgba(20,23,26,.35)">▶&nbsp;&nbsp;Prøv appen her — gratis</button>
 </div>
 <div class="why" style="margin-top:44px">
@@ -796,7 +759,7 @@ img.chap-scroll{opacity:1;transition:none}
 <section class="cwrap" id="problem">
 <div class="sview">
 <p class="eyebrow rv vl">Problemet</p>
-<h2 class="h2"><span class="lr">Design er det billigste løftet en bedrift kan gjøre, <em>men…</em></span></h2>
+<h2 class="h2"><span class="lr">Byrå er dyrt. <em>Maler er alles.</em></span></h2>
 <div class="stack">
 <div class="scard rv vs"><span class="snum">/01</span><h3>…byråprisene er skrudd for konsern</h3><p>Et mid-tier byrå i Oslo tar rundt 300 000 kr for brand og nettside. Prisen dekker møter, mellomledd og timeføring — ikke bedre design.</p></div>
 <div class="scard rv vs" style="transition-delay:.08s"><span class="snum">/02</span><h3>…leveringstiden måles i måneder</h3><p>3–5 måneder til lansering er normalt hos byrå. Imens finner kundene som googler deg i dag — konkurrenten.</p></div>
@@ -808,7 +771,7 @@ img.chap-scroll{opacity:1;transition:none}
 <!-- Løsningen -->
 <section class="sec" style="padding-top:clamp(60px,8vw,120px)"><div class="dark"><div class="dorb dorb1"></div><div class="dorb dorb2"></div><div class="cwrap" style="padding-top:clamp(80px,10vw,140px);padding-bottom:clamp(80px,10vw,140px);position:relative;z-index:1">
 <p class="eyebrow rv vl">Løsningen</p>
-<h2 class="h2"><span class="lr">Svaret er <em>Lagd.</em> Ett verktøy. Én designer. Fast pris.</span></h2>
+<h2 class="h2"><span class="lr">Svaret er <em>Lagd.</em></span></h2>
 <div class="shift">
 <div class="shbox rv vl"><span class="shlab">Fra</span><div class="shbig">Byrå</div><p class="shsub">Mellomledd, timeføring, 3–5 måneder, ~300 000 kr</p></div>
 <div class="sharrow rv vs" style="transition-delay:.2s">→</div>
@@ -835,7 +798,7 @@ img.chap-scroll{opacity:1;transition:none}
 <!-- LANDING ZONE — rolig, statisk, konverterende -->
 <section class="sec cwrap" id="tjenester">
 <p class="eyebrow rv vl">Tjenester</p>
-<h2 class="h2"><span class="lr">Tre ting. Gjort <em>skikkelig.</em></span></h2>
+<h2 class="h2"><span class="lr">Nettsider. Logo. <em>Trykk.</em></span></h2>
 <div style="margin-top:clamp(50px,6vw,80px)">
 <div class="svcrow rv vl"><span class="snum">/01</span><h3 class="svct">Nettsider</h3><p class="svcd">Design, kode, SEO og lansering i én pakke — klar for Google.</p><div class="svcp">fra<b>12 000 kr</b></div></div>
 <div class="svcrow rv vl"><span class="snum">/02</span><h3 class="svct">Logo &amp; merkevare</h3><p class="svcd">Wordmark, farger, typografi og brand book. Bygget for ti år.</p><div class="svcp">fra<b>8 000 kr</b></div></div>
@@ -845,7 +808,7 @@ img.chap-scroll{opacity:1;transition:none}
 </section>
 <section class="sec cwrap" id="prosess" style="padding-top:0">
 <p class="eyebrow rv vl">Prosess</p>
-<h2 class="h2"><span class="lr">Fra første prat til lansering — <em>fire steg</em></span></h2>
+<h2 class="h2"><span class="lr">Fire steg til <em>lansert.</em></span></h2>
 <div class="proc" id="proc">
 <div class="procline"></div><div class="procfill" id="procfill"></div>
 <div class="pstep rv vl"><span class="pday">Dag 1</span><div><h3>Vi snakker</h3><p>20 minutter på telefon eller over en kaffe. Nok til å se om vi passer — helt uforpliktende.</p></div></div>
@@ -856,8 +819,8 @@ img.chap-scroll{opacity:1;transition:none}
 </section>
 <section class="sec cwrap" id="priser" style="padding-top:0">
 <p class="eyebrow rv vl">Priser</p>
-<h2 class="h2"><span class="lr">Enkle priser. <em>Ingen overraskelser.</em></span></h2>
-<p class="mut rv" style="max-width:52ch;margin-top:26px">Bygg selv gratis — eller la meg levere. Du betaler aldri før du har sett utkastet.</p>
+<h2 class="h2"><span class="lr">Bygg selv. <em>Eller bli levert.</em></span></h2>
+<p class="mut rv" style="max-width:52ch;margin-top:26px">Du betaler aldri før du har sett utkastet.</p>
 <div class="pgrid">
 <div class="pcard hot rv vs"><span class="ptier">Appen — gjør det selv</span><h3>Lagd selv</h3><div class="pprice">1&nbsp;990<small> kr én gang</small></div><ul class="pinc"><li>Gratis å prøve — uten konto</li><li>Nettside, app-design og dashbord</li><li>Eksporter som én fil du eier</li><li>Hele appen med på kjøpet, for alltid</li><li>Drift 349 kr/mnd — valgfritt</li></ul><a class="pill inv pbtn" href="https://lagd.app/prov.html" target="_blank" rel="noopener">Prøv gratis nå</a></div>
 <div class="pcard rv vs" style="transition-delay:.12s"><span class="ptier">Levert — merkevare-start</span><h3>Oppstart</h3><div class="pprice">9 000<small> kr</small></div><ul class="pinc"><li>Logo + wordmark + monogram</li><li>Fargesystem + typografi</li><li>250 visittkort trykket</li><li>Ferdig på 7 dager</li></ul><a class="pill pbtn" href="#kontakt">Velg Oppstart</a></div>
@@ -876,7 +839,7 @@ img.chap-scroll{opacity:1;transition:none}
 </section>
 <section class="sec cwrap" style="padding-top:0">
 <p class="eyebrow rv vl">Historien</p>
-<h2 class="h2"><span class="lr">Det startet med en mappe <em>Word-dokumenter</em></span></h2>
+<h2 class="h2"><span class="lr">Det startet med <em>Word-dokumenter.</em></span></h2>
 <div class="about2">
 <div class="body rv"><p>I 2024 startet jeg Verminord på Jæren. Den første måneden gikk til en mappe Word-dokumenter i Times New Roman — ved siden av konkurrentens brosjyre så det ikke ut som en bedrift.</p><p class="asig">— Martin Folkestad · Klepp Stasjon, Jæren</p></div>
 <div class="body rv" style="transition-delay:.15s"><p>Så jeg lærte meg design — fordi en kjøper i Bryne måtte tro på Verminord før første setning. Verktøyet jeg bygde meg underveis ble til Lagd.</p></div>
@@ -884,7 +847,7 @@ img.chap-scroll{opacity:1;transition:none}
 </section>
 <section class="sec cwrap" id="faq" style="padding-top:0">
 <div class="faqw">
-<div><p class="eyebrow rv vl">FAQ</p><h2 class="h2"><span class="lr">Raske svar på det du <em>lurer på</em></span></h2><p class="mut rv" style="margin-top:26px;max-width:34ch">Finner du ikke svaret? Skriv direkte:</p><p class="rv"><a class="tlink" href="mailto:kontakt@lagd.app">kontakt@lagd.app</a></p></div>
+<div><p class="eyebrow rv vl">FAQ</p><h2 class="h2"><span class="lr">Raske <em>svar.</em></span></h2><p class="mut rv" style="margin-top:26px;max-width:34ch">Finner du ikke svaret? Skriv direkte:</p><p class="rv"><a class="tlink" href="mailto:kontakt@lagd.app">kontakt@lagd.app</a></p></div>
 <div class="faq rv">
 <details><summary>Hva er Lagd-appen?<span class="qplus">+</span></summary><p class="qa">Verktøyet alt på denne siden er bygd med. Prøv gratis i nettleseren, uten konto. Eksport koster 1 990 kr én gang — da eier du både siden og appen, for alltid.</p></details>
 <details><summary>Hva betyr «du betaler kun om du er fornøyd»?<span class="qplus">+</span></summary><p class="qa">Vi bygger utkast først, helt gratis. Liker du ikke retningen, går vi hver vår vei uten faktura. Betaling skjer etter godkjent utkast.</p></details>
@@ -896,7 +859,7 @@ img.chap-scroll{opacity:1;transition:none}
 </section>
 <section class="sec cwrap" id="kontakt" style="padding-top:0">
 <p class="eyebrow rv vl">Kontakt</p>
-<h2 class="h2"><span class="lr">Få ditt gratis utkast <em>i dag</em></span></h2>
+<h2 class="h2"><span class="lr">Få et gratis <em>utkast.</em></span></h2>
 <div class="kwrap">
 <div class="rv">
 <p class="mut" style="margin-top:0;max-width:52ch">Fortell kort om bedriften din — Martin svarer personlig innen samme dag.</p>
@@ -918,8 +881,8 @@ img.chap-scroll{opacity:1;transition:none}
 </div>
 </div>
 </section>
-<a class="ctaband" href="#kontakt"><div class="ctain"><span>Er du interessert? <em>La oss snakke.</em></span><span>Er du interessert? <em>La oss snakke.</em></span><span>Er du interessert? <em>La oss snakke.</em></span><span>Er du interessert? <em>La oss snakke.</em></span></div></a>
-<div class="cwrap"><div class="foot"><div class="footin"><div><a class="logo" href="#top" style="font-size:22px">Lagd<span style="color:var(--acc)">.</span></a><p style="font-size:14px;color:var(--mut);margin:8px 0 0">Klepp Stasjon · Jæren · Norge</p></div><div class="fx gap20"><a class="flink" href="#tjenester">Tjenester</a><a class="flink" href="#arbeid">Arbeid</a><a class="flink" href="https://lagd.app/blogg" target="_blank" rel="noopener">Blogg</a><a class="flink" href="https://lagd.app/personvern" target="_blank" rel="noopener">Personvern</a></div></div><p class="fcopy">© 2026 Lagd · Martin Folkestad · Bygd lokalt på Jæren</p></div></div>
+<a class="ctaband" href="#kontakt"><div class="ctain-static">Er du interessert? <em>La oss snakke.</em></div></a>
+<div class="cwrap"><div class="foot"><div class="footin"><div><a class="logo" href="#top" style="font-size:22px">Lagd<span style="color:var(--acc)">.</span></a><p style="font-size:14px;color:var(--mut);margin:8px 0 0">Klepp Stasjon · Jæren · Norge</p></div><div class="fx gap20"><a class="flink" href="#tjenester">Tjenester</a><a class="flink" href="#arbeid">Arbeid</a><a class="flink" href="https://folkestad.design/blogg" target="_blank" rel="noopener">Blogg</a><a class="flink" href="https://folkestad.design/personvern" target="_blank" rel="noopener">Personvern</a></div></div><p class="fcopy">© 2026 Lagd · Martin Folkestad · Bygd lokalt på Jæren</p></div></div>
 </div>
 <script>
 (function(){
@@ -931,28 +894,12 @@ var reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 var clamp01=function(v){return Math.max(0,Math.min(1,v))};
 var lerp=function(a,b,t){return a+(b-a)*t};
 
-/* ---------- preloader (kortere ved gjenbesøk) ---------- */
-var pct=document.getElementById('lpct'),fill=document.getElementById('lbarfill'),loader=document.getElementById('loader');
+/* ---------- preloader: kort ordmerke-fade ---------- */
+var loader=document.getElementById('loader');
 var seen=false;try{seen=!!sessionStorage.getItem('fd-intro');sessionStorage.setItem('fd-intro','1')}catch(e){}
-var ldur=seen?400:1200;
-(function(){
-  var t0=performance.now();
-  var tick=function(t){
-    var p=Math.min(1,(t-t0)/ldur),eased=1-Math.pow(1-p,3);
-    if(pct)pct.textContent=String(Math.round(eased*100)).padStart(2,'0')+'%';
-    if(fill)fill.style.transform='scaleX('+eased.toFixed(4)+')';
-    if(p<1)requestAnimationFrame(tick);
-    else setTimeout(function(){loader&&loader.classList.add('off')},150);
-  };
-  requestAnimationFrame(tick);
-  setTimeout(function(){
-    if(loader&&!loader.classList.contains('off')){
-      if(pct)pct.textContent='100%';
-      if(fill)fill.style.transform='scaleX(1)';
-      loader.classList.add('off');
-    }
-  },ldur+600);
-})();
+var ldur=seen?150:450;
+setTimeout(function(){loader&&loader.classList.add('off')},ldur);
+setTimeout(function(){loader&&loader.classList.add('off')},1500);
 
 /* ---------- count-up ---------- */
 function countUp(el){
@@ -1008,36 +955,6 @@ if(form){
         err.classList.add('show');btn.disabled=false;btn.textContent='Send melding →';
       });
   });
-}
-
-/* ---------- magnetiske knapper ---------- */
-if(!reduced&&window.matchMedia('(pointer:fine)').matches){
-  document.querySelectorAll('.pill,.fbtn').forEach(function(btn){
-    btn.addEventListener('mousemove',function(e){
-      var r=btn.getBoundingClientRect();
-      btn.style.transform='translate('+((e.clientX-r.left-r.width/2)*0.18).toFixed(1)+'px,'+((e.clientY-r.top-r.height/2)*0.3).toFixed(1)+'px)';
-    });
-    btn.addEventListener('mouseleave',function(){btn.style.transform=''});
-  });
-}
-
-/* ---------- egen markør ---------- */
-if(!reduced&&window.matchMedia('(pointer:fine) and (min-width:961px)').matches){
-  var cur=document.getElementById('cur');
-  if(cur){
-    var cx=-100,cy=-100,tx=-100,ty=-100;
-    document.addEventListener('mousemove',function(e){tx=e.clientX;ty=e.clientY});
-    var ints='a,button,summary,.pcard,.svcrow,.chap-frame';
-    document.addEventListener('mouseover',function(e){if(e.target.closest(ints))cur.classList.add('big')});
-    document.addEventListener('mouseout',function(e){if(e.target.closest(ints))cur.classList.remove('big')});
-    document.addEventListener('mouseenter',function(){cur.style.opacity='1'});
-    document.addEventListener('mouseleave',function(){cur.style.opacity='0'});
-    (function mv(){
-      cx+=(tx-cx)*0.12;cy+=(ty-cy)*0.12;
-      cur.style.left=cx+'px';cur.style.top=cy+'px';
-      requestAnimationFrame(mv);
-    })();
-  }
 }
 
 /* ---------- SHOWCASE geometry ----------
@@ -1194,10 +1111,9 @@ function vCapSet(i){
 function startFx(){
   var lastY=window.scrollY,skew=0;
   var hin=document.querySelector('.hin');
-  var hwm=document.querySelector('.hwm');
+  var happ=document.querySelector('.happ');
   var dark=document.querySelector('.dark');
-  var tickers=document.querySelectorAll('.sdin,.ctain');
-  var pbar=document.getElementById('pbar');
+    var pbar=document.getElementById('pbar');
   var mani=document.getElementById('mani');
   var words=mani?mani.querySelectorAll('.mw'):[];
   var proc=document.getElementById('proc');
@@ -1209,7 +1125,6 @@ function startFx(){
     var vel=y-lastY;lastY=y;
     // 1. velocity-skew på marquee-bånd
     skew=lerp(skew,Math.max(-10,Math.min(10,vel*0.35)),0.12);
-    tickers.forEach(function(el){el.style.transform='skewX('+skew.toFixed(2)+'deg)'});
     // 2. hero-parallakse + fade
     if(hin&&y<vh*1.2){
       var hp=clamp01(y/(vh*0.9));
@@ -1217,8 +1132,8 @@ function startFx(){
       hin.style.opacity=String(1-hp*0.9);
     }
     // 3. vannmerke-parallakse
-    if(hwm&&y<vh*1.4){
-      hwm.style.transform='translateY(calc(-50% + '+(y*0.1).toFixed(1)+'px))';
+    if(happ&&y<vh*1.4){
+      happ.style.transform='translateY('+(y*0.06).toFixed(1)+'px)';
     }
     // 4. mørk seksjon utvider seg
     if(dark){
