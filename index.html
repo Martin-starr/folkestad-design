@@ -212,9 +212,6 @@ html{scroll-behavior:smooth}body{margin:0;background:#F5F3EE/* = --bg (utenfor .
 .sdin{display:flex;width:max-content;animation:mq 30s linear infinite;font-weight:500;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--mut);padding:18px 0;white-space:nowrap}
 .sdin>span{padding-right:60px}
 @keyframes mq{to{transform:translateX(-50%)}}
-.introgrid{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(40px,6vw,110px);margin-top:clamp(50px,6vw,90px);align-items:start}
-.lede{font-weight:700;font-size:clamp(24px,2.8vw,40px);line-height:1.25;letter-spacing:-.02em;margin:0;text-wrap:balance}
-.lede em{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400}
 .body p{margin:0 0 20px;color:rgba(20,23,26,.68)}
 .tlink{display:inline-flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;font-weight:500;border-bottom:1.5px solid var(--ink);padding-bottom:4px;transition:color .3s,border-color .3s,gap .4s cubic-bezier(.16,.84,.24,1)}
 .tlink:hover{color:var(--acc);border-color:var(--acc);gap:16px}
@@ -284,10 +281,21 @@ html{scroll-behavior:smooth}body{margin:0;background:#F5F3EE/* = --bg (utenfor .
 .ccard{display:block;text-decoration:none;color:var(--ink);border:1px solid var(--line);border-radius:28px;overflow:hidden;background:var(--white);transition:transform .55s cubic-bezier(.16,.84,.24,1),box-shadow .55s}
 .ccard:hover{transform:translateY(-10px);box-shadow:0 28px 64px rgba(20,23,26,.12)}
 .ccard:nth-child(2){margin-top:64px}
-.cvis{height:clamp(240px,30vw,400px);display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
+.cvis{height:clamp(260px,32vw,420px);display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:clamp(16px,2vw,26px);overflow:hidden;position:relative;padding:clamp(24px,2.6vw,40px) clamp(24px,2.6vw,40px) 0}
 .cvis:after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(135deg,transparent,transparent 50px,rgba(255,255,255,.035) 50px,rgba(255,255,255,.035) 51px);pointer-events:none}
-.cvis span{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;font-size:clamp(44px,7vw,96px);letter-spacing:-.03em;color:rgba(245,243,238,.85);transition:transform .7s cubic-bezier(.16,.84,.24,1)}
-.ccard:hover .cvis span{transform:scale(1.08)}
+.clab{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;font-size:clamp(24px,2.6vw,36px);letter-spacing:-.02em;color:rgba(245,243,238,.9)}
+.clogo{height:clamp(56px,6vw,84px);width:auto}
+.bframe{width:min(86%,560px);background:var(--acc-deep);border-radius:10px 10px 0 0;box-shadow:0 24px 60px rgba(0,0,0,.35);overflow:hidden;will-change:transform}
+.bbar{display:flex;align-items:center;gap:5px;padding:9px 12px}
+.bbar i{width:8px;height:8px;border-radius:50%;background:rgba(245,243,238,.28)}
+.burl{margin-left:10px;font-size:10px;font-weight:500;letter-spacing:.06em;color:rgba(245,243,238,.55);background:rgba(245,243,238,.08);border-radius:100px;padding:3px 14px}
+.bframe img{display:block;width:100%;height:auto;transform-origin:50% 100%;transition:transform .7s cubic-bezier(.16,.84,.24,1)}
+.kstrip{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:24px}
+.kcard{display:block;text-decoration:none;color:var(--ink);border:1px solid var(--line);border-radius:20px;overflow:hidden;background:var(--white);transition:transform .55s cubic-bezier(.16,.84,.24,1),box-shadow .55s}
+.kcard:hover{transform:translateY(-6px);box-shadow:0 20px 48px rgba(20,23,26,.1)}
+.kcard img{display:block;width:100%;height:auto}
+.kcap{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 18px;font-size:14px;font-weight:700;border-top:1px solid var(--line)}
+.kcap em{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:var(--mut);font-size:13px}
 .cv1{background:linear-gradient(135deg,var(--acc),var(--acc-deep))}.cv2{background:linear-gradient(135deg,var(--acc-2),var(--acc-deep))}
 .cmeta{padding:30px 32px 34px;display:flex;justify-content:space-between;gap:20px;align-items:flex-start}
 .cmeta h3{margin:0 0 6px}.cmeta p{margin:0;color:var(--mut);font-size:15px;max-width:42ch}
@@ -331,7 +339,7 @@ textarea.fin{min-height:120px;resize:vertical}
 .footin{display:flex;justify-content:space-between;align-items:end;flex-wrap:wrap;gap:24px}
 .flink{color:var(--mut);text-decoration:none;font-size:14px;transition:color .3s}.flink:hover{color:var(--ink)}
 .fcopy{font-size:13px;color:var(--mut);width:100%;margin:12px 0 0}
-@media(max-width:960px){.nlinks{display:none}.hmeta,.introgrid,.cgrid,.faqw,.kwrap,.about2{grid-template-columns:1fr}.hkpis{justify-content:flex-start}.hkpi{text-align:left}.scard{grid-template-columns:1fr;gap:14px}.why{grid-template-columns:1fr}.bigstats{grid-template-columns:1fr 1fr}.bstat{padding-left:0;border-left:0;border-top:1px solid rgba(245,243,238,.12)}.svcrow{grid-template-columns:1fr;gap:10px}.pgrid{grid-template-columns:1fr}.pstep{grid-template-columns:1fr;gap:8px}.svcp{text-align:left}.shift{grid-template-columns:1fr}.sharrow{transform:rotate(90deg);text-align:center}.ccard:nth-child(2){margin-top:0}.hwm{display:none}.cur{display:none!important}}
+@media(max-width:960px){.nlinks{display:none}.hmeta,.cgrid,.kstrip,.faqw,.kwrap,.about2{grid-template-columns:1fr}.hkpis{justify-content:flex-start}.hkpi{text-align:left}.scard{grid-template-columns:1fr;gap:14px}.why{grid-template-columns:1fr}.bigstats{grid-template-columns:1fr 1fr}.bstat{padding-left:0;border-left:0;border-top:1px solid rgba(245,243,238,.12)}.svcrow{grid-template-columns:1fr;gap:10px}.pgrid{grid-template-columns:1fr}.pstep{grid-template-columns:1fr;gap:8px}.svcp{text-align:left}.shift{grid-template-columns:1fr}.sharrow{transform:rotate(90deg);text-align:center}.ccard:nth-child(2){margin-top:0}.hwm{display:none}.cur{display:none!important}}
 @media(prefers-reduced-motion:reduce){.rv,.lr>span{opacity:1;transform:none;transition:none;filter:none;clip-path:none}.sdin,.ctain{animation-duration:200s}.grain{display:none}}
 /* ============================================================
    CARD HOVER — COLOUR INVERSION
@@ -389,6 +397,13 @@ textarea.fin{min-height:120px;resize:vertical}
 .faq details:before{content:"";position:absolute;left:-18px;right:-18px;top:-1px;bottom:-1px;background:var(--ink);border-radius:14px;opacity:0;transition:opacity .4s ease;pointer-events:none;z-index:0}
 .faq .qa{transition:color .4s ease}
 
+/* 7 · ARBEID · .ccard meta strip (white -> dark ink) + framed mockup zoom.
+   Skjermbildene kan ikke inverteres — meta-stripen bærer familie-effekten. */
+.cmeta{transition:background-color .5s cubic-bezier(.16,.84,.24,1)}
+.cmeta h3,.cmeta p{transition:color .5s cubic-bezier(.16,.84,.24,1)}
+.carr{transition:transform .4s cubic-bezier(.16,.84,.24,1),color .5s cubic-bezier(.16,.84,.24,1)}
+.kcap,.kcap em{transition:background-color .5s cubic-bezier(.16,.84,.24,1),color .5s cubic-bezier(.16,.84,.24,1)}
+
 /* ---------- hover ACTIVATIONS — pointer devices only ---------- */
 @media (hover:hover) and (pointer:fine){
   /* 1 · PROBLEMET */
@@ -444,6 +459,16 @@ textarea.fin{min-height:120px;resize:vertical}
   .faq details:hover summary{color:var(--bg)}
   .faq details:hover .qplus{color:var(--mint)}
   .faq details:hover .qa{color:rgba(245,243,238,.6)}
+
+  /* 7 · ARBEID */
+  .ccard:hover .cmeta{background:var(--ink)}
+  .ccard:hover .cmeta h3{color:var(--bg)}
+  .ccard:hover .cmeta p{color:rgba(245,243,238,.6)}
+  .ccard:hover .carr{color:var(--mint)}
+  .ccard:hover .bframe img{transform:scale(1.04)}
+  .kcard:hover .kcap{background:var(--ink)}
+  .kcard:hover .kcap span{color:var(--bg)}
+  .kcard:hover .kcap em{color:var(--mint)}
 }
 
 
@@ -475,8 +500,13 @@ textarea.fin{min-height:120px;resize:vertical}
 <p class="eyebrow rv vl">Arbeid</p>
 <h2 class="h2"><span class="lr">Levert. Bygget. <em>Eid selv.</em></span></h2>
 <div class="cgrid">
-<a class="ccard rv vs" href="https://folkestad.design/case/ese-solution" target="_blank" rel="noopener"><div class="cvis cv1"><span>ESE</span></div><div class="cmeta"><div><h3 class="h3">ESE Solution Norway</h3><p>Tospråklig B2B-nettside for koreansk presisjonsproduksjon. Levert og live.</p></div><span class="carr">↗</span></div></a>
-<a class="ccard rv vs" href="https://folkestad.design/case/verminord" target="_blank" rel="noopener" style="transition-delay:.15s"><div class="cvis cv2"><span>Verminord</span></div><div class="cmeta"><div><h3 class="h3">Verminord AS</h3><p>Komplett merkevare fra bunnen — logo, brand book, etiketter. I bruk hver dag.</p></div><span class="carr">↗</span></div></a>
+<a class="ccard rv vs" href="https://folkestad.design/case/ese-solution" target="_blank" rel="noopener"><div class="cvis cv1"><span class="clab">ESE Solution</span><div class="bframe"><div class="bbar"><i></i><i></i><i></i><span class="burl">case-studie</span></div><img src="images/work/ese-800.webp" srcset="images/work/ese-800.webp 800w, images/work/ese-1200.webp 1200w" sizes="(max-width:960px) 92vw, 48vw" width="800" height="447" alt="ESE Solution Norway — nettside levert av Lagd" loading="lazy" decoding="async"></div></div><div class="cmeta"><div><h3 class="h3">ESE Solution Norway</h3><p>Tospråklig B2B-nettside for koreansk presisjonsproduksjon. Levert og live.</p></div><span class="carr">↗</span></div></a>
+<a class="ccard rv vs" href="https://folkestad.design/case/verminord" target="_blank" rel="noopener" style="transition-delay:.15s"><div class="cvis cv2"><img class="clogo" src="images/verminord/logo-white.svg" alt="Verminord" width="810" height="1012" loading="lazy" decoding="async"><div class="bframe"><div class="bbar"><i></i><i></i><i></i><span class="burl">case-studie</span></div><img src="images/work/verminord-800.webp" srcset="images/work/verminord-800.webp 800w, images/work/verminord-1200.webp 1200w" sizes="(max-width:960px) 92vw, 38vw" width="800" height="447" alt="Verminord AS — merkevare bygget av Lagd" loading="lazy" decoding="async"></div></div><div class="cmeta"><div><h3 class="h3">Verminord AS</h3><p>Komplett merkevare fra bunnen — logo, brand book, etiketter. I bruk hver dag.</p></div><span class="carr">↗</span></div></a>
+</div>
+<div class="kstrip">
+<a class="kcard rv vs" href="eksempel/onepager/" target="_blank" rel="noopener"><img src="images/work/konsept-bakeri-720.webp" width="720" height="450" alt="Konsept: nettside for Solhuset Bakeri" loading="lazy" decoding="async"><div class="kcap"><span>Solhuset Bakeri</span><em>Konsept</em></div></a>
+<a class="kcard rv vs" href="eksempel/bistro/" target="_blank" rel="noopener" style="transition-delay:.1s"><img src="images/work/konsept-bistro-720.webp" width="720" height="450" alt="Konsept: nettside for Vindfanget Bistro" loading="lazy" decoding="async"><div class="kcap"><span>Vindfanget Bistro</span><em>Konsept</em></div></a>
+<a class="kcard rv vs" href="eksempel/femsider/" target="_blank" rel="noopener" style="transition-delay:.2s"><img src="images/work/konsept-bygg-720.webp" width="720" height="450" alt="Konsept: nettside for Strandhus Bygg" loading="lazy" decoding="async"><div class="kcap"><span>Strandhus Bygg</span><em>Konsept</em></div></a>
 </div>
 </section>
 <section class="sec cwrap" id="problem" data-screen-label="Problemet" style="padding-top:0">
@@ -692,7 +722,7 @@ class Component extends DCLogic {
     const hwm = document.querySelector('.hwm');
     const dark = document.querySelector('.dark');
     const tickers = document.querySelectorAll('.sdin,.ctain');
-    const cvis = document.querySelectorAll('.cvis span');
+    const cvis = document.querySelectorAll('.cvis .bframe');
     const pbar = document.getElementById('pbar');
     const mani = document.getElementById('mani');
     const words = mani ? mani.querySelectorAll('.mw') : [];
