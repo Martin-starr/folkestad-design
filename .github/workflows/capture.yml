@@ -1,5 +1,11 @@
 name: capture
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+  push:
+    branches: [claude/landing-page-redesign-olbskr]
+    paths:
+      - tools/capture-verminord.mjs
+      - .github/workflows/capture.yml
 
 permissions:
   contents: write
