@@ -99,6 +99,24 @@ try {
     manifest.push({ file: out, w, h, kb: Math.round(buf.length / 1024), q: q.toFixed(2) });
     console.log(`${out}  ${w}x${h}  ${Math.round(buf.length / 1024)}KB  q=${q.toFixed(2)}`);
   }
+  // og:image — 1200x630 social card rendered with the site's own fonts
+  {
+    const og = await browser.newPage({ viewport: { width: 1200, height: 630 } });
+    await og.goto(`http://localhost:${PORT}/`, { waitUntil: 'networkidle', timeout: 45000 });
+    await og.evaluate(() => document.fonts.ready);
+    await og.evaluate(() => {
+      document.body.insertAdjacentHTML('beforeend',
+        '<div style="position:fixed;inset:0;z-index:99999;background:#F5F3EE;display:flex;flex-direction:column;justify-content:center;padding:0 90px;box-sizing:border-box;font-family:\'Schibsted Grotesk\',sans-serif;color:#14171A">' +
+        '<div style="width:56px;height:4px;background:#1F4E43;margin-bottom:36px"></div>' +
+        '<div style="font-weight:900;font-size:92px;letter-spacing:-.05em;line-height:.95">Design levert på<br>halve tiden, <em style="font-family:\'Instrument Serif\',serif;font-weight:400;color:#1F4E43">halve prisen.</em></div>' +
+        '<div style="margin-top:40px;font-size:24px;color:rgba(20,23,26,.62)">Folkestad<b style="color:#1F4E43">.</b>&ensp;·&ensp;Nettside, merkevare og trykk — Jæren</div></div>');
+    });
+    await og.waitForTimeout(600);
+    const jpg = await og.screenshot({ type: 'jpeg', quality: 88 });
+    writeFileSync(path.join(ROOT, 'images', 'og.jpg'), jpg);
+    console.log(`og.jpg  1200x630  ${Math.round(jpg.length / 1024)}KB`);
+    await og.close();
+  }
   writeFileSync(path.join(OUT, 'manifest.json'), JSON.stringify(manifest, null, 2));
   console.log('\nDone →', OUT);
 } finally {

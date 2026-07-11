@@ -9,7 +9,9 @@
 <meta property="og:url" content="https://folkestad.design/">
 <meta property="og:title" content="Folkestad Designs — nettside og merkevare på 14 dager, halve prisen">
 <meta property="og:description" content="Nettside, merkevare og trykk for bedrifter på Jæren, bygget av én designer. Du betaler først når utkastet er godkjent.">
-<meta property="og:image" content="https://folkestad.design/images/showcase/solhuset-1440.webp">
+<meta property="og:image" content="https://folkestad.design/images/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#F5F3EE">
 <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
@@ -53,7 +55,7 @@
 
 html{scroll-behavior:smooth}body{margin:0;background:#F5F3EE}
 ::selection{background:#1F4E43;color:#F5F3EE}
-.site{--bg:#F5F3EE;--ink:#14171A;--mut:rgba(20,23,26,.48);--line:rgba(20,23,26,.11);--acc:#1F4E43;--card:#ECE9E1;--mint:#9ED8C6;background:var(--bg);color:var(--ink);font-family:'Schibsted Grotesk',sans-serif;font-size:17px;line-height:1.65;overflow-x:clip}
+.site{--bg:#F5F3EE;--ink:#14171A;--mut:rgba(20,23,26,.58);--line:rgba(20,23,26,.11);--acc:#1F4E43;--card:#ECE9E1;--mint:#9ED8C6;background:var(--bg);color:var(--ink);font-family:'Schibsted Grotesk',sans-serif;font-size:17px;line-height:1.65;overflow-x:clip}
 .cwrap{max-width:1360px;margin:0 auto;padding:0 clamp(24px,4vw,64px)}
 .eyebrow{display:flex;align-items:center;gap:12px;font-weight:500;font-size:11.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--mut)}
 .eyebrow:before{content:"";width:40px;height:1.5px;background:var(--acc)}
@@ -70,10 +72,10 @@ html{scroll-behavior:smooth}body{margin:0;background:#F5F3EE}
 .rv.vl{transform:translateX(-48px)}.rv.vr{transform:translateX(48px)}.rv.vs{transform:scale(.92) translateY(20px)}.rv.vb{transform:translateY(14px);filter:blur(16px)}
 .rv.vw{opacity:1;transform:none;clip-path:inset(0 100% 0 0)}.rv.vw.on{clip-path:inset(0 -2% 0 0)}
 .grain{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:999;opacity:.04;mix-blend-mode:multiply}
-@media(pointer:fine) and (min-width:961px){.site,.site *{cursor:none}}
+@media(pointer:fine) and (min-width:961px) and (prefers-reduced-motion:no-preference){.site,.site *{cursor:none}}
 .cur{display:none;position:fixed;width:14px;height:14px;border-radius:50%;background:var(--acc);pointer-events:none;z-index:10000;transform:translate(-50%,-50%);transition:width .4s cubic-bezier(.16,.84,.24,1),height .4s cubic-bezier(.16,.84,.24,1),background .3s,border .3s,opacity .3s}
 .cur.big{width:56px;height:56px;background:transparent;border:1.5px solid var(--acc)}
-@media(pointer:fine) and (min-width:961px){.cur{display:block}}
+@media(pointer:fine) and (min-width:961px) and (prefers-reduced-motion:no-preference){.cur{display:block}}
 .loader{position:fixed;inset:0;background:var(--ink);color:var(--bg);z-index:100;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;transition:clip-path 1s cubic-bezier(.7,0,.15,1);clip-path:inset(0)}
 .loader.off{clip-path:inset(0 0 100% 0)}
 .lpct{font-weight:900;font-size:clamp(80px,18vw,240px);line-height:.85;letter-spacing:-.05em;font-variant-numeric:tabular-nums}
@@ -92,7 +94,7 @@ html{scroll-behavior:smooth}body{margin:0;background:#F5F3EE}
 .skip{position:fixed;top:-100px;left:16px;z-index:200;background:var(--ink);color:var(--bg);padding:12px 20px;border-radius:8px;text-decoration:none;font-size:14px;transition:top .3s}
 .skip:focus-visible{top:16px}
 a:focus-visible,button:focus-visible,summary:focus-visible,.fin:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
-.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:clip;padding-top:clamp(120px,18vh,180px);box-sizing:border-box}
+.hero{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:clip;padding-top:clamp(120px,18vh,180px);box-sizing:border-box}
 .hbg{position:absolute;inset:0;background:radial-gradient(ellipse 90% 70% at 75% 25%,rgba(31,78,67,.05),transparent 70%);z-index:0}
 .hwm{position:absolute;right:-4vw;top:42%;transform:translateY(-50%);font-family:'Instrument Serif',serif;font-style:italic;font-size:clamp(300px,52vw,750px);color:var(--ink);opacity:.025;line-height:.75;pointer-events:none;z-index:0;user-select:none}
 .hin{position:relative;z-index:2}
@@ -126,7 +128,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,.fin:focus-visible{ou
    ============================================================ */
 .chap{position:relative}
 .chap-runway{position:relative}
-.chap-stage{position:sticky;top:0;height:100svh;overflow:clip;background:var(--bg);display:grid;grid-template-columns:minmax(270px,360px) 1fr;align-items:center;column-gap:clamp(28px,4vw,72px);padding:0 clamp(24px,4vw,64px);box-sizing:border-box;z-index:1}
+.chap-stage{position:sticky;top:0;height:100vh;height:100svh;overflow:clip;background:var(--bg);display:grid;grid-template-columns:minmax(270px,360px) 1fr;align-items:center;column-gap:clamp(28px,4vw,72px);padding:0 clamp(24px,4vw,64px);box-sizing:border-box;z-index:1}
 .chap-meta{position:relative;z-index:2}
 .chap-idx{display:block;font-weight:500;font-size:11.5px;letter-spacing:.15em;color:var(--mut);margin-bottom:18px}
 .chap-idx b{color:var(--acc);font-weight:500}
@@ -183,7 +185,50 @@ img.chap-scroll.ld{opacity:1}
 .chaprail i.on{background:var(--acc);transform:scaleY(1.5)}
 .chaprail.show{opacity:1}
 /* statement slides */
-.sview{min-height:100svh;display:flex;flex-direction:column;justify-content:center;box-sizing:border-box;padding:clamp(90px,13vh,150px) 0}
+.sview{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:center;box-sizing:border-box;padding:clamp(90px,13vh,150px) 0}
+
+/* ============================================================
+   VOYAGE — Wix-Studio-style camera-on-canvas (desktop, motion-ok).
+   One sticky stage; the whole portfolio sits on a 7400x5000 canvas.
+   Page scroll drives a camera path: land zoomed-in on a work ->
+   its content scrolls -> zoom OUT to the huge canvas -> travel in
+   a new direction -> land on the next -> ... -> final overview of
+   everything. Mobile/reduced-motion/no-JS keep the .chapfall
+   chapters instead (same content, same swap contract).
+   ============================================================ */
+.voyage{display:none;position:relative}
+.v-runway{position:relative}
+.v-stage{position:sticky;top:0;height:100vh;height:100svh;overflow:clip;background:var(--bg)}
+.v-canvas{position:absolute;left:0;top:0;width:7400px;height:5000px;transform-origin:0 0;will-change:transform;background-image:radial-gradient(rgba(20,23,26,.07) 1.5px,transparent 1.5px);background-size:56px 56px}
+.v-item{position:absolute}
+.v-lab{position:absolute;top:-30px;left:2px;font-weight:500;font-size:12.5px;letter-spacing:.08em;color:var(--mut);white-space:nowrap}
+.v-lab b{color:var(--acc);font-weight:500}
+.v-frame{position:relative;width:100%;height:100%;border:1px solid var(--line);border-radius:18px;background:var(--card);box-shadow:0 40px 80px rgba(20,23,26,.13);overflow:clip;margin:0}
+.v-view{position:relative;height:calc(100% - 44px);overflow:clip;background:var(--card)}
+.v-frame.plain .v-view{height:100%}
+.v-scroll{display:block;width:100%;height:auto}
+.v-board{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+.v-board img{height:auto}
+.v-ese{position:relative;width:100%;height:100%;border-radius:18px;background:linear-gradient(135deg,#1F4E43,#0E2B25);display:flex;align-items:center;justify-content:center;overflow:clip;box-shadow:0 40px 80px rgba(20,23,26,.13)}
+.v-ese:after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(135deg,transparent,transparent 50px,rgba(255,255,255,.035) 50px,rgba(255,255,255,.035) 51px);pointer-events:none}
+.v-ese .chap-wm{font-size:220px}
+.v-ese .chap-quote{left:48px;right:48px;bottom:40px}
+.v-bs{position:absolute;border-radius:16px;border:1px solid rgba(26,26,26,.08);background:#F6F2EA;color:#1A1A1A;box-shadow:0 24px 56px rgba(20,23,26,.1);padding:26px;box-sizing:border-box;overflow:clip}
+.v-bs .bs-lab{margin-bottom:14px}
+.v-bs .bs-swatches{grid-template-columns:repeat(3,1fr);gap:12px}
+.v-bs .bs-sw{height:150px}
+.v-cap{position:absolute;left:clamp(24px,4vw,64px);bottom:clamp(24px,4svh,48px);z-index:3;max-width:400px;background:rgba(245,243,238,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:18px;padding:22px 26px;opacity:0;transform:translateY(14px);pointer-events:none}
+.v-cap.on{pointer-events:auto}
+.v-cap .chap-idx{margin-bottom:10px}
+.v-cap h3{font-weight:800;font-size:24px;letter-spacing:-.03em;line-height:1.05;margin:0 0 4px}
+.v-cap .vtags{font-family:'Instrument Serif',serif;font-style:italic;font-size:17px;color:var(--acc);margin:0 0 12px}
+.v-cap .tlink{font-size:14px}
+.v-hint{position:absolute;right:clamp(24px,4vw,64px);bottom:clamp(24px,4svh,48px);z-index:3;font-weight:500;font-size:11.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--mut);opacity:0;transition:opacity .6s}
+.v-hint.on{opacity:1}
+@media (min-width:961px) and (prefers-reduced-motion:no-preference){
+.voyage{display:block}
+.chapfall{display:none}
+}
 
 .stack{margin-top:clamp(50px,6vw,80px);display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .scard{background:var(--card);border:1px solid var(--line);border-radius:28px;padding:clamp(28px,3vw,44px);box-shadow:0 -12px 44px rgba(20,23,26,.05)}
@@ -191,8 +236,8 @@ img.chap-scroll.ld{opacity:1}
 .scard h3{font-weight:800;font-size:clamp(20px,2vw,28px);letter-spacing:-.025em;line-height:1.08;margin:0 0 12px}
 .scard p{margin:0;color:rgba(20,23,26,.62);font-size:15px;max-width:44ch}
 .dark{background:var(--ink);color:var(--bg);border-radius:36px;margin:0 14px;position:relative;overflow:clip;will-change:transform,border-radius}
-.dark .eyebrow{color:rgba(245,243,238,.4)}.dark .eyebrow:before{background:var(--mint)}
-.dark .mut{color:rgba(245,243,238,.5)}.dark .h2{max-width:16ch}
+.dark .eyebrow{color:rgba(245,243,238,.55)}.dark .eyebrow:before{background:var(--mint)}
+.dark .mut{color:rgba(245,243,238,.6)}.dark .h2{max-width:16ch}
 .dorb{position:absolute;border-radius:50%;filter:blur(120px);pointer-events:none;opacity:.1}
 .dorb1{width:500px;height:500px;background:#1F4E43;top:-120px;right:-100px}
 .dorb2{width:400px;height:400px;background:#2C5E50;bottom:-100px;left:-80px}
@@ -200,7 +245,7 @@ img.chap-scroll.ld{opacity:1}
 .shbox{border:1px solid rgba(245,243,238,.15);border-radius:24px;padding:clamp(30px,3vw,48px);text-align:center}
 .shbig{font-weight:900;font-size:clamp(30px,3.6vw,52px);letter-spacing:-.03em;line-height:1}
 .sharrow{font-size:clamp(30px,4vw,54px);color:var(--mint)}
-.shlab{font-weight:500;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(245,243,238,.4);display:block;margin-bottom:14px}
+.shlab{font-weight:500;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(245,243,238,.55);display:block;margin-bottom:14px}
 .shsub{font-size:15px;color:rgba(245,243,238,.5);margin:10px 0 0}
 .bigstats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(245,243,238,.12);margin-top:clamp(60px,7vw,100px)}
 .bstat{padding:clamp(30px,3vw,48px) clamp(18px,2vw,34px);border-left:1px solid rgba(245,243,238,.12)}
@@ -290,7 +335,6 @@ textarea.fin{min-height:120px;resize:vertical}
 .fx{display:flex}.gap20{gap:20px}
 .flink{color:var(--mut);text-decoration:none;font-size:14px;transition:color .3s}.flink:hover{color:var(--ink)}
 .fcopy{font-size:13px;color:var(--mut);width:100%;margin:12px 0 0}
-.cvland{content-visibility:auto;contain-intrinsic-size:auto 900px}
 @media(max-width:960px){
 .nlinks{display:none}
 .hmeta,.introgrid,.faqw,.kwrap,.about2{grid-template-columns:1fr}
@@ -307,7 +351,7 @@ textarea.fin{min-height:120px;resize:vertical}
 .sharrow{transform:rotate(90deg);text-align:center}
 .hwm{display:none}
 .cur{display:none!important}
-.chap-stage{grid-template-columns:1fr;grid-template-rows:auto 1fr;row-gap:14px;align-items:start;padding-top:86px;padding-bottom:20px}
+.chap-stage{grid-template-columns:1fr;grid-template-rows:auto minmax(0,1fr);row-gap:14px;align-items:start;padding-top:86px;padding-bottom:20px}
 .chap-meta h3{font-size:24px;margin-bottom:4px;display:inline}
 .chap-idx{margin-bottom:8px}
 .chap-tags{display:inline;margin:0 0 0 10px;font-size:16px}
@@ -321,7 +365,7 @@ textarea.fin{min-height:120px;resize:vertical}
 }
 @media(prefers-reduced-motion:reduce){
 .rv,.lr>span{opacity:1;transform:none;transition:none;filter:none;clip-path:none}
-.sdin,.ctain{animation-duration:200s}
+.sdin,.ctain{animation:none}
 .grain{display:none}
 .chap-runway{height:auto!important}
 .chap-stage{position:static;height:auto;min-height:0;padding-top:110px;padding-bottom:40px}
@@ -401,7 +445,7 @@ img.chap-scroll{opacity:1;transition:none}
 .faq details:hover .qa{color:rgba(245,243,238,.6)}
 }
 </style>
-<noscript><style>.loader{display:none}.rv,.lr>span{opacity:1;transform:none}.mw{opacity:1}.chap-runway{height:auto!important}.chap-stage{position:static;height:auto;padding-top:110px;padding-bottom:40px}.chap-frame{height:70svh}img.chap-scroll{opacity:1}.chap-quote{opacity:1;position:relative;left:0;right:0;bottom:0;padding:24px}.chap-wipe{transform:none;position:relative;height:50%}.chap-wipe>.chap-ground{transform:none}</style></noscript>
+<noscript><style>.loader{display:none}.rv,.lr>span{opacity:1;transform:none}.mw{opacity:1}.voyage{display:none!important}.chapfall{display:block!important}.chap-runway{height:auto!important}.chap-stage{position:static;height:auto;padding-top:110px;padding-bottom:40px}.chap-frame{height:70svh}img.chap-scroll{opacity:1}.chap-quote{opacity:1;position:relative;left:0;right:0;bottom:0;padding:24px}.chap-wipe{transform:none;position:relative;height:50%}.chap-wipe>.chap-ground{transform:none}</style></noscript>
 </head>
 <body>
 <svg class="grain" aria-hidden="true" width="100%" height="100%"><filter id="gn"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"></feTurbulence></filter><rect width="100%" height="100%" filter="url(#gn)"></rect></svg>
@@ -421,8 +465,8 @@ img.chap-scroll{opacity:1;transition:none}
 <div class="hmeta rv on" style="transition-delay:1.85s">
 <p class="hsub">Nettside, merkevare og trykk for bedrifter på Jæren — bygget av én designer, uten byråtimer. Du betaler først når du har godkjent utkastet, og du eier alle filene.</p>
 <div class="hkpis">
-<div class="hkpi"><div class="hknum" data-count="14">0</div><div class="hklab">dager til levert</div></div>
-<div class="hkpi"><div class="hknum" data-count="12" data-suffix="k">0</div><div class="hklab">kr — ikke 80k</div></div>
+<div class="hkpi"><div class="hknum" data-count="14">14</div><div class="hklab">dager til levert</div></div>
+<div class="hkpi"><div class="hknum" data-count="12" data-suffix="k">12k</div><div class="hklab">kr — ikke 80k</div></div>
 <div class="hkpi"><div class="hknum">0 kr</div><div class="hklab">før godkjent utkast</div></div>
 </div>
 </div>
@@ -454,8 +498,10 @@ img.chap-scroll{opacity:1;transition:none}
        oppdater tittel/tags/url/lenke. Resten (høyde, fart, koreografi) regnes ut.
      ································································· -->
 
+<div class="showcase" id="arbeid">
+<div class="chapfall">
 <!-- CH1 · Solhuset Bakeri (konsept) -->
-<section class="chap" data-chap="site" id="arbeid" aria-label="Nettside-konsept: Solhuset Bakeri">
+<section class="chap" data-chap="site" aria-label="Nettside-konsept: Solhuset Bakeri">
 <div class="chap-runway"><div class="chap-stage">
 <aside class="chap-meta">
 <span class="chap-idx"><b>01</b> / 08</span>
@@ -498,20 +544,6 @@ img.chap-scroll{opacity:1;transition:none}
 </div></div>
 </section>
 
-<!-- S2 · statement — Problemet -->
-<section class="cwrap" id="problem">
-<div class="sview">
-<p class="eyebrow rv vl">Problemet</p>
-<h2 class="h2"><span class="lr">Å kjøpe design er det billigste løftet en liten bedrift kan gjøre, <em>men…</em></span></h2>
-<div class="stack">
-<div class="scard rv vs"><span class="snum">/01</span><h3>…byråprisene er skrudd for konsern</h3><p>Et mid-tier byrå i Oslo tar rundt 300 000 kr for brand og nettside. Prisen dekker møter, mellomledd og timeføring — ikke bedre design. For en enkeltperson eller småbedrift er det rett og slett uaktuelt.</p></div>
-<div class="scard rv vs" style="transition-delay:.08s"><span class="snum">/02</span><h3>…leveringstiden måles i måneder</h3><p>3–5 måneder fra oppstart til lansering er normalt hos byrå. I mellomtiden taper du kundene som googler deg i dag og finner ingenting — eller verre: finner konkurrenten.</p></div>
-<div class="scard rv vs" style="transition-delay:.16s"><span class="snum">/03</span><h3>…malene ser ut som alle andre</h3><p>Wix og Squarespace funker — hvis du har god tid og et trent øye. Men driver du bedriften 60 timer i uka, ender du med mal #4827: en side som ser ut som alles, og ingen sin.</p></div>
-<div class="scard rv vs" style="transition-delay:.24s"><span class="snum">/04</span><h3>…du eier sjelden det du betaler for</h3><p>Kildefiler, fonter og vektorlogo blir liggende hos leverandøren. Bytter du senere, starter du på null. Det er innlåsing forkledd som service.</p></div>
-</div>
-</div>
-</section>
-
 <!-- CH3 · Verminord logo (levert) -->
 <section class="chap" data-chap="logo" aria-label="Logo: Verminord AS">
 <div class="chap-runway"><div class="chap-stage">
@@ -530,23 +562,6 @@ img.chap-scroll{opacity:1;transition:none}
 </figure>
 </div></div>
 </section>
-
-<!-- S3 · statement (mørk) — Løsningen -->
-<section class="sec" style="padding-top:clamp(60px,8vw,120px)"><div class="dark"><div class="dorb dorb1"></div><div class="dorb dorb2"></div><div class="cwrap" style="padding-top:clamp(80px,10vw,140px);padding-bottom:clamp(80px,10vw,140px);position:relative;z-index:1">
-<p class="eyebrow rv vl">Løsningen</p>
-<h2 class="h2"><span class="lr">Svaret er <em>én designer.</em> Hele kjeden. Fast pris.</span></h2>
-<div class="shift">
-<div class="shbox rv vl"><span class="shlab">Fra</span><div class="shbig">Byrå</div><p class="shsub">Mellomledd, timeføring, 3–5 måneder, ~300 000 kr</p></div>
-<div class="sharrow rv vs" style="transition-delay:.2s">→</div>
-<div class="shbox rv vr" style="transition-delay:.35s;border-color:rgba(158,216,198,.35)"><span class="shlab" style="color:var(--mint)">Til</span><div class="shbig" style="color:var(--mint)">Én designer</div><p class="shsub">Direkte linje, fast pris, 7–14 dager, fra 12 000 kr</p></div>
-</div>
-<div class="bigstats">
-<div class="bstat rv vb"><div class="bnum" data-count="14">0</div><p class="blab">dager fra første prat til lansert nettside og merkevare</p></div>
-<div class="bstat rv vb" style="transition-delay:.1s"><div class="bnum"><span data-count="12">0</span>–<span data-count="25">0</span>k</div><p class="blab">kroner fast totalpris for komplett pakke — brand, web og trykk</p></div>
-<div class="bstat rv vb" style="transition-delay:.2s"><div class="bnum" data-count="2">0</div><p class="blab">runder finpuss inkludert, endringer levert innen 24 timer</p></div>
-<div class="bstat rv vb" style="transition-delay:.3s"><div class="bnum" data-count="30">0</div><p class="blab">dager gratis support etter lansering — bugs, endringer, spørsmål</p></div>
-</div>
-</div></div></section>
 
 <!-- CH4 · Saltkroken Frisør (konsept) -->
 <section class="chap" data-chap="site" aria-label="Nettside-konsept: Saltkroken Frisør">
@@ -594,23 +609,13 @@ img.chap-scroll{opacity:1;transition:none}
 </div></div>
 <div class="bs-row"><p class="bs-lab">Typografi</p><p class="bs-type">Verminord</p><p class="bs-type-sub">IBM Plex Sans · Bold · 0.18–0.22 em tracking · maks to snitt per design</p></div>
 <div class="bs-row" style="border:0"><p class="bs-lab">I bruk</p><div class="bs-apps">
-<div class="bs-card"><img src="/images/showcase/verminord-white.webp" alt="" loading="lazy" decoding="async"><p>MARTIN FOLKESTAD<br>VERMINORD AS · JÆREN<br>ORG.NR. · VERMINORD.NO</p></div>
+<div class="bs-card"><img src="/images/showcase/verminord-white.webp" alt="" loading="lazy" decoding="async"><p>MARTIN FOLKESTAD<br>VERMINORD AS · JÆREN<br>VERMINORD.NO</p></div>
 <div class="bs-label"><img src="/images/showcase/verminord-dark.webp" alt="" loading="lazy" decoding="async"><p>ETIKETT · SUBSTRAT 5 KG<br>BATCH 24-117 · KLEPP</p></div>
 </div></div>
 </div>
 </div>
 </figure>
 </div></div>
-</section>
-
-<!-- S4 · statement — Manifest -->
-<section class="mani" id="manifest">
-<div class="cwrap maniin">
-<div>
-<p class="eyebrow rv vl" style="margin-bottom:8px">Manifest</p>
-<p class="mtext" id="mani"><span class="mw">En</span> <span class="mw">liten</span> <span class="mw">bedrift</span> <span class="mw">på</span> <span class="mw">Jæren</span> <span class="mw">fortjener</span> <span class="mw">å</span> <span class="mw">se</span> <span class="mw">like</span> <span class="mw">solid</span> <span class="mw">ut</span> <span class="mw">som</span> <span class="mw">et</span> <span class="mw">konsern</span> <span class="mw">i</span> <span class="mw">Oslo.</span> <span class="mw">Ikke</span> <span class="mw">om</span> <span class="mw">tre</span> <span class="mw">måneder</span> <span class="mw">—</span> <span class="mw macc serif">om</span> <span class="mw macc serif">fjorten</span> <span class="mw macc serif">dager.</span></p>
-</div>
-</div>
 </section>
 
 <!-- CH6 · Søregga Auto (konsept) -->
@@ -678,6 +683,143 @@ img.chap-scroll{opacity:1;transition:none}
 </div></div>
 </section>
 
+
+</div>
+<!-- VOYAGE · kamera-på-lerret (desktop + motion). Innholdet speiler .chapfall-kapitlene. -->
+<section class="voyage" aria-label="Utvalgt arbeid — kamerareise over lerretet" data-ov-title="Alt arbeidet. Ett studio." data-ov-tags="Nettsider · Logo · Merkevare">
+<div class="v-runway"><div class="v-stage">
+<div class="v-canvas" id="vcanvas">
+
+<article class="v-item v-stop" style="left:410px;top:470px;width:1180px;height:760px" data-dwell="1.15" data-idx="01" data-title="Solhuset Bakeri" data-tags="Nettside · Konsept" data-href="/eksempel/onepager/" data-link="Åpne demoen ↗">
+<span class="v-lab" aria-hidden="true"><b>01</b> · Solhuset Bakeri — Nettside · Konsept</span>
+<figure class="v-frame">
+<div class="chap-bar" aria-hidden="true"><span class="chap-dots"><i></i><i></i><i></i></span><span class="chap-url">folkestad.design/eksempel/onepager</span><span class="chap-innerbar"></span></div>
+<div class="v-view"><img class="v-scroll" src="/images/showcase/solhuset-1440.webp" width="2160" height="5952" alt="Nettside-konsept for Solhuset Bakeri — hele siden fra topp til bunn" loading="eager" decoding="async"></div>
+</figure>
+</article>
+
+<article class="v-item v-stop" style="left:2260px;top:1270px;width:1180px;height:760px" data-dwell="1.15" data-idx="02" data-title="Vindfanget Bistro" data-tags="Nettside · Konsept" data-href="/eksempel/bistro/" data-link="Åpne demoen ↗">
+<span class="v-lab" aria-hidden="true"><b>02</b> · Vindfanget Bistro — Nettside · Konsept</span>
+<figure class="v-frame">
+<div class="chap-bar" aria-hidden="true"><span class="chap-dots"><i></i><i></i><i></i></span><span class="chap-url">folkestad.design/eksempel/bistro</span><span class="chap-innerbar"></span></div>
+<div class="v-view"><img class="v-scroll" src="/images/showcase/vindfanget-1440.webp" width="2160" height="8795" alt="Nettside-konsept for Vindfanget Bistro og Vinbar — hele siden fra topp til bunn" loading="lazy" decoding="async"></div>
+</figure>
+</article>
+
+<article class="v-item v-stop" style="left:4110px;top:570px;width:1180px;height:760px" data-dwell="0.9" data-idx="03" data-title="Verminord" data-tags="Logo · Levert 2024" data-href="/case/verminord" data-link="Les caset ↗">
+<span class="v-lab" aria-hidden="true"><b>03</b> · Verminord — Logo · Levert 2024</span>
+<figure class="v-frame plain">
+<div class="v-view">
+<div class="chap-ground" style="background:#1C3A5C"><img src="/images/showcase/verminord-white.webp" width="1280" height="853" alt="Verminord-logo, hvit på marineblå" loading="lazy" decoding="async"><span class="glab" style="color:rgba(246,242,234,.6)">Primær · på navy</span></div>
+<div class="chap-wipe"><div class="chap-ground" style="background:#F6F2EA"><img src="/images/showcase/verminord-dark.webp" width="1280" height="853" alt="Verminord-logo, mørk på cream" loading="lazy" decoding="async"><span class="glab" style="color:#5A6270">Sekundær · på cream</span></div></div>
+</div>
+</figure>
+</article>
+
+<article class="v-item v-stop" style="left:5710px;top:1370px;width:1180px;height:760px" data-dwell="1.15" data-idx="04" data-title="Saltkroken Frisør" data-tags="Nettside · Konsept" data-href="/eksempel/frisor/" data-link="Åpne demoen ↗">
+<span class="v-lab" aria-hidden="true"><b>04</b> · Saltkroken Frisør — Nettside · Konsept</span>
+<figure class="v-frame">
+<div class="chap-bar" aria-hidden="true"><span class="chap-dots"><i></i><i></i><i></i></span><span class="chap-url">folkestad.design/eksempel/frisor</span><span class="chap-innerbar"></span></div>
+<div class="v-view"><img class="v-scroll" src="/images/showcase/saltkroken-1440.webp" width="2160" height="6173" alt="Nettside-konsept for Saltkroken Frisør — hele siden fra topp til bunn" loading="lazy" decoding="async"></div>
+</figure>
+</article>
+
+<div class="v-item v-stop" style="left:5380px;top:2960px;width:1530px;height:990px" data-dwell="0.75" data-idx="05" data-title="Verminord AS" data-tags="Merkevaresystem · Levert 2024" data-href="/case/verminord" data-link="Les caset ↗">
+<span class="v-lab" aria-hidden="true"><b>05</b> · Verminord AS — Merkevaresystem · Levert 2024</span>
+<div class="v-bs" style="left:0;top:0;width:900px;height:540px">
+<p class="bs-lab">Fargesystem — maks tre per flate</p>
+<div class="bs-swatches">
+<div class="bs-sw" style="background:#1C3A5C"><span style="color:rgba(246,242,234,.8)">Navy #1C3A5C</span></div>
+<div class="bs-sw" style="background:#B8993A"><span style="color:#1A1A1A">Gull #B8993A</span></div>
+<div class="bs-sw" style="background:#F6F2EA"><span style="color:#5A6270">Cream #F6F2EA</span></div>
+<div class="bs-sw" style="background:#E8E2D5"><span style="color:#5A6270">Sand #E8E2D5</span></div>
+<div class="bs-sw" style="background:#5A6270"><span style="color:rgba(246,242,234,.85)">Grå #5A6270</span></div>
+<div class="bs-sw" style="background:#1A1A1A"><span style="color:rgba(246,242,234,.8)">Ink #1A1A1A</span></div>
+</div>
+</div>
+<div class="v-bs" style="left:950px;top:0;width:580px;height:400px">
+<p class="bs-lab">Typografi</p><p class="bs-type">Verminord</p><p class="bs-type-sub">IBM Plex Sans · Bold · 0.18–0.22 em tracking · maks to snitt per design</p>
+</div>
+<div class="v-bs" style="left:70px;top:590px;width:640px;height:400px;background:#1C3A5C;border:0;display:flex;flex-direction:column;justify-content:space-between">
+<img src="/images/showcase/verminord-white.webp" width="1280" height="853" alt="" style="width:52%" loading="lazy" decoding="async"><p style="margin:0;color:rgba(246,242,234,.75);font-size:13px;letter-spacing:.08em;line-height:1.7">MARTIN FOLKESTAD<br>VERMINORD AS · JÆREN<br>VERMINORD.NO</p>
+</div>
+<div class="v-bs" style="left:790px;top:520px;width:560px;height:400px;background:#E8E2D5;display:flex;flex-direction:column;justify-content:space-between">
+<img src="/images/showcase/verminord-dark.webp" width="1280" height="853" alt="" style="width:52%" loading="lazy" decoding="async"><p style="margin:0;color:#5A6270;font-size:13px;letter-spacing:.08em;line-height:1.7">ETIKETT · SUBSTRAT 5 KG<br>BATCH 24-117 · KLEPP</p>
+</div>
+</div>
+
+<article class="v-item v-stop" style="left:3910px;top:3670px;width:1180px;height:760px" data-dwell="1.15" data-idx="06" data-title="Søregga Auto" data-tags="Nettside · Konsept" data-href="/eksempel/bilverksted/" data-link="Åpne demoen ↗">
+<span class="v-lab" aria-hidden="true"><b>06</b> · Søregga Auto — Nettside · Konsept</span>
+<figure class="v-frame">
+<div class="chap-bar" aria-hidden="true"><span class="chap-dots"><i></i><i></i><i></i></span><span class="chap-url">folkestad.design/eksempel/bilverksted</span><span class="chap-innerbar"></span></div>
+<div class="v-view"><img class="v-scroll" src="/images/showcase/soregga-1440.webp" width="2160" height="5627" alt="Nettside-konsept for Søregga Auto — hele siden fra topp til bunn" loading="lazy" decoding="async"></div>
+</figure>
+</article>
+
+<article class="v-item v-stop" style="left:2060px;top:2970px;width:1180px;height:760px" data-dwell="1.15" data-idx="07" data-title="Strandhus Bygg" data-tags="Nettside · Konsept · 5 sider" data-href="/eksempel/femsider/" data-link="Åpne demoen ↗">
+<span class="v-lab" aria-hidden="true"><b>07</b> · Strandhus Bygg — Nettside · Konsept · 5 sider</span>
+<figure class="v-frame">
+<div class="chap-bar" aria-hidden="true"><span class="chap-dots"><i></i><i></i><i></i></span><span class="chap-url">folkestad.design/eksempel/femsider</span><span class="chap-innerbar"></span></div>
+<div class="v-view"><img class="v-scroll" src="/images/showcase/strandhus-1440.webp" width="2160" height="5340" alt="Nettside-konsept for Strandhus Bygg — hele siden fra topp til bunn" loading="lazy" decoding="async"></div>
+</figure>
+</article>
+
+<article class="v-item v-stop" style="left:360px;top:3620px;width:1180px;height:760px" data-dwell="1" data-idx="08" data-title="ESE Solution Norway" data-tags="Nettside · Levert 2025" data-href="/case/ese-solution" data-link="Les caset ↗">
+<span class="v-lab" aria-hidden="true"><b>08</b> · ESE Solution Norway — Nettside · Levert 2025</span>
+<div class="v-ese">
+<span class="chap-wm" aria-hidden="true">ESE</span>
+<div class="chap-quote"><p class="aq">«Opplevelsen var friksjonsfri, kommunikasjonen presis, og resultatet er noe teamet vårt er stolt av å vise frem. Utmerket verdi og gjennomføring.»</p><p class="asig">SF — Svein Folkestad · ESE Solution Norway</p></div>
+</div>
+</article>
+
+</div>
+<div class="v-cap" id="vcap"></div>
+<div class="v-hint" id="vhint" aria-hidden="true">Scroll — utforsk lerretet</div>
+</div></div>
+</section>
+</div>
+
+<!-- Problemet -->
+<section class="cwrap" id="problem">
+<div class="sview">
+<p class="eyebrow rv vl">Problemet</p>
+<h2 class="h2"><span class="lr">Å kjøpe design er det billigste løftet en liten bedrift kan gjøre, <em>men…</em></span></h2>
+<div class="stack">
+<div class="scard rv vs"><span class="snum">/01</span><h3>…byråprisene er skrudd for konsern</h3><p>Et mid-tier byrå i Oslo tar rundt 300 000 kr for brand og nettside. Prisen dekker møter, mellomledd og timeføring — ikke bedre design. For en enkeltperson eller småbedrift er det rett og slett uaktuelt.</p></div>
+<div class="scard rv vs" style="transition-delay:.08s"><span class="snum">/02</span><h3>…leveringstiden måles i måneder</h3><p>3–5 måneder fra oppstart til lansering er normalt hos byrå. I mellomtiden taper du kundene som googler deg i dag og finner ingenting — eller verre: finner konkurrenten.</p></div>
+<div class="scard rv vs" style="transition-delay:.16s"><span class="snum">/03</span><h3>…malene ser ut som alle andre</h3><p>Wix og Squarespace funker — hvis du har god tid og et trent øye. Men driver du bedriften 60 timer i uka, ender du med mal #4827: en side som ser ut som alles, og ingen sin.</p></div>
+<div class="scard rv vs" style="transition-delay:.24s"><span class="snum">/04</span><h3>…du eier sjelden det du betaler for</h3><p>Kildefiler, fonter og vektorlogo blir liggende hos leverandøren. Bytter du senere, starter du på null. Det er innlåsing forkledd som service.</p></div>
+</div>
+</div>
+</section>
+
+<!-- Løsningen -->
+<section class="sec" style="padding-top:clamp(60px,8vw,120px)"><div class="dark"><div class="dorb dorb1"></div><div class="dorb dorb2"></div><div class="cwrap" style="padding-top:clamp(80px,10vw,140px);padding-bottom:clamp(80px,10vw,140px);position:relative;z-index:1">
+<p class="eyebrow rv vl">Løsningen</p>
+<h2 class="h2"><span class="lr">Svaret er <em>én designer.</em> Hele kjeden. Fast pris.</span></h2>
+<div class="shift">
+<div class="shbox rv vl"><span class="shlab">Fra</span><div class="shbig">Byrå</div><p class="shsub">Mellomledd, timeføring, 3–5 måneder, ~300 000 kr</p></div>
+<div class="sharrow rv vs" style="transition-delay:.2s">→</div>
+<div class="shbox rv vr" style="transition-delay:.35s;border-color:rgba(158,216,198,.35)"><span class="shlab" style="color:var(--mint)">Til</span><div class="shbig" style="color:var(--mint)">Én designer</div><p class="shsub">Direkte linje, fast pris, 7–14 dager, fra 12 000 kr</p></div>
+</div>
+<div class="bigstats">
+<div class="bstat rv vb"><div class="bnum" data-count="14">14</div><p class="blab">dager fra første prat til lansert nettside og merkevare</p></div>
+<div class="bstat rv vb" style="transition-delay:.1s"><div class="bnum"><span data-count="12">12</span>–<span data-count="25">25</span>k</div><p class="blab">kroner fast totalpris for komplett pakke — brand, web og trykk</p></div>
+<div class="bstat rv vb" style="transition-delay:.2s"><div class="bnum" data-count="2">2</div><p class="blab">runder finpuss inkludert, endringer levert innen 24 timer</p></div>
+<div class="bstat rv vb" style="transition-delay:.3s"><div class="bnum" data-count="30">30</div><p class="blab">dager gratis support etter lansering — bugs, endringer, spørsmål</p></div>
+</div>
+</div></div></section>
+
+<!-- S4 · statement — Manifest -->
+<section class="mani" id="manifest">
+<div class="cwrap maniin">
+<div>
+<p class="eyebrow rv vl" style="margin-bottom:8px">Manifest</p>
+<p class="mtext" id="mani"><span class="mw">En</span> <span class="mw">liten</span> <span class="mw">bedrift</span> <span class="mw">på</span> <span class="mw">Jæren</span> <span class="mw">fortjener</span> <span class="mw">å</span> <span class="mw">se</span> <span class="mw">like</span> <span class="mw">solid</span> <span class="mw">ut</span> <span class="mw">som</span> <span class="mw">et</span> <span class="mw">konsern</span> <span class="mw">i</span> <span class="mw">Oslo.</span> <span class="mw">Ikke</span> <span class="mw">om</span> <span class="mw">tre</span> <span class="mw">måneder</span> <span class="mw">—</span> <span class="mw macc serif">om</span> <span class="mw macc serif">fjorten</span> <span class="mw macc serif">dager.</span></p>
+</div>
+</div>
+</section>
+
 <!-- LANDING ZONE — rolig, statisk, konverterende -->
 <section class="sec cwrap" id="tjenester">
 <p class="eyebrow rv vl">Tjenester</p>
@@ -710,7 +852,7 @@ img.chap-scroll{opacity:1;transition:none}
 <div class="pcard rv vs" style="transition-delay:.24s"><span class="ptier">Pakke 03 — Tilpasset</span><h3>Tilpasset</h3><div class="pprice">Kontakt</div><ul class="pinc"><li>Bygd for din situasjon</li><li>E-handel, booking, integrasjoner</li><li>Compliance-dokumentasjon</li><li>Full kreativ retning</li><li>Tidslinje etter avtale</li></ul><a class="pill pbtn" href="#kontakt">Ta kontakt</a></div>
 </div>
 </section>
-<section class="sec cwrap cvland" style="padding-top:0">
+<section class="sec cwrap" style="padding-top:0">
 <p class="eyebrow rv vl">Hvorfor meg</p>
 <h2 class="h2"><span class="lr">Risikoen er <em>min,</em> ikke din</span></h2>
 <div class="why">
@@ -719,7 +861,7 @@ img.chap-scroll{opacity:1;transition:none}
 <div class="wcol rv vw" style="transition-delay:.24s"><h3>Du eier alt</h3><p>Vektor, fonter, PSD, InDesign — alle kildefiler overleveres ved lansering. Du står helt fritt til å bytte leverandør senere uten å miste noe.</p></div>
 </div>
 </section>
-<section class="sec cwrap cvland" style="padding-top:0">
+<section class="sec cwrap" style="padding-top:0">
 <p class="eyebrow rv vl">Historien</p>
 <h2 class="h2"><span class="lr">Det startet med en mappe <em>Word-dokumenter</em></span></h2>
 <div class="about2">
@@ -748,13 +890,13 @@ img.chap-scroll{opacity:1;transition:none}
 <p class="mut" style="margin-top:0;max-width:52ch">Fortell kort om bedriften din — Martin svarer personlig innen samme dag. Første samtale er alltid gratis: ingen salgspresentasjon, bare en prat.</p>
 <form class="form" id="kform" novalidate>
 <input class="fin" name="navn" placeholder="Navn" aria-label="Navn" required autocomplete="name">
-<input class="fin" name="kontakt" placeholder="Telefon eller e-post" aria-label="Telefon eller e-post" required autocomplete="email">
+<input class="fin" name="kontakt" placeholder="Telefon eller e-post" aria-label="Telefon eller e-post" required>
 <textarea class="fin" name="melding" placeholder="Hva trenger du?" aria-label="Hva trenger du?"></textarea>
 <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
 <button class="fbtn" type="submit">Send melding →</button>
 <p class="ferr" id="ferr" role="alert">Kunne ikke sende akkurat nå — <a class="tlink" id="ferrmail" href="mailto:hei@folkestad.design">send e-post direkte</a>, så svarer Martin like raskt.</p>
 </form>
-<div class="sent" id="ksent" hidden>✓ Takk! Martin svarer deg personlig innen samme dag.</div>
+<div class="sent" id="ksent" role="status" tabindex="-1" hidden>✓ Takk! Martin svarer deg personlig innen samme dag.</div>
 </div>
 <div class="klist rv" style="transition-delay:.15s">
 <div class="krow"><span class="klab">E-post</span><span class="kval"><a href="mailto:hei@folkestad.design">hei@folkestad.design</a></span></div>
@@ -834,17 +976,20 @@ if(form){
     e.preventDefault();
     var btn=form.querySelector('.fbtn'),err=document.getElementById('ferr');
     var navn=(form.navn.value||'').trim(),kontakt=(form.kontakt.value||'').trim(),melding=(form.melding.value||'').trim();
-    if(!navn||!kontakt){err.classList.remove('show');(navn?form.kontakt:form.navn).focus();return}
+    if(!navn||!kontakt){
+      err.textContent='Fyll inn navn og telefon eller e-post, så svarer Martin i dag.';
+      err.classList.add('show');(navn?form.kontakt:form.navn).focus();return
+    }
     btn.disabled=true;btn.textContent='Sender…';err.classList.remove('show');
     var fd=new FormData(form);
     fd.append('_subject','Ny henvendelse fra folkestad.design');
     fd.append('_template','table');fd.append('_captcha','false');
     fetch('https://formsubmit.co/ajax/hei@folkestad.design',{method:'POST',headers:{'Accept':'application/json'},body:fd})
       .then(function(r){if(!r.ok)throw 0;return r.json()})
-      .then(function(){form.hidden=true;var s=document.getElementById('ksent');s.hidden=false;s.focus&&s.setAttribute('tabindex','-1')})
+      .then(function(){form.hidden=true;var s=document.getElementById('ksent');s.hidden=false;s.focus()})
       .catch(function(){
-        var m=document.getElementById('ferrmail');
-        m.href='mailto:hei@folkestad.design?subject='+encodeURIComponent('Henvendelse fra '+navn)+'&body='+encodeURIComponent(melding+'\n\n'+navn+'\n'+kontakt);
+        var mailto='mailto:hei@folkestad.design?subject='+encodeURIComponent('Henvendelse fra '+navn)+'&body='+encodeURIComponent(melding+'\n\n'+navn+'\n'+kontakt);
+        err.innerHTML='Kunne ikke sende akkurat nå — <a class="tlink" href="'+mailto+'">send e-post direkte</a>, så svarer Martin like raskt.';
         err.classList.add('show');btn.disabled=false;btn.textContent='Send melding →';
       });
   });
@@ -862,7 +1007,7 @@ if(!reduced&&window.matchMedia('(pointer:fine)').matches){
 }
 
 /* ---------- egen markør ---------- */
-if(window.matchMedia('(pointer:fine) and (min-width:961px)').matches){
+if(!reduced&&window.matchMedia('(pointer:fine) and (min-width:961px)').matches){
   var cur=document.getElementById('cur');
   if(cur){
     var cx=-100,cy=-100,tx=-100,ty=-100;
@@ -948,10 +1093,83 @@ function buildRail(){
 }
 function markLoaded(){
   document.querySelectorAll('img.chap-scroll').forEach(function(img){
-    var done=function(){img.classList.add('ld');geometry()};
+    var done=function(){img.classList.add('ld');allGeom()};
     if(img.complete&&img.naturalWidth)img.classList.add('ld');
     img.addEventListener('load',done);
   });
+}
+
+/* ---------- VOYAGE: kamera-på-lerret ----------
+   Lerretet er 7400x5000. Kameraet er (cx, cy, logS), påført som
+   translate3d+scale med origin 0 0. Tidslinjen er faser: dwell
+   (landet på et stopp; nettsteder ruller internt) og flight (zoom
+   ut -> pan -> zoom inn, med dipp i log-skala så hele lerretet
+   åpner seg mellom stoppene). Alt måles i vGeom(); rAF-loopen
+   leser ingen layout. */
+var CW=7400,CH=5000;
+var voy=(function(){
+  var sec=document.querySelector('.voyage');
+  if(!sec)return null;
+  return {
+    sec:sec,runway:sec.querySelector('.v-runway'),stage:sec.querySelector('.v-stage'),
+    canvas:document.getElementById('vcanvas'),
+    cap:document.getElementById('vcap'),hint:document.getElementById('vhint'),
+    stops:[].slice.call(sec.querySelectorAll('.v-stop')).map(function(el){
+      return {el:el,img:el.querySelector('.v-scroll'),view:el.querySelector('.v-view'),
+        wipe:el.querySelector('.chap-wipe'),wm:el.querySelector('.chap-wm'),
+        quote:el.querySelector('.chap-quote'),bar:el.querySelector('.chap-innerbar'),
+        dwell:parseFloat(el.dataset.dwell)||1,cam:null,S:0,dw:0,dwPhase:0};
+    }),
+    phases:[],total:0,top:0,vh:0,on:false,
+    cx:0,cy:0,ls:0,capIdx:-2,fresh:true,railOn:false
+  };
+})();
+function vGeom(){
+  if(!voy)return;
+  if(!voy.stage.offsetParent){voy.on=false;return}
+  voy.on=true;
+  var vw=window.innerWidth,vh=voy.stage.offsetHeight||window.innerHeight;
+  voy.vh=vh;
+  voy.stops.forEach(function(s){
+    var x=s.el.offsetLeft,y=s.el.offsetTop,w=s.el.offsetWidth,hh=s.el.offsetHeight;
+    s.cam={cx:x+w/2,cy:y+hh/2,s:Math.min(0.92*vw/w,0.84*vh/hh,1.15)};
+    if(s.img){
+      var iw=+s.img.getAttribute('width')||1,ih=+s.img.getAttribute('height')||1;
+      var viewW=s.view?s.view.offsetWidth:1180,viewH=s.view?s.view.offsetHeight:716;
+      s.S=Math.max(0,Math.min(viewW*ih/iw-viewH,viewH*2.3));
+    }
+  });
+  voy.ov={cx:CW/2,cy:CH/2,s:Math.min(vw/CW,vh/CH)*0.88};
+  var ph=[];
+  voy.stops.forEach(function(s,i){
+    s.dwPhase=ph.length;
+    ph.push({t:'d',i:i,len:s.dwell*vh});
+    if(i<voy.stops.length-1)ph.push({t:'f',a:i,b:i+1,len:1.05*vh});
+  });
+  ph.push({t:'f',a:voy.stops.length-1,b:-1,len:0.95*vh});
+  ph.push({t:'d',i:-1,len:0.7*vh});
+  var acc=0;ph.forEach(function(p){p.start=acc;acc+=p.len});
+  voy.phases=ph;voy.total=acc;
+  voy.runway.style.height=Math.round(vh+acc)+'px';
+  voy.top=voy.runway.getBoundingClientRect().top+window.scrollY;
+}
+function allGeom(){geometry();vGeom()}
+function vCam(i){return i===-1?voy.ov:voy.stops[i].cam}
+function vSmooth(u){return u*u*u*(u*(u*6-15)+10)}
+function vPrep(i){
+  if(!voy||i<0||i>=voy.stops.length)return;
+  voy.stops[i].el.querySelectorAll('img').forEach(function(im){
+    if(!im.complete){im.loading='eager';if(im.decode)im.decode().catch(function(){})}
+  });
+}
+function vCapSet(i){
+  if(i===voy.capIdx)return;voy.capIdx=i;
+  var d;
+  if(i===-1)d={idx:'',title:voy.sec.dataset.ovTitle,tags:voy.sec.dataset.ovTags,href:'#tjenester',link:'Se hva jeg kan gjøre for deg →'};
+  else{var el=voy.stops[i].el;d={idx:el.dataset.idx,title:el.dataset.title,tags:el.dataset.tags,href:el.dataset.href,link:el.dataset.link}}
+  voy.cap.innerHTML=(d.idx?'<span class="chap-idx"><b>'+d.idx+'</b> / 08</span>':'')+
+    '<h3>'+d.title+'</h3><p class="vtags">'+d.tags+'</p>'+
+    '<a class="tlink" href="'+d.href+'"'+(d.href.charAt(0)==='#'?'':' target="_blank" rel="noopener"')+'>'+d.link+'</a>';
 }
 
 /* ---------- master rAF loop ---------- */
@@ -1023,7 +1241,11 @@ function startFx(){
       var pin=y-c.top;
       var scrub=clamp01(pin/c.scrubLen);
       var exit=c.exitLen?clamp01((pin-c.scrubLen)/c.exitLen):0;
-      if(!c.live){c.live=true;c.el.classList.add('live');c.en=enter;c.sc=scrub;c.ex=exit}
+      if(!c.live){
+        c.live=true;c.el.classList.add('live');c.en=enter;c.sc=scrub;c.ex=exit;
+        var nx=chaps[i+1];
+        if(nx&&nx.scroll&&nx.scroll.tagName==='IMG'&&!nx.scroll.complete){nx.scroll.loading='eager';if(nx.scroll.decode)nx.scroll.decode().catch(function(){})}
+      }
       c.en+=(enter-c.en)*0.22;
       c.sc+=(scrub-c.sc)*0.14;
       c.ex+=(exit-c.ex)*0.22;
@@ -1051,6 +1273,65 @@ function startFx(){
       if(c.bar)c.bar.style.transform='scaleX('+c.sc.toFixed(4)+')';
       if(y>=c.top-c.vh*0.4&&y<c.top+c.h-c.vh*0.4){anyLive=true;if(activeIdx<0)activeIdx=i}
     }
+    // 9. VOYAGE kamera
+    if(voy&&voy.on&&voy.total){
+      var vin=y>voy.top-vh&&y<voy.top+voy.total+vh;
+      if(vin){
+        var pin2=Math.max(0,Math.min(voy.total,y-voy.top));
+        var vph=voy.phases,cur=vph[0];
+        for(var pi=0;pi<vph.length;pi++){if(pin2>=vph[pi].start)cur=vph[pi]}
+        var vu=clamp01((pin2-cur.start)/(cur.len||1));
+        var tcx,tcy,tls;
+        if(cur.t==='d'){
+          var cm=vCam(cur.i);tcx=cm.cx;tcy=cm.cy;tls=Math.log(cm.s);
+          if(cur.i>=0)vPrep(cur.i+1);
+        }else{
+          var A=vCam(cur.a),B=vCam(cur.b),ue=vSmooth(vu);
+          tls=Math.log(A.s)+(Math.log(B.s)-Math.log(A.s))*ue;
+          if(cur.b!==-1){
+            var dip=Math.min(0,Math.log(voy.ov.s*1.45)-(Math.log(A.s)+Math.log(B.s))/2);
+            tls+=dip*Math.sin(Math.PI*ue);
+          }
+          tcx=A.cx+(B.cx-A.cx)*ue;tcy=A.cy+(B.cy-A.cy)*ue;
+          if(cur.b>=0)vPrep(cur.b);
+        }
+        if(voy.fresh){voy.cx=tcx;voy.cy=tcy;voy.ls=tls;voy.fresh=false}
+        voy.cx+=(tcx-voy.cx)*0.1;voy.cy+=(tcy-voy.cy)*0.1;voy.ls+=(tls-voy.ls)*0.1;
+        var vsc=Math.exp(voy.ls);
+        voy.canvas.style.transform='translate3d('+(window.innerWidth/2-vsc*voy.cx).toFixed(2)+'px,'+(voy.vh/2-vsc*voy.cy+38).toFixed(2)+'px,0) scale('+vsc.toFixed(5)+')';
+        var curPh=vph.indexOf(cur);
+        voy.stops.forEach(function(sp){
+          var tgt=curPh>sp.dwPhase?1:(curPh<sp.dwPhase?0:vu);
+          sp.dw+=(tgt-sp.dw)*0.16;
+          if(sp.img)sp.img.style.transform='translate3d(0,'+(-(sp.dw*sp.S)).toFixed(1)+'px,0)';
+          if(sp.wipe){
+            sp.wipe.style.transform='translate3d(0,'+((1-sp.dw)*100).toFixed(2)+'%,0)';
+            sp.wipe.firstElementChild.style.transform='translate3d(0,'+(-(1-sp.dw)*100).toFixed(2)+'%,0)';
+          }
+          if(sp.wm)sp.wm.style.transform='translate3d(0,'+((0.5-sp.dw)*90).toFixed(1)+'px,0)';
+          if(sp.quote){
+            var qo=clamp01((sp.dw-0.25)/0.5);
+            sp.quote.style.opacity=qo.toFixed(3);
+            sp.quote.style.transform='translate3d(0,'+((1-qo)*26).toFixed(1)+'px,0)';
+          }
+          if(sp.bar)sp.bar.style.transform='scaleX('+sp.dw.toFixed(4)+')';
+        });
+        if(cur.t==='d')vCapSet(cur.i);
+        var capVis=cur.t==='d'?Math.min(clamp01(vu/0.12),clamp01((1-vu)/0.12)):0;
+        if(cur.t==='d'&&cur.i===-1)capVis=clamp01(vu/0.25);
+        voy.cap.style.opacity=capVis.toFixed(3);
+        voy.cap.style.transform='translate3d(0,'+((1-capVis)*14).toFixed(1)+'px,0)';
+        voy.cap.classList.toggle('on',capVis>0.5);
+        if(voy.hint)voy.hint.classList.toggle('on',pin2<vph[0].len*0.8);
+        anyLive=true;
+        activeIdx=cur.t==='d'?cur.i:cur.a;
+        if(activeIdx<0)activeIdx=voy.stops.length-1;
+      }else{
+        voy.fresh=true;
+        if(voy.cap.classList.contains('on')){voy.cap.classList.remove('on');voy.cap.style.opacity='0'}
+        if(voy.hint)voy.hint.classList.remove('on');
+      }
+    }
     if(rail){
       if(anyLive!==railOn){railOn=anyLive;rail.classList.toggle('show',anyLive)}
       for(var t=0;t<ticks.length;t++)ticks[t].classList.toggle('on',t===activeIdx);
@@ -1064,12 +1345,12 @@ buildChaps();
 if(!reduced){
   buildRail();
   markLoaded();
-  geometry();
+  allGeom();
   var rsT;
-  window.addEventListener('resize',function(){clearTimeout(rsT);rsT=setTimeout(geometry,150)});
-  window.addEventListener('orientationchange',function(){setTimeout(geometry,300)});
-  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(geometry);
-  window.addEventListener('load',geometry);
+  window.addEventListener('resize',function(){clearTimeout(rsT);rsT=setTimeout(allGeom,150)});
+  window.addEventListener('orientationchange',function(){setTimeout(allGeom,300)});
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(allGeom);
+  window.addEventListener('load',allGeom);
   startFx();
 }else{
   document.querySelectorAll('.mw').forEach(function(w){w.classList.add('lit')});
