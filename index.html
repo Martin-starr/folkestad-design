@@ -199,7 +199,13 @@ html{scroll-behavior:smooth}body{margin:0;background:#F5F3EE/* = --bg (utenfor .
 .pill.inv{background:var(--bg);color:var(--ink)}.pill.inv:hover{background:var(--white)}
 .hero{min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:clip;padding-top:clamp(120px,18vh,180px);box-sizing:border-box}
 .hbg{position:absolute;inset:0;background:radial-gradient(ellipse 90% 70% at 75% 25%,rgba(31,78,67,.05),transparent 70%);z-index:0}
-.hwm{position:absolute;right:-4vw;top:42%;transform:translateY(-50%);font-family:'Instrument Serif',serif;font-style:italic;font-size:clamp(300px,52vw,750px);color:var(--ink);opacity:.025;line-height:.75;pointer-events:none;z-index:0;user-select:none}
+.hproof{display:none;position:absolute;right:clamp(24px,5vw,100px);top:22%;z-index:1;width:clamp(280px,23vw,370px);aspect-ratio:1.15;pointer-events:none}
+@media(min-width:1200px){.hproof{display:block}.hero .h1{font-size:clamp(80px,6.9vw,112px);padding-right:clamp(300px,26vw,380px)}}
+.hpcard{position:absolute;border-radius:12px;overflow:hidden;background:var(--acc-deep);box-shadow:0 32px 80px rgba(20,23,26,.28);border:1px solid var(--line)}
+.hpcard img{display:block;width:100%;height:auto}
+.hp1{width:84%;left:0;top:10%;transform:rotate(-4deg)}
+.hp1 .bbar{background:var(--acc-deep)}
+.hp2{width:33%;right:0;top:0;transform:rotate(3deg);border-radius:16px}
 .hin{position:relative;z-index:2}
 .h1{font-weight:900;font-size:clamp(58px,11.5vw,176px);line-height:.9;letter-spacing:-.05em;margin:0 0 clamp(32px,4.5vw,60px)}
 .hmeta{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;border-top:1px solid var(--line);padding:28px 0 0}
@@ -339,7 +345,7 @@ textarea.fin{min-height:120px;resize:vertical}
 .footin{display:flex;justify-content:space-between;align-items:end;flex-wrap:wrap;gap:24px}
 .flink{color:var(--mut);text-decoration:none;font-size:14px;transition:color .3s}.flink:hover{color:var(--ink)}
 .fcopy{font-size:13px;color:var(--mut);width:100%;margin:12px 0 0}
-@media(max-width:960px){.nlinks{display:none}.hmeta,.cgrid,.kstrip,.faqw,.kwrap,.about2{grid-template-columns:1fr}.hkpis{justify-content:flex-start}.hkpi{text-align:left}.scard{grid-template-columns:1fr;gap:14px}.why{grid-template-columns:1fr}.bigstats{grid-template-columns:1fr 1fr}.bstat{padding-left:0;border-left:0;border-top:1px solid rgba(245,243,238,.12)}.svcrow{grid-template-columns:1fr;gap:10px}.pgrid{grid-template-columns:1fr}.pstep{grid-template-columns:1fr;gap:8px}.svcp{text-align:left}.shift{grid-template-columns:1fr}.sharrow{transform:rotate(90deg);text-align:center}.ccard:nth-child(2){margin-top:0}.hwm{display:none}.cur{display:none!important}}
+@media(max-width:960px){.nlinks{display:none}.hmeta,.cgrid,.kstrip,.faqw,.kwrap,.about2{grid-template-columns:1fr}.hkpis{justify-content:flex-start}.hkpi{text-align:left}.scard{grid-template-columns:1fr;gap:14px}.why{grid-template-columns:1fr}.bigstats{grid-template-columns:1fr 1fr}.bstat{padding-left:0;border-left:0;border-top:1px solid rgba(245,243,238,.12)}.svcrow{grid-template-columns:1fr;gap:10px}.pgrid{grid-template-columns:1fr}.pstep{grid-template-columns:1fr;gap:8px}.svcp{text-align:left}.shift{grid-template-columns:1fr}.sharrow{transform:rotate(90deg);text-align:center}.ccard:nth-child(2){margin-top:0}.hproof{display:none}.cur{display:none!important}}
 @media(prefers-reduced-motion:reduce){.rv,.lr>span{opacity:1;transform:none;transition:none;filter:none;clip-path:none}.sdin,.ctain{animation-duration:200s}.grain{display:none}}
 /* ============================================================
    CARD HOVER — COLOUR INVERSION
@@ -482,7 +488,10 @@ textarea.fin{min-height:120px;resize:vertical}
 <nav class="nav" id="nav"><a class="logo" href="#top">Lagd<span style="color:var(--acc)">.</span></a><div class="nlinks"><a class="nlink" href="#arbeid">Arbeid</a><a class="nlink" href="#problem">Problemet</a><a class="nlink" href="#tjenester">Tjenester</a><a class="nlink" href="#priser">Priser</a><a class="nlink" href="#om">Om</a><a class="nlink" href="#faq">FAQ</a></div><a class="pill" href="#kontakt">Få gratis utkast</a></nav>
 <header class="hero cwrap" id="top" data-screen-label="Hero">
 <div class="hbg"></div>
-<div class="hwm" aria-hidden="true">F</div>
+<div class="hproof" aria-hidden="true">
+<div class="hpcard hp1"><div class="bbar"><i></i><i></i><i></i></div><img src="images/work/hero-verminord-480.webp" width="480" height="268" alt="" loading="eager" fetchpriority="high" decoding="async"></div>
+<div class="hpcard hp2"><img src="images/work/hero-bakeri-mobil-360.webp" width="360" height="779" alt="" loading="eager" fetchpriority="high" decoding="async"></div>
+</div>
 <div class="hin">
 <h1 class="h1"><span class="lr on"><span style="transition-delay:1.4s">Design levert på</span></span><span class="lr on"><span style="transition-delay:1.6s">halve tiden, <em>halve prisen.</em></span></span></h1>
 <div class="hmeta rv on" style="transition-delay:1.85s">
@@ -719,7 +728,7 @@ class Component extends DCLogic {
     let lastY = window.scrollY, skew = 0, running = true;
     this._stopFx = () => { running = false; };
     const hin = document.querySelector('.hin');
-    const hwm = document.querySelector('.hwm');
+    const hwm = document.querySelector('.hproof');
     const dark = document.querySelector('.dark');
     const tickers = document.querySelectorAll('.sdin,.ctain');
     const cvis = document.querySelectorAll('.cvis .bframe');
@@ -742,9 +751,9 @@ class Component extends DCLogic {
         hin.style.transform = 'translateY(' + (y * 0.28).toFixed(1) + 'px)';
         hin.style.opacity = String(1 - p * 0.9);
       }
-      // 3. Watermark parallax
+      // 3. Proof-stack parallax
       if (hwm && y < vh * 1.4) {
-        hwm.style.transform = 'translateY(calc(-50% + ' + (y * 0.1).toFixed(1) + 'px))';
+        hwm.style.transform = 'translateY(' + (y * 0.1).toFixed(1) + 'px)';
       }
       // 4. Stacking cards depth
       scards.forEach((c, i) => {
