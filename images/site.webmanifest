@@ -4,8 +4,8 @@
   "icons": [
     { "src": "/images/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
   ],
-  "theme_color": "#E85A3C",
-  "background_color": "#F5F0E8",
+  "theme_color": "#1F4E43",
+  "background_color": "#F5F3EE",
   "display": "standalone",
   "start_url": "/"
 }
