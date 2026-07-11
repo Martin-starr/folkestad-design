@@ -68,8 +68,8 @@ html{scroll-behavior:smooth}body{margin:0;background:#F5F3EE}
 .lr>span{display:block;transform:translateY(115%) rotate(2deg);transform-origin:0 100%;transition:transform 1.2s cubic-bezier(.16,.84,.24,1)}
 .on .lr>span,.lr.on>span{transform:none}
 .rv{opacity:0;transform:translateY(34px);transition:opacity .9s cubic-bezier(.16,.84,.24,1),transform .9s cubic-bezier(.16,.84,.24,1),filter .9s cubic-bezier(.16,.84,.24,1),clip-path 1.2s cubic-bezier(.16,.84,.24,1)}
-.rv.on{opacity:1;transform:none;filter:none}
 .rv.vl{transform:translateX(-48px)}.rv.vr{transform:translateX(48px)}.rv.vs{transform:scale(.92) translateY(20px)}.rv.vb{transform:translateY(14px);filter:blur(16px)}
+.rv.on{opacity:1;transform:none;filter:none}
 .rv.vw{opacity:1;transform:none;clip-path:inset(0 100% 0 0)}.rv.vw.on{clip-path:inset(0 -2% 0 0)}
 .grain{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:999;opacity:.04;mix-blend-mode:multiply}
 @media(pointer:fine) and (min-width:961px) and (prefers-reduced-motion:no-preference){.site,.site *{cursor:none}}
@@ -197,7 +197,7 @@ img.chap-scroll.ld{opacity:1}
    chapters instead (same content, same swap contract).
    ============================================================ */
 .voyage{display:none;position:relative}
-.v-runway{position:relative}
+.v-runway{position:relative;height:1840svh} /* pre-JS-plassholder = vGeom-total, så scroll-gjenoppretting lander riktig */
 .v-stage{position:sticky;top:0;height:100vh;height:100svh;overflow:clip;background:var(--bg)}
 .v-canvas{position:absolute;left:0;top:0;width:7400px;height:5000px;transform-origin:0 0;will-change:transform;background-image:radial-gradient(rgba(20,23,26,.07) 1.5px,transparent 1.5px);background-size:56px 56px}
 .v-item{position:absolute}
@@ -212,7 +212,7 @@ img.chap-scroll.ld{opacity:1}
 .v-ese{position:relative;width:100%;height:100%;border-radius:18px;background:linear-gradient(135deg,#1F4E43,#0E2B25);display:flex;align-items:center;justify-content:center;overflow:clip;box-shadow:0 40px 80px rgba(20,23,26,.13)}
 .v-ese:after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(135deg,transparent,transparent 50px,rgba(255,255,255,.035) 50px,rgba(255,255,255,.035) 51px);pointer-events:none}
 .v-ese .chap-wm{font-size:220px}
-.v-ese .chap-quote{left:48px;right:48px;bottom:40px}
+.v-ese .chap-quote{left:380px;right:48px;bottom:40px}
 .v-bs{position:absolute;border-radius:16px;border:1px solid rgba(26,26,26,.08);background:#F6F2EA;color:#1A1A1A;box-shadow:0 24px 56px rgba(20,23,26,.1);padding:26px;box-sizing:border-box;overflow:clip}
 .v-bs .bs-lab{margin-bottom:14px}
 .v-bs .bs-swatches{grid-template-columns:repeat(3,1fr);gap:12px}
@@ -223,7 +223,8 @@ img.chap-scroll.ld{opacity:1}
 .v-cap h3{font-weight:800;font-size:24px;letter-spacing:-.03em;line-height:1.05;margin:0 0 4px}
 .v-cap .vtags{font-family:'Instrument Serif',serif;font-style:italic;font-size:17px;color:var(--acc);margin:0 0 12px}
 .v-cap .tlink{font-size:14px}
-.v-hint{position:absolute;right:clamp(24px,4vw,64px);bottom:clamp(24px,4svh,48px);z-index:3;font-weight:500;font-size:11.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--mut);opacity:0;transition:opacity .6s}
+.v-hint{position:absolute;right:clamp(24px,4vw,64px);bottom:clamp(24px,4svh,48px);z-index:3;font-weight:500;font-size:11.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--mut);opacity:0;transition:opacity .6s;background:rgba(245,243,238,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:999px;padding:9px 16px}
+.v-cap.ov{left:auto;right:clamp(24px,4vw,64px)}
 .v-hint.on{opacity:1}
 @media (min-width:961px) and (prefers-reduced-motion:no-preference){
 .voyage{display:block}
@@ -352,6 +353,9 @@ textarea.fin{min-height:120px;resize:vertical}
 .hwm{display:none}
 .cur{display:none!important}
 .chap-stage{grid-template-columns:1fr;grid-template-rows:auto minmax(0,1fr);row-gap:14px;align-items:start;padding-top:86px;padding-bottom:20px}
+.chap-runway{height:440svh} /* pre-JS-plassholder ≈ mobil-geometri */
+.chap[data-chap="logo"] .chap-runway,.chap[data-chap="brand"] .chap-runway{height:315svh}
+.chap[data-chap="case"] .chap-runway{height:215svh}
 .chap-meta h3{font-size:24px;margin-bottom:4px;display:inline}
 .chap-idx{margin-bottom:8px}
 .chap-tags{display:inline;margin:0 0 0 10px;font-size:16px}
@@ -445,7 +449,7 @@ img.chap-scroll{opacity:1;transition:none}
 .faq details:hover .qa{color:rgba(245,243,238,.6)}
 }
 </style>
-<noscript><style>.loader{display:none}.rv,.lr>span{opacity:1;transform:none}.mw{opacity:1}.voyage{display:none!important}.chapfall{display:block!important}.chap-runway{height:auto!important}.chap-stage{position:static;height:auto;padding-top:110px;padding-bottom:40px}.chap-frame{height:70svh}img.chap-scroll{opacity:1}.chap-quote{opacity:1;position:relative;left:0;right:0;bottom:0;padding:24px}.chap-wipe{transform:none;position:relative;height:50%}.chap-wipe>.chap-ground{transform:none}</style></noscript>
+<noscript><style>.loader{display:none}.rv,.lr>span{opacity:1;transform:none;filter:none}.mw{opacity:1}.site,.site *{cursor:auto!important}.voyage{display:none!important}.chapfall{display:block!important}.chap-runway{height:auto!important}.chap-stage{position:static;height:auto;padding-top:110px;padding-bottom:40px}.chap-frame{height:70svh}img.chap-scroll{opacity:1}.chap-quote{opacity:1;position:relative;left:0;right:0;bottom:0;padding:24px}.chap-wipe{transform:none;position:relative;height:50%}.chap-wipe>.chap-ground{transform:none}</style></noscript>
 </head>
 <body>
 <svg class="grain" aria-hidden="true" width="100%" height="100%"><filter id="gn"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"></feTurbulence></filter><rect width="100%" height="100%" filter="url(#gn)"></rect></svg>
@@ -694,7 +698,7 @@ img.chap-scroll{opacity:1;transition:none}
 <span class="v-lab" aria-hidden="true"><b>01</b> · Solhuset Bakeri — Nettside · Konsept</span>
 <figure class="v-frame">
 <div class="chap-bar" aria-hidden="true"><span class="chap-dots"><i></i><i></i><i></i></span><span class="chap-url">folkestad.design/eksempel/onepager</span><span class="chap-innerbar"></span></div>
-<div class="v-view"><img class="v-scroll" src="/images/showcase/solhuset-1440.webp" width="2160" height="5952" alt="Nettside-konsept for Solhuset Bakeri — hele siden fra topp til bunn" loading="eager" decoding="async"></div>
+<div class="v-view"><img class="v-scroll" src="/images/showcase/solhuset-1440.webp" width="2160" height="5952" alt="Nettside-konsept for Solhuset Bakeri — hele siden fra topp til bunn" loading="lazy" decoding="async"></div>
 </figure>
 </article>
 
@@ -738,7 +742,9 @@ img.chap-scroll{opacity:1;transition:none}
 </div>
 </div>
 <div class="v-bs" style="left:950px;top:0;width:580px;height:400px">
-<p class="bs-lab">Typografi</p><p class="bs-type">Verminord</p><p class="bs-type-sub">IBM Plex Sans · Bold · 0.18–0.22 em tracking · maks to snitt per design</p>
+<p class="bs-lab">Typografi</p><p class="bs-type">Verminord</p><p class="bs-type-sub">IBM Plex Sans · Bold · 0.18–0.22 em tracking</p>
+<p style="font-weight:800;font-size:46px;letter-spacing:-.01em;margin:26px 0 6px;color:#1A1A1A">Aa Bb 0123</p>
+<p class="bs-type-sub">Maks to snitt per design · tabulære tall på datablad og etikett</p>
 </div>
 <div class="v-bs" style="left:70px;top:590px;width:640px;height:400px;background:#1C3A5C;border:0;display:flex;flex-direction:column;justify-content:space-between">
 <img src="/images/showcase/verminord-white.webp" width="1280" height="853" alt="" style="width:52%" loading="lazy" decoding="async"><p style="margin:0;color:rgba(246,242,234,.75);font-size:13px;letter-spacing:.08em;line-height:1.7">MARTIN FOLKESTAD<br>VERMINORD AS · JÆREN<br>VERMINORD.NO</p>
@@ -1130,9 +1136,11 @@ function vGeom(){
   voy.on=true;
   var vw=window.innerWidth,vh=voy.stage.offsetHeight||window.innerHeight;
   voy.vh=vh;
+  var navEl=document.getElementById('nav');
+  voy.navB=navEl?Math.max(60,Math.round(navEl.getBoundingClientRect().bottom)):90;
   voy.stops.forEach(function(s){
     var x=s.el.offsetLeft,y=s.el.offsetTop,w=s.el.offsetWidth,hh=s.el.offsetHeight;
-    s.cam={cx:x+w/2,cy:y+hh/2,s:Math.min(0.92*vw/w,0.84*vh/hh,1.15)};
+    s.cam={cx:x+w/2,cy:y+hh/2,s:Math.min(0.92*vw/w,0.84*(vh-voy.navB)/hh,1.15)};
     if(s.img){
       var iw=+s.img.getAttribute('width')||1,ih=+s.img.getAttribute('height')||1;
       var viewW=s.view?s.view.offsetWidth:1180,viewH=s.view?s.view.offsetHeight:716;
@@ -1167,6 +1175,7 @@ function vCapSet(i){
   var d;
   if(i===-1)d={idx:'',title:voy.sec.dataset.ovTitle,tags:voy.sec.dataset.ovTags,href:'#tjenester',link:'Se hva jeg kan gjøre for deg →'};
   else{var el=voy.stops[i].el;d={idx:el.dataset.idx,title:el.dataset.title,tags:el.dataset.tags,href:el.dataset.href,link:el.dataset.link}}
+  voy.cap.classList.toggle('ov',i===-1);
   voy.cap.innerHTML=(d.idx?'<span class="chap-idx"><b>'+d.idx+'</b> / 08</span>':'')+
     '<h3>'+d.title+'</h3><p class="vtags">'+d.tags+'</p>'+
     '<a class="tlink" href="'+d.href+'"'+(d.href.charAt(0)==='#'?'':' target="_blank" rel="noopener"')+'>'+d.link+'</a>';
@@ -1298,7 +1307,7 @@ function startFx(){
         if(voy.fresh){voy.cx=tcx;voy.cy=tcy;voy.ls=tls;voy.fresh=false}
         voy.cx+=(tcx-voy.cx)*0.1;voy.cy+=(tcy-voy.cy)*0.1;voy.ls+=(tls-voy.ls)*0.1;
         var vsc=Math.exp(voy.ls);
-        voy.canvas.style.transform='translate3d('+(window.innerWidth/2-vsc*voy.cx).toFixed(2)+'px,'+(voy.vh/2-vsc*voy.cy+38).toFixed(2)+'px,0) scale('+vsc.toFixed(5)+')';
+        voy.canvas.style.transform='translate3d('+(window.innerWidth/2-vsc*voy.cx).toFixed(2)+'px,'+(voy.vh/2-vsc*voy.cy+voy.navB/2).toFixed(2)+'px,0) scale('+vsc.toFixed(5)+')';
         var curPh=vph.indexOf(cur);
         voy.stops.forEach(function(sp){
           var tgt=curPh>sp.dwPhase?1:(curPh<sp.dwPhase?0:vu);
@@ -1320,6 +1329,7 @@ function startFx(){
         var capVis=cur.t==='d'?Math.min(clamp01(vu/0.12),clamp01((1-vu)/0.12)):0;
         if(cur.t==='d'&&cur.i===-1)capVis=clamp01(vu/0.25);
         voy.cap.style.opacity=capVis.toFixed(3);
+        voy.cap.style.visibility=capVis>0.01?'visible':'hidden';
         voy.cap.style.transform='translate3d(0,'+((1-capVis)*14).toFixed(1)+'px,0)';
         voy.cap.classList.toggle('on',capVis>0.5);
         if(voy.hint)voy.hint.classList.toggle('on',pin2<vph[0].len*0.8);
@@ -1329,6 +1339,7 @@ function startFx(){
       }else{
         voy.fresh=true;
         if(voy.cap.classList.contains('on')){voy.cap.classList.remove('on');voy.cap.style.opacity='0'}
+        voy.cap.style.visibility='hidden';
         if(voy.hint)voy.hint.classList.remove('on');
       }
     }
@@ -1346,6 +1357,7 @@ if(!reduced){
   buildRail();
   markLoaded();
   allGeom();
+  if(voy&&voy.on)vPrep(0);
   var rsT;
   window.addEventListener('resize',function(){clearTimeout(rsT);rsT=setTimeout(allGeom,150)});
   window.addEventListener('orientationchange',function(){setTimeout(allGeom,300)});
