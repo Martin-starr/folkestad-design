@@ -855,6 +855,8 @@ const THEMES = {
   ember:    {name:"Ember",    bg:"#0D0D0D", ink:"#F5F3EF", muted:"#9A9791", accent:"#E8593B", line:"#24211E"},
   smie:     {name:"Smie",     bg:"#ECECEA", ink:"#131313", muted:"#6E6E6C", accent:"#D8402F", line:"#DADAD6"},
   stein:    {name:"Stein",    bg:"#F6F3EE", ink:"#2B2723", muted:"#857E74", accent:"#9C4A2F", line:"#E6E0D6"},
+  kritt:    {name:"Kritt",    bg:"#F4F5F7", ink:"#0E1116", muted:"#7C828D", accent:"#00249C", line:"#E3E6EB"},
+  mose:     {name:"Mose",     bg:"#F1F3EE", ink:"#1C231C", muted:"#79826F", accent:"#3E6B3F", line:"#DFE4DA"},
   kveld:    {name:"Kveld",    bg:"#1A1714", ink:"#EDE6DB", muted:"#9B9184", accent:"#B8934F", line:"#2A2620"},
 };
 
@@ -1174,6 +1176,21 @@ const FX_OK = t => !(t==="hscroll"||t==="zoom"||t==="spacer"||t==="pinned");
 
 const U = id => "https://images.unsplash.com/photo-"+id+"?auto=format&fit=crop&w=1600&q=80";
 const IMAGE_LIB = {
+  "By & arkitektur":[
+    U("1449824913935-59a10b8d2000"), U("1444723121867-7a241cacace9"),
+    U("1487958449943-2429e8be8625"), U("1486406146926-c627a92ad1ab"),
+    U("1520607162513-77705c0f0d4a"), U("1465101162946-4377e57745c3"),
+  ],
+  "Industri & arbeid":[
+    U("1581091226825-a6a2a5aee158"), U("1565043666747-69f6646db940"),
+    U("1504328345606-18bbc8c9d7d1"), U("1581092160562-40aa08e78837"),
+    U("1504917595217-d4dc5ebe6122"), U("1517048676732-d65bc937f952"),
+  ],
+  "Handel & produkter":[
+    U("1505740420928-5e560c06d30e"), U("1523275335684-37898b6baf30"),
+    U("1526170375885-4d8ecf77b99f"), U("1441986300917-64674bd600d8"),
+    U("1472851294608-062f824d29cc"), U("1512621776951-a57141f2eefd"),
+  ],
   "Coast & nature":[
     U("1506905925346-21bda4d32df4"), U("1441974231531-c6227db76b6e"),
     U("1470071459604-3b5ec3a7fe05"), U("1507525428034-b723cf961d3e"),
@@ -1853,11 +1870,11 @@ const TEMPLATES = {
   kanalene:()=>tpl("smie","kondens","dramatisk",[
     S("hero",{kicker:"En by, fire kapitler",title:"The city is a *journey*, not a map.",sub:"Follow the water from the first dug metre to the last bridge lamp. A story told sideways — chapter by chapter, year by year.",align:"left",height:"full",anim:"words",fadeout:true}),
     S("statement",{text:"History reads better *sideways*.",align:"center",anim:"blur"}),
-    S("hscroll",{kicker:"Kapittel 01 — Oversikten",imgs:IMG("kan1")+" | 01 — The ring takes shape\n"+IMG("kan2")+" | 02 — Water as street\n"+IMG("kan3")+" | 03 — The merchant houses\n"+IMG("kan4")+" | 04 — Ninety islands"}),
+    S("hscroll",{kicker:"Kapittel 01 — Oversikten",imgs:U("1449824913935-59a10b8d2000")+" | 01 — The ring takes shape\n"+U("1444723121867-7a241cacace9")+" | 02 — Water as street\n"+U("1487958449943-2429e8be8625")+" | 03 — The merchant houses\n"+U("1486406146926-c627a92ad1ab")+" | 04 — Ninety islands"}),
     S("stats",{kicker:"Tallenes tale",items:"1612 | The first spade in the mud\n165 | Canals, still counting\n1281 | Bridges over still water\n90 | Islands stitched together",cols:"4",fx:"cover",bg:"#131313",fg:"#F2F2EF"}),
-    S("split",{kicker:"Kapittel 02 — Byggingen",heading:"Dug by hand, drawn by *greed*.",body:"The ring was never romantic to the people who built it. It was land reclaimed shovel by shovel, sold plot by plot, the profit drawn straight onto the map. The beauty came later — an accident of money and mud that outlived them both.",side:"right",parallax:true,anim:"rise"}),
-    S("hscroll",{kicker:"Kapittel 03 — Utvidelsene",imgs:IMG("kan5")+" | 1662 — The second ring\n"+IMG("kan6")+" | 1750 — The warehouses fill\n"+IMG("kan7")+" | 1860 — Rail meets water\n"+IMG("kan8")+" | 1901 — The city turns inward"}),
-    S("zoom",{kicker:"Nærmere",img:IMG("kanzoom"),caption:"Every bridge holds a century of crossings"}),
+    S("split",{img:U("1552664730-d307ca884978"),kicker:"Kapittel 02 — Byggingen",heading:"Dug by hand, drawn by *greed*.",body:"The ring was never romantic to the people who built it. It was land reclaimed shovel by shovel, sold plot by plot, the profit drawn straight onto the map. The beauty came later — an accident of money and mud that outlived them both.",side:"right",parallax:true,anim:"rise"}),
+    S("hscroll",{kicker:"Kapittel 03 — Utvidelsene",imgs:U("1470770903676-69b98201ea1c")+" | 1662 — The second ring\n"+U("1502082553048-f009c37129b9")+" | 1750 — The warehouses fill\n"+U("1500534623283-312aade485b7")+" | 1860 — Rail meets water\n"+U("1465101162946-4377e57745c3")+" | 1901 — The city turns inward"}),
+    S("zoom",{kicker:"Nærmere",img:U("1520607162513-77705c0f0d4a"),caption:"Every bridge holds a century of crossings"}),
     S("quote",{text:"A canal is a street that refuses to hurry.",who:"Byarkivet, 1958",anim:"blur"}),
     S("marquee",{text:"1612 — 1662 — 1750 — 1860 — 1901 — 2026 — ",size:"l",speed:"34",react:true}),
     S("statement",{text:"Four hundred years, and the water still sets the *pace*.",align:"left",anim:"rise"}),
@@ -1865,37 +1882,37 @@ const TEMPLATES = {
     S("footer",{heading:"Kanalene",links:"Instagram → https://instagram.com\nRuten → https://kanalene.no\nhei@kanalene.no → mailto:hei@kanalene.no",note:"A city story, told sideways. Fire kapitler, ett tempo."}),
   ],"Kanalene"),
   foljetong:()=>tpl("papir","spektral","rolig",[
-    S("hero",{kicker:"En føljetong i fem deler · Del I",title:"The night the lights went out in *Løkka*.",sub:"Av Ingrid Havstad · Illustrert av Mons Berge · 14 minutter",align:"center",height:"full",img:IMG("folj-hero"),anim:"fade",fadeout:true}),
+    S("hero",{kicker:"En føljetong i fem deler · Del I",title:"The night the lights went out in *Løkka*.",sub:"Av Ingrid Havstad · Illustrert av Mons Berge · 14 minutter",align:"center",height:"full",img:U("1519681393784-d120267933ba"),anim:"fade",fadeout:true}),
     S("prose",{kicker:"Del I",heading:"The last ordinary evening",body:"Nobody in the street remembers the exact minute the power went, only what they were holding when it happened. A ladle. A phone mid-sentence. A glass that never got refilled.\n\nEilert Grans was holding a key that did not fit. He had been holding it for twenty minutes, on the wrong step of the right building, and when the windows above him went dark one by one he took it — wrongly, as it turned out — as a sign to keep trying.\n\nBy morning, three flats had been opened. Nothing was missing. Something had been left behind in each.",width:"narrow",drop:true,align:"left",anim:"rise"}),
-    S("pinned",{kicker:"Det som ble funnet",img:IMG("folj-pin"),side:"right",steps:"Leilighet 2B | A photograph of the street, taken from a window that does not exist.\nLeilighet 3A | A key, identical to Grans' own, lying on a kitchen table wiped clean.\nLeilighet 4C | A note, unsigned: 'Lyset kommer tilbake. Det gjør ikke jeg.'"}),
+    S("pinned",{kicker:"Det som ble funnet",img:U("1506744038136-46273834b3fb"),side:"right",steps:"Leilighet 2B | A photograph of the street, taken from a window that does not exist.\nLeilighet 3A | A key, identical to Grans' own, lying on a kitchen table wiped clean.\nLeilighet 4C | A note, unsigned: 'Lyset kommer tilbake. Det gjør ikke jeg.'"}),
     S("prose",{kicker:"Del II",heading:"What the neighbours knew",body:"Fru Solheim on the ground floor had theories the way other people have houseplants — many, tended daily, most of them dying quietly.\n\nBut about the man in 4C she had only facts, and she laid them out like cutlery: he paid cash, he left at six, he greeted no one, and for eleven years his window had been the last light burning on the street. Every night. Until the night all of them went out together.",width:"narrow",drop:true,align:"left",anim:"rise"}),
-    S("zoom",{kicker:"Illustrasjon",img:IMG("folj-zoom"),caption:"Gaten, slik den så ut i mørket — Mons Berge"}),
+    S("zoom",{kicker:"Illustrasjon",img:U("1495578942200-c5f5d2137def"),caption:"Gaten, slik den så ut i mørket — Mons Berge"}),
     S("quote",{text:"Everyone on the street had a reason to be awake. Only one of them had a reason to lie about it.",who:"Del III",anim:"blur"}),
     S("prose",{kicker:"Del III",heading:"The window that does not exist",body:"The photograph from 2B was the problem. The street has forty-one windows, and the picture was taken from the forty-second.\n\nGrans counted twice, then a third time in daylight with a borrowed pair of binoculars and a mounting sense that the building was counting him back.",width:"narrow",drop:true,align:"left",anim:"rise"}),
     S("statement",{text:"*IV*",align:"center",anim:"blur"}),
-    S("split",{kicker:"Del IV",heading:"Six o'clock, eleven years",body:"They found the room behind the bricked-up window on a Tuesday. It held a chair, a lamp with no bulb, and eleven years of newspapers, each one folded open to the same page — the shipping lists, arrivals only.\n\nWhoever sat there had been waiting for a boat. The last paper was dated the day before the blackout.",side:"left",parallax:true,anim:"rise"}),
+    S("split",{img:U("1509042239860-f550ce710b93"),kicker:"Del IV",heading:"Six o'clock, eleven years",body:"They found the room behind the bricked-up window on a Tuesday. It held a chair, a lamp with no bulb, and eleven years of newspapers, each one folded open to the same page — the shipping lists, arrivals only.\n\nWhoever sat there had been waiting for a boat. The last paper was dated the day before the blackout.",side:"left",parallax:true,anim:"rise"}),
     S("prose",{kicker:"Del V",heading:"The lights come back",body:"The power returned at 04:12, all at once, the way it had left. Forty-one windows lit up along the street.\n\nAnd one more.",width:"narrow",drop:false,align:"left",anim:"rise"}),
     S("cta",{kicker:"Neste del",heading:"Del VI slippes *fredag*.",sub:"Get each instalment the morning it publishes — no noise in between, and the archive is always open.",btn:"Følg føljetongen → mailto:red@foljetong.no",anim:"rise"}),
     S("footer",{heading:"Føljetong",links:"Arkivet → https://foljetong.no\nred@foljetong.no → mailto:red@foljetong.no",note:"Fortellinger i deler. Skrevet sakte, lest sent."}),
   ],"Føljetong"),
   utstilling:()=>tpl("galleri","sveitsisk","balansert",[
     S("hero",{kicker:"Grafisk designer — Oslo",title:"Work that *works*.",sub:"Identity, interfaces and the occasional poster. Twelve years in, still choosing projects the slow way: one at a time.",align:"center",height:"tall",anim:"words",fadeout:true}),
-    S("filmstrip",{imgs:IMG("ut1")+" | Fjellrom — identity\n"+IMG("ut2")+" | Brygga 11 — packaging\n"+IMG("ut3")+" | Norsk Form — campaign\n"+IMG("ut4")+" | Skala — app design\n"+IMG("ut5")+" | Papirhuset — editorial\n"+IMG("ut6")+" | Vinterlys — poster series",speed:"38",size:"l"}),
-    S("stats",{kicker:"Siden 2014",items:"90+ | Projects shipped and still live\n14 | Design awards, two regretted\n6 | Long-term clients on retainer\n1 | Person answering this email",cols:"4"}),
+    S("filmstrip",{imgs:U("1467232004584-a241de8bcf5d")+" | Fjellrom — identity\n"+U("1504384308090-c894fdcc538d")+" | Brygga 11 — packaging\n"+U("1516937941344-00b4e0337589")+" | Norsk Form — campaign\n"+U("1497366811353-6870744d04b2")+" | Skala — app design\n"+U("1493246507139-91e8fad9978e")+" | Papirhuset — editorial\n"+U("1526170375885-4d8ecf77b99f")+" | Vinterlys — poster series",speed:"38",size:"l"}),
+    S("stats",{bg:"#0E1116",fg:"#F4F5F7",kicker:"Siden 2014",items:"90+ | Projects shipped and still live\n14 | Design awards, two regretted\n6 | Long-term clients on retainer\n1 | Person answering this email",cols:"4"}),
     S("cards",{kicker:"Hva jeg gjør",heading:"Three things, done *properly*.",items:"Identitet | Name, mark and system — built to survive the second logo committee and the third CEO.\nDigitalt | Interfaces and websites where the design decisions are invisible and the product feels obvious.\nTrykk | Posters, books and packaging. The slow disciplines that keep the digital work honest.",cols:"3",interaction:"none"}),
-    S("split",{kicker:"Metode",heading:"I show *fewer* options on purpose.",body:"Three directions is a menu; one direction with a reason is a recommendation. You are not paying me to hedge. Every project gets research you can read, one direction I stand behind, and the working files at the end.",side:"right",parallax:true,anim:"rise"}),
-    S("gallery",{heading:"Utvalgte prosjekter",imgs:IMG("ut7")+" | Fjellrom — full identity, 2025\n"+IMG("ut8")+" | Skala — design system, 2024\n"+IMG("ut9")+" | Papirhuset — quarterly, ongoing\n"+IMG("ut10")+" | Vinterlys — silkscreen series",cols:"2",hover:"lift"}),
+    S("split",{img:U("1495474472287-4d71bcdd2085"),kicker:"Metode",heading:"I show *fewer* options on purpose.",body:"Three directions is a menu; one direction with a reason is a recommendation. You are not paying me to hedge. Every project gets research you can read, one direction I stand behind, and the working files at the end.",side:"right",parallax:true,anim:"rise"}),
+    S("gallery",{heading:"Utvalgte prosjekter",imgs:U("1461023058943-07fcbe16d735")+" | Fjellrom — full identity, 2025\n"+U("1497366216548-37526070297c")+" | Skala — design system, 2024\n"+U("1416879595882-3373a0480b5b")+" | Papirhuset — quarterly, ongoing\n"+U("1524758631624-e2822e304c36")+" | Vinterlys — silkscreen series",cols:"2",hover:"lift"}),
     S("faq",{kicker:"Praktisk",heading:"Before you write",items:"Er du tilgjengelig? | For the right project, always. Current lead time is about six weeks.\nHva koster det? | Fixed price per project, agreed before we start. Identity work starts at 80 000 kr.\nJobber du alene? | Yes — with a trusted circle of developers, photographers and printers when the project needs them.\nHvor sitter du? | Oslo, men det spiller sjelden noen rolle."}),
     S("cta",{kicker:"Nytt prosjekt?",heading:"Tell me what you're *making*.",sub:"A few honest lines about the project beats a formal brief. I reply within two days, also when the answer is no.",btn:"Skriv til meg → mailto:post@utstilling.design",anim:"rise"}),
     S("footer",{heading:"Utstilling",links:"Instagram → https://instagram.com\nLinkedIn → https://linkedin.com\npost@utstilling.design → mailto:post@utstilling.design",note:"Grafisk design fra Oslo. Ett prosjekt om gangen siden 2014."}),
   ],"Utstilling"),
   billboard:()=>tpl("galleri","presise","balansert",[
-    S("hero",{kicker:"Ny",title:"Lyd. *Uten* støyen.",sub:"Hodetelefonen som gjør mindre, med vilje.",align:"center",height:"full",img:IMG("bill-hero"),anim:"rise",fadeout:true}),
-    S("zoom",{kicker:"Nærmere",img:IMG("bill-1"),caption:"Titan. Lettere enn tvilen."}),
-    S("split",{kicker:"Batteri",heading:"Førti timer. *Én* bekymring mindre.",body:"Charged on Sunday, working on Friday. The battery is not a feature you notice — it is a thought you stop having. Ten minutes of charge buys an evening; a full charge buys the week.",side:"left",parallax:false,anim:"rise",fx:"cover",bg:"#0B0B0C",fg:"#F5F5F7"}),
-    S("zoom",{kicker:"Detaljen",img:IMG("bill-2"),caption:"Ett hjul. Alle funksjoner. Ingen manual."}),
-    S("split",{kicker:"Lydbildet",heading:"Stillhet er også en *lyd*.",body:"Active noise cancelling tuned for rooms people actually sit in — trains, open offices, kitchens at seven. And when someone talks to you, one tap lets the world back in, exactly as loud as it was.",side:"right",parallax:false,anim:"rise"}),
-    S("filmstrip",{imgs:IMG("bill-3")+" | Studio — grafitt\n"+IMG("bill-4")+" | Studio — bein\n"+IMG("bill-5")+" | Reisefutteralet\n"+IMG("bill-6")+" | Puter i tre størrelser\n"+IMG("bill-7")+" | Kabelen, for puristene",speed:"38",size:"m"}),
+    S("hero",{kicker:"Ny",title:"Lyd. *Uten* støyen.",sub:"Hodetelefonen som gjør mindre, med vilje.",align:"center",height:"full",img:U("1505740420928-5e560c06d30e"),anim:"rise",fadeout:true}),
+    S("zoom",{kicker:"Nærmere",img:U("1524504388940-b1c1722653e1"),caption:"Titan. Lettere enn tvilen."}),
+    S("split",{img:U("1523275335684-37898b6baf30"),kicker:"Batteri",heading:"Førti timer. *Én* bekymring mindre.",body:"Charged on Sunday, working on Friday. The battery is not a feature you notice — it is a thought you stop having. Ten minutes of charge buys an evening; a full charge buys the week.",side:"left",parallax:false,anim:"rise",fx:"cover",bg:"#0B0B0C",fg:"#F5F5F7"}),
+    S("zoom",{kicker:"Detaljen",img:U("1558618666-fcd25c85cd64"),caption:"Ett hjul. Alle funksjoner. Ingen manual."}),
+    S("split",{img:U("1521017432531-fbd92d768814"),kicker:"Lydbildet",heading:"Stillhet er også en *lyd*.",body:"Active noise cancelling tuned for rooms people actually sit in — trains, open offices, kitchens at seven. And when someone talks to you, one tap lets the world back in, exactly as loud as it was.",side:"right",parallax:false,anim:"rise"}),
+    S("filmstrip",{imgs:U("1507003211169-0a1dd7228f2d")+" | Studio — grafitt\n"+U("1529626455594-4ff0802cfb7e")+" | Studio — bein\n"+U("1493723843671-1d655e66ac1c")+" | Reisefutteralet",speed:"38",size:"m"}),
     S("cards",{kicker:"Gode grunner",heading:"To ting til.",items:"Bytt inn | Send oss den gamle — uansett merke — og få opptil 1 200 kr i avslag. Vi gjenvinner resten skikkelig.\nDel opp | Fra 249 kr i måneden, rentefritt i tolv måneder. Prisen er den samme, bare langsommere.",cols:"2",interaction:"none"}),
     S("cta",{kicker:"Tilgjengelig nå",heading:"Hør *forskjellen* selv.",sub:"Fri frakt, fri retur i 30 dager. Om stillheten ikke overbeviser deg, gjør vi det ikke vanskeligere enn en returlapp.",btn:"Kjøp — 3 990 kr → mailto:ordre@billboard.no",anim:"rise"}),
     S("footer",{heading:"Billboard Audio",links:"Support → https://billboard.no/support\nordre@billboard.no → mailto:ordre@billboard.no",note:"Design i Oslo. Lyd for resten av landet. © 2026"}),
@@ -1906,15 +1923,15 @@ const TEMPLATES = {
     S("statement",{text:"ENTER THE *ARCHIVE*",align:"center",anim:"blur"}),
     S("marquee",{text:"✷ Nattarkiv ✷ 2026 ✷ Utvalgt ✷ Uinnstilt ✷ ",size:"l",speed:"30",react:true}),
     S("prose",{kicker:"Om utvalget",heading:"Thirty rooms, one corridor",body:"Every year we collect the work that was made for its own sake — the side projects, the prints in editions of ten, the websites with an audience of one.\n\nNo jury, no categories, no gold. Just rooms. Walk slowly.",width:"narrow",drop:false,align:"left",anim:"rise"}),
-    S("gallery",{heading:"Rommene",imgs:IMG("natt1")+" | Rom 01 ✷ Papirarbeid\n"+IMG("natt2")+" | Rom 02 ✷ Skjermlys\n"+IMG("natt3")+" | Rom 03 ✷ Bokstaver\n"+IMG("natt4")+" | Rom 04 ✷ Uferdig, med vilje",cols:"2",hover:"mono"}),
-    S("filmstrip",{imgs:IMG("natt5")+" | ✷ 05\n"+IMG("natt6")+" | ✷ 06\n"+IMG("natt7")+" | ✷ 07\n"+IMG("natt8")+" | ✷ 08\n"+IMG("natt9")+" | ✷ 09",speed:"55",size:"m"}),
+    S("gallery",{heading:"Rommene",imgs:U("1447752875215-b2761acb3c5d")+" | Rom 01 ✷ Papirarbeid\n"+U("1454165804606-c3d57bc86b40")+" | Rom 02 ✷ Skjermlys\n"+U("1516035069371-29a1b244cc32")+" | Rom 03 ✷ Bokstaver\n"+U("1519085360753-af0119f7cbe7")+" | Rom 04 ✷ Uferdig, med vilje",cols:"2",hover:"mono"}),
+    S("filmstrip",{imgs:U("1501339847302-ac426a4a7cbb")+" | ✷ 05\n"+U("1525610553991-2bede1a236e2")+" | ✷ 06\n"+U("1441057206919-63d19fac2369")+" | ✷ 07\n"+U("1472214103451-9374bd1c798e")+" | ✷ 08\n"+U("1470252649378-9c29740c9fa8")+" | ✷ 09",speed:"55",size:"m"}),
     S("quote",{text:"The best work happens when nobody is asking for it.",who:"Fra gjesteboken, november",anim:"blur"}),
     S("cta",{kicker:"Bidra neste år",heading:"Made something *after hours*?",sub:"Send it in. If it kept you up, it belongs here. Innsendingen åpner i oktober, stenger når vi sovner.",btn:"Send inn arbeid → mailto:post@nattarkiv.no",anim:"rise"}),
     S("footer",{heading:"✷ Nattarkiv",links:"Instagram → https://instagram.com\npost@nattarkiv.no → mailto:post@nattarkiv.no",note:"En årbok i mørket. Åpen hele natten, hele året."}),
   ],"Nattarkiv"),
-  depot:()=>tpl("galleri","brutal","dramatisk",[
+  depot:()=>tpl("kritt","brutal","dramatisk",[
     S("hero",{kicker:"DEPOT — DIGITALT DESIGNSTUDIO",title:"We build sites that win *awards*. Yours is next.",sub:"Nettsider, identiteter og den slags digitale rom folk husker. Ett studio, én farge, ingen unnskyldninger.",align:"left",height:"full",anim:"words",fadeout:true}),
-    S("gallery",{heading:"UTVALGTE PROSJEKTER",imgs:IMG("dep1")+" | NO.001 — TERRENG EIENDOM\n"+IMG("dep2")+" | NO.002 — FABEL FORLAG\n"+IMG("dep3")+" | NO.003 — ORBIT LYD\n"+IMG("dep4")+" | NO.004 — STAV ARKITEKTUR",cols:"2",hover:"zoom"}),
+    S("gallery",{heading:"UTVALGTE PROSJEKTER",imgs:U("1460925895917-afdab827c52f")+" | NO.001 — TERRENG EIENDOM\n"+U("1522071820081-009f0129c71c")+" | NO.002 — FABEL FORLAG\n"+U("1497436072909-60f360e1d4b1")+" | NO.003 — ORBIT LYD\n"+U("1517245386807-bb43f82c33c4")+" | NO.004 — STAV ARKITEKTUR",cols:"2",hover:"zoom"}),
     S("marquee",{text:"SOTD ✕ 4 — DEVELOPER AWARD ✕ 2 — HONORS ✕ 11 — ",size:"m",speed:"26",react:true}),
     S("statement",{text:"Beauty that doesn't *sell* is just decoration.",align:"center",anim:"blur"}),
     S("cards",{kicker:"TJENESTER",heading:"Fire disipliner. Én *standard*.",items:"KOMPLETT NETTSIDE | Strategi, design og utvikling under samme tak. Fra første skisse til siste deploy.\nUI-DESIGN | Grensesnitt med én jobb: å gjøre det kompliserte selvsagt.\nUX-DESIGN | Flyt, friksjon og alt brukeren aldri skal måtte tenke på.\nUTVIKLING | Håndskrevet frontend som laster raskt og eldes saktere enn designet.",cols:"2",interaction:"none"}),
@@ -1922,15 +1939,15 @@ const TEMPLATES = {
     S("cta",{kicker:"NESTE PROSJEKT",heading:"Klar for et nettsted folk *misunner*?",sub:"Vi tar fire store prosjekter i året. Fortell oss hva du bygger — vi svarer innen 48 timer, også når svaret er nei.",btn:"START HER → mailto:post@depot.studio",anim:"rise"}),
     S("footer",{heading:"DEPOT",links:"Instagram → https://instagram.com\nAwwwards → https://awwwards.com\npost@depot.studio → mailto:post@depot.studio",note:"Digitalt designstudio. Én farge siden 2019."}),
   ],"DEPOT"),
-  rebell:()=>tpl("papir","redaksjon","balansert",[
+  rebell:()=>tpl("stein","redaksjon","balansert",[
     S("hero",{kicker:"Byrå for merkevarer i bevegelse — Oslo & Bergen",title:"Brands don't need ads. They need *conviction*.",sub:"Vi er et byrå av strateger, skribenter og regissører som mener merkevarer må stå for noe — og tør å si det høyt.",align:"left",height:"full",anim:"words",fadeout:true}),
     S("statement",{text:"A brand that stands still is just a *logo* with overhead.",align:"left",anim:"rise"}),
     S("list",{kicker:"Det vi gjør",heading:"Fem rom, samme retning",items:"Strategi | Posisjonen først. Alt annet er eksekvering av den.\nTendenskontor | Vi leser kulturen før den blir brief — og sier fra når dere er sent ute.\nReklame | Kampanjer med en mening bak seg, ikke bare et mediebudsjett foran seg.\nAktivering | Øyeblikk folk deltar i, ikke bare ser på.\nInnhold | Redaksjonell kraft, utgitt i merkevarens navn og verdt tiden den ber om.",size:"m"}),
     S("quote",{text:"We hire people who argue back. The work is better because the meetings are worse.",who:"Partnerne, samlet sitat",anim:"blur"}),
-    S("split",{kicker:"Menneskene",heading:"Femti fjes. Ingen *fasade*.",body:"Ingen stockfoto, ingen 'ledergruppe i trapp'. Byrået er de femti menneskene som faktisk gjør jobben — strateger som skriver, skribenter som tenker, produsenter som redder alt til slutt. Du møter dem fra første møte.",side:"right",parallax:true,anim:"rise"}),
-    S("gallery",{heading:"Et utvalg av oss",imgs:IMG("reb1")+" | Strategi\n"+IMG("reb2")+" | Kreativt\n"+IMG("reb3")+" | Produksjon\n"+IMG("reb4")+" | Tendens\n"+IMG("reb5")+" | Innhold\n"+IMG("reb6")+" | Ledelse — også til stede",cols:"3",hover:"mono"}),
-    S("split",{kicker:"To byer",heading:"Oslo tenker. Bergen *svarer*.",body:"To kontor, én holdning. Møterommene har forskjellige postnummer, arbeidet har samme signatur. Kom innom det som er nærmest — kaffen er like sterk begge steder.",side:"left",parallax:false,anim:"rise"}),
-    S("cta",{kicker:"To dører inn",heading:"Send en brief. Eller en *CV*.",sub:"Begge leses av mennesker, begge får svar. Vi vokser sakte og ansetter sjelden — men vi svarer alltid.",btn:"Skriv til oss → mailto:hei@rebell.no",anim:"rise"}),
+    S("split",{img:U("1490645935967-10de6ba17061"),kicker:"Menneskene",heading:"Femti fjes. Ingen *fasade*.",body:"Ingen stockfoto, ingen 'ledergruppe i trapp'. Byrået er de femti menneskene som faktisk gjør jobben — strateger som skriver, skribenter som tenker, produsenter som redder alt til slutt. Du møter dem fra første møte.",side:"right",parallax:true,anim:"rise"}),
+    S("gallery",{heading:"Et utvalg av oss",imgs:U("1573496359142-b8d87734a5a2")+" | Strategi\n"+U("1560250097-0b93528c311a")+" | Kreativt\n"+U("1508214751196-bcfd4ca60f91")+" | Produksjon\n"+U("1506794778202-cad84cf45f1d")+" | Tendens\n"+U("1521737604893-d14cc237f11d")+" | Innhold\n"+U("1600880292203-757bb62b4baf")+" | Ledelse — også til stede",cols:"3",hover:"mono"}),
+    S("split",{img:U("1517048676732-d65bc937f952"),kicker:"To byer",heading:"Oslo tenker. Bergen *svarer*.",body:"To kontor, én holdning. Møterommene har forskjellige postnummer, arbeidet har samme signatur. Kom innom det som er nærmest — kaffen er like sterk begge steder.",side:"left",parallax:false,anim:"rise"}),
+    S("cta",{bg:"#141210",fg:"#F2F1ED",kicker:"To dører inn",heading:"Send en brief. Eller en *CV*.",sub:"Begge leses av mennesker, begge får svar. Vi vokser sakte og ansetter sjelden — men vi svarer alltid.",btn:"Skriv til oss → mailto:hei@rebell.no",anim:"rise"}),
     S("footer",{heading:"Rebell",links:"Instagram → https://instagram.com\nLinkedIn → https://linkedin.com\nhei@rebell.no → mailto:hei@rebell.no\nOslo · Bergen → https://maps.google.com",note:"Byrå for merkevarer i bevegelse. Femti mennesker, én overbevisning."}),
   ],"Rebell"),
   kolofon:()=>tpl("galleri","lesbar","rolig",[
@@ -1953,44 +1970,44 @@ const TEMPLATES = {
     S("marquee",{text:"Fjordkraft-leverandører · Kommuner · Sjømat · Logistikk · Bygg · Helse · Retail · ",size:"s",speed:"40",react:false}),
     S("cards",{kicker:"Tjenester",heading:"Seks måter vi *hjelper* på.",items:"Datavisualisering | Dashboards ledelsen åpner frivillig — bygget rundt beslutningene, ikke tallene.\nDatagrunnlag | Rørene bak: integrasjoner, datavarehus og kvalitet du kan stole på i styremøtet.\nStyring | Eierskap, definisjoner og tilgang — så to avdelinger slutter å ha hver sin sannhet.\nAutomatisering | Rapportene som lager seg selv, varslene som kommer før problemet.\nKI-agenter | Praktisk KI på egne data — pilot først, festtale etterpå.\nOpplæring | Vi gjør oss selv overflødige. Det er hele forretningsmodellen.",cols:"3",interaction:"none"}),
     S("list",{kicker:"Verktøykassen",heading:"Sertifisert på det dere allerede eier",items:"Power BI | Rapporter og datamodeller — vårt daglige verktøy siden 2017.\nAzure | Datavarehus og integrasjoner i skyen dere allerede betaler for.\nFabric | Ny plattform, gamle prinsipper: riktig tall, riktig sted, riktig tid.\nCopilot | KI der den hjelper — og ærlige råd om hvor den ikke gjør det.",size:"s"}),
-    S("split",{kicker:"Slik starter det",heading:"Første leveranse innen *tre uker*.",body:"Vi begynner aldri med en forstudie på førti sider. Vi begynner med det ene dashbordet dere savner mest, leverer det innen tre uker, og lar resten av samarbeidet vokse fra hva det beviser.",side:"right",parallax:true,anim:"rise"}),
+    S("split",{img:U("1556761175-b413da4baf72"),kicker:"Slik starter det",heading:"Første leveranse innen *tre uker*.",body:"Vi begynner aldri med en forstudie på førti sider. Vi begynner med det ene dashbordet dere savner mest, leverer det innen tre uker, og lar resten av samarbeidet vokse fra hva det beviser.",side:"right",parallax:true,anim:"rise"}),
     S("quote",{text:"For første gang krangler vi om hva tallene betyr — ikke om hvem sine tall som stemmer.",who:"Økonomidirektør, logistikkonsern",anim:"fade"}),
-    S("stats",{kicker:"Siden 2017",items:"60+ | Virksomheter hjulpet i gang\n3 uker | Fra signering til første dashbord\n94 % | Fortsetter etter første prosjekt\n0 | Rapporter ingen leser",cols:"4"}),
+    S("stats",{bg:"#14202B",fg:"#EEF2F4",kicker:"Siden 2017",items:"60+ | Virksomheter hjulpet i gang\n3 uker | Fra signering til første dashbord\n94 % | Fortsetter etter første prosjekt\n0 | Rapporter ingen leser",cols:"4"}),
     S("cta",{kicker:"Uforpliktende",heading:"Ta med et tall dere *ikke* stoler på.",sub:"En time, gratis, hos dere eller på video. Vi ser på datagrunnlaget sammen og sier ærlig hva som er raskt, hva som er dyrt, og hva som ikke er verdt det.",btn:"Book en gjennomgang → mailto:hei@konsulent.no",anim:"rise"}),
     S("footer",{heading:"Konsulent Analyse",links:"LinkedIn → https://linkedin.com\nhei@konsulent.no → mailto:hei@konsulent.no\nKirkegata 2, 4006 Stavanger → https://maps.google.com",note:"Data- og analyserådgivning. Stavanger, siden 2017."}),
   ],"Konsulent"),
   handel:()=>tpl("papir","moderne","balansert",[
     S("hero",{kicker:"Alt du trenger for å selge på nett",title:"Open your shop *tonight*.",sub:"Nettbutikken, betalingen og fraktlappene — samlet i ett verktøy som ikke krever et byrå for å komme i gang.",align:"left",height:"tall",anim:"words",fadeout:true}),
-    S("filmstrip",{imgs:IMG("han1")+" | Strikkeriet — garn & oppskrifter\n"+IMG("han2")+" | Brygg — kaffeabonnement\n"+IMG("han3")+" | Fjellsport — utstyr\n"+IMG("han4")+" | Atelier Vind — keramikk\n"+IMG("han5")+" | Nordlys Hud — pleie",speed:"38",size:"m"}),
+    S("filmstrip",{imgs:U("1441986300917-64674bd600d8")+" | Strikkeriet — garn & oppskrifter\n"+U("1472851294608-062f824d29cc")+" | Brygg — kaffeabonnement\n"+U("1441984904996-e0b6ba687e04")+" | Fjellsport — utstyr\n"+U("1512621776951-a57141f2eefd")+" | Atelier Vind — keramikk\n"+U("1556742049-0cfed4f6a45d")+" | Nordlys Hud — pleie",speed:"38",size:"m"}),
     S("cards",{kicker:"Tre tall som teller",heading:"Bygget for *drift*, ikke demo.",items:"99,9 % | Oppetid siste tolv måneder. Butikken din sover aldri, og vi gjør det heller ikke.\n15 % | Høyere fullføringsgrad i kassen enn bransjesnittet — én side, alle betalingsmåter.\n4 min | Fra produktbilde til publisert produkt. Målt med stoppeklokke, på mobil.",cols:"3",interaction:"none"}),
-    S("split",{kicker:"Vei nummer én",heading:"Start med et *tema*.",body:"Ni gjennomarbeidede maler, alle mobile-først og klare for norsk mva, Vipps og Posten. Bytt farger, last opp logoen, publiser. Du kan bytte tema senere uten å miste noe.",side:"right",parallax:true,anim:"rise"}),
-    S("split",{kicker:"Vei nummer to",heading:"Eller bygg *fritt*.",body:"Full tilgang til maler og kode når butikken vokser ut av standardoppsettet. Utviklere får API-er og dokumentasjon; du beholder innholdet og kundene dine uansett retning.",side:"left",parallax:true,anim:"rise"}),
-    S("gallery",{heading:"Temaer å starte fra",imgs:IMG("han6")+" | Ren — for få, dyre produkter\n"+IMG("han7")+" | Marked — for store kataloger\n"+IMG("han8")+" | Galleri — for det visuelle",cols:"3",hover:"lift"}),
+    S("split",{img:U("1556910103-1c02745aae4d"),kicker:"Vei nummer én",heading:"Start med et *tema*.",body:"Ni gjennomarbeidede maler, alle mobile-først og klare for norsk mva, Vipps og Posten. Bytt farger, last opp logoen, publiser. Du kan bytte tema senere uten å miste noe.",side:"right",parallax:true,anim:"rise"}),
+    S("split",{img:U("1414235077428-338989a2e8c0"),kicker:"Vei nummer to",heading:"Eller bygg *fritt*.",body:"Full tilgang til maler og kode når butikken vokser ut av standardoppsettet. Utviklere får API-er og dokumentasjon; du beholder innholdet og kundene dine uansett retning.",side:"left",parallax:true,anim:"rise"}),
+    S("gallery",{heading:"Temaer å starte fra",imgs:U("1542838132-92c53300491e")+" | Ren — for få, dyre produkter\n"+U("1445116572660-236099ec97a0")+" | Marked — for store kataloger\n"+U("1517248135467-4c7edcad34c4")+" | Galleri — for det visuelle",cols:"3",hover:"lift"}),
     S("list",{kicker:"Inkludert i alt",heading:"Ingen tillegg å jakte på",items:"Betaling | Vipps, kort, faktura og delbetaling — ferdig koblet fra dag én.\nFrakt | Posten, Bring og PostNord med utskriftsklare etiketter.\nMva & regnskap | Norske satser, ferdige bilag, eksport til regnskapssystemet.\nKundeklubb | Rabattkoder, gavekort og e-postlister uten ekstra abonnement.",size:"s"}),
-    S("quote",{text:"Jeg åpnet butikken en søndag kveld mens ungene sov. Mandag morgen hadde jeg tre ordre.",who:"Grunnlegger, Strikkeriet",anim:"blur"}),
+    S("quote",{bg:"#1E4B40",fg:"#F2F5F3",text:"Jeg åpnet butikken en søndag kveld mens ungene sov. Mandag morgen hadde jeg tre ordre.",who:"Grunnlegger, Strikkeriet",anim:"blur"}),
     S("faq",{kicker:"Før du starter",heading:"Det folk lurer på",items:"Hva koster det? | 249 kr i måneden, alt inkludert. Ingen bindingstid, ingen prosent av salget ditt.\nKan jeg flytte en eksisterende butikk? | Ja — vi importerer produkter, kunder og ordrehistorikk fra de vanligste plattformene.\nTrenger jeg organisasjonsnummer? | For å ta betalt, ja. Du kan bygge hele butikken ferdig uten.\nHva med support? | Mennesker, på norsk, hver dag 08–20."}),
     S("cta",{kicker:"Prøv gratis i 14 dager",heading:"Butikken din er *fire minutter* unna.",sub:"Ingen kort, ingen forpliktelse. Bygg ferdig i fred — betal først når du er klar til å åpne dørene.",btn:"Start gratis → mailto:start@handel.no",anim:"rise"}),
     S("footer",{heading:"Handel",links:"Hjelpesenter → https://handel.no/hjelp\nstart@handel.no → mailto:start@handel.no",note:"Norsk netthandel, gjort håndterlig. © 2026"}),
   ],"Handel"),
-  pakt:()=>tpl("galleri","geometrisk","balansert",[
+  pakt:()=>tpl("mose","geometrisk","balansert",[
     S("hero",{kicker:"Designstudio for organisasjoner som vil noe",title:"DESIGN FOR THE WORLD WE *WANT*.",sub:"Vi bygger merkevarer og formidling for stiftelser, forskningsmiljø og organisasjoner som jobber for noe større enn neste kvartal.",align:"left",height:"full",anim:"words",fadeout:true}),
     S("prose",{kicker:"Hvorfor",heading:"Substance deserves style",body:"De viktigste sakene taper ofte oppmerksomhetskampen mot de best finansierte. Det nekter vi å akseptere.\n\nDerfor gir vi organisasjoner med substans den samme designkraften som kommersielle merkevarer tar for gitt — så budskapet når like langt som det fortjener.",width:"narrow",drop:false,align:"left",anim:"rise"}),
     S("cards",{kicker:"Det vi gjør",heading:"Seks håndverk, ett *formål*.",items:"Identitet | Merkevarer for organisasjoner der troverdighet er hele kapitalen.\nInformasjonsdesign | Årsrapporter og datahistorier folk faktisk leser ferdig.\nHistoriefortelling | Strategi og språk som gjør komplekse saker menneskelige.\nFilm | Dokumentarisk innhold med research i bunn og hjerte i klippen.\nIllustrasjon | Animasjon og illustrasjon som forklarer uten å forenkle.\nNettsider | Tilgjengelige, raske og bygget for å vare lenger enn kampanjen.",cols:"3",interaction:"none"}),
     S("list",{kicker:"Arbeid",heading:"Utvalgte prosjekter, nummerert",items:"01 — Havstiftelsen | Årsrapport som ble sitert oftere enn pressemeldingen.\n02 — Institutt for folkehelse | Datavisualisering av ti års forskning, forstått på ti minutter.\n03 — Regnskogfondet | Kampanjeidentitet på tvers av fjorten land.\n04 — Universitetet i Bergen | Formidlingsplattform for klimaforskning.\n05 — Barnas Rettigheter | Interaktivt undervisningsverktøy, brukt i 400 klasserom.",size:"m"}),
-    S("gallery",{heading:"Fra prosjektene",imgs:IMG("pakt1")+" | 01 — Havstiftelsen\n"+IMG("pakt2")+" | 02 — Folkehelse\n"+IMG("pakt3")+" | 03 — Regnskog\n"+IMG("pakt4")+" | 04 — Klima",cols:"2",hover:"mono"}),
+    S("gallery",{heading:"Fra prosjektene",imgs:U("1426604966848-d7adac402bff")+" | 01 — Havstiftelsen\n"+U("1433086966358-54859d0ed716")+" | 02 — Folkehelse\n"+U("1439853949127-fa647821eba0")+" | 03 — Regnskog\n"+U("1518837695005-2083093ee35b")+" | 04 — Klima",cols:"2",hover:"mono"}),
     S("marquee",{text:"Stiftelser · Forskning · NGO · Universiteter · Kultur · Folkehelse · ",size:"s",speed:"42",react:false}),
-    S("cta",{kicker:"Nytt samarbeid",heading:"Jobber dere med noe som *betyr* noe?",sub:"Da vil vi høre om det. Vi setter av plass til to ideelle prosjekter i året til redusert pris — søknaden er en e-post.",btn:"Fortell oss mer → mailto:post@pakt.design",anim:"rise"}),
+    S("cta",{bg:"#12291B",fg:"#EDF4EE",kicker:"Nytt samarbeid",heading:"Jobber dere med noe som *betyr* noe?",sub:"Da vil vi høre om det. Vi setter av plass til to ideelle prosjekter i året til redusert pris — søknaden er en e-post.",btn:"Fortell oss mer → mailto:post@pakt.design",anim:"rise"}),
     S("footer",{heading:"PAKT",links:"Instagram → https://instagram.com\npost@pakt.design → mailto:post@pakt.design\nOslo · København → https://maps.google.com",note:"Design for organisasjoner som vil noe. Siden 2015."}),
   ],"PAKT"),
   kryo:()=>tpl("grafitt","teknisk","balansert",[
-    S("hero",{kicker:"Industriell rengjøring med tørris — hele Norge",title:"Clean without *water*. Precise without damage.",sub:"Tørrisblåsing for produksjonslinjer, el-anlegg og maskiner som ikke tåler vann, kjemikalier eller nedetid.",align:"left",height:"full",img:IMG("kryo-hero"),anim:"rise",fadeout:true}),
+    S("hero",{kicker:"Industriell rengjøring med tørris — hele Norge",title:"Clean without *water*. Precise without damage.",sub:"Tørrisblåsing for produksjonslinjer, el-anlegg og maskiner som ikke tåler vann, kjemikalier eller nedetid.",align:"left",height:"full",img:U("1581091226825-a6a2a5aee158"),anim:"rise",fadeout:true}),
     S("statement",{text:"Rengjøring er ikke vedlikehold. Det er *presisjon* under trykk.",align:"left",anim:"rise"}),
     S("list",{kicker:"Metoden",heading:"Tre ting som aldri skjer",items:"Vann | Tørris sublimerer — is blir gass, flaten står tørr. El-skap kan rengjøres spenningssatt.\nKjemikalier | Ingen løsemidler, ingen avfallshåndtering, ingen restlukt i næringsmiddelsonen.\nSlitasje | Ikke-abrasivt. Lakk, pakninger og presisjonsflater beholder toleransene sine.",size:"m"}),
-    S("split",{kicker:"Slik virker det",heading:"Minus 78 grader, i *lydens* hastighet.",body:"Tørrispellets akselereres i trykkluft og treffer belegget, som fryses, sprekker og løsner fra flaten. Isen går rett over i gass — tilbake står bare det som skulle bort, klart til oppsamling.",side:"right",parallax:false,anim:"rise"}),
-    S("pinned",{kicker:"Gjennomføringen",img:IMG("kryo-pin"),side:"left",steps:"01 — Befaring | Vi kartlegger anlegget, beleggtype og tilkomst. Fastpris før vi starter.\n02 — Sikkerhet | CO2-måling, avsperring og ventilasjonsplan avstemt med deres HMS.\n03 — Utførelse | Utenfor produksjonstid der det trengs. To operatører, eget aggregat, egen strøm.\n04 — Oppstart | Anlegget overleveres tørt og dokumentert — klart for drift samme skift."}),
+    S("split",{img:U("1531482615713-2afd69097998"),kicker:"Slik virker det",heading:"Minus 78 grader, i *lydens* hastighet.",body:"Tørrispellets akselereres i trykkluft og treffer belegget, som fryses, sprekker og løsner fra flaten. Isen går rett over i gass — tilbake står bare det som skulle bort, klart til oppsamling.",side:"right",parallax:false,anim:"rise"}),
+    S("pinned",{kicker:"Gjennomføringen",img:U("1565043666747-69f6646db940"),side:"left",steps:"01 — Befaring | Vi kartlegger anlegget, beleggtype og tilkomst. Fastpris før vi starter.\n02 — Sikkerhet | CO2-måling, avsperring og ventilasjonsplan avstemt med deres HMS.\n03 — Utførelse | Utenfor produksjonstid der det trengs. To operatører, eget aggregat, egen strøm.\n04 — Oppstart | Anlegget overleveres tørt og dokumentert — klart for drift samme skift."}),
     S("faq",{kicker:"Bransjer",heading:"Der metoden gjør størst forskjell",items:"Næringsmiddel | Produksjonslinjer, ovner og former — uten vann i sonen og uten smitteflater.\nEnergi & el | Trafoer, tavler og generatorer rengjort spenningssatt. Ingen tørketid.\nPlast & verktøy | Former renses i maskinen, uten demontering. Timer spart per syklus.\nGrafisk & tre | Valser, lim og sot — flater tilbake til spesifikasjon uten slipestøv."}),
     S("stats",{kicker:"Dokumentert",items:"0 | Liter vann per oppdrag\n24/7 | Beredskap ved driftsstans\n1 200+ | Oppdrag siden 2015\n100 % | Fastpris, aldri timepris",cols:"4"}),
-    S("gallery",{heading:"Fra felten",imgs:IMG("kryo1")+" | El-tavle, spenningssatt rengjøring\n"+IMG("kryo2")+" | Produksjonslinje, natt-skift\n"+IMG("kryo3")+" | Form-rens uten demontering",cols:"3",hover:"zoom"}),
+    S("gallery",{heading:"Fra felten",imgs:U("1504328345606-18bbc8c9d7d1")+" | El-tavle, spenningssatt rengjøring\n"+U("1581092160562-40aa08e78837")+" | Produksjonslinje, natt-skift\n"+U("1504917595217-d4dc5ebe6122")+" | Form-rens uten demontering",cols:"3",hover:"zoom"}),
     S("cta",{kicker:"Befaring innen 48 timer",heading:"Hva koster *nedetiden* dere har i dag?",sub:"Send bilder av anlegget, så kommer vi med fastpris og tidsplan. Akutt driftsstans? Ring — vi har vakt hele døgnet.",btn:"Book befaring → mailto:vakt@kryo.no",anim:"rise"}),
     S("footer",{heading:"KRYO",links:"vakt@kryo.no → mailto:vakt@kryo.no\nDøgnvakt → https://kryo.no/vakt\nHele Norge → https://maps.google.com",note:"Industriell tørrisblåsing. Presisjon siden 2015."}),
   ],"KRYO"),
@@ -5728,9 +5745,11 @@ $("#lib-overlay").onclick = e=>{ if(e.target.id==="lib-overlay") closeLibrary();
 
 const frame = $("#frame");
 
+let _scrollTopNext=false;   /* v12.8: template loads start at the top, not at the previous design's scroll */
 function rebuildFrame(){
   let y = 0;
-  try{ y = frame.contentWindow ? frame.contentWindow.scrollY : 0; }catch(e){}
+  try{ y = (!_scrollTopNext && frame.contentWindow) ? frame.contentWindow.scrollY : 0; }catch(e){}
+  _scrollTopNext = false;
   frame.onload = ()=>{
     try{
       frame.contentWindow.scrollTo(0,y);
@@ -7466,6 +7485,7 @@ function loadTemplateByKey(k){
   if(_tm) state.mode = _tm;
   state.customThemes = keepT||{}; state.customFonts = keepF||[];
   sel = 0; selObj = null; selObjs = null; closeQuickFill();
+  _scrollTopNext = true;
   syncAll(); update(true); renderThemes(); renderFonts(); renderCustomFonts(); renderToggles();
   const label = (userTemplates[k]&&userTemplates[k].name) || k;
   showToast("Loaded template: "+label);
