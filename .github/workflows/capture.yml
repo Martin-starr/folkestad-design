@@ -1,0 +1,53 @@
+name: capture
+on:
+  workflow_dispatch:
+  push:
+    branches: [claude/landing-page-redesign-olbskr]
+    paths:
+      - tools/capture-verminord.mjs
+      - .github/workflows/capture.yml
+
+permissions:
+  contents: write
+
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: claude/landing-page-redesign-olbskr
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Playwright
+        run: |
+          npm i playwright@1.49.0
+          npx playwright install --with-deps chromium
+
+      - name: Screenshot verminord.no
+        run: node tools/capture-verminord.mjs
+
+      - name: Recover prov.html from previous deployment
+        run: |
+          SHARE="https://lagd-hw36nrste-sahithewes-projects.vercel.app/prov.html?_vercel_share=4AjRVm37mx3XG4WXHnmU13FR8MH3dBtf"
+          curl -sL -c /tmp/jar -b /tmp/jar -o prov-recovered.html "$SHARE"
+          echo "size: $(wc -c < prov-recovered.html)"
+          head -c 200 prov-recovered.html; echo
+
+      - name: Probe old routes (report only)
+        run: |
+          for p in "demo/atelier" "demo/atelier.html" "demo/atelier/index.html" "blogg" "personvern" "images/og.jpg"; do
+            code=$(curl -sL -c /tmp/jar -b /tmp/jar -o /dev/null -w "%{http_code}" "https://lagd-hw36nrste-sahithewes-projects.vercel.app/$p")
+            echo "$p -> $code"
+          done
+
+      - name: Commit results
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@users.noreply.github.com"
+          git add images/showcase prov-recovered.html
+          git commit -m "capture: verminord.no-skjermbilder + gjenopprettet prov.html" || echo "nothing to commit"
+          git push
